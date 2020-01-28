@@ -27,6 +27,8 @@ import {
 * Components
 */
 
+import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
+
 /**
 * Actions
 */
@@ -43,19 +45,23 @@ import './sidebar.scss';
 * Selectors
 */
 
-import * as Selectors from '../../../reducers/selectors';
+// import * as Selectors from '../../../reducers/selectors';
+
+/**
+* Images
+*/
+
+import MyLogo from '../../../images/myLogo.png';
+import MyLogoCafe from '../../../images/myLogoCafe.png';
+import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 
 /**
 * Hooks
 */
 
 import {
-    useWindowSize
-} from '../../../Hooks/useWindowSize';
-
-import {
-    toolabarItems
-} from '../../../constants/toolbarItems';
+    sidebarItems
+} from '../../../constants/sidebarItems';
 
 /**
 * Sidebar component definition and export
@@ -71,22 +77,20 @@ export const Sidebar = (props) => {
     * Methods
     */
 
-    const sidebarOnClick = (path) => {
-        props.history.push(`/${path}`);
-    }
+    // const sidebarOnClick = (path) => {
+    //     props.history.push(`/${path}`);
+    // }
 
-    const renderToolbarItems = () => {
+    const renderSidebarItems = () => {
         // return(
-        //     <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
-        //         {toolabarItems.map((el) => {
+        //     <div className="sidebar-items">
+        //         {sidebarItems.map((el) => {
         //             return(
-        //                 <ToolbarItem 
+        //                 <SidebarItem 
         //                     key={el.id}
         //                     text={el.text}
         //                     className="sidebar-item"
-        //                     options={el.options}
-        //                     onClick={() => sidebarOnClick(el.path)}
-        //                     optionClassName="sidebar-item-options"
+        //                     // onClick={() => sidebarOnClick(el.path)}
         //                 />
         //             )
         //     })}</div>
@@ -99,19 +103,30 @@ export const Sidebar = (props) => {
 
     return(
         <div className="sidebar">
-            {renderToolbarItems()}
+            <div className="sidebar-logo">
+                <div className="sidebar-image-logo">
+                    <img src={MyLogo}/>
+                </div>
+                <div className="sidebar-image-cafe">
+                    <img src={MyLogoCafe}/>
+                </div>
+                <div className="sidebar-image-crypto">
+                    <img src={MyLogoCrypto}/>
+                </div>
+            </div>
+            {renderSidebarItems()}
         </div>
     );
 }
  export default connect(
     (state) => {
         return {
-            menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
         };
     },
     (dispatch) => {
         return {
-            toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
 )(withRouter(Sidebar));
