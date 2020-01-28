@@ -24,6 +24,7 @@ import './main.scss';
 * Components
 */
 
+import Sidebar from './Parts/Sidebar/sidebar';
 
 /**
 * Actions
@@ -55,7 +56,8 @@ export const Main = (props) => {
 
     return(
         <div className="main">
-            cd
+            <Sidebar/>
+            <div className="main-wrapper"></div>
         </div>
     );
 }

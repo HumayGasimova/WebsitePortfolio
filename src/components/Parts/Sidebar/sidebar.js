@@ -27,8 +27,6 @@ import {
 * Components
 */
 
-import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
-
 /**
 * Actions
 */
@@ -69,8 +67,6 @@ export const Sidebar = (props) => {
     * State
     */
 
-    const size = useWindowSize();
-
     /**
     * Methods
     */
@@ -80,52 +76,31 @@ export const Sidebar = (props) => {
     }
 
     const renderToolbarItems = () => {
-        return(
-            <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
-                {toolabarItems.map((el) => {
-                    return(
-                        <ToolbarItem 
-                            key={el.id}
-                            text={el.text}
-                            className="sidebar-item"
-                            options={el.options}
-                            onClick={() => sidebarOnClick(el.path)}
-                            optionClassName="sidebar-item-options"
-                            // toolBarInit={toolBarInit}
-                            // id={el.itemId}
-                            // active={el.itemId === props.activatedIcon}
-                        />
-                    )
-            })}</div>
-        )
+        // return(
+        //     <div className={props.menuButtonIsPressed ? "sidebar-mounted-items" : "sidebar-unmounted-items"}>
+        //         {toolabarItems.map((el) => {
+        //             return(
+        //                 <ToolbarItem 
+        //                     key={el.id}
+        //                     text={el.text}
+        //                     className="sidebar-item"
+        //                     options={el.options}
+        //                     onClick={() => sidebarOnClick(el.path)}
+        //                     optionClassName="sidebar-item-options"
+        //                 />
+        //             )
+        //     })}</div>
+        // )
     }
-
-    // useEffect(()=>{
-    //     addEventListener('scroll', handleScroll)
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
 
     /**
     * Markup
     */
 
     return(
-        <CSSTransition 
-            in={props.menuButtonIsPressed} 
-            timeout={2000}
-            // mountOnEnter
-            unmountOnExit
-            classNames={{
-                enter: '',
-                enterActive: 'sidebar-mounted',
-                exit: '',
-                exitActive: 'sidebar-unmounted'
-            }}
-        > 
-            <div className="sidebar">
-                {renderToolbarItems()}
-            </div>
-        </CSSTransition>
+        <div className="sidebar">
+            {renderToolbarItems()}
+        </div>
     );
 }
  export default connect(

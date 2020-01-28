@@ -1,0 +1,13 @@
+.main {
+    position: relative;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    .main-wrapper {
+        background: rgb(82, 78, 76);
+        width: calc(80% + 18px);
+        height: 3000px;
+        position: relative;
+        left: 20%;
+    }
+}
