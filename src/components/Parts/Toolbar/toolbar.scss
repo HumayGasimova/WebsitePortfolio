@@ -1,0 +1,149 @@
+.toolbar {
+    padding-top: 30px;
+    height: 130px;
+    position: absolute;
+    z-index: 700;
+    display: flex;
+    width: 98%;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.toolbar-menu-text {
+   display: none;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(45deg);
+        transform-origin: top left;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .toolbar-main {
+        background: rgba(52, 52, 151, 0.7);
+        padding-top: 23px;
+        height: 75px;
+        width: 100%;
+        .toolbar-min {
+            cursor: pointer;
+            position: relative;
+            width: 40px;
+            height: 45px;
+            .toolbar-min-line1 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line2 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line3 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line1-effect {
+                border: 2px solid rgb(139, 160, 230);
+                background: rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(45deg);
+                transform-origin: 10% 90%;
+            }
+            .toolbar-min-line2-effect {
+                width: 0%;
+                opacity: 0;
+            }
+            .toolbar-min-line3-effect {
+                border: 2px solid rgb(139, 160, 230);
+                background: rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(-45deg);
+                transform-origin: 43% 80%;
+            }
+        }
+        .toolbar-menu-text {
+            font-family: 'Indie Flower', cursive;
+            display: inline;
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(139, 160, 230, 1);
+            padding-bottom: 17px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+    }
+    
+    .toolbar {
+        background: rgba(52, 52, 151, 0.7);
+        padding-top: 23px;
+        height: 75px;
+        width: 100%;
+        .toolbar-min {
+            cursor: pointer;
+            position: relative;
+            width: 40px;
+            height: 45px;
+            .toolbar-min-line1 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line2 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line3 {
+                border: 2px solid rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+            }
+            .toolbar-min-line1-effect {
+                border: 2px solid rgb(139, 160, 230);
+                background: rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(45deg);
+                transform-origin: 10% 90%;
+            }
+            .toolbar-min-line2-effect {
+                width: 0%;
+                opacity: 0;
+            }
+            .toolbar-min-line3-effect {
+                border: 2px solid rgb(139, 160, 230);
+                background: rgb(139, 160, 230);
+                border-radius: 7px;
+                margin: 0 40px 7px 0;
+                width: 27px;
+                transform: rotate(-45deg);
+                transform-origin: 43% 80%;
+            }
+        }
+        .toolbar-menu-text {
+            font-family: 'Indie Flower', cursive;
+            display: inline;
+            font-size: 25px;
+            font-weight: bold;
+            color: rgba(139, 160, 230, 1);
+            padding-bottom: 17px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+    }
+}

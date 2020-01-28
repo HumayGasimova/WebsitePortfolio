@@ -1,0 +1,35 @@
+.achievement {
+    .achievement-value {
+        font-family: 'Indie Flower', cursive;
+        font-size: 50px;
+        font-weight: bold;
+        color: rgb(238, 203, 184);
+    }
+    .achievement-text {
+        font-family: 'Indie Flower', cursive;
+        color: rgb(238, 203, 184);
+        font-size: 23px;
+    }
+}
+
+@media only screen and (max-width: 734px) {
+    .achievement {
+        .achievement-value {
+            font-size: 40px;
+        }
+        .achievement-text {
+            font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .achievement {
+        .achievement-value {
+            font-size: 38px;
+        }
+        .achievement-text {
+            font-size: 20px;
+        }
+    }
+}

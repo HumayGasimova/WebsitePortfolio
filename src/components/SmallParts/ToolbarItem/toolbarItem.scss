@@ -1,0 +1,82 @@
+.toolbar-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    .toolbar-item {
+        padding: 15px;
+        color: rgba(238, 203, 184, 1);
+        font-size: 30px;
+        font-family: 'Indie Flower', cursive;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            color: rgba(249, 142, 108, 1);
+        }
+        .icon-arrow-down {
+            padding-left: 5px;
+        }
+    }
+    
+    .sidebar-item {
+        display: none;
+    }
+    
+    .toolbar-item-options {
+        // top: 90px;
+        // right: 600px;
+        width: 170px;
+        height: 95px;
+        background-color: rgba(238, 203, 184, 0.2);
+        box-shadow: 3px 3px 5px 3px rgba(238, 203, 184, 0.4);
+        .item-option {
+            padding: 10px;
+            color: rgba(238, 203, 184, 1);
+            font-size: 20px;
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(249, 142, 108);
+                color: rgb(42,20,33);
+            }
+        }
+    }
+    
+    .sidebar-item-options {
+        width: 300px;
+        .item-option {
+            color: rgba(139, 160, 230, 0.4);
+            padding: 5px 0 5px 70px;
+            font-size: 25px;
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover {
+                color: rgba(238, 203, 184, 1);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .toolbar-item-wrapper {
+        .toolbar-item {
+            display: none;
+        }
+        .sidebar-item {
+            display: inline;
+            padding: 15px 15px 15px 30px;
+            color: rgba(139, 160, 230, 0.4);
+            font-size: 25px;
+            font-family: 'Indie Flower', cursive;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{
+                color: rgba(139, 160, 230, 1);
+            }
+            
+        }
+        .toolbar-item-options {
+           display: none
+        }
+    }
+}

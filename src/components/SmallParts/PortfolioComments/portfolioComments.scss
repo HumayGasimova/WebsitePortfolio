@@ -1,0 +1,15 @@
+.portfolio-comments {
+    margin-bottom: 30px;
+    .portfolio-comments-total-number-of-comments {
+        font-family: 'Indie Flower', cursive;
+        font-size: 37px;
+        font-weight: bold;
+        margin-left: 30px;
+        color: rgb(42, 20, 33);
+    }
+    .portfolio-comment {
+        .portfolio-comments-reply {
+            margin-left: 70px;
+        }
+    }
+}

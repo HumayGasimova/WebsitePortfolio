@@ -1,0 +1,111 @@
+.sidebar {
+    position: absolute;
+    top: 98;
+    background: rgba(52, 52, 151, 0.7);
+    height: 470px;
+    width: 100%;
+    z-index: 100;
+    .sidebar-mounted-items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.sidebar-mounted {
+    position: absolute;
+    top: 98;
+    background: rgba(52, 52, 151, 0.7);
+    height: 470px;
+    width: 100%;
+    z-index: 100;
+    animation: appear 0.5s linear;
+    .sidebar-mounted-items {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        animation: appearItems 2s linear;
+    }
+}
+
+.sidebar-unmounted {
+    position: absolute;
+    top: 98;
+    background: rgba(52, 52, 151, 0.7);
+    height: 0px;
+    width: 100%;
+    z-index: 100;
+    animation: disappear 1.5s linear;
+    .sidebar-unmounted-items {
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        animation: disappearItems 0.5s linear;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+// .sidebar-open {
+//     position: absolute;
+//     top: 98;
+//     display: flex;
+//     background: rgba(52, 52, 151, 0.7);
+//     height: 115px;
+//     border: 2px solid red;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 700;
+//     animation: appear 1s linear;
+// }
+// .sidebar-close {
+//     position: absolute;
+//     top: 98;
+//     display: flex;
+//     background: rgba(52, 52, 151, 0.7);
+//     height: 115px;
+//     border: 2px solid red;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 700;
+//     animation: disappear 1s linear;
+// }
+
+@keyframes appear {
+    from{
+        height: 0;
+    }
+    to {
+        height: 470px;
+    }
+}
+
+@keyframes disappear {
+    from{
+        height: 470px;
+    }
+    to {
+        height: 0;
+    }
+}
+
+@keyframes appearItems {
+    0% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappearItems {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}

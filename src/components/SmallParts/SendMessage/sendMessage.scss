@@ -1,0 +1,17 @@
+.send-message {
+    width: 50%;
+    .send-message-form-inputs {
+        margin: 0px 0 20px 0;
+
+        .send-message-form-input {
+            margin: 10px 0 10px 0;
+            // width: 100%;
+            .send-message-form-input-name {
+                font-family: 'Indie Flower', cursive;
+                color: rgb(42, 20, 33);
+                font-size: 20px;
+                margin: 0 0 5px 3px;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+input {
+    border: 1px solid rgb(13, 48, 42);
+    border-radius: 2px;
+    width: 260px;
+    height: 30px;
+}
+
+.invalid {
+    border: 1px solid rgb(185, 35, 8);
+    // background-color: rgb(247, 181, 181);
+}
+
+.errors {
+    // border-radius: 3px;
+    border: 1px solid rgb(185, 35, 8);
+    border-top: 0;
+    background-color: rgb(250, 229, 229);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // white-space: nowrap;
+    font-size: 87%;
+    padding-left: 5px;
+}
+
+.input_error {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,152 @@
+.portfolio-description-button {
+    border-radius: 30px;
+    width: 170px;
+    color: rgb(42, 20, 33);
+    border: 1px solid rgb(42, 20, 33);
+    margin: 10px 0 0 0;
+    margin: 10px 0 0 0;
+    background: rgb(238, 203, 184);
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(42, 20, 33);
+        box-shadow: 5px 5px 5px 0 rgb(73, 38, 52);
+    }
+}
+
+.portfolio-description-button-middle {
+    border-radius: 30px;
+    width: 170px;
+    color: rgb(42, 20, 33);
+    border: 1px solid rgb(42, 20, 33);
+    margin: 10px 0 0 0;
+    background: rgb(238, 203, 184);
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(42, 20, 33);
+        box-shadow: -5px 5px 5px 0 rgb(73, 38, 52);
+    }
+}
+
+.customer-feedbacks-button {
+    background: none;
+    border: none;
+    margin-bottom: 80px;
+}
+
+.pagination-button {
+    background: none;
+    border: none;
+    font-family: 'Indie Flower', cursive;
+    color: rgb(42, 20, 33);
+    cursor: pointer;
+    &:disabled{
+        color:rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
+}
+
+.portfolio-content-button {
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    color: rgb(42, 20, 33);
+    border: 1px solid rgb(42, 20, 33);
+    background: rgb(238, 203, 184
+    );
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(42, 20, 33); 
+        box-shadow: 5px 5px 5px 0 rgb(73, 38, 52);
+    }
+}
+
+.comment-button {
+    border-radius: 30px;
+    width: 100px;
+    height: 25px;
+    color:  rgb(42, 20, 33);
+    // border: 1px solid rgb(39, 49, 85);
+    border: 1px solid rgb(42, 20, 33);
+    background: rgb(238, 203, 184);
+    margin-top: 10px;
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(13, 48, 42); 
+        box-shadow: -5px 5px 5px 0 rgb(73, 38, 52);
+    }
+    &:disabled{
+        box-shadow: none;
+        background-color: rgba(238, 203, 184, 1);
+        border: none;
+        color:rgb(238, 203, 184);
+        cursor: not-allowed;
+    }
+}
+
+.comment-button-input {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 100px;
+    height: 27px;
+    color: rgb(42, 20, 33);
+    // border: 1px solid rgb(39, 49, 85);
+    border: 1px solid rgb(42, 20, 33);
+    background: rgb(238, 203, 184);
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(42, 20, 33); 
+    }
+    &:disabled{
+        box-shadow: none;
+        background-color: rgba(249, 142, 108, 0.5);
+        color: rgb(150, 150, 150);
+        cursor: not-allowed;
+    }
+}
+
+.post-comment-button {
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
+    color: rgb(42, 20, 33);
+    border: 1px solid rgb(42, 20, 33);
+    background: rgb(238, 203, 184);
+    margin-right: 20px;
+    font-size: 15px;
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(249, 142, 108);
+        color: rgb(42, 20, 33); 
+        box-shadow: 5px 5px 5px 0 rgb(42, 20, 33);
+    }
+    &:disabled{
+        box-shadow: none;
+        background-color: rgb(249, 142, 108);
+        color:rgb(150, 150, 150);
+        border: none;
+        cursor: not-allowed;
+    }
+}
+
+@media only screen and (max-width: 441px){
+    .portfolio-description-button {
+        width: 110px;
+    }
+    
+    .portfolio-description-button-middle {
+        width: 110px;
+    }
+}

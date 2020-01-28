@@ -1,0 +1,9 @@
+{ 
+    "transform": {
+        "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+        "^.+\\.css$": "<rootDir>/__mocks__/styleMock.js",
+        "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/__mocks__/fileMock.js"
+        },
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+    "testRegex": "((\\.|/*.)(test))\\.js?$"
+}
