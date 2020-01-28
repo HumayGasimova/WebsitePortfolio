@@ -82,19 +82,18 @@ export const Sidebar = (props) => {
     // }
 
     const renderSidebarItems = () => {
-        // return(
-        //     <div className="sidebar-items">
-        //         {sidebarItems.map((el) => {
-        //             return(
-        //                 <SidebarItem 
-        //                     key={el.id}
-        //                     text={el.text}
-        //                     className="sidebar-item"
-        //                     // onClick={() => sidebarOnClick(el.path)}
-        //                 />
-        //             )
-        //     })}</div>
-        // )
+        return(
+            <div className="sidebar-items">
+                {sidebarItems.map((el) => {
+                    return(
+                        <SidebarItem 
+                            key={el.id}
+                            text={el.text}
+                            // onClick={() => sidebarOnClick(el.path)}
+                        />
+                    )
+            })}</div>
+        )
     }
 
     /**

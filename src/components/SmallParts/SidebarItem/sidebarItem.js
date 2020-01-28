@@ -58,7 +58,8 @@ export const SidebarItem = (props) => {
     */
 
     return(
-        <div className="sidebar">
+        <div className="sidebar-item">
+            {props.text}
         </div>
     );
 }
