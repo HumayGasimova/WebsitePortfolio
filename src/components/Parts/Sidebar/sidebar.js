@@ -12,14 +12,6 @@ import {
 } from 'react-redux';
 
 import {
-    bindActionCreators
-} from 'redux';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
-import {
     withRouter
 } from 'react-router-dom';
 
@@ -28,6 +20,7 @@ import {
 */
 
 import SidebarItem from '../../SmallParts/SidebarItem/sidebarItem';
+import SocialMediaIcon from '../../SmallParts/SocialMediaIcon/socialMediaIcon';
 
 /**
 * Actions
@@ -56,13 +49,16 @@ import MyLogoCafe from '../../../images/myLogoCafe.png';
 import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 
 /**
-* Hooks
+* Constants
 */
 
 import {
     sidebarItems
 } from '../../../constants/sidebarItems';
-import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons';
+
+import {
+    socialMediaIcons
+} from '../../../constants/socialMediaIcons';
 
 /**
 * Sidebar component definition and export
@@ -98,6 +94,19 @@ export const Sidebar = (props) => {
         )
     }
 
+    const renderSocialMediaIcons = () => {
+        return(
+            <div className="icons-soc-med" >{socialMediaIcons.map((el, i) => {
+                return(
+                    <SocialMediaIcon
+                        key={i}
+                        name={el.name}
+                    />
+                )
+            })}</div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -116,13 +125,14 @@ export const Sidebar = (props) => {
                 </div>
             </div>
             {renderSidebarItems()}
-            <SocialMediaIcons
-                size="lg" 
+            {renderSocialMediaIcons()}
+
+            {/* <SocialMediaIcons
                 linkFacebook={"http://www.facebook.com/"}
                 linkLinkedIn={"http://www.linkedin.com/"}
                 linkInstagram={"http://www.instagram.com/"}
                 linkTwitter={"http://www.twitter.com/"}
-            />
+            /> */}
         </div>
     );
 }
