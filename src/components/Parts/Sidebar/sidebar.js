@@ -62,6 +62,7 @@ import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 import {
     sidebarItems
 } from '../../../constants/sidebarItems';
+import SocialMediaIcons from '../../SmallParts/SocialMediaIcons/socialMediaIcons';
 
 /**
 * Sidebar component definition and export
@@ -115,6 +116,13 @@ export const Sidebar = (props) => {
                 </div>
             </div>
             {renderSidebarItems()}
+            <SocialMediaIcons
+                size="lg" 
+                linkFacebook={"http://www.facebook.com/"}
+                linkLinkedIn={"http://www.linkedin.com/"}
+                linkInstagram={"http://www.instagram.com/"}
+                linkTwitter={"http://www.twitter.com/"}
+            />
         </div>
     );
 }

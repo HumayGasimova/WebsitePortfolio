@@ -6,12 +6,14 @@
     z-index: 500;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     .sidebar-logo {
         width: inherit;
         align-items: center;
         display: flex;
         flex-direction: column;
+        padding-top: 40px;
         .sidebar-image-logo {
             display: flex;
             flex-direction: column;
@@ -31,6 +33,7 @@
         .sidebar-image-crypto {
             display: flex;
             flex-direction: column;
+            padding-bottom: 50px;
             >img {
                 width: 80px;
                 height: 20px;
@@ -39,5 +42,6 @@
     }
     .sidebar-items {
         border-top: 1px solid rgb(82, 78, 76);
+        width: inherit;
     }
 }
