@@ -4,6 +4,7 @@ export const sidebarItems = [
         text: "HOME",
         itemId: "home",
         path: "",
+        active: true,
         options: []
     },
     {
@@ -11,6 +12,7 @@ export const sidebarItems = [
         text: "ABOUT US",
         itemId: "aboutUs",
         path: "aboutUs",
+        active: false,
         options: []
     },
     {
@@ -18,6 +20,7 @@ export const sidebarItems = [
         text: "FOOD & DRINK",
         itemId: "foodAndDrinks",
         path: "foodAndDrinks",
+        active: false,
         options: []
     },
     {
@@ -25,6 +28,7 @@ export const sidebarItems = [
         text: "OUR STORY",
         itemId: "outStory",
         path: "outStory",
+        active: false,
         options: []
     },
     {
@@ -32,6 +36,7 @@ export const sidebarItems = [
         text: "LOCATIONS",
         itemId: "locations",
         path: "locations",
+        active: false,
         options: []
     },
     {
@@ -39,6 +44,7 @@ export const sidebarItems = [
         text: "CONTACT",
         itemId: "contact",
         path: "contact",
+        active: false,
         options: []
     }
 ]

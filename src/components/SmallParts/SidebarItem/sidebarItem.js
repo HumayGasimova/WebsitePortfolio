@@ -58,7 +58,7 @@ export const SidebarItem = (props) => {
     */
 
     return(
-        <div className="sidebar-item">
+        <div className={props.active ? "sidebar-item-active" : "sidebar-item"}>
             {props.text}
         </div>
     );

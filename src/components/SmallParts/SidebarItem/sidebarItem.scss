@@ -4,4 +4,22 @@
     height: 33px;
     padding-top: 12px;
     color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+    }
+}
+
+.sidebar-item-active {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    border-right: 2px solid rgb(180, 139, 62);
+    text-align: center;
+    height: 33px;
+    padding-top: 12px;
+    color: rgb(180, 139, 62);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
 }

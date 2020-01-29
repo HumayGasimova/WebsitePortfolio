@@ -51,7 +51,7 @@ import './sidebar.scss';
 * Images
 */
 
-import MyLogo from '../../../images/myLogo.png';
+import MyLogo2 from '../../../images/myLogo2.png';
 import MyLogoCafe from '../../../images/myLogoCafe.png';
 import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 
@@ -89,6 +89,7 @@ export const Sidebar = (props) => {
                         <SidebarItem 
                             key={el.id}
                             text={el.text}
+                            active={el.active}
                             // onClick={() => sidebarOnClick(el.path)}
                         />
                     )
@@ -104,7 +105,7 @@ export const Sidebar = (props) => {
         <div className="sidebar">
             <div className="sidebar-logo">
                 <div className="sidebar-image-logo">
-                    <img src={MyLogo}/>
+                    <img src={MyLogo2}/>
                 </div>
                 <div className="sidebar-image-cafe">
                     <img src={MyLogoCafe}/>
