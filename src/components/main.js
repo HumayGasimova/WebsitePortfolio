@@ -57,7 +57,9 @@ export const Main = (props) => {
     return(
         <div className="main">
             <Sidebar/>
-            <div className="main-wrapper"></div>
+            <div className="main-wrapper">
+                <div className="main-wrapper-cover-image"></div>
+            </div>
         </div>
     );
 }
