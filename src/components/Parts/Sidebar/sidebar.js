@@ -44,7 +44,7 @@ import './sidebar.scss';
 * Images
 */
 
-import MyLogo2 from '../../../images/myLogo2.png';
+import MyLogo3 from '../../../images/myLogo3.png';
 import MyLogoCafe from '../../../images/myLogoCafe.png';
 import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 
@@ -115,7 +115,7 @@ export const Sidebar = (props) => {
         <div className="sidebar">
             <div className="sidebar-logo">
                 <div className="sidebar-image-logo">
-                    <img src={MyLogo2}/>
+                    <img src={MyLogo3}/>
                 </div>
                 <div className="sidebar-image-cafe">
                     <img src={MyLogoCafe}/>
