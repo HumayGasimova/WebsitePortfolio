@@ -3,7 +3,11 @@
     top: -10px;
     left: -10px;
     .main-wrapper {
-        background: rgb(82, 78, 76);
+        background-image: url("../images/eat-drink-cafe-bar.jpg");
+        background-size: 100% 100vh;
+        background-attachment: fixed;
+        overflow: hidden;
+        filter: grayscale(50%);
         width: calc(100% - 282px);
         height: 3000px;
         position: relative;
