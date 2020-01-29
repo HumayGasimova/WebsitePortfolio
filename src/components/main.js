@@ -39,6 +39,12 @@ import Sidebar from './Parts/Sidebar/sidebar';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Images
+*/
+
+import CoverLogo from '../images/imageedit_7_6799057799.png';
+
+/**
 * Main component definition and export
 */
 
@@ -58,6 +64,9 @@ export const Main = (props) => {
         <div className="main">
             <Sidebar/>
             <div className="main-wrapper">
+                <div className="main-wrapper-cover-logo">
+                    <img src={CoverLogo}/>
+                </div>
                 <div className="main-wrapper-cover-image"></div>
             </div>
         </div>

@@ -17,5 +17,18 @@
         background-color: rgba(51, 51, 51, 0.7);
         width: 100%;
         height: 100vh;
+        z-index: 300;
     }
+    .main-wrapper-cover-logo {
+       
+        >img {
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            z-index: 1;
+            width: 150px;
+            height: 200px;
+        }
+    }
+   
 }
