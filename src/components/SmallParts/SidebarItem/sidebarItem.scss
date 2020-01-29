@@ -9,6 +9,7 @@
     cursor: pointer;
     &:hover {
         color: rgb(180, 139, 62);
+        animation: appear 0.3s linear;
     }
 }
 
@@ -22,4 +23,13 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
     cursor: pointer;
+}
+
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
 }
