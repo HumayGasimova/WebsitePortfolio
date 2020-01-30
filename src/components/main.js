@@ -70,7 +70,6 @@ export const Main = (props) => {
                 </div>
                 <Description/>
             </div>
-            <Description/>
         </div>
     );
 }
