@@ -15,24 +15,18 @@
         flex-direction: column;
         padding-top: 40px;
         .sidebar-image-logo {
-            display: flex;
-            flex-direction: column;
             >img {
                 width: 120px;
                 height: 120px;
             }
         }
         .sidebar-image-cafe {
-            display: flex;
-            flex-direction: column;
             >img {
                 width: 140px;
                 height: 80px;
             }
         }
         .sidebar-image-crypto {
-            display: flex;
-            flex-direction: column;
             padding-bottom: 50px;
             >img {
                 width: 80px;
@@ -55,6 +49,6 @@
 
 @media only screen and (max-width: 1120px){
     .sidebar {
-      display: none;
+        display: none;
     }
 }

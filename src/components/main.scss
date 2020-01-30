@@ -32,6 +32,7 @@
 @media only screen and (max-width: 1120px){
     .main {
         .main-wrapper {
+            background-position-y: 100px;
             width: calc(100% + 18px);
             position: static;
         }

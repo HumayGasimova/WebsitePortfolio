@@ -24,6 +24,7 @@ import './main.scss';
 * Components
 */
 
+import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
 import Description from './Parts/Description/description';
 
@@ -63,6 +64,7 @@ export const Main = (props) => {
 
     return(
         <div className="main">
+            <Toolbar/>
             <Sidebar/>
             <div className="main-wrapper">
                 <div className="main-wrapper-cover-logo">
