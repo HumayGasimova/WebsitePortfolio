@@ -4,10 +4,43 @@
 
 @media only screen and (max-width: 1120px){
     .toolbar {
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: calc(100% + 18px);
-        height: 100px;
-        background-color: rgb(82, 78, 76);
+        background-color: rgb(51, 51, 51);
+        .toolbar-wrapper {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            .toolbar-image-logo {
+                width: 100px;
+                height: 100px;
+                >img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            .toolbar-text-logo {
+                width: 100px;
+                height: 130px;
+                >img {
+                    width: 130px;
+                    height: 130px;
+                }
+            }
+        }
+        .toolbar-menu {
+            padding-right: 25px;
+            cursor: pointer;
+            .toolbar-menu-line {
+                width: 20px;
+                border: 2px solid rgb(180, 139, 62);
+                background-color: rgb(180, 139, 62);
+                border-radius: 3px;
+                margin: 4.5px;
+            }
+        }
     }
 }
 

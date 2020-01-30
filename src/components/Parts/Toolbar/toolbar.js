@@ -42,6 +42,13 @@ import './toolbar.scss';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Images
+*/
+
+import MyLogo from '../../../images/FinalLogo.png';
+import MyLogoText from '../../../images/crypto.png';
+
+/**
 * Hooks
 */
 
@@ -96,6 +103,19 @@ export const Toolbar = (props) => {
 
     return(
         <div className="toolbar">
+            <div className="toolbar-wrapper">
+                <div className="toolbar-image-logo">
+                    <img src={MyLogo}/>
+                </div>
+                <div className="toolbar-text-logo">
+                    <img src={MyLogoText}/>
+                </div>
+            </div>
+            <div className="toolbar-menu">
+                <div className="toolbar-menu-line"/>
+                <div className="toolbar-menu-line"/>
+                <div className="toolbar-menu-line"/>
+            </div>
         </div>
     );
 }
