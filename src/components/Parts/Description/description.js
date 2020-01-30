@@ -33,18 +33,6 @@ import Button from '../../../library/Button/button';
 */
 
 /**
-* Constants
-*/
-
-import {
-    sidebarItems
-} from '../../../constants/sidebarItems';
-
-import {
-    socialMediaIcons
-} from '../../../constants/socialMediaIcons';
-
-/**
 * Utility
 */
 

@@ -55,8 +55,8 @@ import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 */
 
 import {
-    sidebarItems
-} from '../../../constants/sidebarItems';
+    menuItems
+} from '../../../constants/menuItems';
 
 import {
     socialMediaIcons
@@ -83,7 +83,7 @@ export const Sidebar = (props) => {
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
-                {sidebarItems.map((el) => {
+                {menuItems.map((el) => {
                     return(
                         <SidebarItem 
                             key={el.id}

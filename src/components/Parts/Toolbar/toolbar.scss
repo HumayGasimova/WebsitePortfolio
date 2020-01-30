@@ -1,9 +1,12 @@
-.toolbar {
+.toolbar-closed-part {
+    display: none;
+}
+.toolbar-open-part {
     display: none;
 }
 
 @media only screen and (max-width: 1120px){
-    .toolbar {
+    .toolbar-closed-part {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -41,6 +44,12 @@
                 margin: 4.5px;
             }
         }
+    }
+    .toolbar-open-part {
+        display: none;
+        width: calc(100% + 18px);
+        background-color: rgb(51, 51, 51);
+        height: 800px;
     }
 }
 

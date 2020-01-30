@@ -1,4 +1,4 @@
-export const sidebarItems = [
+export const menuItems = [
     {
         id: 1,
         text: "HOME",
