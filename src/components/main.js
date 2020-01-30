@@ -42,7 +42,7 @@ import Sidebar from './Parts/Sidebar/sidebar';
 * Images
 */
 
-import CoverLogo from '../images/imageedit_7_6799057799.png';
+import CoverLogo from '../images/a8e6ac2a-a20a-46c2-86d7-068ed159557f_200x200.png';
 
 /**
 * Main component definition and export
