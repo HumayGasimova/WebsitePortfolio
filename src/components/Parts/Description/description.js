@@ -52,6 +52,8 @@ import {
     H2,
     H4,
     H5,
+    EH1,
+    EH2,
     Line
 } from '../../UtilityComponents';
 
@@ -77,12 +79,18 @@ export const Description = (props) => {
         <div className="description">
             <div className="description-wrapper">
                 <H2>A NEW WAY OF EATING</H2>
+                <EH2/>
                 <H4>AVADA CAFE EXTRAORDINARY FOOD AT UNBEATABLE PRICES</H4>
+                <EH1/>
                 <Line/>
+                <EH1/>
+                <EH1/>
                 <div className="description-wrapper2">
                     <div className="description-image"></div>
                     <div className="description-image"></div>
                 </div>
+                <EH1/>
+                <EH1/>
                 <H5>
                     Café au lait, breve coffee latte froth shop macchiato grinder. 
                     Wings cream steamed single shot, cup cinnamon et aroma acerbic 
@@ -94,6 +102,8 @@ export const Description = (props) => {
                     grinder aged, mug plunger pot caramelization latte eu spoon. Cup, 
                     flavour, spoon plunger pot and, strong, macchiato organic whipped sugar.
                 </H5>
+                <EH1/>
+                <EH1/>
                 <Button
                     className="learn-more"
                     text="LEARN MORE"
