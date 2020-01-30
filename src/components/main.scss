@@ -12,23 +12,21 @@
         height: 3000px;
         position: relative;
         left: 300px;
-    }
-    .main-wrapper-cover-image {
-        background-color: rgba(51, 51, 51, 0.7);
-        width: 100%;
-        height: 100vh;
-        z-index: 300;
-    }
-    .main-wrapper-cover-logo {
-       
-        >img {
-            position: absolute;
-            top: calc(50vh - 190px);
-            left: calc(50% - 165px);
-            z-index: 1;
-            width: 330px;
-            height: 380px;
+        .main-wrapper-cover-logo {
+            background-color: rgba(51, 51, 51, 0.7);
+            width: 100%;
+            height: 100vh;
+            z-index: 300;
+            >img {
+                position: absolute;
+                top: calc(50vh - 190px);
+                left: calc(50% - 165px);
+                z-index: 1;
+                width: 330px;
+                height: 380px;
+            }
         }
     }
+  
    
 }

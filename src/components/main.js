@@ -25,6 +25,7 @@ import './main.scss';
 */
 
 import Sidebar from './Parts/Sidebar/sidebar';
+import Description from './Parts/Description/description';
 
 /**
 * Actions
@@ -67,7 +68,7 @@ export const Main = (props) => {
                 <div className="main-wrapper-cover-logo">
                     <img src={CoverLogo}/>
                 </div>
-                <div className="main-wrapper-cover-image"></div>
+                <Description/>
             </div>
         </div>
     );
