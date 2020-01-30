@@ -108,7 +108,7 @@ export const Toolbar = (props) => {
 
     return(
         <>
-            <div className="toolbar-closed-part">
+            <div className="toolbar-visible-part">
                 <div className="toolbar-wrapper">
                     <div className="toolbar-image-logo">
                         <img src={MyLogo}/>
@@ -124,7 +124,7 @@ export const Toolbar = (props) => {
                 </div>
             </div>
             {menuIsShown ? 
-                <div className="toolbar-open-part">
+                <div className="toolbar-invisible-part">
 
                 </div> 
             : null}
