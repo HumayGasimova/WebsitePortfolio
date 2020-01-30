@@ -23,7 +23,7 @@
     .description-image-big-screen {
         background-color: white;
         width: 30%;
-        filter: grayscale(50%);
+        filter: grayscale(60%);
        >img {
            height: 100%;
        }
@@ -58,6 +58,7 @@
     }
     .description-image-small-screen {
         display: inline;
+        filter: grayscale(60%);
         >img {
             width: 100%;
         }
