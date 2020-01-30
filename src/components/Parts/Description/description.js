@@ -54,8 +54,16 @@ import {
     H5,
     EH1,
     EH2,
+    EW1,
     Line
 } from '../../UtilityComponents';
+
+/**
+* Images
+*/
+
+import Cake from '../../../images/cake.jpg';
+import CoffeeCups from '../../../images/two-blue-white-and-red-coffee-cups-on-brown-leather-briefcase.jpg';
 
 /**
 * Description component definition and export
@@ -86,8 +94,13 @@ export const Description = (props) => {
                 <EH1/>
                 <EH1/>
                 <div className="description-wrapper2">
-                    <div className="description-image"></div>
-                    <div className="description-image"></div>
+                    <div>
+                        <img src={Cake}/>
+                    </div>
+                    <EW1/>
+                    <div className="description-image">
+                        <img src={CoffeeCups}/>
+                    </div>
                 </div>
                 <EH1/>
                 <EH1/>
