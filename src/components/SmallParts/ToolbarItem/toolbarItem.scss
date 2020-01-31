@@ -17,8 +17,8 @@
 }
 
 .toolbar-item-active {
-    border-bottom: 1px solid rgb(82, 78, 76);
-    border-right: 2px solid rgb(180, 139, 62);
+    border-bottom: 1px solid rgb(180, 139, 62);
+    border-top: 1px solid rgb(180, 139, 62);
     text-align: center;
     height: 34px;
     padding-top: 18px;
@@ -44,7 +44,6 @@
 
 .toolbar-item-active-disappear {
     border-bottom: 1px solid rgb(82, 78, 76);
-    border-right: 2px solid rgb(180, 139, 62);
     text-align: center;
     height: 34px;
     padding-top: 18px;
