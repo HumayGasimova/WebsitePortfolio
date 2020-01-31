@@ -124,7 +124,7 @@ export const Toolbar = (props) => {
             </div>
             <CSSTransition 
                 in={menuIsShown} 
-                timeout={1000}
+                timeout={285}
                 // mountOnEnter
                 unmountOnExit
                 classNames={{

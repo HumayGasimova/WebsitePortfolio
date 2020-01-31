@@ -60,7 +60,7 @@
         width: calc(100% + 18px);
         background-color: rgb(51, 51, 51);
         border-top: 1px solid rgb(82, 78, 76);
-        animation: open 1s linear;
+        animation: open 0.3s linear;
     }
 
     .toolbar-invisible-part-close {
@@ -70,7 +70,7 @@
         height: 0px;
         background-color: rgb(51, 51, 51);
         border-top: 1px solid rgb(82, 78, 76);
-        animation: close 1s linear;
+        animation: close 0.3s linear;
     }
 
     .toolbar-invisible-mounted {
