@@ -17,14 +17,20 @@
             width: 100%;
             height: 100vh;
             z-index: 300;
-            >img {
-                position: absolute;
-                top: calc(50vh - 190px);
-                left: calc(50% - 165px);
-                z-index: 1;
-                width: 330px;
-                height: 380px;
-            }
+            background-image: url("../images/a8e6ac2a-a20a-46c2-86d7-068ed159557f_200x200.png");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 330px 380px;
+            background-position: calc(50% + 149px) 50%;
+            overflow: hidden;
+            // >img {
+            //     position: absolute;
+            //     top: calc(50vh - 190px);
+            //     left: calc(50% - 165px);
+            //     z-index: 1;
+            //     width: 330px;
+            //     height: 380px;
+            // }
         }
     }
 }
