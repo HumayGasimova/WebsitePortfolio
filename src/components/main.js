@@ -66,7 +66,7 @@ export const Main = (props) => {
             <Sidebar/>
             <div className="main-wrapper">
                 <div className="main-wrapper-cover-logo">
-                    {/* <img src={CoverLogo}/> */}
+                    <img src={CoverLogo}/>
                 </div>
                 <Description/>
             </div>

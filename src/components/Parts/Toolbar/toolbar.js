@@ -19,6 +19,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    CSSTransition 
+} from 'react-transition-group';
+
 /**
 * Styles
 */
@@ -84,14 +88,9 @@ export const Toolbar = (props) => {
                 return(
                     <ToolbarItem 
                         key={el.id}
-                        // text={el.text}
-                        // options={el.options}
-                        // className="toolbar-item"
-                        // onClick={() => toolbarOnClick(el.path)}
-                        // optionClassName="toolbar-item-options"
-                        // toolBarInit={toolBarInit}
-                        // id={el.itemId}
-                        // active={el.itemId === props.activatedIcon}
+                        text={el.text}
+                        active={el.active}
+                        menuIsShown={menuIsShown}
                     />
                 )
             })}</>
@@ -123,11 +122,22 @@ export const Toolbar = (props) => {
                     <div className="toolbar-menu-line"/>
                 </div>
             </div>
-            {menuIsShown ? 
-                <div className="toolbar-invisible-part">
-
+            <CSSTransition 
+                in={menuIsShown} 
+                timeout={1000}
+                // mountOnEnter
+                unmountOnExit
+                classNames={{
+                    enter: '',
+                    enterActive: 'toolbar-invisible-part-open',
+                    exit: '',
+                    exitActive: 'toolbar-invisible-part-close'
+                }}
+            > 
+                <div className={"toolbar-invisible-mounted"}>
+                    {renderToolbarItems()}
                 </div> 
-            : null}
+            </CSSTransition>
         </>
     );
 }

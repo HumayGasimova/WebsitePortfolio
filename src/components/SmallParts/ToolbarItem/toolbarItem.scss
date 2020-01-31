@@ -1,0 +1,83 @@
+.toolbar-item {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 1;
+    // animation: appearText 2s linear;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+        background-color: rgba(104, 97, 95, 0.5);
+        animation: appear 0.3s linear;
+    }
+}
+
+.toolbar-item-active {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    border-right: 2px solid rgb(180, 139, 62);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: rgb(180, 139, 62);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 1;
+    // animation: appearText 2s linear;
+    cursor: pointer;
+}
+
+.toolbar-item-disappear {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+    animation: disappearText 0.3s linear;
+}
+
+.toolbar-item-active-disappear {
+    border-bottom: 1px solid rgb(82, 78, 76);
+    border-right: 2px solid rgb(180, 139, 62);
+    text-align: center;
+    height: 34px;
+    padding-top: 18px;
+    color: rgb(180, 139, 62);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 18px;
+    opacity: 0;
+    animation: disappearText 0.3s linear;
+}
+
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+
+@keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
