@@ -1,0 +1,18 @@
+.reservations {
+    background-image: url('../../../images/coffee-beans.jpg');
+    background-size: 100%;
+    .reservations-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(141, 133, 130, 0.6);
+        padding: 80px;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    .reservations {
+        background-image: url('../../../images/coffee-beans.jpg');
+        background-size: 100% 100%;
+    }
+}

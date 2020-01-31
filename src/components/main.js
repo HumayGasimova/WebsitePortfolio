@@ -27,6 +27,7 @@ import './main.scss';
 import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
 import Description from './Parts/Description/description';
+import Reservations from './Parts/Reservations/reservations';
 
 /**
 * Actions
@@ -69,6 +70,7 @@ export const Main = (props) => {
                     <img src={CoverLogo}/>
                 </div>
                 <Description/>
+                <Reservations/>
             </div>
         </div>
     );
