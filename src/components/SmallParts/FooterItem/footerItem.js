@@ -44,7 +44,7 @@ import {
 * Styles
 */
 
-import './adSmallCard.scss';
+import './footerItem.scss';
 
 /**
 * Selectors
@@ -53,10 +53,10 @@ import './adSmallCard.scss';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* AdSmallCard component definition and export
+* FooterItem component definition and export
 */
 
-export const AdSmallCard = (props) => {
+export const FooterItem = (props) => {
 
     /**
     * State
@@ -73,12 +73,8 @@ export const AdSmallCard = (props) => {
     */
 
     return(
-        <div className={props.darkColor ? "ad-small-card-dark" : "ad-small-card-light"}>
-            <EH1/>
-            <H4>{props.description}</H4>
-            <EH1/>
-            <H3>{props.advertisement}</H3>
-            <EH1/>
+        <div className="footer-item">
+           
         </div>
     );
 }
@@ -93,5 +89,5 @@ export const AdSmallCard = (props) => {
             // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(AdSmallCard);
+)(FooterItem);
  

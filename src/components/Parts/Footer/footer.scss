@@ -1,71 +1,30 @@
 .footer {
-    height: 400px;
-    // background-image: url('../../../images/abstract-439142_960_720.jpg');
-    // background-position: center;
-    background-size: 2000px 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .footer-section1 {
+    width: 100%;
+    background-color: rgb(82, 78, 76);
+    padding: 80px;
+    .footer-wrapper {
         display: flex;
-        width: 100%;
-        height: 270px;
+        align-items: center;
         justify-content: center;
-        .footer-section1-items {
-            display: flex;
-            padding-top: 40px;
-        }
-        .footer-section1-get-in-touch {
-            padding-top: 40px;
-            cursor: context-menu;
-            .footer-section1-get-in-touch-header {
-                font-family: 'Indie Flower', cursive;
-                color: rgb(42, 20, 33);
-                font-size: 20px;
-                font-weight: bold;
+        width: calc(100% - 160px);
+        .footer-image-logo {
+            width: 100px;
+            height: 100px;
+            >img {
+                width: 100px;
+                height: 100px;
             }
-            .footer-section1-get-in-touch-item {
-                display: flex;
-                padding-top:10px;
-                font-size: 17px;
-                font-family: 'Indie Flower', cursive;
-                .footer-section1-get-in-touch-item-text {
-                    padding: 3px 0  0 10px;
-                }
-                .icon-info {
-                    color: rgb(42, 20, 33);
-                }
+        }
+        .footer-text-logo {
+            width: 100px;
+            height: 130px;
+            >img {
+                width: 130px;
+                height: 130px;
             }
         }
     }
-    .footer-copyrights {
-        font-family: 'Indie Flower', cursive;
-        color:  rgb(42, 20, 33);
-        font-size: 20px;
-        text-align: center;
-        cursor: context-menu;
-    }
-}
-
-
-@media only screen and (max-width: 1010px) {
-    .footer {
-        height: 800px;
-        justify-content: center;
-        .footer-section1 {
-            flex-direction: column;
-            align-items: center;
-            height: 650px;
-            .footer-section1-items {
-                flex-direction: column;
-                height: 490px;
-                padding-top: 0px;
-            }
-            .footer-section1-get-in-touch {
-                height: 300px;
-                text-align: center;
-                padding: 10px 0px 10px 0px;
-            }
-        }
+    .footer-items {
+        // border-top: 
     }
 }

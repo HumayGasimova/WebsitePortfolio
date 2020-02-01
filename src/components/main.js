@@ -29,6 +29,7 @@ import Sidebar from './Parts/Sidebar/sidebar';
 import Description from './Parts/Description/description';
 import Reservations from './Parts/Reservations/reservations';
 import Advantages from './Parts/Advantages/advantages';
+import Footer from './Parts/Footer/footer';
 
 /**
 * Actions
@@ -73,6 +74,7 @@ export const Main = (props) => {
                 <Description/>
                 <Reservations/>
                 <Advantages/>
+                <Footer/>
             </div>
         </div>
     );
