@@ -49,9 +49,10 @@ import {
 * Images
 */
 
-import Cake from '../../../images/cake.jpg';
-import CoffeeCups from '../../../images/two-blue-white-and-red-coffee-cups-on-brown-leather-briefcase.jpg';
-import Plant from '../../../images/plant-stand-green-standing.jpg';
+import Image1 from '../../../images/waffles-ice-coffee-juice.jpg';
+import Image2 from '../../../images/coffee-2440014_1280.jpg';
+import Image3 from '../../../images/cheesecake-dessert-food-sweet.jpg';
+import Image4 from '../../../images/coffee-cup-coffee-cup-aroma-cafe-wallpaper-preview.jpg';
 
 /**
 * Advantages component definition and export
@@ -75,10 +76,18 @@ export const Advantages = (props) => {
         <div className="advantages">
             <AdBigCard darkColor/>
             <AdBigCard/>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
+            <div className="advantages-image">
+                <img src={Image1}/>
+            </div>
+            <div className="advantages-image">
+                <img src={Image2}/>
+            </div>
+            <div className="advantages-image">
+                <img src={Image3}/>
+            </div>
+            <div className="advantages-image">
+                <img src={Image4}/>
+            </div>
             <div className="advantages-"></div>
             <div className="advantages-"></div>
             <div className="advantages-"></div>
