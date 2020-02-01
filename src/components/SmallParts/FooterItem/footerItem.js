@@ -53,6 +53,7 @@ import {
     EH2,
     EW1,
     EW3,
+    EH3,
     Line
 } from '../../UtilityComponents';
 
@@ -108,6 +109,7 @@ export const FooterItem = (props) => {
     return(
             <>
                 <EW3/>
+                <EH3/>
                 <div className="footer-item">
                     <FontAwesomeIcon icon={renderIcon(props.icon)} size="lg" color="rgb(180, 139, 62)" className="icon-arrow-left"/>
                     <EH1/>
@@ -116,6 +118,7 @@ export const FooterItem = (props) => {
                     <H5 textColor={Colors.PINK_SWAN}>{props.info}</H5>
                 </div>
                 <EW3/>
+                <EH3/>
             </>
     );
 }

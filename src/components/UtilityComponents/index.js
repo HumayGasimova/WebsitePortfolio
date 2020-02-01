@@ -6,6 +6,7 @@ export * from './FontSize/H5/h5';
 
 export * from './EmptyDivs/EH1/eh1';
 export * from './EmptyDivs/EH2/eh2';
+export * from './EmptyDivs/EH3/eh3';
 export * from './EmptyDivs/EH4/eh4';
 
 export * from './EmptyDivs/EW1/ew1';

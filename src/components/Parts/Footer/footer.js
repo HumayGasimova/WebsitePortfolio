@@ -71,6 +71,8 @@ import {
     footerItems
 } from '../../../constants/footerItems';
 
+import * as Colors from '../../../constants/colors';
+
 /**
 * Footer component definition and export
 */
@@ -112,7 +114,11 @@ export const Footer = (props) => {
                     <img src={MyLogoText}/>
                 </div>
             </div>
+            <EH2/>
             {renderFooterItems()}
+            <EH2/>
+            <EH2/>
+            <H5 textColor={Colors.PINK_SWAN}>© Copyright 2012 - 2020   |   Avada Theme by Theme Fusion   |   All Rights Reserved   |   Powered by WordPress </H5>
         </div>
     );
 }
