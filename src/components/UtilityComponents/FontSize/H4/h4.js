@@ -30,7 +30,7 @@ export const H4 = (props) => {
     */
 
     return(
-        <div className="h4">
+        <div className={props.white ? "h4-white" : "h4"}>
            {props.children}
         </div>
     );

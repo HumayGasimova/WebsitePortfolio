@@ -28,6 +28,7 @@ import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
 import Description from './Parts/Description/description';
 import Reservations from './Parts/Reservations/reservations';
+import Advantages from './Parts/Advantages/advantages';
 
 /**
 * Actions
@@ -71,6 +72,7 @@ export const Main = (props) => {
                 </div>
                 <Description/>
                 <Reservations/>
+                <Advantages/>
             </div>
         </div>
     );

@@ -42,7 +42,7 @@ import {
     H5,
     EH1,
     EH2,
-    EW1,
+    EW2,
     Line
 } from '../../UtilityComponents';
 
@@ -87,7 +87,7 @@ export const Description = (props) => {
                         <div>
                             <img src={Cake}/>
                         </div>
-                        <EW1/>
+                        <EW2/>
                         <EH1/>
                         <div className="description-image">
                             <img src={CoffeeCups}/>
