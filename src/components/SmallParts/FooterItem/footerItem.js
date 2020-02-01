@@ -15,6 +15,21 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+    faEnvelope,
+    faComments,
+    faThumbtack,
+    faSpinner
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
 * Components
 */
@@ -37,6 +52,7 @@ import {
     EH1,
     EH2,
     EW1,
+    EW3,
     Line
 } from '../../UtilityComponents';
 
@@ -53,6 +69,12 @@ import './footerItem.scss';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Constants
+*/
+
+import * as Colors from '../../../constants/colors';
+
+/**
 * FooterItem component definition and export
 */
 
@@ -66,16 +88,35 @@ export const FooterItem = (props) => {
     * Methods
     */
 
-
+    const renderIcon = (iconName) => {
+        switch(iconName) {
+            case 'faEnvelope':
+                return faEnvelope;
+            case 'faComments':
+                return faComments;
+            case 'faThumbtack':
+                return faThumbtack;
+            default:
+                return faSpinner;
+        }
+    }
 
     /**
     * Markup
     */
 
     return(
-        <div className="footer-item">
-           
-        </div>
+            <>
+                <EW3/>
+                <div className="footer-item">
+                    <FontAwesomeIcon icon={renderIcon(props.icon)} size="lg" color="rgb(180, 139, 62)" className="icon-arrow-left"/>
+                    <EH1/>
+                    <H4 className="h4-animation">{props.name}</H4>
+                    <EH1/>
+                    <H5 textColor={Colors.PINK_SWAN}>{props.info}</H5>
+                </div>
+                <EW3/>
+            </>
     );
 }
  export default connect(

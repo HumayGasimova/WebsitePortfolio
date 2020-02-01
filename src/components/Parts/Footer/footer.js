@@ -15,25 +15,11 @@ import {
     bindActionCreators
 } from 'redux';
 
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
 /**
 * Styles
 */
 
 import './footer.scss';
-
-/**
-* Icons
-*/
-
-import { 
-    faPhoneAlt,
-    faEnvelope,
-    faMapMarkerAlt    
-} from '@fortawesome/free-solid-svg-icons'
 
 /**
 * Components
@@ -52,6 +38,23 @@ import FooterItem from '../../SmallParts/FooterItem/footerItem';
 */
 
 // import * as Selectors from '../../../reducers/selectors';
+
+/**
+* Utility
+*/
+
+import {
+    H2,
+    H3,
+    H4,
+    H5,
+    EH1,
+    EH2,
+    EW1,
+    EW3,
+    EH4,
+    Line
+} from '../../UtilityComponents';
 
 /**
 * Images
@@ -85,6 +88,9 @@ export const Footer = (props) => {
                 return(
                     <FooterItem
                         key={i}
+                        icon={el.icon}
+                        name={el.name}
+                        info={el.info}
                     />
                 )
             })}

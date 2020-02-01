@@ -1,0 +1,10 @@
+export const EBB = 'ebb';
+export const PINK_SWAN = 'pink-swan';
+export const SUVA_GREY = 'suva-grey';
+export const ZAMBEZI = 'zambezi';
+export const TUNDORA = 'tundora';
+export const CHARCOAL = 'charcoal';
+export const NIGHT_RIDER = 'night Rider';
+export const BOKARA_GREY = 'bokara Grey';
+export const MARIGOLD = 'marigold';
+export const ORANGE = 'orange';

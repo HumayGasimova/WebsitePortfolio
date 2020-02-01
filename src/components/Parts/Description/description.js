@@ -55,6 +55,12 @@ import CoffeeCups from '../../../images/two-blue-white-and-red-coffee-cups-on-br
 import Plant from '../../../images/plant-stand-green-standing.jpg';
 
 /**
+* Images
+*/
+
+import * as Colors from '../../../constants/colors';
+
+/**
 * Description component definition and export
 */
 
@@ -95,7 +101,7 @@ export const Description = (props) => {
                     </div>
                     <EH1/>
                     <EH1/>
-                    <H5>
+                    <H5 textColor={Colors.EBB}>
                         Café au lait, breve coffee latte froth shop macchiato grinder. 
                         Wings cream steamed single shot, cup cinnamon et aroma acerbic 
                         chicory aroma java. Plunger pot medium, latte chicory coffee 

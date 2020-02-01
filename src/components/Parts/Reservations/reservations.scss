@@ -1,6 +1,7 @@
 .reservations {
     background-image: url('../../../images/coffee-beans.jpg');
     background-size: 100%;
+    cursor: context-menu;
     .reservations-wrapper {
         display: flex;
         flex-direction: column;

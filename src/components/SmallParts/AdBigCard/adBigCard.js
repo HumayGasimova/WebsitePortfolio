@@ -77,7 +77,7 @@ export const AdBigCard = (props) => {
             <div className="ad-big-wrapper">
                 <H4>{props.description}</H4>
                 <EW1/>
-                <H4 white>{props.location}</H4>
+                <H4 className="h4-white">{props.location}</H4>
             </div>
             <EH1/>
             <H3>{props.advertisement}</H3>
