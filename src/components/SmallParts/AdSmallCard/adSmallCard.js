@@ -44,7 +44,7 @@ import {
 * Styles
 */
 
-import './adBigCard.scss';
+import './adSmallCard.scss';
 
 /**
 * Selectors
@@ -53,10 +53,10 @@ import './adBigCard.scss';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* AdBigCard component definition and export
+* AdSmallCard component definition and export
 */
 
-export const AdBigCard = (props) => {
+export const AdSmallCard = (props) => {
 
     /**
     * State
@@ -73,16 +73,11 @@ export const AdBigCard = (props) => {
     */
 
     return(
-        <div className={props.darkColor ? "ad-big-card-dark" : "ad-big-card-light"}>
-            <div className="ad-big-wrapper">
-                <H4>{props.description}</H4>
-                <EW1/>
-                <H4 white>{props.location}</H4>
-            </div>
+        <div className={props.darkColor ? "ad-small-card-dark" : "ad-small-card-light"}>
+             <EH1/>
+            <H4>{props.description}</H4>
             <EH1/>
             <H3>{props.advertisement}</H3>
-            <EH1/>
-            <Line/>
             <EH1/>
         </div>
     );
@@ -98,5 +93,5 @@ export const AdBigCard = (props) => {
             // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(AdBigCard);
+)(AdSmallCard);
  

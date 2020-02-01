@@ -26,6 +26,7 @@ import './advantages.scss';
 */
 
 import AdBigCard from '../../SmallParts/AdBigCard/adBigCard';
+import AdSmallCard from '../../SmallParts/AdSmallCard/adSmallCard';
 
 /**
 * Images
@@ -74,8 +75,17 @@ export const Advantages = (props) => {
 
     return(
         <div className="advantages">
-            <AdBigCard darkColor/>
-            <AdBigCard/>
+            <AdBigCard 
+                darkColor
+                description="FOOD SPECIAL"
+                location="NEW YORK CITY, USA"
+                advertisement="AVADA CAFE ANNOUNCES THE WORLD FAMOUS AVADA SWISS CHEESEBURGER"
+            />
+            <AdBigCard
+                description="EXCLUSIVE PROMOTION"
+                location="LONDON, UNITED KINGDOM"
+                advertisement="AVADA CAFE LONDON INTRODUCES SPECIAL 10% DISCOUNT FOR STUDENTS" 
+            />
             <div className="advantages-image">
                 <img src={Image1}/>
             </div>
@@ -88,10 +98,24 @@ export const Advantages = (props) => {
             <div className="advantages-image">
                 <img src={Image4}/>
             </div>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
-            <div className="advantages-"></div>
+            <AdSmallCard
+                darkColor
+                description="SYDNEY"
+                advertisement="NEW STORE OPENED" 
+            />
+            <AdSmallCard
+                 description="LATEST NEWS"
+                 advertisement="10% STUDENT DISCOUNT" 
+            />
+            <AdSmallCard
+                 darkColor
+                description="FOOD SPECIAL"
+                advertisement="LEMON ZEST BROWNIES" 
+            />
+            <AdSmallCard
+                description="WI-FI HOTSPOT"
+                advertisement="FASTER INTERNET SPEEDS" 
+            />
         </div>
     );
 }
