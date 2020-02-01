@@ -10,6 +10,16 @@
     background-color: rgb(82, 78, 76);
 }
 
-.ad-big-wrapper {
-    display: flex;
+@media only screen and (max-width: 1300px){
+    .ad-small-card-dark {
+        padding: 40px;
+        width: calc(100% - 80px);
+        background-color: rgb(41, 39, 38);
+    }
+    
+    .ad-small-card-light {
+        padding: 40px;
+        width: calc(100% - 80px);
+        background-color: rgb(82, 78, 76);
+    }
 }

@@ -13,3 +13,16 @@
         }
     }
 }
+
+@media only screen and (max-width: 1300px){
+    .advantages {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        .advantages-image {
+            width: 100%;
+            >img {
+                height: 400px;
+            }
+        }
+    }
+}
