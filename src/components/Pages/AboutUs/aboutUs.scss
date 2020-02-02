@@ -38,8 +38,17 @@
 
 @media only screen and (max-width: 1120px){
     .about-us {
-        .about-us-wrapper {
+        .about-us-cover-wrapper {
             // background-position-y: 100px;
+            width: calc(100% + 18px);
+            position: static;
+        }
+        .about-us-header-text {
+            left: 0px;
+            width: calc(100% - 200px);
+            padding: 0 100px 0 100px;
+        }
+        .about-us-wrapper {
             width: calc(100% + 18px);
             position: static;
         }
