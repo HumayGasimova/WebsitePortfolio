@@ -48,6 +48,22 @@ import Footer from '../../Parts/Footer/footer';
 // import CoverLogo from '../images/a8e6ac2a-a20a-46c2-86d7-068ed159557f_200x200.png';
 
 /**
+* Utility
+*/
+
+import {
+    H1,
+    H2,
+    H3,
+    H4,
+    H5,
+    EH1,
+    EH2,
+    EW1,
+    Line
+} from '../../UtilityComponents';
+
+/**
 * AboutUs component definition and export
 */
 
@@ -65,9 +81,16 @@ export const AboutUs = (props) => {
         <div className="about-us">
             <Toolbar/>
             <Sidebar/>
-            <div className="about-us">
-                <div className="about-us-wrapper-cover-logo">
-                    {/* <img src={CoverLogo}/> */}
+            <div className="about-us-header-text">
+                <H1>ABOUT US</H1>
+                <EH1/>
+                <Line/>
+                <EH1/>
+                <H3>WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
+            </div>
+            <div className="about-us-wrapper">
+                <div className="about-us-wrapper-cover-div">
+                   
                 </div>
                 <Advantages/>
                 <Footer/>

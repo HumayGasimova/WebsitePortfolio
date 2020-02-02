@@ -53,7 +53,7 @@ import {
 import Image1 from '../../../images/waffles-ice-coffee-juice.jpg';
 import Image2 from '../../../images/coffee-2440014_1280.jpg';
 import Image3 from '../../../images/cheesecake-dessert-food-sweet.jpg';
-import Image4 from '../../../images/coffee-cup-coffee-cup-aroma-cafe-wallpaper-preview.jpg';
+import Image4 from '../../../images/coffee-cup-cup-of-coffee-cafe.jpg';
 
 /**
 * Advantages component definition and export
