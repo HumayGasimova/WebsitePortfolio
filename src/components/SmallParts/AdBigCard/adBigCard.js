@@ -37,7 +37,7 @@ import {
     EH1,
     EH2,
     EW1,
-    Line
+    Line1
 } from '../../UtilityComponents';
 
 /**
@@ -82,7 +82,7 @@ export const AdBigCard = (props) => {
             <EH1/>
             <H3>{props.advertisement}</H3>
             <EH1/>
-            <Line/>
+            <Line1/>
             <EH1/>
         </div>
     );

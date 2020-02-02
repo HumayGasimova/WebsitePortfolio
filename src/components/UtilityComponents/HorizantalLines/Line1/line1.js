@@ -8,13 +8,13 @@ import React from 'react';
 * Styles
 */
 
-import './line.scss';
+import './line1.scss';
 
 /**
-* Line component definition and export
+* Line1 component definition and export
 */
 
-export const Line = (props) => {
+export const Line1 = (props) => {
 
     /**
     * State
@@ -29,9 +29,9 @@ export const Line = (props) => {
     */
 
     return(
-        <div className="line"/>
+        <div className="line1"/>
     );
 }
 
-export default Line;
+export default Line1;
  

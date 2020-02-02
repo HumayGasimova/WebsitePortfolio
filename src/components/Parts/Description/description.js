@@ -43,7 +43,7 @@ import {
     EH1,
     EH2,
     EW2,
-    Line
+    Line1
 } from '../../UtilityComponents';
 
 /**
@@ -86,7 +86,7 @@ export const Description = (props) => {
                     <EH2/>
                     <H4>AVADA CAFE EXTRAORDINARY FOOD AT UNBEATABLE PRICES</H4>
                     <EH1/>
-                    <Line/>
+                    <Line1/>
                     <EH1/>
                     <EH1/>
                     <div className="description-wrapper2">

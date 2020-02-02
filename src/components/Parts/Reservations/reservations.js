@@ -45,7 +45,7 @@ import {
     EH2,
     EH4,
     EW1,
-    Line
+    Line1
 } from '../../UtilityComponents';
 
 /**
@@ -76,7 +76,7 @@ export const Reservations = (props) => {
                 <EH4/>
                 <H2>RESERVATIONS</H2>
                 <EH1/>
-                <Line/>
+                <Line1/>
                 <EH1/>
                 <EH1/>
                 <H3 center>

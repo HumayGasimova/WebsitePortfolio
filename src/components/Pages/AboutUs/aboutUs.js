@@ -60,7 +60,8 @@ import {
     EH1,
     EH2,
     EW1,
-    Line
+    Line1,
+    Line2
 } from '../../UtilityComponents';
 
 /**
@@ -87,7 +88,7 @@ export const AboutUs = (props) => {
             <div className="about-us-header-text">
                 <H1>ABOUT US</H1>
                 <EH1/>
-                <Line/>
+                <Line2/>
                 <EH1/>
                 <H3 center>WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
             </div>

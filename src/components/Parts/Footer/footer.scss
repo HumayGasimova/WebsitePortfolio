@@ -2,6 +2,8 @@
     width: calc(100% - 160px);
     background-color: rgb(82, 78, 76);
     padding: 80px;
+    position: relative;
+    z-index: 20;
     cursor: context-menu;
     .footer-wrapper {
         display: flex;

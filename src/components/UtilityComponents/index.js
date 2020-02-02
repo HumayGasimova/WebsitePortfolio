@@ -13,4 +13,5 @@ export * from './EmptyDivs/EW1/ew1';
 export * from './EmptyDivs/EW2/ew2';
 export * from './EmptyDivs/EW3/ew3';
 
-export * from './Line/line';
+export * from './HorizantalLines/Line1/line1';
+export * from './HorizantalLines/Line2/line2';
