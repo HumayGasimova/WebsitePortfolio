@@ -78,9 +78,9 @@ export const Toolbar = (props) => {
     * Methods
     */
 
-    // const toolbarOnClick = (path) => {
-    //     props.history.push(`/${path}`);
-    // }
+    const toolbarOnClick = (path) => {
+        props.history.push(`/${path}`);
+    }
 
     const renderToolbarItems = () => {
         return(
@@ -91,6 +91,7 @@ export const Toolbar = (props) => {
                         text={el.text}
                         active={el.active}
                         menuIsShown={menuIsShown}
+                        onClick={() => toolbarOnClick(el.path)}
                     />
                 )
             })}</>

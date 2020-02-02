@@ -15,6 +15,7 @@ import {
 */
 
 import Main from './components/main';
+import AboutUs from './components/Pages/AboutUs/aboutUs';
 
 /**
 * Styles
@@ -36,11 +37,31 @@ export class App extends Component {
    render(){
       return(
          <div className="app">
-            {/* <Route 
+            <Route 
                exact 
-               path="/about"
-               component={ AboutPage }
-            /> */}
+               path="/contact"
+               // component={ AboutPage }
+            />
+            <Route 
+               exact 
+               path="/locations"
+               // component={ AboutPage }
+            />
+            <Route 
+               exact 
+               path="/our-story"
+               // component={ AboutPage }
+            />
+            <Route 
+               exact 
+               path="/food-drink"
+               // component={ AboutPage }
+            />
+            <Route 
+               exact 
+               path="/about-us"
+               component={ AboutUs }
+            />
             <Route 
                exact
                path="/"

@@ -76,9 +76,9 @@ export const Sidebar = (props) => {
     * Methods
     */
 
-    // const sidebarOnClick = (path) => {
-    //     props.history.push(`/${path}`);
-    // }
+    const sidebarOnClick = (path) => {
+        props.history.push(`/${path}`);
+    }
 
     const renderSidebarItems = () => {
         return(
@@ -89,7 +89,7 @@ export const Sidebar = (props) => {
                             key={el.id}
                             text={el.text}
                             active={el.active}
-                            // onClick={() => sidebarOnClick(el.path)}
+                            onClick={() => sidebarOnClick(el.path)}
                         />
                     )
             })}</div>

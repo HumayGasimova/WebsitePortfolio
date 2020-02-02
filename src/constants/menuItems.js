@@ -11,7 +11,7 @@ export const menuItems = [
         id: 2,
         text: "ABOUT US",
         itemId: "aboutUs",
-        path: "aboutUs",
+        path: "about-us",
         active: false,
         options: []
     },
@@ -19,7 +19,7 @@ export const menuItems = [
         id: 3,
         text: "FOOD & DRINK",
         itemId: "foodAndDrinks",
-        path: "foodAndDrinks",
+        path: "food-drink",
         active: false,
         options: []
     },
@@ -27,7 +27,7 @@ export const menuItems = [
         id: 4,
         text: "OUR STORY",
         itemId: "outStory",
-        path: "outStory",
+        path: "our-story",
         active: false,
         options: []
     },

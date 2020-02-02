@@ -58,12 +58,16 @@ export const SidebarItem = (props) => {
     */
 
     return(
-        <div className={props.active ? "sidebar-item-active" : "sidebar-item"}>
+        <div 
+            onClick={props.onClick}
+            className={props.active ? "sidebar-item-active" : "sidebar-item"}
+        >
             {props.text}
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
