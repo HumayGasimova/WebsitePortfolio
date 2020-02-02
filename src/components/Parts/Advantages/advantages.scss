@@ -1,7 +1,8 @@
 .advantages {
     display: flex;
     flex-wrap: wrap;
-    z-index: -1;
+    position: relative;
+    z-index: 20;
     cursor: context-menu;
     .advantages-image {
         width: 25%;

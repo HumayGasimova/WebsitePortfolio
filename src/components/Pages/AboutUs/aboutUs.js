@@ -45,7 +45,7 @@ import Footer from '../../Parts/Footer/footer';
 * Images
 */
 
-// import CoverLogo from '../images/a8e6ac2a-a20a-46c2-86d7-068ed159557f_200x200.png';
+import Background from '../../../images/700_FO36064926_7b9fb5c531d9ef758ada11137a039fa4.jpg';
 
 /**
 * Utility
@@ -81,17 +81,17 @@ export const AboutUs = (props) => {
         <div className="about-us">
             <Toolbar/>
             <Sidebar/>
+            <div className="about-us-cover-wrapper">
+                <div className="about-us-wrapper-backgroud-div"/>
+            </div>
             <div className="about-us-header-text">
                 <H1>ABOUT US</H1>
                 <EH1/>
                 <Line/>
                 <EH1/>
-                <H3>WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
+                <H3 center>WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
             </div>
             <div className="about-us-wrapper">
-                <div className="about-us-wrapper-cover-div">
-                   
-                </div>
                 <Advantages/>
                 <Footer/>
             </div>
