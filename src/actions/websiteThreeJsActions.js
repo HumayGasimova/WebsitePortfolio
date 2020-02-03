@@ -1,8 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function toggleMenuButton() {
+export function initMenuItems(array) {
     return { 
-        type: actionTypes.TOGGLE_MENU_BUTTON
+        type: actionTypes.INIT_MENU_ITEMS,
+        array: array
     };
 };
 

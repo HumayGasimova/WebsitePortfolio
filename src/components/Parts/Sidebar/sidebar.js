@@ -12,6 +12,10 @@ import {
 } from 'react-redux';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     withRouter
 } from 'react-router-dom';
 
@@ -38,7 +42,7 @@ import './sidebar.scss';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -55,7 +59,7 @@ import MyLogoCrypto from '../../../images/myLogoCrypto.png';
 */
 
 import {
-    menuItems
+    menuItemsArray
 } from '../../../constants/menuItems';
 
 import {
@@ -72,6 +76,10 @@ export const Sidebar = (props) => {
     * State
     */
 
+    useEffect(() => {
+        props.initMenuItems(menuItemsArray);
+    }, [])
+
     /**
     * Methods
     */
@@ -83,7 +91,7 @@ export const Sidebar = (props) => {
     const renderSidebarItems = () => {
         return(
             <div className="sidebar-items">
-                {menuItems.map((el) => {
+                {props.menuItems.map((el) => {
                     return(
                         <SidebarItem 
                             key={el.id}
@@ -141,12 +149,12 @@ export const Sidebar = (props) => {
  export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            menuItems: Selectors.getMenuItemsState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
         };
     }
 )(withRouter(Sidebar));

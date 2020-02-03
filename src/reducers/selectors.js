@@ -2,9 +2,9 @@ import {
     createSelector 
 } from 'reselect';
 
-const getMenuButtonIsPressed = (state) => state.home.menuButtonIsPressed;
+const getMenuItems = (state) => state.home.menuItems;
 
-export const getMenuButtonIsPressedState = createSelector(
-    [getMenuButtonIsPressed],
+export const getMenuItemsState = createSelector(
+    [getMenuItems],
     (x) => x
 );

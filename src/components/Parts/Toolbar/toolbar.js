@@ -39,13 +39,13 @@ import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -59,7 +59,7 @@ import MyLogoText from '../../../images/crypto.png';
 */
 
 import {
-    menuItems
+    menuItemsArray
 } from '../../../constants/menuItems';
 
 /**
@@ -78,13 +78,17 @@ export const Toolbar = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        props.initMenuItems(menuItemsArray);
+    }, [])
+
     const toolbarOnClick = (path) => {
         props.history.push(`/${path}`);
     }
 
     const renderToolbarItems = () => {
         return(
-            <>{menuItems.map((el) => {
+            <>{props.menuItems.map((el) => {
                 return(
                     <ToolbarItem 
                         key={el.id}
@@ -145,12 +149,12 @@ export const Toolbar = (props) => {
  export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            menuItems: Selectors.getMenuItemsState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
             // menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
         };
     }

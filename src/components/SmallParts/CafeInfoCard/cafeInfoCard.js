@@ -105,14 +105,14 @@ export const CafeInfoCard = (props) => {
             <> 
                 {props.options.map((el, i) => {
                     return(
-                        <>
+                        <div key={i}>
                             <EH1/>
                             <div className="cafe-info-card-option">
                                 <FontAwesomeIcon icon={faStar} size="sm" color="rgb(180, 139, 62)" className="icon-arrow-left"/>
                                 <EW1/>
                                 <H5 textColor={Colors.EBB}>{el}</H5>
                             </div>
-                        </>
+                        </div>
                     )
                 })}
             </>

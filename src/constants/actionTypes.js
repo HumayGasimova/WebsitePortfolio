@@ -1,2 +1,1 @@
-export const TOGGLE_MENU_BUTTON = 'TOGGLE_MENU_BUTTON';
-
+export const INIT_MENU_ITEMS = 'INIT_MENU_ITEMS';

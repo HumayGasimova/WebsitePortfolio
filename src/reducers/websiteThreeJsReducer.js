@@ -16,20 +16,20 @@ import uuid from "uuid";
 */
 
 export const initialState = {
-    // menuButtonIsPressed: false,
+    menuItems: [],
 }
 
-// const toggleMenuButton = (state) => {
-//     return {
-//         ...state,
-//         menuButtonIsPressed: !state.menuButtonIsPressed
-//     };
-// }
+const initMenuItems = (state, action) => {
+    return {
+        ...state,
+        menuItems: action.array
+    };
+}
 
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
-        case actionTypes.TOGGLE_MENU_BUTTON:
-            return toggleMenuButton(state, action);  
+        case actionTypes.INIT_MENU_ITEMS:
+            return initMenuItems(state, action);  
         default: 
             return state;
     }
