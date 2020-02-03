@@ -1,6 +1,8 @@
 .description {
     width: 100%;
     display: flex;
+    position: relative;
+    z-index: 20;
     cursor: context-menu;
     .description-wrapper {
         background-color: rgb(82, 78, 76);
@@ -9,7 +11,7 @@
         .description-wrapper2 {
             display: flex;
             flex-direction: row;
-            filter: grayscale(40%);
+            filter: grayscale(60%);
             .description-image {
                 width: 276px;
                 height: 182px;

@@ -47,7 +47,7 @@ import Footer from './Parts/Footer/footer';
 * Images
 */
 
-import CoverLogo from '../images/a8e6ac2a-a20a-46c2-86d7-068ed159557f_200x200.png';
+import CoverLogo from '../images/9b541779-8309-4d93-b45f-ac4060084b89_200x200.png';
 
 /**
 * Main component definition and export
@@ -67,10 +67,22 @@ export const Main = (props) => {
         <div className="main">
             <Toolbar/>
             <Sidebar/>
-            <div className="main-wrapper">
+            {/* <div className="main-wrapper">
                 <div className="main-wrapper-cover-logo">
                     <img src={CoverLogo}/>
                 </div>
+                <Description/>
+                <Reservations/>
+                <Advantages/>
+                <Footer/>
+            </div> */}
+            <div className="main-cover-wrapper">
+                <div className="main-wrapper-backgroud-div"/>
+            </div>
+            <div className="main-logo">
+                <img src={CoverLogo}/>
+            </div>
+            <div className="main-wrapper">
                 <Description/>
                 <Reservations/>
                 <Advantages/>
