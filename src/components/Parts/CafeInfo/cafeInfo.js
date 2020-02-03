@@ -26,7 +26,7 @@ import './cafeInfo.scss';
 */
 
 import Button from '../../../library/Button/button';
-// import * as Selectors from '../../../reducers/selectors';
+import CafeInfoCard from '../../SmallParts/CafeInfoCard/cafeInfoCard';
 
 /**
 * Images
@@ -79,12 +79,36 @@ export const CafeInfo = (props) => {
            <div className="cafe-info-image">
                 <img src={Image1}/>
             </div>
+            <CafeInfoCard
+                header="EAT DIFFERENTLY"
+                description="AVADA FOOD AT UNBEATABLE PRICES."
+                paragraphs={[
+                                "Aged single origin dark coffee ristretto qui caffeine, body half and half kopi-luwak affogato cultivar. Wings ut single origin, medium decaffeinated, skinny arabica carajillo macchiato con panna caffeine arabica. Cinnamon, irish mazagran espresso beans caramelization americano. Foam sugar, cream cappuccino id macchiato whipped con panna. Id irish dark, sweet single shot, sweet, strong breve lungo half and half body.",
+                                "Body ut white, breve organic to go a arabica. Plunger pot single shot caramelization pumpkin spice aftertaste cultivar redeye foam frappuccino white. Barista, mug doppio single shot black shop white. Roast, mocha sweet breve cream single origin aromatic espresso. Crema, milk whipped, caramelization galão brewed shop est cinnamon cup cortado plunger pot."
+                            ]}
+            />
+            <CafeInfoCard
+                header="EAT DIFFERENTLY"
+                description="AVADA FOOD AT UNBEATABLE PRICES."
+                paragraphs={[
+                                "Aged single origin dark coffee ristretto qui caffeine, body half and half kopi-luwak affogato cultivar. Wings ut single origin, medium decaffeinated, skinny arabica carajillo macchiato con panna caffeine arabica. Cinnamon, irish mazagran espresso beans caramelization americano. Foam sugar, cream cappuccino id macchiato whipped con panna. Id irish dark, sweet single shot, sweet, strong breve lungo half and half body.",
+                                "Body ut white, breve organic to go a arabica. Plunger pot single shot caramelization pumpkin spice aftertaste cultivar redeye foam frappuccino white. Barista, mug doppio single shot black shop white. Roast, mocha sweet breve cream single origin aromatic espresso. Crema, milk whipped, caramelization galão brewed shop est cinnamon cup cortado plunger pot."
+                            ]}
+            />
             <div className="cafe-info-image">
                 <img src={Image2}/>
             </div>
             <div className="cafe-info-image">
                 <img src={Image3}/>
             </div>
+            <CafeInfoCard
+                header="EAT DIFFERENTLY"
+                description="AVADA FOOD AT UNBEATABLE PRICES."
+                paragraphs={[
+                                "Aged single origin dark coffee ristretto qui caffeine, body half and half kopi-luwak affogato cultivar. Wings ut single origin, medium decaffeinated, skinny arabica carajillo macchiato con panna caffeine arabica. Cinnamon, irish mazagran espresso beans caramelization americano. Foam sugar, cream cappuccino id macchiato whipped con panna. Id irish dark, sweet single shot, sweet, strong breve lungo half and half body.",
+                                "Body ut white, breve organic to go a arabica. Plunger pot single shot caramelization pumpkin spice aftertaste cultivar redeye foam frappuccino white. Barista, mug doppio single shot black shop white. Roast, mocha sweet breve cream single origin aromatic espresso. Crema, milk whipped, caramelization galão brewed shop est cinnamon cup cortado plunger pot."
+                            ]}
+            />
         </div>
     );
 }
