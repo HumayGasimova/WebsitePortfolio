@@ -24,11 +24,14 @@ import {
 */
 
 import { 
-    faEnvelope,
     faComments,
     faThumbtack,
     faSpinner
 } from '@fortawesome/free-solid-svg-icons';
+
+import { 
+    faEnvelope
+} from '@fortawesome/free-regular-svg-icons';
 
 /**
 * Components

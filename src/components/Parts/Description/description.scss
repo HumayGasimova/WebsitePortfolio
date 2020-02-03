@@ -62,6 +62,8 @@
     .description-image-small-screen {
         display: inline;
         filter: grayscale(60%);
+        position: relative;
+        z-index: 20;
         >img {
             width: 100%;
         }
