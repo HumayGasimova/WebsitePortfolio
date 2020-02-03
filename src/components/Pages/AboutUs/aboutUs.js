@@ -26,6 +26,7 @@ import './aboutUs.scss';
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import Sidebar from '../../Parts/Sidebar/sidebar';
+import CafeInfo from '../../Parts/CafeInfo/cafeInfo';
 import Advantages from '../../Parts/Advantages/advantages';
 import Footer from '../../Parts/Footer/footer';
 
@@ -93,6 +94,7 @@ export const AboutUs = (props) => {
                 <H3 center>WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
             </div>
             <div className="about-us-wrapper">
+                <CafeInfo/>
                 <Advantages/>
                 <Footer/>
             </div>
