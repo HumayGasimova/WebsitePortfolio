@@ -7,3 +7,9 @@ export function initMenuItems(array) {
     };
 };
 
+export function activateMenuItem(id) {
+    return { 
+        type: actionTypes.ACTIVATE_MENU_ITEM,
+        id: id
+    };
+};

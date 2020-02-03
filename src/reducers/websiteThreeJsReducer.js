@@ -26,10 +26,29 @@ const initMenuItems = (state, action) => {
     };
 }
 
+const activateMenuItem = (state, action) => {
+    let updatedMenuItems = [...state.menuItems];
+    updatedMenuItems = updatedMenuItems.map(el => {
+        return {...el, active: false}
+    })
+
+    let menuItem = {...updatedMenuItems.find(x => x.id === action.id), active: true};
+    let menuIndex = updatedMenuItems.findIndex(x => x.id === action.id);
+
+    updatedMenuItems.splice(menuIndex, 1, menuItem);
+
+    return {
+        ...state,
+        menuItems: updatedMenuItems
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
             return initMenuItems(state, action);  
+        case actionTypes.ACTIVATE_MENU_ITEM:
+            return activateMenuItem(state, action);  
         default: 
             return state;
     }
