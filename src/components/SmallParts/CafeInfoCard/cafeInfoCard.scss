@@ -17,3 +17,14 @@
         align-items: center;
     }
 }
+
+@media only screen and (max-width: 1300px){
+    .cafe-info-card-dark {
+        padding: 80px;
+        width: calc(100% - 160px);
+    }
+    .cafe-info-card-light {
+        padding: 80px;
+        width: calc(100% - 160px);
+    }
+}

@@ -16,3 +16,16 @@
         }
     }
 }
+
+@media only screen and (max-width: 1300px){
+    .cafe-info {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        .cafe-info-image {
+            width: 100%;
+            >img {
+                height: 1000px;
+            }
+        }
+    }
+}
