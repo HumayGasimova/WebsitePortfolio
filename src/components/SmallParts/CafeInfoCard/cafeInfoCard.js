@@ -127,6 +127,7 @@ export const CafeInfoCard = (props) => {
     return(
         <div className={props.className}>
             <H3>{props.header}</H3>
+            <EH1/>
             <H4>{props.description}</H4>
             <EH1/>
             <Line2/>
