@@ -19,7 +19,7 @@ export const menuItemsArray = [
         id: 3,
         text: "FOOD & DRINK",
         itemId: "foodAndDrinks",
-        path: "food-drink",
+        path: "food-and-drink",
         active: false,
         options: []
     },
