@@ -83,7 +83,7 @@ export const Toolbar = (props) => {
     }, [])
 
     const toolbarOnClick = (path) => {
-        props.history.push(`/${path}`);
+        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
     }
 
     const renderToolbarItems = () => {

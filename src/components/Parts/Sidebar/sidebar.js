@@ -85,7 +85,7 @@ export const Sidebar = (props) => {
     */
 
     const sidebarOnClick = (path) => {
-        props.history.push(props.match.url + `/${path}`);
+        props.history.push(props.match.url + (path === "" ? path : `/${path}`));
     }
 
     const renderSidebarItems = () => {
