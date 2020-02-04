@@ -52,7 +52,7 @@ import * as Selectors from '../../../reducers/selectors';
 // import MyLogoInPart from '../../../images/GHB.png';
 import MyLogo from '../../../images/FinalLogo.png';
 import MyLogoCafe from '../../../images/myLogoCafe.png';
-import MyLogoCrypto from '../../../images/myLogoCrypto.png';
+import MyLogoCrypto from '../../../images/cryptoLogoText.png';
 
 /**
 * Constants
