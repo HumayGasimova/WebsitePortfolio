@@ -1,0 +1,54 @@
+.home-cover-wrapper {
+    background-image: url("../../../images/eat-drink-cafe-bar.jpg");
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+    filter: grayscale(50%);
+    width: calc(100% - 282px);
+    position: relative;
+    left: 300px;
+    z-index: -1;
+    .home-wrapper-backgroud-div {
+        background-color: rgba(51, 51, 51, 0.5);
+        width: 100%;
+        height: 100vh;
+    }
+}
+.home-logo {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 30%;
+    left: 282px;
+    z-index: 10;
+    width: calc(100% - 882px);
+    padding: 0 300px 0 300px;
+    >img {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+.home-wrapper {
+    position: relative;
+    left: 300px;
+    width: calc(100% - 282px);
+}
+
+@media only screen and (max-width: 1120px){
+    .home-cover-wrapper {
+        // background-position-y: 100px;
+        width: calc(100% + 18px);
+        position: static;
+    }
+    .home-logo {
+        left: 0px;
+        width: calc(100% - 200px);
+        padding: 0 100px 0 100px;
+    }
+    .home-wrapper {
+        width: calc(100% + 18px);
+        position: static;
+    }
+}

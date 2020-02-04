@@ -34,11 +34,7 @@ import './main.scss';
 
 import Toolbar from './Parts/Toolbar/toolbar';
 import Sidebar from './Parts/Sidebar/sidebar';
-import Description from './Parts/Description/description';
-import Reservations from './Parts/Reservations/reservations';
-import Advantages from './Parts/Advantages/advantages';
-import Footer from './Parts/Footer/footer';
-
+import Home from './Pages/Home/home';
 import AboutUs from './Pages/AboutUs/aboutUs';
 
 /**
@@ -54,10 +50,7 @@ import AboutUs from './Pages/AboutUs/aboutUs';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
 
-import CoverLogo from '../images/9b541779-8309-4d93-b45f-ac4060084b89_200x200.png';
 
 /**
 * Main component definition and export
@@ -86,23 +79,16 @@ export const Main = (props) => {
                 <Advantages/>
                 <Footer/>
             </div> */}
-            {/* <div className="main-cover-wrapper">
-                <div className="main-wrapper-backgroud-div"/>
-            </div>
-            <div className="main-logo">
-                <img src={CoverLogo}/>
-            </div>
-            <div className="main-wrapper">
-                <Description/>
-                <Reservations/>
-                <Advantages/>
-                <Footer/>
-            </div> */}
             <Switch>
                 <Route 
                     exact 
                     path={props.match.url + "/about-us"}
                     component={AboutUs}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + ""}
+                    component={Home}
                 />
             </Switch>
         </div>
