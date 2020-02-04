@@ -84,8 +84,9 @@ export const Sidebar = (props) => {
     * Methods
     */
 
-    const sidebarOnClick = (path) => {
+    const sidebarOnClick = (path, id) => {
         props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        props.activateMenuItem(id);
     }
 
     const renderSidebarItems = () => {
@@ -97,7 +98,7 @@ export const Sidebar = (props) => {
                             key={el.id}
                             text={el.text}
                             active={el.active}
-                            onClick={() => sidebarOnClick(el.path)}
+                            onClick={() => sidebarOnClick(el.path, el.id)}
                         />
                     )
             })}</div>
@@ -155,6 +156,7 @@ export const Sidebar = (props) => {
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
+            activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
 )(withRouter(Sidebar));

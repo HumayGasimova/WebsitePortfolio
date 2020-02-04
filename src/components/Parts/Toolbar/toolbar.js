@@ -82,8 +82,9 @@ export const Toolbar = (props) => {
         props.initMenuItems(menuItemsArray);
     }, [])
 
-    const toolbarOnClick = (path) => {
+    const toolbarOnClick = (path, id) => {
         props.history.push(props.match.url + (path === "" ? path : `/${path}`));
+        props.activateMenuItem(id);
     }
 
     const renderToolbarItems = () => {
@@ -95,7 +96,7 @@ export const Toolbar = (props) => {
                         text={el.text}
                         active={el.active}
                         menuIsShown={menuIsShown}
-                        onClick={() => toolbarOnClick(el.path)}
+                        onClick={() => toolbarOnClick(el.path, el.id)}
                     />
                 )
             })}</>
@@ -155,7 +156,7 @@ export const Toolbar = (props) => {
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            // menuButtonIsToggled: bindActionCreators(Actions.menuButtonIsToggled, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
 )(withRouter(Toolbar));
