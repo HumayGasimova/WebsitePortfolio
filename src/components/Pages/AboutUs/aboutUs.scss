@@ -1,8 +1,8 @@
-.about-us {
-    position: relative;
-    top: -10px;
-    left: -10px;
-    height: 0px;
+// .about-us {
+//     position: relative;
+//     top: -10px;
+//     left: -10px;
+//     height: 0px;
     .about-us-cover-wrapper {
         background-image: url("../../../images/700_FO36064926_7b9fb5c531d9ef758ada11137a039fa4.jpg");
         background-size: 100% 100vh;
@@ -35,10 +35,9 @@
         left: 300px;
         width: calc(100% - 282px);
     }
-}
-
+// }
 @media only screen and (max-width: 1120px){
-    .about-us {
+    // .about-us {
         .about-us-cover-wrapper {
             // background-position-y: 100px;
             width: calc(100% + 18px);
@@ -53,5 +52,5 @@
             width: calc(100% + 18px);
             position: static;
         }
-    }
+    // }
 }

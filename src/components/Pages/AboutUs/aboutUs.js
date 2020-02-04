@@ -80,9 +80,9 @@ export const AboutUs = (props) => {
     */
 
     return(
-        <div className="about-us">
-            <Toolbar/>
-            <Sidebar/>
+        <>
+            {/* <Toolbar/>
+            <Sidebar/> */}
             <div className="about-us-cover-wrapper">
                 <div className="about-us-wrapper-backgroud-div"/>
             </div>
@@ -98,7 +98,7 @@ export const AboutUs = (props) => {
                 <Advantages/>
                 <Footer/>
             </div>
-        </div>
+        </>
     );
 }
 

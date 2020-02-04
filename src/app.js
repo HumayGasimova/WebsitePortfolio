@@ -66,11 +66,10 @@ export class App extends Component {
                   component={ AboutUs }
                /> */}
                <Route 
-                  exact
                   path="/crypto-cafe"
                   component={ Main }
                />
-               <Redirect from="/" to="/crypto-cafe"/>
+               <Redirect exact from="/" to="/crypto-cafe"/>
             </Switch>
          </div>
       );

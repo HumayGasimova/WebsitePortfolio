@@ -91,12 +91,12 @@ export const Description = (props) => {
                     <EH1/>
                     <div className="description-wrapper2">
                         <div>
-                            <img src={Cake}/>
+                            <img src={`/${Cake}`}/>
                         </div>
                         <EW2/>
                         <EH1/>
                         <div className="description-image">
-                            <img src={CoffeeCups}/>
+                            <img src={`/${CoffeeCups}`}/>
                         </div>
                     </div>
                     <EH1/>
@@ -121,11 +121,11 @@ export const Description = (props) => {
                     />
                 </div>
                 <div className="description-image-big-screen">
-                    <img src={Plant}/>
+                    <img src={`/${Plant}`}/>
                 </div>
             </div>
             <div className="description-image-small-screen">
-                <img src={Plant}/>
+                <img src={`/${Plant}`}/>
             </div>
         </>
     );

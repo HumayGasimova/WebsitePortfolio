@@ -14,6 +14,14 @@ import {
     bindActionCreators
 } from 'redux';
 
+
+import {
+    BrowserRouter as Router,
+    Route,
+    NavLink,
+    Switch
+ } from 'react-router-dom';
+
 /**
 * Styles
 */
@@ -30,6 +38,8 @@ import Description from './Parts/Description/description';
 import Reservations from './Parts/Reservations/reservations';
 import Advantages from './Parts/Advantages/advantages';
 import Footer from './Parts/Footer/footer';
+
+import AboutUs from './Pages/AboutUs/aboutUs';
 
 /**
 * Actions
@@ -69,25 +79,32 @@ export const Main = (props) => {
             <Sidebar/>
             {/* <div className="main-wrapper">
                 <div className="main-wrapper-cover-logo">
-                    <img src={CoverLogo}/>
+                    <img src={`/${CoverLogo}`}/>
                 </div>
                 <Description/>
                 <Reservations/>
                 <Advantages/>
                 <Footer/>
             </div> */}
-            <div className="main-cover-wrapper">
+            {/* <div className="main-cover-wrapper">
                 <div className="main-wrapper-backgroud-div"/>
             </div>
             <div className="main-logo">
-                <img src={CoverLogo}/>
+                <img src={`/${CoverLogo}`}/>
             </div>
             <div className="main-wrapper">
                 <Description/>
                 <Reservations/>
                 <Advantages/>
                 <Footer/>
-            </div>
+            </div> */}
+            <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/about-us"}
+                    component={AboutUs}
+                />
+            </Switch>
         </div>
     );
 }
