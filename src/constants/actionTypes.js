@@ -1,2 +1,4 @@
 export const INIT_MENU_ITEMS = 'INIT_MENU_ITEMS';
 export const ACTIVATE_MENU_ITEM = 'ACTIVATE_MENU_ITEM';
+export const INIT_MENU_FOOD = 'INIT_MENU_FOOD';
+

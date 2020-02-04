@@ -1,0 +1,19 @@
+.menu-food {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 20;
+    cursor: context-menu;
+}
+
+@media only screen and (max-width: 1250px){
+    .menu-food {
+        height: 5000px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .menu-food {
+        height: 6400px;
+    }
+}

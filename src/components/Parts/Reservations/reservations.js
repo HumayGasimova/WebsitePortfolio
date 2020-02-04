@@ -53,7 +53,7 @@ import {
 */
 
 /**
-* Description component definition and export
+* Reservations component definition and export
 */
 
 export const Reservations = (props) => {

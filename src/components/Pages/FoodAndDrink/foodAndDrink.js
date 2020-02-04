@@ -25,7 +25,7 @@ import './foodAndDrink.scss';
 */
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
-import Sidebar from '../../Parts/Sidebar/sidebar';
+import MenuFood from '../../Parts/MenuFood/menuFood';
 import Reservations from '../../Parts/Reservations/reservations';
 import Advantages from '../../Parts/Advantages/advantages';
 import Footer from '../../Parts/Footer/footer';
@@ -92,6 +92,7 @@ export const FoodAndDrink = (props) => {
                 <H3 center>TENDER STEAKS, TASTY BURGERS AND LIGHT BITES. WASH IT DOWN WITH A COFFEE OR A BEER.</H3>
             </div>
             <div className="food-and-drink-wrapper">
+                <MenuFood/>
                 <Reservations/>
                 <Advantages/>
                 <Footer/>

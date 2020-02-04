@@ -17,12 +17,13 @@ import uuid from "uuid";
 
 export const initialState = {
     menuItems: [],
+    menuFood: []
 }
 
 const initMenuItems = (state, action) => {
     return {
         ...state,
-        menuItems: action.array
+        menuItems: action.array,
     };
 }
 
@@ -43,12 +44,21 @@ const activateMenuItem = (state, action) => {
     };
 }
 
+const initMenuFood = (state, action) => {
+    return {
+        ...state,
+        menuFood: action.array
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
             return initMenuItems(state, action);  
         case actionTypes.ACTIVATE_MENU_ITEM:
             return activateMenuItem(state, action);  
+        case actionTypes.INIT_MENU_FOOD:
+            return initMenuFood(state, action); 
         default: 
             return state;
     }

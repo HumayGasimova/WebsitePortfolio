@@ -74,7 +74,7 @@ export const AdBigCard = (props) => {
 
     return(
         <div className={props.darkColor ? "ad-big-card-dark" : "ad-big-card-light"}>
-            <div className="ad-big-wrapper">
+            <div className="ad-big-card-wrapper">
                 <H4>{props.description}</H4>
                 <EW1/>
                 <H4 className="h4-white">{props.location}</H4>

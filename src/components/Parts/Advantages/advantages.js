@@ -104,11 +104,11 @@ export const Advantages = (props) => {
                 advertisement="NEW STORE OPENED" 
             />
             <AdSmallCard
-                 description="LATEST NEWS"
-                 advertisement="10% STUDENT DISCOUNT" 
+                description="LATEST NEWS"
+                advertisement="10% STUDENT DISCOUNT" 
             />
             <AdSmallCard
-                 darkColor
+                darkColor
                 description="FOOD SPECIAL"
                 advertisement="LEMON ZEST BROWNIES" 
             />

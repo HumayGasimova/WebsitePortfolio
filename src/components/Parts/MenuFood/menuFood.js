@@ -1,0 +1,141 @@
+/**
+* Libraries
+*/
+
+import React, {
+    useState,
+    useEffect
+} from 'react';
+
+import {
+    connect
+} from 'react-redux';
+
+import {
+    bindActionCreators
+} from 'redux';
+
+/**
+* Styles
+*/
+
+import './menuFood.scss';
+
+/**
+* Components
+*/
+
+import MenuFoodCard from '../../SmallParts/MenuFoodCard/menuFoodCard';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
+
+/**
+* Images
+*/
+
+/**
+* Utility
+*/
+
+import {
+    H2,
+    H3,
+    H4,
+    H5,
+    EH1,
+    EH2,
+    EH4,
+    EW1,
+    Line1
+} from '../../UtilityComponents';
+
+/**
+* Constants
+*/
+
+import {
+    menuFoodArray
+} from '../../../constants/menuFoodArray';
+
+/**
+* MenuFood component definition and export
+*/
+
+export const MenuFood = (props) => {
+
+    /**
+    * State
+    */
+
+    /**
+    * Methods
+    */
+
+    useEffect(() => {
+        props.initMenuFood(menuFoodArray);
+    }, []);
+
+    const renderMenuFoodCards = () => {
+        return(
+            <>{props.menuFood.map((el, i) => {
+                if(i % 2){
+                    return(
+                        <MenuFoodCard
+                            key={i}
+                            image={el.image}
+                            header={el.header}
+                            menu={el.menu}
+                            promo={el.promo}
+                        />
+                    )
+                }else{
+                    return(
+                        <MenuFoodCard
+                            darkColor
+                            key={i}
+                            image={el.image}
+                            header={el.header}
+                            menu={el.menu}
+                            promo={el.promo}
+                        />
+                    )
+                }
+               
+            })}</>
+        )
+    }
+
+    /**
+    * Markup
+    */
+
+    return(
+        <div className="menu-food">
+            {renderMenuFoodCards()}
+        </div>
+    );
+}
+
+export default connect(
+    (state) => {
+        return {
+            menuFood: Selectors.getMenuFoodState(state),
+        };
+    },
+    (dispatch) => {
+        return {
+            initMenuFood: bindActionCreators(Actions.initMenuFood, dispatch),
+        };
+    }
+)(MenuFood);
+ 

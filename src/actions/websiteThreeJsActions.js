@@ -13,3 +13,10 @@ export function activateMenuItem(id) {
         id: id
     };
 };
+
+export function initMenuFood(array) {
+    return { 
+        type: actionTypes.INIT_MENU_FOOD,
+        array: array
+    };
+};
