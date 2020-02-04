@@ -42,7 +42,7 @@ import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../actions';
 
 /**
 * Selectors
@@ -63,6 +63,35 @@ export const Main = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        let path = props.location.pathname.slice(13);
+        let id;
+        switch(path){
+            case '':
+                id = 1;
+                break;
+            case 'about-us':
+                id = 2;
+                break;
+            case 'food-and-drink':
+                id = 3;
+                break;
+            case 'our-story':
+                id = 4;
+                break;
+            case 'locations':
+                id = 5;
+                break;
+            case 'contact':
+                id = 6;
+                break;
+            default:
+                id = 1;
+                break;
+        }
+        props.activateMenuItem(id);
+    }, [])
+
     /**
     * Markup
     */
@@ -71,15 +100,6 @@ export const Main = (props) => {
         <div className="main">
             <Toolbar/>
             <Sidebar/>
-            {/* <div className="main-wrapper">
-                <div className="main-wrapper-cover-logo">
-                    <img src={CoverLogo}/>
-                </div>
-                <Description/>
-                <Reservations/>
-                <Advantages/>
-                <Footer/>
-            </div> */}
             <Switch>
                 <Route 
                     exact 
@@ -110,7 +130,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }

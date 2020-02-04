@@ -40,31 +40,6 @@ export class App extends Component {
       return(
          <div className="app">
             <Switch>
-               {/* <Route 
-                  exact 
-                  path="/contact"
-                  // component={ AboutPage }
-               />
-               <Route 
-                  exact 
-                  path="/locations"
-                  // component={ AboutPage }
-               />
-               <Route 
-                  exact 
-                  path="/our-story"
-                  // component={ AboutPage }
-               />
-               <Route 
-                  exact 
-                  path="/food-drink"
-                  // component={ AboutPage }
-               />
-               <Route 
-                  exact 
-                  path="/about-us"
-                  component={ AboutUs }
-               /> */}
                <Route 
                   path="/crypto-cafe"
                   component={ Main }
