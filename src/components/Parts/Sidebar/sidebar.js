@@ -125,13 +125,13 @@ export const Sidebar = (props) => {
         <div className="sidebar">
             <div className="sidebar-logo">
                 <div className="sidebar-image-logo">
-                    <img src={`/${MyLogo}`}/>
+                    <img src={MyLogo}/>
                 </div>
                 <div className="sidebar-image-cafe">
-                    <img src={`/${MyLogoCafe}`}/>
+                    <img src={MyLogoCafe}/>
                 </div>
                 <div className="sidebar-image-crypto">
-                    <img src={`/${MyLogoCrypto}`}/>
+                    <img src={MyLogoCrypto}/>
                 </div>
             </div>
             {renderSidebarItems()}

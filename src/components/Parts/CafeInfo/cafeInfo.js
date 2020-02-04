@@ -77,7 +77,7 @@ export const CafeInfo = (props) => {
     return(
         <div className="cafe-info">
            <div className="cafe-info-image">
-                <img src={`/${Image1}`}/>
+                <img src={Image1}/>
             </div>
             <CafeInfoCard
                 className="cafe-info-card-dark"
@@ -103,10 +103,10 @@ export const CafeInfo = (props) => {
                 ]}
             />
             <div className="cafe-info-image">
-                <img src={`/${Image2}`}/>
+                <img src={Image2}/>
             </div>
             <div className="cafe-info-image">
-                <img src={`/${Image3}`}/>
+                <img src={Image3}/>
             </div>
             <CafeInfoCard
                 className="cafe-info-card-dark"

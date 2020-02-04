@@ -108,10 +108,10 @@ export const Footer = (props) => {
         <div className="footer">
             <div className="footer-wrapper">
                 <div className="footer-image-logo">
-                    <img src={`/${MyLogo}`}/>
+                    <img src={MyLogo}/>
                 </div>
                 <div className="footer-text-logo">
-                    <img src={`/${MyLogoText}`}/>
+                    <img src={MyLogoText}/>
                 </div>
             </div>
             <EH2/>

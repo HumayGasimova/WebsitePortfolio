@@ -87,16 +87,16 @@ export const Advantages = (props) => {
                 advertisement="AVADA CAFE LONDON INTRODUCES SPECIAL 10% DISCOUNT FOR STUDENTS" 
             />
             <div className="advantages-image">
-                <img src={`/${Image1}`}/>
+                <img src={Image1}/>
             </div>
             <div className="advantages-image">
-                <img src={`/${Image2}`}/>
+                <img src={Image2}/>
             </div>
             <div className="advantages-image">
-                <img src={`/${Image3}`}/>
+                <img src={Image3}/>
             </div>
             <div className="advantages-image">
-                <img src={`/${Image4}`}/>
+                <img src={Image4}/>
             </div>
             <AdSmallCard
                 darkColor

@@ -55,7 +55,8 @@ module.exports = {
   },
   output: {
     filename: 'transformed.js',
-    path: __dirname + '/dist'
+    path: __dirname + '/dist',
+    publicPath: '/' //reload page when refresh browser (react-router /ex/ex)
   },
   devServer: {
     contentBase: './dist',

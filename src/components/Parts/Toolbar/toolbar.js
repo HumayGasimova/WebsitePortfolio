@@ -115,10 +115,10 @@ export const Toolbar = (props) => {
             <div className="toolbar-visible-part">
                 <div className="toolbar-wrapper">
                     <div className="toolbar-image-logo">
-                        <img src={`/${MyLogo}`}/>
+                        <img src={MyLogo}/>
                     </div>
                     <div className="toolbar-text-logo">
-                        <img src={`/${MyLogoText}`}/>
+                        <img src={MyLogoText}/>
                     </div>
                 </div>
                 <div className="toolbar-menu" onClick={toggleMenuButton}>

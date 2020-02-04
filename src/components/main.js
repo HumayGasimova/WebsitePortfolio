@@ -79,7 +79,7 @@ export const Main = (props) => {
             <Sidebar/>
             {/* <div className="main-wrapper">
                 <div className="main-wrapper-cover-logo">
-                    <img src={`/${CoverLogo}`}/>
+                    <img src={CoverLogo}/>
                 </div>
                 <Description/>
                 <Reservations/>
@@ -90,7 +90,7 @@ export const Main = (props) => {
                 <div className="main-wrapper-backgroud-div"/>
             </div>
             <div className="main-logo">
-                <img src={`/${CoverLogo}`}/>
+                <img src={CoverLogo}/>
             </div>
             <div className="main-wrapper">
                 <Description/>
