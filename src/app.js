@@ -7,7 +7,9 @@ import React,{
 } from 'react';
 
 import {
-   Route
+   Route,
+   Switch,
+   Redirect
 } from 'react-router-dom';
 
 /**
@@ -37,36 +39,39 @@ export class App extends Component {
    render(){
       return(
          <div className="app">
-            <Route 
-               exact 
-               path="/contact"
-               // component={ AboutPage }
-            />
-            <Route 
-               exact 
-               path="/locations"
-               // component={ AboutPage }
-            />
-            <Route 
-               exact 
-               path="/our-story"
-               // component={ AboutPage }
-            />
-            <Route 
-               exact 
-               path="/food-drink"
-               // component={ AboutPage }
-            />
-            <Route 
-               exact 
-               path="/about-us"
-               component={ AboutUs }
-            />
-            <Route 
-               exact
-               path="/"
-               component={ Main }
-            />
+            <Switch>
+               {/* <Route 
+                  exact 
+                  path="/contact"
+                  // component={ AboutPage }
+               />
+               <Route 
+                  exact 
+                  path="/locations"
+                  // component={ AboutPage }
+               />
+               <Route 
+                  exact 
+                  path="/our-story"
+                  // component={ AboutPage }
+               />
+               <Route 
+                  exact 
+                  path="/food-drink"
+                  // component={ AboutPage }
+               />
+               <Route 
+                  exact 
+                  path="/about-us"
+                  component={ AboutUs }
+               /> */}
+               <Route 
+                  exact
+                  path="/crypto-cafe"
+                  component={ Main }
+               />
+               <Redirect from="/" to="/crypto-cafe"/>
+            </Switch>
          </div>
       );
    }
