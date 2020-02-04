@@ -21,6 +21,8 @@
         align-items: center;
         width: calc(100% + 18px);
         background-color: rgb(51, 51, 51);
+        position: relative;
+        z-index: 100;
         .toolbar-wrapper {
             display: flex;
             align-items: center;
@@ -74,7 +76,7 @@
         border-top: 1px solid rgb(82, 78, 76);
         animation: close 0.3s linear;
         position: relative;
-        z-index: 20;
+        z-index: 100;
     }
 
     .toolbar-invisible-mounted {
@@ -85,7 +87,7 @@
         border-top: 1px solid rgb(82, 78, 76);
         height: 314px;
         position: relative;
-        z-index: 20;
+        z-index: 100;
     }
 }
 

@@ -34,6 +34,7 @@ import './toolbar.scss';
 */
 
 import ToolbarItem from '../../SmallParts/ToolbarItem/toolbarItem';
+import Backdrop from '../../../library/Backdrop/backdrop';
 
 /**
 * Actions
@@ -80,11 +81,21 @@ export const Toolbar = (props) => {
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
+        addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [])
+
+    const handleScroll = () => {
+        setMenuIsShown(false);
+    }
 
     const toolbarOnClick = (path, id) => {
         props.history.push(props.match.url + (path === "" ? path : `/${path}`));
         props.activateMenuItem(id);
+    }
+
+    const toggleMenuButton = () => {
+        setMenuIsShown(!menuIsShown);
     }
 
     const renderToolbarItems = () => {
@@ -101,10 +112,6 @@ export const Toolbar = (props) => {
                 )
             })}</>
         )
-    }
-
-    const toggleMenuButton = () => {
-        setMenuIsShown(!menuIsShown);
     }
 
     /**
@@ -144,6 +151,13 @@ export const Toolbar = (props) => {
                     {renderToolbarItems()}
                 </div> 
             </CSSTransition>
+            {menuIsShown ? 
+                <Backdrop 
+                    show 
+                    className={"backdrop-home"}
+                    onClick={() => setMenuIsShown(false)}
+                /> 
+            : null}
         </>
     );
 }
