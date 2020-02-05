@@ -4,7 +4,8 @@
 
 import { 
     of,
-    interval
+    interval,
+    empty
 } from 'rxjs';
 
 import { 
@@ -35,12 +36,15 @@ export const startInitStoriesEpic = (action$) =>
     action$.pipe(
         ofType(actionTypes.START_INIT_STORIES),
         mergeMap((action) => {
-            let storiesFilteredByMonth = storiesArray.find(x => x.key === action.month);
-            return of(
-                Actions.addStoriesByMonth(storiesFilteredByMonth),
-            )   
-        }),
-                
+            if(storiesArray.length >= action.index + 1){
+                let storiesFilteredByMonth = storiesArray[action.index];
+                return of(
+                    Actions.addStoriesByMonth(storiesFilteredByMonth),
+                )   
+            }else{
+                return empty()
+            }
+        })                
     )
 
 export default startInitStoriesEpic;

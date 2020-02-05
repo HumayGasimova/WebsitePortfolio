@@ -83,8 +83,14 @@ export const Stories = (props) => {
     */
 
     useEffect(() => {
-        props.startInitStories("february20");
+        if(props.stories.length === 0){
+            props.startInitStories(0);
+        }
     }, [])
+
+    const loadMoreHandler = () => {
+        props.startInitStories(props.stories.length);
+    } 
 
     const renderStoriesByMonth = () => {
         return(
@@ -115,6 +121,11 @@ export const Stories = (props) => {
                 <FontAwesomeIcon icon={faComments} size="3x" color="rgb(63, 63, 63)"/>
                 <EH1/>
                 {renderStoriesByMonth()}
+                <Button
+                    className="learn-more"
+                    text="LOAD MORE POSTS"
+                    onClick={loadMoreHandler}
+                />
             </div>
             
         </div>

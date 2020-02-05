@@ -28,10 +28,10 @@ export function initMenuDrinks(array) {
     };
 };
 
-export function startInitStories(month) {
+export function startInitStories(index) {
     return { 
         type: actionTypes.START_INIT_STORIES,
-        month: month
+        index: index
     };
 };
 
