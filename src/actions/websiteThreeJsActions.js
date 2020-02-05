@@ -20,3 +20,11 @@ export function initMenuFood(array) {
         array: array
     };
 };
+
+export function initMenuDrinks(array) {
+    return { 
+        type: actionTypes.INIT_MENU_DRINKS,
+        array: array
+    };
+};
+

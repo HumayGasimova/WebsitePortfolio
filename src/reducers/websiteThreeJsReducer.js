@@ -17,7 +17,8 @@ import uuid from "uuid";
 
 export const initialState = {
     menuItems: [],
-    menuFood: []
+    menuFood: [],
+    menuDrinks: []
 }
 
 const initMenuItems = (state, action) => {
@@ -51,6 +52,13 @@ const initMenuFood = (state, action) => {
     };
 }
 
+const initMenuDrinks = (state, action) => {
+    return {
+        ...state,
+        menuDrinks: action.array
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -59,6 +67,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return activateMenuItem(state, action);  
         case actionTypes.INIT_MENU_FOOD:
             return initMenuFood(state, action); 
+        case actionTypes.INIT_MENU_DRINKS:
+            return initMenuDrinks(state, action); 
         default: 
             return state;
     }

@@ -19,25 +19,25 @@
     display: flex;
     flex-direction: column;
     width: 45%;
-    background-color: rgb(18, 68, 159);
     .menu-food-card-promo {
         background-color: rgb(41, 39, 38);
         padding: 40px;
     }
     .menu-food-card-image {
         height: 100%;
-        opacity: 0.9;
-        filter: grayscale(70%);
+        background-color: rgb(18, 68, 159);
+        overflow: hidden;
         >img {
             height: 100%;
             object-fit: cover;
+            opacity: 0.9;
+            filter: grayscale(70%);
         }
     }
 }
 
 
 @media only screen and (max-width: 1250px){
-
     .menu-food-card-dark {
         flex-direction: column;
         height: 100%;

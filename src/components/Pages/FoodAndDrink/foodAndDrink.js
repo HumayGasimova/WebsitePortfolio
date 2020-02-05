@@ -26,6 +26,7 @@ import './foodAndDrink.scss';
 
 import Toolbar from '../../Parts/Toolbar/toolbar';
 import MenuFood from '../../Parts/MenuFood/menuFood';
+import MenuDrinks from '../../Parts/MenuDrinks/menuDrinks';
 import Reservations from '../../Parts/Reservations/reservations';
 import Advantages from '../../Parts/Advantages/advantages';
 import Footer from '../../Parts/Footer/footer';
@@ -93,6 +94,7 @@ export const FoodAndDrink = (props) => {
             </div>
             <div className="food-and-drink-wrapper">
                 <MenuFood/>
+                <MenuDrinks/>
                 <Reservations/>
                 <Advantages/>
                 <Footer/>

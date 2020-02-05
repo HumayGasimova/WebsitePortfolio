@@ -15,3 +15,11 @@ export const getMenuFoodState = createSelector(
     [getMenuFood],
     (x) => x
 );
+
+const getMenuDrinks = (state) => state.home.menuDrinks;
+
+export const getMenuDrinksState = createSelector(
+    [getMenuDrinks],
+    (x) => x
+);
+
