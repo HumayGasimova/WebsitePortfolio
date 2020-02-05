@@ -15,3 +15,4 @@ export * from './EmptyDivs/EW3/ew3';
 
 export * from './HorizantalLines/Line1/line1';
 export * from './HorizantalLines/Line2/line2';
+export * from './HorizantalLines/DoubleLine1/doubleLine1';

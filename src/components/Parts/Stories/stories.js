@@ -38,7 +38,7 @@ import './stories.scss';
 */
 
 import Button from '../../../library/Button/button';
-// import * as Selectors from '../../../reducers/selectors';
+import StoryCard from '../../SmallParts/StoryCard/storyCard';
 
 /**
 * Actions
@@ -65,7 +65,8 @@ import {
     EH2,
     EH4,
     EW1,
-    Line1
+    Line1,
+    DoubleLine1
 } from '../../UtilityComponents';
 
 /**
@@ -102,7 +103,16 @@ export const Stories = (props) => {
                             <H4 className="h4-white-centered">{el.date.year}</H4>
                         </div>
                         <div className="stories-wrapper">
-
+                            {el.storiesArray.map((el, i) => {
+                                let description = el.paragraphs[0].slice(0, 195);
+                                return(
+                                    <StoryCard
+                                        key={i}
+                                        header={el.header}
+                                        description={description}
+                                    />
+                                )
+                            })}
                         </div>
                     </div>
                 )
