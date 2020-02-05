@@ -37,6 +37,7 @@ import Sidebar from './Parts/Sidebar/sidebar';
 import Home from './Pages/Home/home';
 import AboutUs from './Pages/AboutUs/aboutUs';
 import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
+import OurStory from './Pages/OurStory/ourStory';
 
 /**
 * Actions
@@ -101,6 +102,11 @@ export const Main = (props) => {
             <Toolbar/>
             <Sidebar/>
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/our-story"}
+                    component={OurStory}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/food-and-drink"}
