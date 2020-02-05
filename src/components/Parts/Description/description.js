@@ -12,6 +12,10 @@ import {
 } from 'react-redux';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     withRouter
 } from 'react-router-dom';
 
@@ -29,8 +33,10 @@ import Button from '../../../library/Button/button';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
+* Actions
 */
+
+import * as Actions from '../../../actions';
 
 /**
 * Utility
@@ -55,7 +61,7 @@ import CoffeeCups from '../../../images/two-blue-white-and-red-coffee-cups-on-br
 import Plant from '../../../images/plant-stand-green-standing.jpg';
 
 /**
-* Images
+* Constants
 */
 
 import * as Colors from '../../../constants/colors';
@@ -73,6 +79,11 @@ export const Description = (props) => {
     /**
     * Methods
     */
+
+    const learnMoreHandler = () => {
+        props.history.push(`/crypto-cafe/food-and-drink`);
+        props.activateMenuItem(3);
+    }
 
     /**
     * Markup
@@ -117,7 +128,7 @@ export const Description = (props) => {
                     <Button
                         className="learn-more"
                         text="LEARN MORE"
-                        // onClick={props.leftArrowOnClick}
+                        onClick={learnMoreHandler}
                     />
                 </div>
                 <div className="description-image-big-screen">
@@ -138,8 +149,8 @@ export const Description = (props) => {
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
-)(Description);
+)(withRouter(Description));
  
