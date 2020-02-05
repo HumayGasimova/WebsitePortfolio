@@ -1,0 +1,20 @@
+.stories {
+    // display: flex;
+    // flex-wrap: wrap;
+    position: relative;
+    z-index: 20;
+    cursor: context-menu;
+    .stories-icon {
+        background-color: rgb(63, 63, 63);
+    }
+}
+
+// @media only screen and (max-width: 1300px){
+//     .stories {
+//         flex-wrap: nowrap;
+//         flex-direction: column;
+//         .stories-image {
+//             width: 100%;
+//         }
+//     }
+// }

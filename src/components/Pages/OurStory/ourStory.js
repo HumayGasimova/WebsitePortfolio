@@ -24,7 +24,7 @@ import './ourStory.scss';
 * Components
 */
 
-import Toolbar from '../../Parts/Toolbar/toolbar';
+import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
 
 /**
@@ -89,6 +89,7 @@ export const OurStory = (props) => {
                 <H3 center>BORN FROM OUR LOVE OF GOOD COFFEE, COLD BEER AND FINE FOOD. IT'S BEEN QUITE A JOURNEY.</H3>
             </div>
             <div className="our-story-wrapper">
+                <Stories/>
                 <Footer/>
             </div>
         </>
