@@ -18,7 +18,8 @@ import uuid from "uuid";
 export const initialState = {
     menuItems: [],
     menuFood: [],
-    menuDrinks: []
+    menuDrinks: [],
+    stories: [] 
 }
 
 const initMenuItems = (state, action) => {
@@ -59,6 +60,15 @@ const initMenuDrinks = (state, action) => {
     };
 }
 
+const addStoriesByMonth = (state, action) => {
+    let updatedStories = [...state.stories];
+    updatedStories.push(action.obj);
+    return {
+        ...state,
+        stories: updatedStories
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -68,7 +78,11 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.INIT_MENU_FOOD:
             return initMenuFood(state, action); 
         case actionTypes.INIT_MENU_DRINKS:
-            return initMenuDrinks(state, action); 
+            return initMenuDrinks(state, action);
+        case actionTypes.ADD_STORIES_BY_MONTH:
+            return addStoriesByMonth(state, action);  
+        case actionTypes.START_INIT_STORIES:
+            return state;
         default: 
             return state;
     }

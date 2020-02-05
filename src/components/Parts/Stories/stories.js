@@ -12,8 +12,8 @@ import {
 } from 'react-redux';
 
 import {
-    withRouter
-} from 'react-router-dom';
+    bindActionCreators
+} from 'redux';
 
 import { 
     FontAwesomeIcon 
@@ -41,8 +41,16 @@ import Button from '../../../library/Button/button';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
+* Actions
 */
+
+import * as Actions from '../../../actions';
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Utility
@@ -61,10 +69,6 @@ import {
 } from '../../UtilityComponents';
 
 /**
-* Images
-*/
-
-/**
 * Stories component definition and export
 */
 
@@ -78,6 +82,28 @@ export const Stories = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        props.startInitStories("february20");
+    }, [])
+
+    const renderStoriesByMonth = () => {
+        return(
+            <>{props.stories.map((el, i) => {
+                return(
+                    <div key={i} className="stories-by-month">
+                        <div className="stories-button">
+                            <H4 className="h4-white-centered">{el.date.month}</H4>
+                            <H4 className="h4-white-centered">{el.date.year}</H4>
+                        </div>
+                        <div className="stories-wrapper">
+
+                        </div>
+                    </div>
+                )
+            })}</>
+        )
+    }
+
     /**
     * Markup
     */
@@ -85,8 +111,10 @@ export const Stories = (props) => {
     return(
         <div className="stories">
             <div className="stories-icon">
-                <FontAwesomeIcon icon={faComments} size="3x" color="rgb(41, 39, 38)" className="icon-arrow-left"/>
-                {/* {renderStoryPage()} */}
+                <EH1/>
+                <FontAwesomeIcon icon={faComments} size="3x" color="rgb(63, 63, 63)"/>
+                <EH1/>
+                {renderStoriesByMonth()}
             </div>
             
         </div>
@@ -95,12 +123,12 @@ export const Stories = (props) => {
  export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            stories: Selectors.getStoriesState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
         };
     }
 )(Stories);

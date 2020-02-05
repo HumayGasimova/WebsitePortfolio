@@ -28,3 +28,16 @@ export function initMenuDrinks(array) {
     };
 };
 
+export function startInitStories(month) {
+    return { 
+        type: actionTypes.START_INIT_STORIES,
+        month: month
+    };
+};
+
+export function addStoriesByMonth(obj) {
+    return { 
+        type: actionTypes.ADD_STORIES_BY_MONTH,
+        obj: obj
+    };
+};

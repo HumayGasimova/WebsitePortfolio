@@ -23,3 +23,9 @@ export const getMenuDrinksState = createSelector(
     (x) => x
 );
 
+const getStories = (state) => state.home.stories;
+
+export const getStoriesState = createSelector(
+    [getStories],
+    (x) => x
+);

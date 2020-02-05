@@ -22,31 +22,25 @@ import {
 
 import * as actionTypes from '../constants/actionTypes';
 import * as Actions from '../actions';
+
 import {
-    portfolioArray
-} from '../constants/portfolio';
-
-/**
-* Constants
-*/
-
-import * as Utility from '../utility';
+    storiesArray
+} from '../constants/storiesArray';
 
 /**
 * Epic
 */
 
-export const startInitPortfolioSingleEpic = (action$) => 
+export const startInitStoriesEpic = (action$) => 
     action$.pipe(
-        ofType(actionTypes.START_INIT_PORTFOLIO_SINGLE),
+        ofType(actionTypes.START_INIT_STORIES),
         mergeMap((action) => {
-            let portfolio = portfolioArray.find(x => x.id === action.potfolioId);
-
+            let storiesFilteredByMonth = storiesArray.find(x => x.key === action.month);
             return of(
-                Actions.loadSinglePortfolio(portfolio),
+                Actions.addStoriesByMonth(storiesFilteredByMonth),
             )   
         }),
                 
     )
 
-export default startInitPortfolioSingleEpic;
+export default startInitStoriesEpic;
