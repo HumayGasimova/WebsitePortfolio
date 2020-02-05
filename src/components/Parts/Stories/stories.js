@@ -122,7 +122,8 @@ export const Stories = (props) => {
                 <EH1/>
                 {renderStoriesByMonth()}
                 <Button
-                    className="learn-more"
+                    outerDivClassName="load-more-posts-button-wrapper"
+                    className="load-more-posts"
                     text="LOAD MORE POSTS"
                     onClick={loadMoreHandler}
                 />

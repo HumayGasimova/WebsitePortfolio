@@ -29,6 +29,26 @@
     }
 }
 
+.load-more-posts-button-wrapper {
+    width: 100%;
+    .load-more-posts {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
+        color: rgb(233, 220, 216);
+        background-color: rgb(51, 51, 51);
+        border: 1px solid white;
+        border-radius: 3px;
+        padding: 17px 40px 13px 40px;
+        // display: block;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+            background-color: rgba(104, 97, 95, 0.5);
+        }
+    }
+}
+
+
 // @media only screen and (max-width: 441px){
 //     .portfolio-description-button {
 //         width: 110px;
