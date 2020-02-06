@@ -111,7 +111,7 @@ export const StoryCard = (props) => {
 
     return(
         <div className={props.left ? "story-card-left" : "story-card-right"}>
-            <div className="story-card-wrapper">
+            <div className={props.left ? "story-card-wrapper-left" : "story-card-wrapper-right"}>
                 <div className="story-card-image">
                     <img src={loadImage(props.image)}/>
                 </div>
