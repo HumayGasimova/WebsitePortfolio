@@ -19,6 +19,10 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+import { 
+    CSSTransition 
+} from 'react-transition-group';
+
 /**
 * Icons
 */
@@ -26,10 +30,6 @@ import {
 import { 
     faComments
 } from '@fortawesome/free-regular-svg-icons';
-
-import { 
-    faAngleRight
-} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Styles
@@ -100,15 +100,22 @@ export const Stories = (props) => {
     const renderStoriesByMonth = () => {
         return(
             <>{props.stories.map((el, i) => {
+                let show = el.show;
                 return(
                     <div key={i} className="stories-by-month">
-                        <div className="stories-button">
+                        <div 
+                            className="stories-button"
+                            onClick={() => props.showStoriesOfMonth(el.key)}
+                        >
                             <H4 className="h4-white-centered">{el.date.month}</H4>
                             <H4 className="h4-white-centered">{el.date.year}</H4>
                         </div>
-                        <div className="stories-wrapper">
+                        <div 
+                            className={el.show ? "stories-wrapper" : "stories-wrapper-close"}
+                        >
                             {el.storiesArray.map((el, i) => {
                                 let description = el.paragraphs[0].slice(0, 195);
+                                
                                 if(i % 2) {
                                     return(
                                         <StoryCard
@@ -116,8 +123,8 @@ export const Stories = (props) => {
                                             header={el.header}
                                             description={description}
                                             image={el.image}
-                                            iconArrow={faAngleRight}
                                             iconComments={faComments}
+                                            show={show}
                                         />
                                     )
                                 }else{
@@ -128,12 +135,11 @@ export const Stories = (props) => {
                                             header={el.header}
                                             description={description}
                                             image={el.image}
-                                            iconArrow={faAngleRight}
                                             iconComments={faComments}
+                                            show={show}
                                         />
                                     )
                                 }
-                               
                             })}
                         </div>
                     </div>
@@ -175,6 +181,7 @@ export const Stories = (props) => {
     (dispatch) => {
         return {
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
+            showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
         };
     }
 )(Stories);

@@ -19,6 +19,7 @@
         .stories-button {
             width: 100px;
             background-color: rgb(63, 63, 63);
+            border: 1px solid rgb(41, 39, 38);
             padding: 7px;
             cursor: pointer;
         }
@@ -26,10 +27,57 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
+            height: auto;
+            max-height: 1900px;
+            transition: max-height 0.3s ease-out;
+        }
+        .stories-wrapper-close {
+            max-height: 0;
+            // animation: closeStories 0.3s linear;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            max-height: 0px;
+            transition: max-height 0.3s ease-out;
         }
     }
 }
 
+@keyframes openStories {
+    from{
+        height: 0px;
+    }
+    to {
+        height: 1900px;
+    }
+  }
+
+@keyframes closeStories {
+    from{
+        height: 1900px;
+    }
+    to {
+        height: 0px;
+    }
+  }
+
+// @-moz-keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+// }
+// @-o-keyframes open {
+//     from{
+//         height: 0;
+//     }
+//     to {
+//         height: 314px;
+//     }
+// }
 // @media only screen and (max-width: 1300px){
 //     .stories {
 //         flex-wrap: nowrap;

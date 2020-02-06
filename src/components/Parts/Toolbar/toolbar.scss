@@ -56,12 +56,16 @@
             }
         }
     }
+    
     .toolbar-invisible-part-open {
         display: flex;
         flex-direction: column;
         width: calc(100% + 18px);
         background-color: rgb(51, 51, 51);
         border-top: 1px solid rgb(82, 78, 76);
+        -webkit-animation: open 0.3s linear;
+        -moz-animation: open 0.3s linear;
+        -o-animation: open 0.3s linear;
         animation: open 0.3s linear;
         // position: relative;
         // z-index: 20;
@@ -74,6 +78,9 @@
         height: 0px;
         background-color: rgb(51, 51, 51);
         border-top: 1px solid rgb(82, 78, 76);
+        -webkit-animation: close 0.3s linear;
+        -moz-animation: close 0.3s linear;
+        -o-animation: close 0.3s linear;
         animation: close 0.3s linear;
         position: relative;
         z-index: 100;
@@ -91,6 +98,31 @@
     }
 }
 
+@-webkit-keyframes open {
+    from{
+        height: 0;
+    }
+    to {
+        height: 314px;
+    }
+  }
+@-moz-keyframes open {
+    from{
+        height: 0;
+    }
+    to {
+        height: 314px;
+    }
+}
+@-o-keyframes open {
+    from{
+        height: 0;
+    }
+    to {
+        height: 314px;
+    }
+}
+
 @keyframes open {
     from{
         height: 0;
@@ -100,6 +132,30 @@
     }
 }
 
+@-webkit-keyframes close {
+    from{
+        height: 314px;
+    }
+    to {
+        height: 0px;
+    }
+}
+@-moz-keyframes close {
+    from{
+        height: 314px;
+    }
+    to {
+        height: 0px;
+    }
+}
+@-o-keyframes close {
+    from{
+        height: 314px;
+    }
+    to {
+        height: 0px;
+    }
+}
 @keyframes close {
     from{
         height: 314px;

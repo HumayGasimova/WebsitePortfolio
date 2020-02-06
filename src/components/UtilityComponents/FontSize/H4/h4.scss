@@ -24,6 +24,9 @@
     position: relative;
     &:hover {
         color: rgb(180, 139, 62);
+        -webkit-animation: appear 0.3s linear;
+        -moz-animation: appear 0.3s linear;
+        -o-animation: appear 0.3s linear;
         animation: appear 0.3s linear;
     }
 }
@@ -35,6 +38,9 @@
     position: relative;
     &:hover {
         color: rgb(180, 139, 62);
+        -webkit-animation: appear 0.3s linear;
+        -moz-animation: appear 0.3s linear;
+        -o-animation: appear 0.3s linear;
         animation: appear 0.3s linear;
     }
 }
@@ -49,9 +55,32 @@
     font-size: 14px;
     position: absolute;
     transform: translateY(-50%);
-   
 }
 
+@-webkit-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
 @keyframes appear {
     from{
         color: white;

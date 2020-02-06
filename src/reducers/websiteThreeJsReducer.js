@@ -69,6 +69,19 @@ const addStoriesByMonth = (state, action) => {
     };
 }
 
+const showStoriesOfMonth = (state, action) => {
+    let updatedStories = [...state.stories];
+    let storiesOfMonth = updatedStories.find(x => x.key === action.key);
+    storiesOfMonth.show = !storiesOfMonth.show;
+    let storiesOfMonthIndex = updatedStories.findIndex(x => x.key === action.key);
+    updatedStories.splice(storiesOfMonthIndex, 1, storiesOfMonth);
+
+    return {
+        ...state,
+        stories: updatedStories
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -81,7 +94,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initMenuDrinks(state, action);
         case actionTypes.ADD_STORIES_BY_MONTH:
             return addStoriesByMonth(state, action);  
-        case actionTypes.START_INIT_STORIES:
+        case actionTypes.SHOW_STORIES_OF_MONTH:
+            return showStoriesOfMonth(state, action);  
+        case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         default: 
             return state;

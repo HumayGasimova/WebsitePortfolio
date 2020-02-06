@@ -41,3 +41,10 @@ export function addStoriesByMonth(obj) {
         obj: obj
     };
 };
+
+export function showStoriesOfMonth(key) {
+    return { 
+        type: actionTypes.SHOW_STORIES_OF_MONTH,
+        key: key
+    };
+};

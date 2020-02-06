@@ -5,6 +5,7 @@ export const storiesArray = [
             month: "FEBRUARY",
             year: "2020"
         },
+        show: true,
         storiesArray: [
             {
                 id: 1,
@@ -93,6 +94,7 @@ export const storiesArray = [
             month: "JANUARY",
             year: "2020"
         },
+        show: true,
         storiesArray: [
             {
                 id: 5,
