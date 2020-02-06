@@ -1,7 +1,31 @@
 .story-card-left {
-    width: 50%;
+    width: calc(50% - 182px);
+    padding: 0 90px 0 90px;
+    border-right: 1px solid rgb(63, 63, 63);
+    padding-bottom: 40px;
 }
 
 .story-card-right {
-    width: 50%;
+    width: calc(50% - 182px);
+    padding: 0 90px 0 90px;
+    border-left: 1px solid rgb(63, 63, 63);
+    padding-bottom: 40px;
+}
+
+.story-card-image {
+    background-color: rgb(18, 68, 159);
+    width: 100%;
+    filter: grayscale(70%);
+    >img {
+        width: 100%;
+        opacity: 0.7;
+    }
+}
+
+.story-card-wrapper {
+    border: 1px solid rgb(63, 63, 63);
+}
+
+.story-card-description {
+    padding: 40px;
 }

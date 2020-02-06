@@ -105,13 +105,27 @@ export const Stories = (props) => {
                         <div className="stories-wrapper">
                             {el.storiesArray.map((el, i) => {
                                 let description = el.paragraphs[0].slice(0, 195);
-                                return(
-                                    <StoryCard
-                                        key={i}
-                                        header={el.header}
-                                        description={description}
-                                    />
-                                )
+                                if(i % 2) {
+                                    return(
+                                        <StoryCard
+                                            key={i}
+                                            header={el.header}
+                                            description={description}
+                                            image={el.image}
+                                        />
+                                    )
+                                }else{
+                                    return(
+                                        <StoryCard
+                                            key={i}
+                                            left
+                                            header={el.header}
+                                            description={description}
+                                            image={el.image}
+                                        />
+                                    )
+                                }
+                               
                             })}
                         </div>
                     </div>
@@ -131,6 +145,8 @@ export const Stories = (props) => {
                 <FontAwesomeIcon icon={faComments} size="3x" color="rgb(63, 63, 63)"/>
                 <EH1/>
                 {renderStoriesByMonth()}
+                <EH1/>
+                <EH1/>
                 <Button
                     outerDivClassName="load-more-posts-button-wrapper"
                     className="load-more-posts"
