@@ -21,10 +21,35 @@
     font-size: 18px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     color:  white;
+    position: relative;
     &:hover {
         color: rgb(180, 139, 62);
         animation: appear 0.3s linear;
     }
+}
+
+.h4-animation-with-icon {
+    font-size: 18px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color:  white;
+    position: relative;
+    &:hover {
+        color: rgb(180, 139, 62);
+        animation: appear 0.3s linear;
+    }
+}
+
+.h4-animation-with-icon:after {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    top: 50%;
+    right: -12px;
+    padding-left: 5px;
+    font-size: 14px;
+    position: absolute;
+    transform: translateY(-50%);
+   
 }
 
 @keyframes appear {

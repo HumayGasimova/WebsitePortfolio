@@ -77,4 +77,40 @@
 
 .story-card-description {
     padding: 40px;
+    .story-card-link {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .story-card-link-left {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &:hover {
+                color: rgb(180, 139, 62);
+                animation: appear 0.3s linear;
+                .icon-arrow {
+                    color: rgb(180, 139, 62);
+                    // animation: appear 0.3s linear;
+                }
+            }
+        }
+        .icon-comments {
+            color:  white;
+            cursor: pointer;
+            &:hover {
+                color: rgb(180, 139, 62);
+                animation: appear 0.3s linear;
+            }
+        }
+    }
+}
+
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
 }

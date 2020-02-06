@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
 /**
 * Components
 */
@@ -121,7 +125,14 @@ export const StoryCard = (props) => {
                     <DoubleLine1/>
                     <EH1/>
                     <H5 textColor={Colors.EBB}>{props.description} [...]</H5>
-                    <H3></H3>
+                    <EH1/>
+                    <div className="story-card-link">
+                        <div className="story-card-link-left">
+                            <H4 className="h4-animation-with-icon">Read more</H4>
+                        </div>
+                        <EW1/>
+                        <FontAwesomeIcon icon={props.iconComments} size="sm" className="icon-comments"/>
+                    </div>
                 </div>
             </div>
         </div>

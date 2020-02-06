@@ -27,6 +27,10 @@ import {
     faComments
 } from '@fortawesome/free-regular-svg-icons';
 
+import { 
+    faAngleRight
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
 * Styles
 */
@@ -112,6 +116,8 @@ export const Stories = (props) => {
                                             header={el.header}
                                             description={description}
                                             image={el.image}
+                                            iconArrow={faAngleRight}
+                                            iconComments={faComments}
                                         />
                                     )
                                 }else{
@@ -122,6 +128,8 @@ export const Stories = (props) => {
                                             header={el.header}
                                             description={description}
                                             image={el.image}
+                                            iconArrow={faAngleRight}
+                                            iconComments={faComments}
                                         />
                                     )
                                 }
