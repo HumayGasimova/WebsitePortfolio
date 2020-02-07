@@ -122,8 +122,7 @@ export const StatisticsItem = (props) => {
             <FontAwesomeIcon icon={renderIcon(props.icon)} size="3x" color="rgb(180, 139, 62)"/>
             <EH1/>
             <H1 className="h1-center-dekko">{value}</H1>
-            <EH1/>
-            <H4>{props.header}</H4>
+            <H3>{props.header}</H3>
         </div>
     );
 }

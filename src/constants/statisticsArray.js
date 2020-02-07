@@ -7,7 +7,7 @@ export const statisticsArray = [
     {
         icon: "faIceCream",
         number: 39285,
-        header: "ICECREAM EATEN"
+        header: "ICE CREAM EATEN"
     },
     {
         icon: "faUtensils",

@@ -77,17 +77,12 @@ export const Statistics = (props) => {
             <div className="statistics-items">
                 {statisticsArray.map((el,i) => {
                     return(
-                        <div 
+                        <StatisticsItem
                             key={i}
-                        >
-                            <EW2/>
-                            <StatisticsItem
-                                icon={el.icon}
-                                number={el.number}
-                                header={el.header}
-                            />
-                            <EW2/>
-                        </div>
+                            icon={el.icon}
+                            number={el.number}
+                            header={el.header}
+                        />
                     )
                 })}
             </div>
