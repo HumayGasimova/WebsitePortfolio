@@ -86,7 +86,7 @@ export const OurStory = (props) => {
                 <EH1/>
                 <Line2/>
                 <EH1/>
-                <H3 center>BORN FROM OUR LOVE OF GOOD COFFEE, COLD BEER AND FINE FOOD. IT'S BEEN QUITE A JOURNEY.</H3>
+                <H3 className="h3-center">BORN FROM OUR LOVE OF GOOD COFFEE, COLD BEER AND FINE FOOD. IT'S BEEN QUITE A JOURNEY.</H3>
             </div>
             <div className="our-story-wrapper">
                 <Stories/>

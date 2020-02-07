@@ -90,7 +90,7 @@ export const FoodAndDrink = (props) => {
                 <EH1/>
                 <Line2/>
                 <EH1/>
-                <H3 center>TENDER STEAKS, TASTY BURGERS AND LIGHT BITES. WASH IT DOWN WITH A COFFEE OR A BEER.</H3>
+                <H3 className="h3-center">TENDER STEAKS, TASTY BURGERS AND LIGHT BITES. WASH IT DOWN WITH A COFFEE OR A BEER.</H3>
             </div>
             <div className="food-and-drink-wrapper">
                 <MenuFood/>

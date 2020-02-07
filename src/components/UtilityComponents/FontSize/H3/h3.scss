@@ -10,3 +10,51 @@
     color:  white;
     text-align: center;
 }
+
+.h3-animation {
+    font-size: 40px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color:  white;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+        -webkit-animation: appear 0.3s linear;
+        -moz-animation: appear 0.3s linear;
+        -o-animation: appear 0.3s linear;
+        animation: appear 0.3s linear;
+    }
+}
+
+@-webkit-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}

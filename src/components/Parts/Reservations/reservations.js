@@ -79,7 +79,7 @@ export const Reservations = (props) => {
                 <Line1/>
                 <EH1/>
                 <EH1/>
-                <H3 center>
+                <H3 className="h3-center">
                     WE’RE NOT TRYING TO BE COOL BUT SADLY THERE ARE ONLY 68 
                     SEATS IN EACH CAFE AND THEY FILL UP QUICKLY. IF YOU WANT 
                     IN, MAKE A RESERVATION TODAY.
