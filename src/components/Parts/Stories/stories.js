@@ -28,8 +28,13 @@ import {
 */
 
 import { 
-    faComments
+    faComments,
 } from '@fortawesome/free-regular-svg-icons';
+
+import { 
+    faSearch,
+    faLink
+} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Styles
@@ -137,6 +142,8 @@ export const Stories = (props) => {
                                                 description={description}
                                                 image={el.image}
                                                 iconComments={faComments}
+                                                iconSearch={faSearch}
+                                                iconLink={faLink}
                                                 show={show}
                                             />
                                         )
@@ -149,6 +156,8 @@ export const Stories = (props) => {
                                                 description={description}
                                                 image={el.image}
                                                 iconComments={faComments}
+                                                iconSearch={faSearch}
+                                                iconLink={faLink}
                                                 show={show}
                                             />
                                         )

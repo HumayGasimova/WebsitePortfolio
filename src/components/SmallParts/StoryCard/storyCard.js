@@ -139,7 +139,7 @@ export const StoryCard = (props) => {
                     <img src={loadImage(props.image)}/>
                     <CSSTransition 
                             in={isHovering} 
-                            timeout={4000}
+                            timeout={2000}
                             mountOnEnter
                             unmountOnExit
                             classNames={{
@@ -150,9 +150,13 @@ export const StoryCard = (props) => {
                             }}
                         > 
                         <div className="story-card-image-hover">
-                            {/* <div className="story-card-image-hover-icons">
-                            
-                            </div> */}
+                            <div className="story-card-image-hover-icons">
+                                <FontAwesomeIcon icon={props.iconLink} size="lg" color="white"/>
+                            </div>
+                            <EW1/>
+                            <div className="story-card-image-hover-icons">
+                                <FontAwesomeIcon icon={props.iconSearch} size="lg" color="white"/>
+                            </div>
                         </div>
                     </CSSTransition>
                 </div>
