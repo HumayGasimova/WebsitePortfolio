@@ -24,6 +24,7 @@ import './ourStory.scss';
 * Components
 */
 
+import Statistics from '../../Parts/Statistics/statistics'
 import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
 
@@ -82,7 +83,7 @@ export const OurStory = (props) => {
                 <div className="our-story-wrapper-backgroud-div"/>
             </div>
             <div className="our-story-header-text">
-                <H1 center>OUR STORY</H1>
+                <H1 className="h1-center">OUR STORY</H1>
                 <EH1/>
                 <Line2/>
                 <EH1/>
@@ -90,6 +91,7 @@ export const OurStory = (props) => {
             </div>
             <div className="our-story-wrapper">
                 <Stories/>
+                <Statistics/>
                 <Footer/>
             </div>
         </>

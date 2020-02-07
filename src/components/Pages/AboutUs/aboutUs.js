@@ -87,7 +87,7 @@ export const AboutUs = (props) => {
                 <div className="about-us-wrapper-backgroud-div"/>
             </div>
             <div className="about-us-header-text">
-                <H1 center>ABOUT US</H1>
+                <H1 className="h1-center">ABOUT US</H1>
                 <EH1/>
                 <Line2/>
                 <EH1/>

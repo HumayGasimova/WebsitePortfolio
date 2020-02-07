@@ -86,7 +86,7 @@ export const FoodAndDrink = (props) => {
                 <div className="food-and-drink-wrapper-backgroud-div"/>
             </div>
             <div className="food-and-drink-header-text">
-                <H1 center>FOOD & DRINK</H1>
+                <H1 className="h1-center">FOOD & DRINK</H1>
                 <EH1/>
                 <Line2/>
                 <EH1/>

@@ -25,7 +25,7 @@ import './statistics.scss';
 * Components
 */
 
-import Button from '../../../library/Button/button';
+import StatisticsItem from '../../SmallParts/StatisticsItem/statisticsItem';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
@@ -45,12 +45,18 @@ import {
     EH2,
     EH4,
     EW1,
+    EW2,
     Line1
 } from '../../UtilityComponents';
 
 /**
-* Images
+* Constants
 */
+
+import {
+    statisticsArray
+} from '../../../constants/statisticsArray';
+
 
 /**
 * Statistics component definition and export
@@ -66,13 +72,35 @@ export const Statistics = (props) => {
     * Methods
     */
 
+    const renderStatisticsItems = () => {
+        return(
+            <div className="statistics-items">
+                {statisticsArray.map((el,i) => {
+                    return(
+                        <div 
+                            key={i}
+                        >
+                            <EW2/>
+                            <StatisticsItem
+                                icon={el.icon}
+                                number={el.number}
+                                header={el.header}
+                            />
+                            <EW2/>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+
     /**
     * Markup
     */
 
     return(
         <div className="statistics">
-    
+            {renderStatisticsItems()}
         </div>
     );
 }
