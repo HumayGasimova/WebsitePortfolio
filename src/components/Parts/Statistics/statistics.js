@@ -68,9 +68,27 @@ export const Statistics = (props) => {
     * State
     */
 
+    const [showComponent, setShowComponent] = useState(false);
+
     /**
     * Methods
     */
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, []);
+
+    const handleScroll = () => {
+        let scrollHeight = document.body.scrollTop;
+        let el = document.getElementById("statistics");
+      
+        if(scrollHeight >= el.offsetTop - window.innerHeight/2 + 400){
+            // console.log(el.offsetTop - window.innerHeight/2 + 400, scrollHeight)
+            setShowComponent(true);
+        }
+    }
 
     const renderStatisticsItems = () => {
         return(
@@ -94,8 +112,11 @@ export const Statistics = (props) => {
     */
 
     return(
-        <div className="statistics">
-            {renderStatisticsItems()}
+        <div 
+            className="statistics"
+            id="statistics"
+        >
+            {showComponent ? renderStatisticsItems() : null}
         </div>
     );
 }
