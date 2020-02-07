@@ -19,6 +19,10 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+import { 
+    CSSTransition 
+} from 'react-transition-group';
+
 /**
 * Components
 */
@@ -86,9 +90,19 @@ export const StoryCard = (props) => {
     * State
     */
 
+    const [isHovering, setIsHovering] = useState(false);
+
     /**
     * Methods
     */
+
+    const handleMouseEnter = () => {
+        setIsHovering(true);
+    }
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    }
 
     const loadImage = (img) => {
         switch(img) {
@@ -108,6 +122,7 @@ export const StoryCard = (props) => {
                 return DefaultImage;
         }
     }
+    
 
     /**
     * Markup
@@ -116,8 +131,30 @@ export const StoryCard = (props) => {
     return(
         <div className={props.left ? "story-card-left" : "story-card-right"}>
             <div className={props.left ? "story-card-wrapper-left" : "story-card-wrapper-right"}>
-                <div className="story-card-image">
+                <div 
+                    className="story-card-image"
+                    onMouseLeave={handleMouseLeave} 
+                    onMouseEnter={handleMouseEnter} 
+                >
                     <img src={loadImage(props.image)}/>
+                    <CSSTransition 
+                            in={isHovering} 
+                            timeout={4000}
+                            mountOnEnter
+                            unmountOnExit
+                            classNames={{
+                                enter: '',
+                                enterActive: 'story-card-image-hover-open',
+                                exit: '',
+                                exitActive: 'story-card-image-hover-close'
+                            }}
+                        > 
+                        <div className="story-card-image-hover">
+                            {/* <div className="story-card-image-hover-icons">
+                            
+                            </div> */}
+                        </div>
+                    </CSSTransition>
                 </div>
                 <div className="story-card-description">
                     <H3 className="h3-animation">{props.header}</H3>

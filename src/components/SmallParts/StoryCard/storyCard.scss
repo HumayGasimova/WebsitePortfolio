@@ -71,34 +71,99 @@
     background-color: rgb(18, 68, 159);
     width: 100%;
     filter: grayscale(65%);
+    .story-card-image-hover {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        z-index: 1;
+        max-width: 0px;
+        width: 0%;
+        height: 100%;
+        background-color: rgba(255, 165, 0, 0.7);
+        cursor: pointer;
+        animation: slideStoryCardOpen 4s ease;
+        .story-card-image-hover-icons {
+            border: 2px solid red;
+            width: 40px;
+            height:20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            // animation: iconsAppear 4s ease;
+        }
+    }
+    .story-card-image-hover-open {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        z-index: 1;
+        max-width: 1000px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 165, 0, 0.7);
+        cursor: pointer;
+        animation: slideStoryCardOpen 4s ease;
+        .story-card-image-hover-icons {
+            border: 2px solid red;
+            width: 40px;
+            height:20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            // animation: iconsAppear 4s ease;
+        }
+    }
+    .story-card-image-hover-close {
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        z-index: 1;
+        max-width: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 165, 0, 0.7);
+        cursor: pointer;
+        animation: slideStoryCardClose 1s ease;
+        .story-card-image-hover-icons {
+            border: 2px solid red;
+            width: 40px;
+            height:20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            // animation: iconsAppear 4s ease;
+        }
+    }
     >img {
         width: 100%;
         opacity: 0.8;
     }
-    &:hover::after{
-            content: '.';
-            position: absolute;
-            left: 0%;
-            z-index: 1;
-            max-width: 1000px;
-            width: 100%;
-            height: 100%;
-            background-color:  rgba(255, 165, 0, 0.7);
-            cursor: pointer;
-            animation: slideStoryCardOpen 4s ease;
-            // right: 0;
-            // top: calc(70% - 25px);
-            // width: 10px;
-            // height: 10px;
-            // border: 0,5px solid transparent;
-            // border-radius: 50%;
-            // border-color: rgb(192, 55, 55);
-            // border-right: ss0;
-            // margin-top: -10px;
-            // margin-right: -6.5px;
-            // background-color: rgb(192, 55, 55);
-    }
+    
+    // &:hover::after{
+    //     content: '.';
+    //     position: absolute;
+    //     left: 0%;
+    //     z-index: 1;
+    //     max-width: 1000px;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color:  rgba(255, 165, 0, 0.7);
+    //     cursor: pointer;
+    //     animation: slideStoryCardOpen 4s ease;
+    // }
 }
+// .story-card-image:after{
+//     content: '.';
+//     position: absolute;
+//     left: 0%;
+//     z-index: 1;
+//     max-width: 0px;
+//     width: 0%;
+//     height: 100%;
+//     background-color:  rgba(255, 165, 0, 0.7);
+//     cursor: pointer;
+//     animation: slideStoryCardClose 4s ease;
+// }
 
 .story-card-description {
     padding: 40px;
