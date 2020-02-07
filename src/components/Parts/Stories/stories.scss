@@ -138,35 +138,30 @@
     }
 }
 
-
 @media only screen and (max-width: 1000px){
     .stories {
         padding: 80px 0 0 0;
     }
 }
 
-// @-moz-keyframes open {
-//     from{
-//         height: 0;
-//     }
-//     to {
-//         height: 314px;
-//     }
-// }
-// @-o-keyframes open {
-//     from{
-//         height: 0;
-//     }
-//     to {
-//         height: 314px;
-//     }
-// }
-// @media only screen and (max-width: 1300px){
-//     .stories {
-//         flex-wrap: nowrap;
-//         flex-direction: column;
-//         .stories-image {
-//             width: 100%;
-//         }
-//     }
-// }
+@media only screen and (max-width: 900px){
+    .stories {
+        padding: 80px 80px 0 80px;
+        .stories-by-month {
+           
+            .stories-wrapper {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                max-height: 9400px;
+            }
+            .stories-wrapper-open {
+                flex-wrap: nowrap;
+                flex-direction: column;
+            }
+            .stories-wrapper-close {
+                flex-wrap: nowrap;
+                flex-direction: column;
+            }
+        }
+    }
+}

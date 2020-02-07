@@ -1,8 +1,7 @@
 .story-card-left {
     width: calc(50% - 182px);
-    padding: 0 90px 0 90px;
+    padding: 0 90px 40px 90px;
     border-right: 1px solid rgb(63, 63, 63);
-    padding-bottom: 40px;
     position: relative;
     // z-index: -1;
     .story-card-wrapper-left {
@@ -42,9 +41,8 @@
 
 .story-card-right {
     width: calc(50% - 182px);
-    padding: 0 90px 0 90px;
+    padding: 0 90px 40px 90px;
     border-left: 1px solid rgb(63, 63, 63);
-    padding-bottom: 40px;
     // position: relative;
     // z-index: -1;
     .story-card-wrapper-right {
@@ -361,57 +359,31 @@
     }
 }
 
-// @media only screen and (max-width: 1300px){
-//     .story-card-left {
-//         width: calc(50% - 182px);
-//         padding: 0 90px 0 90px;
-//         border-right: 1px solid rgb(63, 63, 63);
-//         padding-bottom: 40px;
-//         position: relative;
-//         // z-index: -1;
-//         .story-card-wrapper-left {
-//             border: 1px solid rgb(63, 63, 63);
-//             position: relative;
-//         }
-//         .story-card-wrapper-left:after {
-//             content: '';
-//             position: absolute;
-//             right: 0;
-//             top: 70%;
-//             width: 0;
-//             height: 0;
-//             border: 10px solid transparent;
-//             border-left-color: rgb(63, 63, 63);
-//             border-right: 0;
-//             margin-top: -10px;
-//             margin-right: -10px;
-//         }
-//     }
+ @media only screen and (max-width: 900px){
+    .story-card-left {
+        width: 100%;
+        padding: 0 0 40px 0;
+        border-right: none;
+        .story-card-wrapper-left:after {
+            display: none;
+        }
+    }
 
-//     .story-card-right {
-//         width: calc(50% - 182px);
-//         padding: 0 90px 0 90px;
-//         border-left: 1px solid rgb(63, 63, 63);
-//         padding-bottom: 40px;
-//         // position: relative;
-//         // z-index: -1;
-//         .story-card-wrapper-right {
-//             border: 1px solid rgb(63, 63, 63);
-//             position: relative;
-//         }
+    .story-card-left:after {
+        display: none;
+    }
+
+    .story-card-right {
+        width: 100%;
+        padding: 0 0 40px 0;
+        border-left: none;
+       .story-card-wrapper-right {
+            border: 1px solid rgb(63, 63, 63);
+            position: relative;
+        }
         
-//         .story-card-wrapper-right:after {
-//             content: '';
-//             position: absolute;
-//             left: 0;
-//             top: 70%;
-//             width: 0;
-//             height: 0;
-//             border: 10px solid transparent;
-//             border-right-color: rgb(63, 63, 63);
-//             border-left: 0;
-//             margin-top: -10px;
-//             margin-left: -11px;
-//         }
-//     }
-// }
+        .story-card-wrapper-right:after {
+            display: none;
+        }
+    } 
+}
