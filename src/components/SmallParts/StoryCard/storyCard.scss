@@ -81,6 +81,9 @@
         height: 100%;
         background-color: rgba(255, 165, 0, 0.7);
         cursor: pointer;
+        -webkit-animation: slideStoryCardOpen 2s ease;
+        -moz-animation: slideStoryCardOpen 2s ease;
+        -o-animation: slideStoryCardOpen 2s ease;
         animation: slideStoryCardOpen 2s ease;
         .story-card-image-hover-icons {
             border-radius: 50%;
@@ -105,6 +108,9 @@
         height: 100%;
         background-color: rgba(255, 165, 0, 0.7);
         cursor: pointer;
+        -webkit-animation: slideStoryCardOpen 2s ease;
+        -moz-animation: slideStoryCardOpen 2s ease;
+        -o-animation: slideStoryCardOpen 2s ease;
         animation: slideStoryCardOpen 2s ease;
         .story-card-image-hover-icons {
             border-radius: 50%;
@@ -114,6 +120,9 @@
             text-align: center;
             padding-top: 14px;
             opacity: 1;
+            -webkit-animation: iconAppear 2s ease;
+            -moz-animation: iconAppear 2s ease;
+            -o-animation: iconAppear 2s ease;
             animation: iconAppear 2s ease;
         }
     }
@@ -127,6 +136,9 @@
         height: 100%;
         background-color: rgba(255, 165, 0, 0.7);
         cursor: pointer;
+        -webkit-animation: slideStoryCardClose 1s ease;
+        -moz-animation: slideStoryCardClose 1s ease;
+        -o-animation: slideStoryCardClose 1s ease;
         animation: slideStoryCardClose 1s ease;
         .story-card-image-hover-icons {
             border-radius: 50%;
@@ -136,6 +148,9 @@
             text-align: center;
             padding-top: 14px;
             opacity: 0;
+            -webkit-animation: iconDisappear 1s ease;
+            -moz-animation: iconDisappear 1s ease;
+            -o-animation: iconDisappear 1s ease;
             animation: iconDisappear 1s ease;
         }
     }

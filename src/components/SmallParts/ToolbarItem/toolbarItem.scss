@@ -7,6 +7,9 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
     opacity: 1;
+    -webkit-animation: appearText 2s linear;
+    -moz-animation: appearText 2s linear;
+    -o-animation: appearText 2s linear;
     animation: appearText 2s linear;
     cursor: pointer;
     &:hover {
@@ -26,6 +29,9 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
     opacity: 1;
+    -webkit-animation: appearText 2s linear;
+    -moz-animation: appearText 2s linear;
+    -o-animation: appearText 2s linear;
     animation: appearText 2s linear;
     cursor: pointer;
 }
@@ -39,6 +45,9 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
     opacity: 0;
+    -webkit-animation: disappearText 0.3s linear;
+    -moz-animation: disappearText 0.3s linear;
+    -o-animation: disappearText 0.3s linear;
     animation: disappearText 0.3s linear;
 }
 
@@ -51,9 +60,36 @@
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 18px;
     opacity: 0;
+    -webkit-animation: disappearText 0.3s linear;
+    -moz-animation: disappearText 0.3s linear;
+    -o-animation: disappearText 0.3s linear;
     animation: disappearText 0.3s linear;
 }
 
+@-webkit-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
 @keyframes appear {
     from{
         color: white;
@@ -63,6 +99,30 @@
     }
 }
 
+@-webkit-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+@-o-keyframes appearText {
+    0%{
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+}
 @keyframes appearText {
     0%{
         opacity: 0;
@@ -72,6 +132,30 @@
     }
 }
 
+@-webkit-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
+@-o-keyframes disappearText {
+    0%{
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+}
 @keyframes disappearText {
     0%{
         opacity: 1;
