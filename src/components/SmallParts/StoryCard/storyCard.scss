@@ -4,6 +4,7 @@
     border-right: 1px solid rgb(63, 63, 63);
     padding-bottom: 40px;
     position: relative;
+    z-index: -1;
     .story-card-wrapper-left {
         border: 1px solid rgb(63, 63, 63);
         position: relative;
@@ -22,35 +23,6 @@
         margin-right: -10px;
     }
 }
-
-// .story-card-left-close {
-//     width: calc(50% - 182px);
-//     padding: 0 90px 0 90px;
-//     border-right: 1px solid rgb(63, 63, 63);
-//     padding-bottom: 40px;
-//     position: relative;
-//     opacity: 0;
-//     animation: closeStoryCard 1s linear;
-//     .story-card-wrapper-left {
-//         border: 1px solid rgb(63, 63, 63);
-//         position: relative;
-//         opacity: 0;
-//     }
-//     .story-card-wrapper-left:after {
-//         content: '';
-//         position: absolute;
-//         right: 0;
-//         top: 70%;
-//         width: 0;
-//         height: 0;
-//         border: 10px solid transparent;
-//         border-left-color: rgb(63, 63, 63);
-//         border-right: 0;
-//         margin-top: -10px;
-//         margin-right: -10px;
-//         opacity: 0;
-//     }
-// }
 
 .story-card-left:after {
     content: '';
@@ -73,6 +45,8 @@
     padding: 0 90px 0 90px;
     border-left: 1px solid rgb(63, 63, 63);
     padding-bottom: 40px;
+    position: relative;
+    z-index: -1;
     .story-card-wrapper-right {
         border: 1px solid rgb(63, 63, 63);
         position: relative;
@@ -92,35 +66,6 @@
         margin-left: -11px;
     }
 }
-
-// .story-card-right-close {
-//     width: calc(50% - 182px);
-//     padding: 0 90px 0 90px;
-//     border-left: 1px solid rgb(63, 63, 63);
-//     padding-bottom: 40px;
-//     opacity: 0;
-//     animation: closeStoryCard 1s linear;
-//     .story-card-wrapper-right {
-//         border: 1px solid rgb(63, 63, 63);
-//         position: relative;
-//         opacity: 0;
-//     }
-    
-//     .story-card-wrapper-right:after {
-//         content: '';
-//         position: absolute;
-//         left: 0;
-//         top: 70%;
-//         width: 0;
-//         height: 0;
-//         border: 10px solid transparent;
-//         border-right-color: rgb(63, 63, 63);
-//         border-left: 0;
-//         margin-top: -10px;
-//         margin-left: -11px;
-//         opacity: 0;
-//     }
-// }
 
 .story-card-image {
     background-color: rgb(18, 68, 159);

@@ -110,38 +110,52 @@ export const Stories = (props) => {
                             <H4 className="h4-white-centered">{el.date.month}</H4>
                             <H4 className="h4-white-centered">{el.date.year}</H4>
                         </div>
-                        <div 
-                            className={el.show ? "stories-wrapper" : "stories-wrapper-close"}
-                        >
-                            {el.storiesArray.map((el, i) => {
-                                let description = el.paragraphs[0].slice(0, 195);
-                                
-                                if(i % 2) {
-                                    return(
-                                        <StoryCard
-                                            key={i}
-                                            header={el.header}
-                                            description={description}
-                                            image={el.image}
-                                            iconComments={faComments}
-                                            show={show}
-                                        />
-                                    )
-                                }else{
-                                    return(
-                                        <StoryCard
-                                            key={i}
-                                            left
-                                            header={el.header}
-                                            description={description}
-                                            image={el.image}
-                                            iconComments={faComments}
-                                            show={show}
-                                        />
-                                    )
-                                }
-                            })}
-                        </div>
+
+                        <CSSTransition 
+                            in={el.show} 
+                            timeout={950}
+                            mountOnEnter
+                            unmountOnExit
+                            classNames={{
+                                enter: '',
+                                enterActive: 'stories-wrapper-open',
+                                exit: '',
+                                exitActive: 'stories-wrapper-close'
+                            }}
+                        > 
+                            <div 
+                                className="stories-wrapper"
+                            >
+                                {el.storiesArray.map((el, i) => {
+                                    let description = el.paragraphs[0].slice(0, 195);
+                                    
+                                    if(i % 2) {
+                                        return(
+                                            <StoryCard
+                                                key={i}
+                                                header={el.header}
+                                                description={description}
+                                                image={el.image}
+                                                iconComments={faComments}
+                                                show={show}
+                                            />
+                                        )
+                                    }else{
+                                        return(
+                                            <StoryCard
+                                                key={i}
+                                                left
+                                                header={el.header}
+                                                description={description}
+                                                image={el.image}
+                                                iconComments={faComments}
+                                                show={show}
+                                            />
+                                        )
+                                    }
+                                })}
+                            </div>
+                        </CSSTransition>
                     </div>
                 )
             })}</>
@@ -167,6 +181,7 @@ export const Stories = (props) => {
                     text="LOAD MORE POSTS"
                     onClick={loadMoreHandler}
                 />
+                <div className="utility-div"/>
             </div>
             
         </div>
