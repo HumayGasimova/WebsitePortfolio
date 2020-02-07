@@ -75,6 +75,29 @@
         width: 100%;
         opacity: 0.8;
     }
+    &:hover::after{
+            content: '.';
+            position: absolute;
+            left: 0%;
+            z-index: 1;
+            max-width: 1000px;
+            width: 100%;
+            height: 100%;
+            background-color:  rgba(255, 165, 0, 0.7);
+            cursor: pointer;
+            animation: slideStoryCardOpen 4s ease;
+            // right: 0;
+            // top: calc(70% - 25px);
+            // width: 10px;
+            // height: 10px;
+            // border: 0,5px solid transparent;
+            // border-radius: 50%;
+            // border-color: rgb(192, 55, 55);
+            // border-right: ss0;
+            // margin-top: -10px;
+            // margin-right: -6.5px;
+            // background-color: rgb(192, 55, 55);
+    }
 }
 
 .story-card-description {
@@ -114,12 +137,69 @@
     }
 }
 
-@keyframes closeStoryCard {
-    100%{
-        opacity: 1;
+@-webkit-keyframes slideStoryCardOpen {
+    from{
+        max-width: 0px;
     }
-    30% {
-        opacity: 0;
+    to {
+        max-width: 1000px;
+    }
+}
+@-moz-keyframes slideStoryCardOpen {
+    from{
+        max-width: 0px;
+    }
+    to {
+        max-width: 1000px;
+    }
+}
+@-o-keyframes slideStoryCardOpen {
+    from{
+        max-width: 0px;
+    }
+    to {
+        max-width: 1000px;
+    }
+}
+@keyframes slideStoryCardOpen {
+    from{
+        max-width: 0px;
+    }
+    to {
+        max-width: 1000px;
+    }
+}
+
+@-webkit-keyframes slideStoryCardClose {
+    from{
+        max-width: 1000px;
+    }
+    to {
+        max-width: 0px;
+    }
+}
+@-moz-keyframes slideStoryCardClose {
+    from{
+        max-width: 1000px;
+    }
+    to {
+        max-width: 0px;
+    }
+}
+@-o-keyframes slideStoryCardClose {
+    from{
+        max-width: 1000px;
+    }
+    to {
+        max-width: 0px;
+    }
+}
+@keyframes slideStoryCardClose {
+    from{
+        max-width: 1000px;
+    }
+    to {
+        max-width: 0px;
     }
 }
 
