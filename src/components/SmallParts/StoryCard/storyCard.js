@@ -151,7 +151,12 @@ export const StoryCard = (props) => {
                         > 
                         <div className="story-card-image-hover">
                             <div className="story-card-image-hover-icons">
-                                <FontAwesomeIcon icon={props.iconLink} size="lg" color="white"/>
+                                <FontAwesomeIcon 
+                                    icon={props.iconLink} 
+                                    size="lg" 
+                                    color="white"
+                                    onClick={props.onClick}
+                                />
                             </div>
                             <EW1/>
                             <div className="story-card-image-hover-icons">
@@ -168,11 +173,19 @@ export const StoryCard = (props) => {
                     <H5 textColor={Colors.EBB}>{props.description} [...]</H5>
                     <EH1/>
                     <div className="story-card-link">
-                        <div className="story-card-link-left">
+                        <div 
+                            className="story-card-link-left"
+                            onClick={props.onClick}
+                        >
                             <H4 className="h4-animation-with-icon">Read more</H4>
                         </div>
                         <EW1/>
-                        <FontAwesomeIcon icon={props.iconComments} size="sm" className="icon-comments"/>
+                        <FontAwesomeIcon 
+                            icon={props.iconComments} 
+                            size="sm" 
+                            className="icon-comments"
+                            onClick={props.onClick}
+                        />
                     </div>
                 </div>
             </div>

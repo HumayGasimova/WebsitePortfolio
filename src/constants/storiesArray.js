@@ -27,7 +27,8 @@ export const storiesArray = [
                     "openning",
                     "specials"
                 ],
-                popular: 4
+                popular: 4,
+                path: "new-york-opening"
             },
             {
                 id: 2,
@@ -46,7 +47,8 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 10
+                popular: 10,
+                path: "million-visits"
             },
             {
                 id: 3,
@@ -65,7 +67,8 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 100
+                popular: 100,
+                path: "exclusive-coffee"
             },
             {
                 id: 4,
@@ -84,7 +87,8 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 100
+                popular: 100,
+                path: "pacific-opening"
             },
         ]
     },
@@ -100,7 +104,7 @@ export const storiesArray = [
                 id: 5,
                 day: "5th",
                 image: "image5",
-                header: "NEW YORK OPENING",
+                header: "SYDNEY OPENING",
                 paragraphs: [
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin eu magna ut sollicitudin. Maecenas eu turpis enim. Phasellus sapien ligula, suscipit non urna elementum, dignissim accumsan mauris. Duis bibendum purus vitae purus scelerisque, ut mollis purus luctus. Vestibulum at auctor urna. Nam facilisis, justo ac pellentesque faucibus, libero magna congue tortor, eu varius ante nisi ac risus.',
                     'Curabitur quam lorem, cursus in convallis at, pulvinar quis sem. Integer porttitor ornare purus, vel efficitur ligula cursus vitae. Aliquam erat volutpat. Nulla eu tortor a dolor sodales suscipit. Donec interdum magna ut orci tempus, non porttitor nulla dapibus. Praesent in tristique ex. Suspendisse ut lacinia orci, ut feugiat lorem. Sed rhoncus, lorem et sodales accumsan, urna ipsum cursus mauris, aliquam tincidunt nisl mauris at mi. Quisque elit nisi, auctor id lectus et, ultricies auctor ligula. Vivamus semper quam id eros semper finibus. Fusce rutrum id nibh vitae dapibus. Sed lacus massa, dictum eget nulla iaculis, vehicula volutpat metus. Morbi mattis aliquet tincidunt. Suspendisse cursus interdum felise ultrices.',
@@ -116,13 +120,14 @@ export const storiesArray = [
                     "openning",
                     "specials"
                 ],
-                popular: 70
+                popular: 70,
+                path: "sydney-opening"
             },
             {
                 id: 6,
                 day: "19th",
                 image: "image6",
-                header: "SYDNEY OPENING",
+                header: "LONDON OPENING",
                 paragraphs: [
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin eu magna ut sollicitudin. Maecenas eu turpis enim. Phasellus sapien ligula, suscipit non urna elementum, dignissim accumsan mauris. Duis bibendum purus vitae purus scelerisque, ut mollis purus luctus. Vestibulum at auctor urna. Nam facilisis, justo ac pellentesque faucibus, libero magna congue tortor, eu varius ante nisi ac risus.',
                     'Curabitur quam lorem, cursus in convallis at, pulvinar quis sem. Integer porttitor ornare purus, vel efficitur ligula cursus vitae. Aliquam erat volutpat. Nulla eu tortor a dolor sodales suscipit. Donec interdum magna ut orci tempus, non porttitor nulla dapibus. Praesent in tristique ex. Suspendisse ut lacinia orci, ut feugiat lorem. Sed rhoncus, lorem et sodales accumsan, urna ipsum cursus mauris, aliquam tincidunt nisl mauris at mi. Quisque elit nisi, auctor id lectus et, ultricies auctor ligula. Vivamus semper quam id eros semper finibus. Fusce rutrum id nibh vitae dapibus. Sed lacus massa, dictum eget nulla iaculis, vehicula volutpat metus. Morbi mattis aliquet tincidunt. Suspendisse cursus interdum felise ultrices.',
@@ -133,7 +138,8 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 500
+                popular: 500,
+                path: "london-opening"
             }
         ]
     }

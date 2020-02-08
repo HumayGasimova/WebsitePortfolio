@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -102,6 +106,10 @@ export const Stories = (props) => {
         props.startInitStories(props.stories.length);
     } 
 
+    const storyOnClick = (path) => {
+        props.history.push(`/crypto-cafe/${path}`);
+    }
+
     const renderStoriesByMonth = () => {
         return(
             <>{props.stories.map((el, i) => {
@@ -145,6 +153,7 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
+                                                onClick={() => storyOnClick(el.path)}
                                             />
                                         )
                                     }else{
@@ -159,6 +168,7 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
+                                                onClick={() => storyOnClick(el.path)}
                                             />
                                         )
                                     }
@@ -208,5 +218,5 @@ export const Stories = (props) => {
             showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
         };
     }
-)(Stories);
+)(withRouter(Stories));
  
