@@ -95,12 +95,15 @@ export const Statistics = (props) => {
             <div className="statistics-items">
                 {statisticsArray.map((el,i) => {
                     return(
-                        <StatisticsItem
-                            key={i}
-                            icon={el.icon}
-                            number={el.number}
-                            header={el.header}
-                        />
+                        <div  key={i}>
+                            <EH1/>
+                            <StatisticsItem
+                                icon={el.icon}
+                                number={el.number}
+                                header={el.header}
+                            />
+                            <EH1/>
+                        </div>
                     )
                 })}
             </div>

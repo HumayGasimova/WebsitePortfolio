@@ -17,5 +17,12 @@
     .statistics {
         background-image: url('../../../images/caffeine-coffee-coffee-beans-cup-606545.jpg');
         background-size: 100% 100%;
+        .statistics-items {
+            background-color: rgba(41, 39, 38, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 170px 80px 170px 80px;
+        }
     }
 }
