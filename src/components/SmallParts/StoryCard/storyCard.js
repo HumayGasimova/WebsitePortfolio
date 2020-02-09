@@ -166,7 +166,10 @@ export const StoryCard = (props) => {
                     </CSSTransition>
                 </div>
                 <div className="story-card-description">
-                    <H3 className="h3-animation">{props.header}</H3>
+                    <H3 
+                        className="h3-animation"
+                        onClick={props.onClick}
+                    >{props.header}</H3>
                     <EH1/>
                     <DoubleLine1/>
                     <EH1/>

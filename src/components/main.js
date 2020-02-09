@@ -38,6 +38,7 @@ import Home from './Pages/Home/home';
 import AboutUs from './Pages/AboutUs/aboutUs';
 import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
 import OurStory from './Pages/OurStory/ourStory';
+import SingleStory from './Pages/SingleStory/singleStory';
 
 /**
 * Actions
@@ -102,6 +103,36 @@ export const Main = (props) => {
             <Toolbar/>
             <Sidebar/>
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/london-opening"}
+                    component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/sydney-opening"}
+                    component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/pacific-opening"}
+                    component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/exclusive-coffee"}
+                    component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/million-visits"}
+                    component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/new-york-opening"}
+                    component={SingleStory}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/our-story"}

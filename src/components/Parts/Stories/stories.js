@@ -106,8 +106,8 @@ export const Stories = (props) => {
         props.startInitStories(props.stories.length);
     } 
 
-    const storyOnClick = (path) => {
-        props.history.push(`/crypto-cafe/${path}`);
+    const storyOnClick = (path, obj) => {
+        props.history.push(`/crypto-cafe/${path}`,{obj});
     }
 
     const renderStoriesByMonth = () => {
@@ -153,7 +153,7 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
-                                                onClick={() => storyOnClick(el.path)}
+                                                onClick={() => storyOnClick(el.path, el)}
                                             />
                                         )
                                     }else{
@@ -168,7 +168,7 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
-                                                onClick={() => storyOnClick(el.path)}
+                                                onClick={() => storyOnClick(el.path, el)}
                                             />
                                         )
                                     }

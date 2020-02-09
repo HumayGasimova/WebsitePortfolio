@@ -30,7 +30,10 @@ export const H3 = (props) => {
     */
 
     return(
-        <div className={props.className ? props.className  : "h3"}>
+        <div 
+            className={props.className ? props.className  : "h3"}
+            onClick={props.onClick}
+        >
            {props.children}
         </div>
     );
