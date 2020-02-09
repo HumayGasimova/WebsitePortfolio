@@ -38,7 +38,7 @@ import Footer from '../../Parts/Footer/footer';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -74,7 +74,7 @@ export const SingleStory = (props) => {
     */
 
     useEffect(()=>{
-        console.log(props.location.state.obj)
+        console.log(props.obj)
     }, []);
 
     /**
@@ -87,16 +87,16 @@ export const SingleStory = (props) => {
                 <div className="single-story-wrapper-backgroud-div"/>
             </div>
             <div className="single-story-header-text">
-                <H1 className="h1-center">{props.location.state.obj.header}</H1>
+                <H1 className="h1-center">{props.singleStory.header}</H1>
                 <EH1/>
-                <H4 className="h4-white-centered">{`Home / ${props.location.state.obj.tag.join(", ")} / ${props.location.state.obj.header}`}</H4>
+                <H4 className="h4-white-centered">{`Home / ${props.singleStory.tag ? props.singleStory.tag.join(", "): []} / ${props.singleStory.header}`}</H4>
             </div>
             <div className="single-story-wrapper">
                 <SingleStoryContent
-                    image={props.location.state.obj.image}
-                    header={props.location.state.obj.header}
-                    paragraphs={props.location.state.obj.paragraphs}
-                    header={props.location.state.obj.header}
+                    image={props.singleStory.image}
+                    header={props.singleStory.header}
+                    paragraphs={props.singleStory.paragraphs ? props.singleStory.paragraphs : []}
+                    // header={props.singleStory.header}
                 />
             </div>
         </>
@@ -106,7 +106,7 @@ export const SingleStory = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            singleStory: Selectors.getSingleStoryState(state),
             // dots: Selectors.getDotsState(state)
         };
     },

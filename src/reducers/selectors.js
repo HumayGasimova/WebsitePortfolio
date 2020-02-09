@@ -29,3 +29,10 @@ export const getStoriesState = createSelector(
     [getStories],
     (x) => x
 );
+
+const getSingleStory = (state) => state.home.singleStory;
+
+export const getSingleStoryState = createSelector(
+    [getSingleStory],
+    (x) => x
+);

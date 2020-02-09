@@ -19,7 +19,8 @@ export const initialState = {
     menuItems: [],
     menuFood: [],
     menuDrinks: [],
-    stories: [] 
+    stories: [] ,
+    singleStory: {}
 }
 
 const initMenuItems = (state, action) => {
@@ -84,6 +85,13 @@ const showStoriesOfMonth = (state, action) => {
     };
 }
 
+const initSingleStory = (state, action) => {
+    return {
+        ...state,
+        singleStory: action.obj
+    };
+} 
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -97,7 +105,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.ADD_STORIES_BY_MONTH:
             return addStoriesByMonth(state, action);  
         case actionTypes.SHOW_STORIES_OF_MONTH:
-            return showStoriesOfMonth(state, action);  
+            return showStoriesOfMonth(state, action); 
+        case actionTypes.INIT_SINGLE_STORY:
+            return initSingleStory(state, action);   
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         default: 

@@ -50,10 +50,15 @@ import * as Actions from '../actions';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+// import * as Selectors from '../reducers/selectors';
 
 /**
+* Constants
+*/
 
+import {
+    storiesArray
+} from '../constants/storiesArray';
 
 /**
 * Main component definition and export
@@ -67,6 +72,7 @@ export const Main = (props) => {
 
     useEffect(() => {
         let path = props.location.pathname.slice(13);
+        let storyObj = {};
         let id;
         switch(path){
             case '':
@@ -92,6 +98,12 @@ export const Main = (props) => {
                 break;
         }
         props.activateMenuItem(id);
+        storiesArray.map(el => {
+            storyObj = el.storiesArray.find(x => x.path === path);
+            if(storyObj){
+                props.initSingleStory(storyObj);
+            }
+        })
     }, [])
 
     /**
@@ -161,14 +173,15 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            // singleStory: Selectors.getSingleStoryState(state),
             // dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {
         return {
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
+            initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
         };
     }
 )(Main);

@@ -48,3 +48,10 @@ export function showStoriesOfMonth(key) {
         key: key
     };
 };
+
+export function initSingleStory(obj) {
+    return { 
+        type: actionTypes.INIT_SINGLE_STORY,
+        obj: obj
+    };
+};
