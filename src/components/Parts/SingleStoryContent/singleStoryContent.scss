@@ -1,0 +1,33 @@
+.single-story-content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 20;
+    padding: 40px;
+    background-color: rgb(82, 78, 76);
+    cursor: context-menu;
+    .single-story-content-left-part {
+        // border: 2px solid red;
+        width: 60%;
+        // height: 100px;
+    }
+    .single-story-content-right-part {
+        // border: 2px solid red;
+        width: 40%;
+        // height: 100px;
+    }
+}
+
+// @media only screen and (max-width: 1300px){
+//     .statistics {
+//         background-image: url('../../../images/caffeine-coffee-coffee-beans-cup-606545.jpg');
+//         background-size: 100% 100%;
+//         .statistics-items {
+//             background-color: rgba(41, 39, 38, 0.8);
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: space-around;
+//             padding: 170px 80px 170px 80px;
+//         }
+//     }
+// }

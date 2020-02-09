@@ -122,7 +122,6 @@ export const StoryCard = (props) => {
                 return DefaultImage;
         }
     }
-    
 
     /**
     * Markup

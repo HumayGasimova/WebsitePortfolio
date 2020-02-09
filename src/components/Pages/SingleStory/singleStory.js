@@ -24,7 +24,7 @@ import './singleStory.scss';
 * Components
 */
 
-import Statistics from '../../Parts/Statistics/statistics'
+import SingleStoryContent from '../../Parts/SingleStoryContent/singleStoryContent';
 import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
 
@@ -89,14 +89,15 @@ export const SingleStory = (props) => {
             <div className="single-story-header-text">
                 <H1 className="h1-center">{props.location.state.obj.header}</H1>
                 <EH1/>
-                <Line2/>
-                <EH1/>
                 <H4 className="h4-white-centered">{`Home / ${props.location.state.obj.tag.join(", ")} / ${props.location.state.obj.header}`}</H4>
             </div>
             <div className="single-story-wrapper">
-                <Stories/>
-                <Statistics/>
-                <Footer/>
+                <SingleStoryContent
+                    image={props.location.state.obj.image}
+                    header={props.location.state.obj.header}
+                    paragraphs={props.location.state.obj.paragraphs}
+                    header={props.location.state.obj.header}
+                />
             </div>
         </>
     );
