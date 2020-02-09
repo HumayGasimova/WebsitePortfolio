@@ -1,8 +1,10 @@
 .content {
     .content-image {
+        background-color: rgb(18, 68, 159);
+        width: 100%;
+        filter: grayscale(65%);
         >img {
-            width: 300px;
-            height: 300px;
+            width: 100%;
         }
     }
     .content-additional-text {
