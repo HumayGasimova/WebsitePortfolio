@@ -5,6 +5,7 @@
         filter: grayscale(65%);
         >img {
             width: 100%;
+            opacity: 0.8;
         }
     }
     .content-additional-text {
