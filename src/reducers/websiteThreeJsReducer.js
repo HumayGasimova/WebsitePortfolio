@@ -35,11 +35,13 @@ const activateMenuItem = (state, action) => {
         return {...el, active: false}
     })
 
-    let menuItem = {...updatedMenuItems.find(x => x.id === action.id), active: true};
-    let menuIndex = updatedMenuItems.findIndex(x => x.id === action.id);
-
-    updatedMenuItems.splice(menuIndex, 1, menuItem);
-
+    if(action.id !== null){
+        let menuItem = {...updatedMenuItems.find(x => x.id === action.id), active: true};
+        let menuIndex = updatedMenuItems.findIndex(x => x.id === action.id);
+    
+        updatedMenuItems.splice(menuIndex, 1, menuItem);
+    }
+   
     return {
         ...state,
         menuItems: updatedMenuItems

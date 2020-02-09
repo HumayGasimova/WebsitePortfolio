@@ -108,6 +108,7 @@ export const Stories = (props) => {
 
     const storyOnClick = (path, obj) => {
         props.history.push(`/crypto-cafe/${path}`,{obj});
+        props.activateMenuItem(null);
     }
 
     const renderStoriesByMonth = () => {
@@ -216,6 +217,7 @@ export const Stories = (props) => {
         return {
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
 )(withRouter(Stories));
