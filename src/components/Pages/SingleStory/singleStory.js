@@ -32,7 +32,7 @@ import Footer from '../../Parts/Footer/footer';
 * Actions
 */
 
-// import * as Actions from '../../../actions';
+import * as Actions from '../../../actions';
 
 /**
 * Selectors
@@ -74,7 +74,7 @@ export const SingleStory = (props) => {
     */
 
     useEffect(()=>{
-        console.log(props.obj)
+        props.initSingleStory(props.location.state ? props.location.state.obj : {}); 
     }, []);
 
     /**
@@ -112,7 +112,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
+            initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
