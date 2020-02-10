@@ -75,6 +75,10 @@ export const AboutUs = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     /**
     * Markup
     */

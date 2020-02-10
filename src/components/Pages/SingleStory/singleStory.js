@@ -74,7 +74,8 @@ export const SingleStory = (props) => {
     */
 
     useEffect(()=>{
-        props.initSingleStory(props.location.state ? props.location.state.obj : {}); 
+        props.initSingleStory(props.location.state ? props.location.state.obj : {});
+        window.scrollTo(0, 0);
     }, []);
 
     /**

@@ -76,6 +76,10 @@ export const FoodAndDrink = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     /**
     * Markup
     */
