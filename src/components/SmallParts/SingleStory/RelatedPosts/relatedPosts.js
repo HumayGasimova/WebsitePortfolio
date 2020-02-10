@@ -77,11 +77,16 @@ export const RelatedPosts = (props) => {
     const renderRelatedPostsCards = () => {
      
         return(
-            <div>{props.relatedPosts.map((el, i) => {
+            <div className="related-posts-cards">{props.relatedPosts.map((el, i) => {
                 return (
                     <RelatedPostCard
                         key={i}
                         image={el.image}
+                        header={el.header}
+                        day={el.day}
+                        month={el.month}
+                        year={el.year}
+                        comments={el.comments}
                     />
                 )
             })}</div>
@@ -97,10 +102,10 @@ export const RelatedPosts = (props) => {
             <EH2/>
             <H3>RELATED POSTS</H3>
             <EH2/>
-            <div>
-                <div></div>
+            <div className="related-posts-wrapper">
+                <div className="related-posts-arrow-left"></div>
                 {renderRelatedPostsCards()}
-                <div></div>
+                <div className="related-posts-arrow-right"></div>
             </div>
         </div>
     );

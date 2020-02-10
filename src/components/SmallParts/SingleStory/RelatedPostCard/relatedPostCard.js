@@ -63,6 +63,7 @@ import {
     H3,
     H4,
     H5,
+    H6,
     EH1,
     EH2,
     EH4,
@@ -166,6 +167,11 @@ export const relatedPostCard = (props) => {
                         </div>
                     </div>
                 </CSSTransition>
+            </div>
+            <H4 className="h4-white">{props.header}</H4>
+            <div className="related-post-card-wrapper">
+                <H6 className="h6-pink-yanone-suva-grey">{`${props.month} ${props.day}, ${props.year} | `}</H6> 
+                <H6>{`${props.comments ? props.comments.length : 0} Comments`}</H6>
             </div>
         </div>
     );
