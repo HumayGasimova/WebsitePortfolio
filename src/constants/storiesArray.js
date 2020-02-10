@@ -10,6 +10,8 @@ export const storiesArray = [
             {
                 id: 1,
                 day: "20th",
+                month: "February",
+                year: "2020",
                 image: "image1",
                 header: "NEW YORK OPENING",
                 paragraphs: [
@@ -33,6 +35,8 @@ export const storiesArray = [
             {
                 id: 2,
                 day: "19th",
+                month: "February",
+                year: "2020",
                 image: "image2",
                 header: "1,000,000 VISITS",
                 paragraphs: [
@@ -53,6 +57,8 @@ export const storiesArray = [
             {
                 id: 3,
                 day: "12th",
+                month: "February",
+                year: "2020",
                 image: "image3",
                 header: "EXCLUSIVE COFFEE",
                 paragraphs: [
@@ -73,6 +79,8 @@ export const storiesArray = [
             {
                 id: 4,
                 day: "12th",
+                month: "February",
+                year: "2020",
                 image: "image4",
                 header: "PACIFIC OPENING",
                 paragraphs: [
@@ -103,6 +111,8 @@ export const storiesArray = [
             {
                 id: 5,
                 day: "5th",
+                month: "January",
+                year: "2020",
                 image: "image5",
                 header: "SYDNEY OPENING",
                 paragraphs: [
@@ -126,6 +136,8 @@ export const storiesArray = [
             {
                 id: 6,
                 day: "19th",
+                month: "January",
+                year: "2020",
                 image: "image6",
                 header: "LONDON OPENING",
                 paragraphs: [

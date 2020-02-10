@@ -36,3 +36,10 @@ export const getSingleStoryState = createSelector(
     [getSingleStory],
     (x) => x
 );
+
+const getRelatedPosts = (state) => state.home.relatedPosts;
+
+export const getRelatedPostsState = createSelector(
+    [getRelatedPosts],
+    (x) => x
+);

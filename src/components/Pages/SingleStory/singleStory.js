@@ -97,7 +97,7 @@ export const SingleStory = (props) => {
                     image={props.singleStory.image}
                     header={props.singleStory.header}
                     paragraphs={props.singleStory.paragraphs ? props.singleStory.paragraphs : []}
-                    // header={props.singleStory.header}
+                    id={props.singleStory.id}
                 />
             </div>
         </>

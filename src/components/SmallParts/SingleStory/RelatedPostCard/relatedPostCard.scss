@@ -1,0 +1,97 @@
+.related-post-card {
+    .related-post-card-image {
+        background-color: rgb(18, 68, 159);
+        width: 100%;
+        filter: grayscale(65%);
+        .related-post-card-image-hover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            max-width: 1000px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 165, 0, 0.7);
+            cursor: pointer;
+            -webkit-animation: slideStoryCardOpen 2s ease;
+            -moz-animation: slideStoryCardOpen 2s ease;
+            -o-animation: slideStoryCardOpen 2s ease;
+            animation: slideStoryCardOpen 2s ease;
+            .related-post-card-image-hover-icons {
+                border-radius: 50%;
+                width: 50px;
+                height: 36px;
+                background-color: rgb(82, 78, 76);
+                text-align: center;
+                padding-top: 14px;
+                opacity: 1;
+                &:hover {
+                    background-color: rgb(63, 63, 63);
+                }
+            }
+        }
+        .related-post-card-image-hover-open {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            z-index: 1;
+            max-width: 1000px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 165, 0, 0.7);
+            cursor: pointer;
+            -webkit-animation: slideStoryCardOpen 2s ease;
+            -moz-animation: slideStoryCardOpen 2s ease;
+            -o-animation: slideStoryCardOpen 2s ease;
+            animation: slideStoryCardOpen 2s ease;
+            .related-post-card-image-hover-icons {
+                border-radius: 50%;
+                width: 50px;
+                height: 36px;
+                background-color: rgb(82, 78, 76);
+                text-align: center;
+                padding-top: 14px;
+                opacity: 1;
+                -webkit-animation: iconAppear 2s ease;
+                -moz-animation: iconAppear 2s ease;
+                -o-animation: iconAppear 2s ease;
+                animation: iconAppear 2s ease;
+            }
+        }
+        .related-post-card-image-hover-close {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            z-index: 1;
+            max-width: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 165, 0, 0.7);
+            cursor: pointer;
+            -webkit-animation: slideStoryCardClose 1s ease;
+            -moz-animation: slideStoryCardClose 1s ease;
+            -o-animation: slideStoryCardClose 1s ease;
+            animation: slideStoryCardClose 1s ease;
+            .related-post-card-image-hover-icons {
+                border-radius: 50%;
+                width: 50px;
+                height: 36px;
+                background-color: rgb(82, 78, 76);
+                text-align: center;
+                padding-top: 14px;
+                opacity: 0;
+                -webkit-animation: iconDisappear 1s ease;
+                -moz-animation: iconDisappear 1s ease;
+                -o-animation: iconDisappear 1s ease;
+                animation: iconDisappear 1s ease;
+            }
+        }
+        >img {
+            width: 100%;
+            opacity: 0.8;
+        }
+    }
+}
+

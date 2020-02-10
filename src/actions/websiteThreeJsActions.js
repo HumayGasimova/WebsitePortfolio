@@ -55,3 +55,18 @@ export function initSingleStory(obj) {
         obj: obj
     };
 };
+
+export function startInitRelatedPosts(id) {
+    return { 
+        type: actionTypes.START_INIT_RELATED_POSTS,
+        currentStoryId: id
+    };
+};
+
+export function addRelatedPosts(array) {
+    return { 
+        type: actionTypes.ADD_RELATED_POSTS,
+        array: array
+    };
+};
+

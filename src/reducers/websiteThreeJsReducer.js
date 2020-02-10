@@ -20,7 +20,8 @@ export const initialState = {
     menuFood: [],
     menuDrinks: [],
     stories: [] ,
-    singleStory: {}
+    singleStory: {},
+    relatedPosts: []
 }
 
 const initMenuItems = (state, action) => {
@@ -92,6 +93,13 @@ const initSingleStory = (state, action) => {
     };
 } 
 
+const addRelatedPosts = (state, action) => {
+    return {
+        ...state,
+        relatedPosts: action.array
+    };
+} 
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -108,7 +116,11 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return showStoriesOfMonth(state, action); 
         case actionTypes.INIT_SINGLE_STORY:
             return initSingleStory(state, action);   
+        case actionTypes.ADD_RELATED_POSTS:
+            return addRelatedPosts(state, action);
         case actionTypes.SHOW_STORIES_OF_MONTH:
+            return state;
+        case actionTypes.START_INIT_RELATED_POSTS:
             return state;
         default: 
             return state;
