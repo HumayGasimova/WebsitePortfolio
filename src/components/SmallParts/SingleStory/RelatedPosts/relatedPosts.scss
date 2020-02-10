@@ -1,11 +1,22 @@
 .related-posts {
     .related-posts-wrapper {
-        width: 100%;
-        overflow: hidden;
-        // display: flex;
-        // overflow: hidden;
+        display: flex;
+        align-items: center;
+        .related-posts-inner-wrapper {
+            width: 100%;
+            overflow: hidden;
+       
+            // overflow: hidden;
+            .related-post-cards {
+                display: flex;
+                height: 233px;
+                width: 166.5%;
+                position: relative;
+                left: -33.3%;
+            }
+        }
         .related-posts-arrow-left {
-            border: 2px solid red;
+            // border: 2px solid red;
             width: 30px;
             height: 30px;
             // position: absolute;
@@ -14,20 +25,13 @@
 
         }
         .related-posts-arrow-right {
-            border: 2px solid red;
+            // border: 2px solid red;
             width: 30px;
             height: 30px;
             // position: absolute;
             left: 00%;
             z-index: 1;
 
-        }
-        .related-posts-cards {
-            display: flex;
-            height: 233px;
-            width: 166.5%;
-            position: relative;
-            left: -33.3%;
         }
     }
 }

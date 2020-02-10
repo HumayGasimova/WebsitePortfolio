@@ -141,17 +141,17 @@ export const relatedPostCard = (props) => {
             >
                 <img src={loadImage(props.image)}/>
                 <CSSTransition 
-                        in={isHovering} 
-                        timeout={2000}
-                        mountOnEnter
-                        unmountOnExit
-                        classNames={{
-                            enter: '',
-                            enterActive: 'related-post-card-image-hover-open',
-                            exit: '',
-                            exitActive: 'related-post-card-image-hover-close'
-                        }}
-                    > 
+                    in={isHovering} 
+                    timeout={2000}
+                    mountOnEnter
+                    unmountOnExit
+                    classNames={{
+                        enter: '',
+                        enterActive: 'related-post-card-image-hover-open',
+                        exit: '',
+                        exitActive: 'related-post-card-image-hover-close'
+                    }}
+                > 
                     <div className="related-post-card-image-hover">
                         <div className="related-post-card-image-hover-icons">
                             <FontAwesomeIcon 
