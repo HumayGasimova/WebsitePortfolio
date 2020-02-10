@@ -168,6 +168,7 @@ export const relatedPostCard = (props) => {
                     </div>
                 </CSSTransition>
             </div>
+            <EH1/>
             <H4 className="h4-white">{props.header}</H4>
             <div className="related-post-card-wrapper">
                 <H6 className="h6-pink-yanone-suva-grey">{`${props.month} ${props.day}, ${props.year} | `}</H6> 

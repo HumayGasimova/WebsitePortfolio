@@ -103,9 +103,9 @@ export const RelatedPosts = (props) => {
             <H3>RELATED POSTS</H3>
             <EH2/>
             <div className="related-posts-wrapper">
-                <div className="related-posts-arrow-left"></div>
+                {/* <div className="related-posts-arrow-left"></div> */}
                 {renderRelatedPostsCards()}
-                <div className="related-posts-arrow-right"></div>
+                {/* <div className="related-posts-arrow-right"></div> */}
             </div>
         </div>
     );
