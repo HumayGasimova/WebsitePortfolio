@@ -5,14 +5,13 @@
         .related-posts-inner-wrapper {
             width: 100%;
             overflow: hidden;
-       
             // overflow: hidden;
             .related-post-cards {
                 display: flex;
                 height: 233px;
                 width: 233%;
                 position: relative;
-                left: -33.3%;
+                left: -300px;
                 background-color: white;
             }
         }
@@ -37,3 +36,6 @@
     }
 }
 
+.shifting {
+    transition: left .2s ease-out;
+}

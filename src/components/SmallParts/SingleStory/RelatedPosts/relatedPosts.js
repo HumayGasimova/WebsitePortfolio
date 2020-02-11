@@ -92,64 +92,113 @@ export const RelatedPosts = (props) => {
         let next = document.getElementById('next');
 
         slide(slider, sliderItems, prev, next);
-
-
-
     }, [props.id]);
 
     const slide = (slider, sliderItems, prev, nex) => {
-        let isDown = false;
         let posX1 = 0;
         let posX2 = 0;
         let posInitial;
         let posFinal;
-        let threshold;
-
+        let threshold = 100;
         let slides = sliderItems.getElementsByClassName('related-post-card');
         let relatedPostsArray = props.relatedPosts;
         let relatedPostsArrayLength = relatedPostsArray.length;
-        let slideSize = slides.length ? slides[0].offsetWidth : null;
+        let slideSize = slides.length ? sliderItems.getElementsByClassName('related-post-card')[0].offsetWidth : null;
         let index = 0;
         let allowShift = true;
         props.addRelatedPostsElement();
-   
-        sliderItems.addEventListener('mousedown', (e) => {
-            isDown = true;
-        console.log("mousedown")
-        });
-        sliderItems.addEventListener('mouseleave', () => {
-            isDown = false
-            console.log("mouseleave")
-        });
-        sliderItems.addEventListener('mouseup', () => {
-            isDown = false
-            console.log("mouseup")
-        });
-        sliderItems.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            console.log("mousemove")
-            // feedbacksDiv.scrollLeft = (scrollLeft - walk) * 4; // scrolling with speed
-            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
-            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
-        });
 
-        // let slides = sliderItems.getElementsByClassName('related-post-card');
-        // let slidesLength = slides.length;
-        // let slideSize = slides.length ? slides[0].offsetWidth : null;
-        // let firstSlide = slides[0];
-        // let lastSlide = slides[slidesLength - 1];
-        // let cloneFirst = firstSlide ? firstSlide.cloneNode(true) : firstSlide;
-        // let cloneLast = lastSlide ? lastSlide.cloneNode(true) : lastSlide;
-        // let index = 0;
-        // let allowShift = true;
+        // sliderItems.addEventListener('mousedown', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
 
-        // console.log(cloneFirst)
-        // sliderItems.appendChild(cloneFirst);
-        // sliderItems.insertBefore(cloneLast, firstSlide);
+        sliderItems.addEventListener('touchstart', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
+        sliderItems.addEventListener('touched', (e) => dragEnd(e, sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index));
+        sliderItems.addEventListener('touchmove', (e) => dragAction(e, sliderItems, posX1, posX2));
+        sliderItems.addEventListener('transitionend', (e) => checkIndex(sliderItems, index, relatedPostsArrayLength, slideSize, allowShift));
+
+        prev.addEventListener('click', () => shiftSlide(-1, null, sliderItems, posInitial, slideSize, allowShift, index));
+        next.addEventListener('click', () => shiftSlide(1, null, sliderItems, posInitial, slideSize, allowShift, index));
+    }
+
+    const dragStart = (e, sliderItems, posInitial, posFinal, threshold, posX1, slideSize, allowShift, index) => {
+        e = e || window.event;
+        e.preventDefault();
+        posInitial = sliderItems.offsetLeft;
+        console.log(posInitial)
+        if(e.type === 'touchstart'){
+            posX1 = e.touches[0].clientX;
+        }else {
+            posX1 = e.clientX;
+            document.onmouseup = () => dragEnd(sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index);
+            document.onmousemove = () => dragAction(e, sliderItems, posInitial, posX1);
+        }
+    }
+
+    const dragAction = (e, sliderItems, posX1, posX2) => {
+        e = e || window.event;
+      
+        if(e.type === 'touchstart'){
+            posX2 = posX1 - e.touches[0].clientX;
+            posX1 = e.touches[0].clientX;
+        }else {
+            posX2 = posX1 - e.clientX;
+            posX1 = e.clientX;
+        }
+        sliderItems.style.left = (sliderItems.offsetLeft - posX2) + "px";
+    }
+
+    const dragEnd = (sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index) => {
+        posFinal = sliderItems.offsetLeft;
+      
+        if(posFinal - posInitial > threshold){
+            shiftSlide(1, 'drag', sliderItems, posInitial, slideSize, allowShift, index);
+        }else if (posFinal - posInitial < threshold){
+            shiftSlide(-1, 'drag', sliderItems, posInitial, slideSize, allowShift, index);
+        }else {
+            sliderItems.style.left = (posInitial) + "px";
+        }
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
+    const shiftSlide = (dir, action, sliderItems, posInitial, slideSize, allowShift, index) => {
+        console.log("dd")
+        sliderItems.classList.add('shifting');
+        if(allowShift) {
+            if(!action) {
+                posInitial = sliderItems.offsetLeft;
+            }
+            if(dir === 1) {
+                sliderItems.style.left = (posInitial - slideSize) + "px";
+                console.log("length1",  sliderItems.style.left)
+                index ++;
+            } else if (dir === -1) {
+                sliderItems.style.left = (posInitial + slideSize) + "px";
+                console.log("length2",  sliderItems.style.left)
+                index --;
+            }
+        }
+        allowShift = false;
+    }
+
+    const checkIndex = (sliderItems, index, relatedPostsArrayLength, slideSize, allowShift) => {
+        sliderItems.classList.remove("shifting");
+
+        if(index === -1){
+            sliderItems.style.left = -(relatedPostsArrayLength * slideSize) + "px";
+            console.log("none", sliderItems.style.left)
+            index = relatedPostsArrayLength - 1;
+        }
+
+        if(index === relatedPostsArrayLength){
+            sliderItems.style.left = -(1 * slideSize) + "px";
+            console.log("left", sliderItems.style.left)
+            index = 0;
+        }
+
+        allowShift = true;
     }
 
     const renderRelatedPostsCards = () => {
-     
         return(
             <div className="related-post-cards" id="slides">{props.relatedPosts.map((el, i) => {
                 return (
