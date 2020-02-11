@@ -10,9 +10,10 @@
             .related-post-cards {
                 display: flex;
                 height: 233px;
-                width: 166.5%;
+                width: 233%;
                 position: relative;
                 left: -33.3%;
+                background-color: white;
             }
         }
         .related-posts-arrow-left {
@@ -20,7 +21,7 @@
             width: 30px;
             height: 30px;
             // position: absolute;
-            right: 00%;
+            right: 0%;
             z-index: 1;
 
         }
@@ -29,7 +30,7 @@
             width: 30px;
             height: 30px;
             // position: absolute;
-            left: 00%;
+            left: 0%;
             z-index: 1;
 
         }

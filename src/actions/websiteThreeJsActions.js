@@ -70,3 +70,10 @@ export function addRelatedPosts(array) {
     };
 };
 
+export function addRelatedPostsElement(str) {
+    return { 
+        type: actionTypes.ADD_RELATED_POSTS_ELEMENT,
+        str: str
+    };
+};
+

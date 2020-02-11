@@ -100,6 +100,21 @@ const addRelatedPosts = (state, action) => {
     };
 } 
 
+const addRelatedPostsElement = (state, action) => {
+    let updatedRelatedPosts = [...state.relatedPosts];
+    let firstElement = state.relatedPosts[0];
+    let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
+  
+    updatedRelatedPosts.unshift(lastElement);
+    updatedRelatedPosts.push(firstElement);
+
+    return {
+        ...state,
+        relatedPosts: updatedRelatedPosts
+    };
+} 
+
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -118,6 +133,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initSingleStory(state, action);   
         case actionTypes.ADD_RELATED_POSTS:
             return addRelatedPosts(state, action);
+        case actionTypes.ADD_RELATED_POSTS_ELEMENT:
+            return addRelatedPostsElement(state, action);
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         case actionTypes.START_INIT_RELATED_POSTS:

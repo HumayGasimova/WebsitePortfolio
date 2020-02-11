@@ -93,27 +93,59 @@ export const RelatedPosts = (props) => {
 
         slide(slider, sliderItems, prev, next);
 
+
+
     }, [props.id]);
 
     const slide = (slider, sliderItems, prev, nex) => {
+        let isDown = false;
         let posX1 = 0;
         let posX2 = 0;
         let posInitial;
         let posFinal;
         let threshold;
+
         let slides = sliderItems.getElementsByClassName('related-post-card');
-        let slidesLength = slides.length;
+        let relatedPostsArray = props.relatedPosts;
+        let relatedPostsArrayLength = relatedPostsArray.length;
         let slideSize = slides.length ? slides[0].offsetWidth : null;
-        let firstSlide = slides[0];
-        let lastSlide = slides[slidesLength - 1];
-        let cloneFirst = firstSlide ? firstSlide.cloneNode(true) : null;
-        let cloneLast = lastSlide ? lastSlide.cloneNode(true) : null;
         let index = 0;
         let allowShift = true;
+        props.addRelatedPostsElement();
+   
+        sliderItems.addEventListener('mousedown', (e) => {
+            isDown = true;
+        console.log("mousedown")
+        });
+        sliderItems.addEventListener('mouseleave', () => {
+            isDown = false
+            console.log("mouseleave")
+        });
+        sliderItems.addEventListener('mouseup', () => {
+            isDown = false
+            console.log("mouseup")
+        });
+        sliderItems.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            console.log("mousemove")
+            // feedbacksDiv.scrollLeft = (scrollLeft - walk) * 4; // scrolling with speed
+            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
+            // console.log("mouseMove", isDown, {scrollLeft,startX,x,walk});
+        });
 
-        console.log(cloneFirst)
+        // let slides = sliderItems.getElementsByClassName('related-post-card');
+        // let slidesLength = slides.length;
+        // let slideSize = slides.length ? slides[0].offsetWidth : null;
+        // let firstSlide = slides[0];
+        // let lastSlide = slides[slidesLength - 1];
+        // let cloneFirst = firstSlide ? firstSlide.cloneNode(true) : firstSlide;
+        // let cloneLast = lastSlide ? lastSlide.cloneNode(true) : lastSlide;
+        // let index = 0;
+        // let allowShift = true;
+
+        // console.log(cloneFirst)
         // sliderItems.appendChild(cloneFirst);
-        // sliderItems.appendChild(cloneLast, firstSlide);
+        // sliderItems.insertBefore(cloneLast, firstSlide);
     }
 
     const renderRelatedPostsCards = () => {
@@ -178,6 +210,7 @@ export default connect(
     (dispatch) => {
         return {
             startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
         };
     }
 )(RelatedPosts);
