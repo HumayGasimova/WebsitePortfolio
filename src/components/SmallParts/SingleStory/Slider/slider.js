@@ -15,9 +15,24 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+    faArrowAltCircleLeft,
+    faArrowAltCircleRight
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
 * Components
 */
+
+import RelatedPostCard from '../RelatedPostCard/relatedPostCard';
 
 /**
 * Actions
@@ -69,13 +84,15 @@ export const Slider = (props) => {
             threshold = 100,
             slides = items.getElementsByClassName('slide'),
             slidesLength = slides.length,
-            slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
+            slideSize = slides.length ? items.getElementsByClassName('slide')[0].offsetWidth : null,
             firstSlide = slides[0],
             lastSlide = slides[slidesLength - 1],
             cloneFirst = firstSlide.cloneNode(true),
             cloneLast = lastSlide.cloneNode(true),
             index = 0,
             allowShift = true;
+console.log(cloneFirst)
+            // props.addRelatedPostsElement();
         
         // Clone first and last slide
         items.appendChild(cloneFirst);
@@ -173,6 +190,26 @@ export const Slider = (props) => {
         }
     }
 
+    const renderSlides = () => {
+        return(
+            <div id="slides" className="slides">{props.slidesArray.map((el, i) => {
+                return (
+                    <div className="slide">
+                        <RelatedPostCard
+                            key={i}
+                            image={el.image}
+                            header={el.header}
+                            day={el.day}
+                            month={el.month}
+                            year={el.year}
+                            comments={el.comments}
+                        />
+                    </div>
+                )
+            })}</div>
+        )
+    }
+
     /**
     * Markup
     */
@@ -182,20 +219,33 @@ export const Slider = (props) => {
             id="slider" 
             className="slider"
         >
+            <div className="related-posts-arrow-left" id="prev">
+                <FontAwesomeIcon 
+                    icon={faArrowAltCircleLeft} 
+                    size="lg" 
+                    color="white"
+                />
+            </div>
             <div className="wrapper">
-            <div 
-                id="slides" 
-                className="slides"
-            >
-                <span className="slide">Slide 1</span>
-                <span className="slide">Slide 2</span>
-                <span className="slide">Slide 3</span>
-                <span className="slide">Slide 4</span>
-                <span className="slide">Slide 5</span>
+                {/* <div 
+                    id="slides" 
+                    className="slides"
+                >
+                    <span className="slide">Slide 1</span>
+                    <span className="slide">Slide 2</span>
+                    <span className="slide">Slide 3</span>
+                    <span className="slide">Slide 4</span>
+                    <span className="slide">Slide 5</span>
+                </div> */}
+                {renderSlides()}
             </div>
+            <div className="related-posts-arrow-right" id="next">
+                <FontAwesomeIcon 
+                    icon={faArrowAltCircleRight} 
+                    size="lg" 
+                    color="white"
+                />
             </div>
-            <a id="prev" className="control prev"></a>
-            <a id="next" className="control next"></a>
         </div>
     );
 }
@@ -208,7 +258,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
         };
     }
 )(Slider);

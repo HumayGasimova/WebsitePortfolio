@@ -87,10 +87,10 @@ export const SingleStoryContent = (props) => {
                     paragraphs={props.paragraphs}
                     // header={props.header}
                 />
-                {/* <RelatedPosts
+                <RelatedPosts
                     id={props.id}
-                /> */}
-                <Slider/>
+                />
+                {/* <Slider/> */}
             </div>
             <div className="single-story-content-right-part">
             
