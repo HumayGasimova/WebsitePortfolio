@@ -101,14 +101,13 @@ export const RelatedPosts = (props) => {
         let posFinal;
         let threshold = 100;
         let slides = sliderItems.getElementsByClassName('related-post-card');
-        let relatedPostsArray = props.relatedPosts;
-        let relatedPostsArrayLength = relatedPostsArray.length;
+        let relatedPostsArrayLength = props.relatedPosts.length;
         let slideSize = slides.length ? sliderItems.getElementsByClassName('related-post-card')[0].offsetWidth : null;
         let index = 0;
         let allowShift = true;
         props.addRelatedPostsElement();
 
-        // sliderItems.addEventListener('mousedown', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
+        sliderItems.addEventListener('mousedown', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
 
         sliderItems.addEventListener('touchstart', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
         sliderItems.addEventListener('touched', (e) => dragEnd(e, sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index));

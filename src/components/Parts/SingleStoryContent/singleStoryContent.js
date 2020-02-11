@@ -27,6 +27,7 @@ import './singleStoryContent.scss';
 
 import Content from '../../SmallParts/SingleStory/Content/content';
 import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
+import Slider from '../../SmallParts/SingleStory/Slider/slider';
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
@@ -86,9 +87,10 @@ export const SingleStoryContent = (props) => {
                     paragraphs={props.paragraphs}
                     // header={props.header}
                 />
-                <RelatedPosts
+                {/* <RelatedPosts
                     id={props.id}
-                />
+                /> */}
+                <Slider/>
             </div>
             <div className="single-story-content-right-part">
             
