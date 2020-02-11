@@ -198,69 +198,69 @@ export const RelatedPosts = (props) => {
     //     allowShift = true;
     // }
 
-    // const renderRelatedPostsCards = () => {
-    //     return(
-    //         <div className="related-post-cards" id="slides">{props.relatedPosts.map((el, i) => {
-    //             return (
-    //                 <div key={i} className="related-post-card">
-    //                     <RelatedPostCard
-    //                         key={i}
-    //                         image={el.image}
-    //                         header={el.header}
-    //                         day={el.day}
-    //                         month={el.month}
-    //                         year={el.year}
-    //                         comments={el.comments}
-    //                     />
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
+    const renderRelatedPostsCards = () => {
+        return(
+            <div className="related-post-cards" id="slides">{props.relatedPosts.map((el, i) => {
+                return (
+                    <div key={i} className="related-post-card">
+                        <RelatedPostCard
+                            key={i}
+                            image={el.image}
+                            header={el.header}
+                            day={el.day}
+                            month={el.month}
+                            year={el.year}
+                            comments={el.comments}
+                        />
+                    </div>
+                )
+            })}</div>
+        )
+    }
 
     /**
     * Markup
     */
-
-    return(
-        <div className="related-posts">
-            <EH2/>
-            <H3>RELATED POSTS</H3>
-            <EH2/>
-            <Slider
-                slidesArray={props.relatedPosts}
-            />
-        </div>
-    );
 
     // return(
     //     <div className="related-posts">
     //         <EH2/>
     //         <H3>RELATED POSTS</H3>
     //         <EH2/>
-    //         <div className="related-posts-wrapper" id="slider">
-    //             <div className="related-posts-arrow-left" id="prev">
-    //                 <FontAwesomeIcon 
-    //                     icon={faArrowAltCircleLeft} 
-    //                     size="lg" 
-    //                     color="white"
-    //                 />
-    //             </div>
-    //             <div className="related-posts-inner-wrapper">
-                   
-    //                 {renderRelatedPostsCards()}
-                    
-    //             </div>
-    //             <div className="related-posts-arrow-right" id="next">
-    //                 <FontAwesomeIcon 
-    //                     icon={faArrowAltCircleRight} 
-    //                     size="lg" 
-    //                     color="white"
-    //                 />
-    //             </div>
-    //         </div>
+    //         <Slider
+    //             slidesArray={props.relatedPosts}
+    //         />
     //     </div>
     // );
+
+    return(
+        <div className="related-posts">
+            <EH2/>
+            <H3>RELATED POSTS</H3>
+            <EH2/>
+            <div className="related-posts-wrapper" id="slider">
+                <div className="related-posts-arrow-left" id="prev">
+                    <FontAwesomeIcon 
+                        icon={faArrowAltCircleLeft} 
+                        size="lg" 
+                        color="white"
+                    />
+                </div>
+                <div className="related-posts-inner-wrapper">
+                   
+                    {renderRelatedPostsCards()}
+                    
+                </div>
+                <div className="related-posts-arrow-right" id="next">
+                    <FontAwesomeIcon 
+                        icon={faArrowAltCircleRight} 
+                        size="lg" 
+                        color="white"
+                    />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default connect(
