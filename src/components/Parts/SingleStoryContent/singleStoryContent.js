@@ -12,6 +12,10 @@ import {
 } from 'react-redux';
 
 import {
+    bindActionCreators
+} from 'redux';
+
+import {
     withRouter
 } from 'react-router-dom';
 
@@ -29,6 +33,19 @@ import Content from '../../SmallParts/SingleStory/Content/content';
 import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
 import Slider from '../../SmallParts/SingleStory/Slider/slider';
 // import * as Selectors from '../../../reducers/selectors';
+
+/**
+* Actions
+*/
+
+import * as Actions from '../../../actions';
+
+
+/**
+* Selectors
+*/
+
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -74,6 +91,10 @@ export const SingleStoryContent = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        // props.startInitRelatedPosts(props.id);
+    }, [props.id]);
+
     /**
     * Markup
     */
@@ -88,6 +109,7 @@ export const SingleStoryContent = (props) => {
                     // header={props.header}
                 />
                 <RelatedPosts
+                    // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
                 />
                 {/* <Slider/> */}
@@ -98,15 +120,16 @@ export const SingleStoryContent = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
+            relatedPosts: Selectors.getRelatedPostsState(state),
         };
     },
     (dispatch) => {
         return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
         };
     }
 )(SingleStoryContent);

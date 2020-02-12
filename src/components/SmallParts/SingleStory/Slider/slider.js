@@ -173,7 +173,7 @@ console.log(cloneFirst)
           allowShift = false;
         }
           
-        function checkIndex (){
+        function checkIndex (e){
           items.classList.remove('shifting');
       
           if (index == -1) {
@@ -185,30 +185,30 @@ console.log(cloneFirst)
             items.style.left = -(1 * slideSize) + "px";
             index = 0;
           }
-          
+          console.log(index)
           allowShift = true;
         }
     }
 
-    const renderSlides = () => {
-        return(
-            <div id="slides" className="slides">{props.slidesArray.map((el, i) => {
-                return (
-                    <div className="slide">
-                        <RelatedPostCard
-                            key={i}
-                            image={el.image}
-                            header={el.header}
-                            day={el.day}
-                            month={el.month}
-                            year={el.year}
-                            comments={el.comments}
-                        />
-                    </div>
-                )
-            })}</div>
-        )
-    }
+    // const renderSlides = () => {
+    //     return(
+    //         <div id="slides" className="slides">{props.slidesArray.map((el, i) => {
+    //             return (
+    //                 <div className="slide">
+    //                     <RelatedPostCard
+    //                         key={i}
+    //                         image={el.image}
+    //                         header={el.header}
+    //                         day={el.day}
+    //                         month={el.month}
+    //                         year={el.year}
+    //                         comments={el.comments}
+    //                     />
+    //                 </div>
+    //             )
+    //         })}</div>
+    //     )
+    // }
 
     /**
     * Markup
@@ -227,17 +227,17 @@ console.log(cloneFirst)
                 />
             </div>
             <div className="wrapper">
-                {/* <div 
+                <div 
                     id="slides" 
                     className="slides"
                 >
-                    <span className="slide">Slide 1</span>
+                    {/* <span className="slide">Slide 1</span>
                     <span className="slide">Slide 2</span>
                     <span className="slide">Slide 3</span>
                     <span className="slide">Slide 4</span>
-                    <span className="slide">Slide 5</span>
-                </div> */}
-                {renderSlides()}
+                    <span className="slide">Slide 5</span> */}
+                    {renderSlides()}
+                </div>
             </div>
             <div className="related-posts-arrow-right" id="next">
                 <FontAwesomeIcon 

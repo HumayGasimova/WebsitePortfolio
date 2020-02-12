@@ -86,123 +86,139 @@ export const RelatedPosts = (props) => {
 
     useEffect(() => {
         props.startInitRelatedPosts(props.id);
+        props.addRelatedPostsElement();
+        let slider = document.getElementById('slider');
+        let sliderItems = document.getElementById('slides');
+        let prev = document.getElementById('prev');
+        let next = document.getElementById('next');
 
-        // let slider = document.getElementById('slider');
-        // let sliderItems = document.getElementById('slides');
-        // let prev = document.getElementById('prev');
-        // let next = document.getElementById('next');
-
-        // slide(slider, sliderItems, prev, next);
+        slide(slider, sliderItems, prev, next);
     }, [props.id]);
 
-    // const slide = (slider, sliderItems, prev, nex) => {
-    //     let posX1 = 0;
-    //     let posX2 = 0;
-    //     let posInitial;
-    //     let posFinal;
-    //     let threshold = 100;
-    //     let slides = sliderItems.getElementsByClassName('related-post-card');
-    //     let relatedPostsArrayLength = props.relatedPosts.length;
-    //     let slideSize = slides.length ? sliderItems.getElementsByClassName('related-post-card')[0].offsetWidth : null;
-    //     let index = 0;
-    //     let allowShift = true;
-    //     props.addRelatedPostsElement();
+    const slide = (wrapper, items, prev, next) => {
+        var posX1 = 0,
+            posX2 = 0,
+            posInitial,
+            posFinal,
+            threshold = 100,
+            slides = items.getElementsByClassName('related-post-cards'),
+            slidesLength = props.relatedPosts.length,
+            slideSize = slidesLength !== 0 ? document.getElementById('slide').offsetWidth : null,
+            // firstSlide = slides[0],
+            // lastSlide = slides[slidesLength - 1],
+            // cloneFirst = firstSlide.cloneNode(true),
+            // cloneLast = lastSlide.cloneNode(true),
+            index = 0,
+            allowShift = true;
+        console.log(slidesLength)
+        
+        console.log(props.relatedPosts.length)
+        // Clone first and last slide
+        // items.appendChild(cloneFirst);
+        // items.insertBefore(cloneLast, firstSlide);
+        // wrapper.classList.add('loaded');
 
-    //     sliderItems.addEventListener('mousedown', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
+        // Mouse events
+        items.onmousedown = dragStart;
 
-    //     sliderItems.addEventListener('touchstart', (e) => dragStart(e, sliderItems, posInitial, posFinal, threshold, posX1));
-    //     sliderItems.addEventListener('touched', (e) => dragEnd(e, sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index));
-    //     sliderItems.addEventListener('touchmove', (e) => dragAction(e, sliderItems, posX1, posX2));
-    //     sliderItems.addEventListener('transitionend', (e) => checkIndex(sliderItems, index, relatedPostsArrayLength, slideSize, allowShift));
+        // Touch events
+        // items.addEventListener('touchstart', dragStart);
+        // items.addEventListener('touchend', dragEnd);
+        // items.addEventListener('touchmove', dragAction);
 
-    //     prev.addEventListener('click', () => shiftSlide(-1, null, sliderItems, posInitial, slideSize, allowShift, index));
-    //     next.addEventListener('click', () => shiftSlide(1, null, sliderItems, posInitial, slideSize, allowShift, index));
-    // }
+        // Click events
+        prev.addEventListener('click', () => { shiftSlide(-1) });
+        next.addEventListener('click', () => { shiftSlide(1) });
 
-    // const dragStart = (e, sliderItems, posInitial, posFinal, threshold, posX1, slideSize, allowShift, index) => {
-    //     e = e || window.event;
-    //     e.preventDefault();
-    //     posInitial = sliderItems.offsetLeft;
-    //     console.log(posInitial)
-    //     if(e.type === 'touchstart'){
-    //         posX1 = e.touches[0].clientX;
-    //     }else {
-    //         posX1 = e.clientX;
-    //         document.onmouseup = () => dragEnd(sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index);
-    //         document.onmousemove = () => dragAction(e, sliderItems, posInitial, posX1);
-    //     }
-    // }
+        // Transition events
+        items.addEventListener('transitionend', checkIndex);
 
-    // const dragAction = (e, sliderItems, posX1, posX2) => {
-    //     e = e || window.event;
-      
-    //     if(e.type === 'touchstart'){
-    //         posX2 = posX1 - e.touches[0].clientX;
-    //         posX1 = e.touches[0].clientX;
-    //     }else {
-    //         posX2 = posX1 - e.clientX;
-    //         posX1 = e.clientX;
-    //     }
-    //     sliderItems.style.left = (sliderItems.offsetLeft - posX2) + "px";
-    // }
+        function dragStart (e) {
+            e = e || window.event;
+            e.preventDefault();
+            posInitial = items.offsetLeft;
+            
+            if (e.type == 'touchstart') {
+                posX1 = e.touches[0].clientX;
+            } else {
+                posX1 = e.clientX;
+                document.onmouseup = dragEnd;
+                document.onmousemove = dragAction;
+            }
+        }
 
-    // const dragEnd = (sliderItems, posInitial, posFinal, threshold, slideSize, allowShift, index) => {
-    //     posFinal = sliderItems.offsetLeft;
-      
-    //     if(posFinal - posInitial > threshold){
-    //         shiftSlide(1, 'drag', sliderItems, posInitial, slideSize, allowShift, index);
-    //     }else if (posFinal - posInitial < threshold){
-    //         shiftSlide(-1, 'drag', sliderItems, posInitial, slideSize, allowShift, index);
-    //     }else {
-    //         sliderItems.style.left = (posInitial) + "px";
-    //     }
-    //     document.onmouseup = null;
-    //     document.onmousemove = null;
-    // }
+        function dragAction (e) {
+            e = e || window.event;
+            
+            if (e.type == 'touchmove') {
+                posX2 = posX1 - e.touches[0].clientX;
+                posX1 = e.touches[0].clientX;
+            } else {
+                posX2 = posX1 - e.clientX;
+                posX1 = e.clientX;
+            }
+            items.style.left = (items.offsetLeft - posX2) + "px";
+        }
 
-    // const shiftSlide = (dir, action, sliderItems, posInitial, slideSize, allowShift, index) => {
-    //     console.log("dd")
-    //     sliderItems.classList.add('shifting');
-    //     if(allowShift) {
-    //         if(!action) {
-    //             posInitial = sliderItems.offsetLeft;
-    //         }
-    //         if(dir === 1) {
-    //             sliderItems.style.left = (posInitial - slideSize) + "px";
-    //             console.log("length1",  sliderItems.style.left)
-    //             index ++;
-    //         } else if (dir === -1) {
-    //             sliderItems.style.left = (posInitial + slideSize) + "px";
-    //             console.log("length2",  sliderItems.style.left)
-    //             index --;
-    //         }
-    //     }
-    //     allowShift = false;
-    // }
+        function dragEnd (e) {
+            posFinal = items.offsetLeft;
+            if (posFinal - posInitial < -threshold) {
+                shiftSlide(1, 'drag');
+            } else if (posFinal - posInitial > threshold) {
+                shiftSlide(-1, 'drag');
+            } else {
+                items.style.left = (posInitial) + "px";
+            }
 
-    // const checkIndex = (sliderItems, index, relatedPostsArrayLength, slideSize, allowShift) => {
-    //     sliderItems.classList.remove("shifting");
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
 
-    //     if(index === -1){
-    //         sliderItems.style.left = -(relatedPostsArrayLength * slideSize) + "px";
-    //         console.log("none", sliderItems.style.left)
-    //         index = relatedPostsArrayLength - 1;
-    //     }
+        function shiftSlide(dir, action) {
+            items.classList.add('shifting');
+            
+            if (allowShift) {
+                if (!action) { posInitial = items.offsetLeft; }
 
-    //     if(index === relatedPostsArrayLength){
-    //         sliderItems.style.left = -(1 * slideSize) + "px";
-    //         console.log("left", sliderItems.style.left)
-    //         index = 0;
-    //     }
+                if (dir == 1) {
+                    items.style.left = (posInitial - slideSize) + "px";
+                    index++;      
+                    console.log("INdex1",index)
+                } else if (dir == -1) {
+                    items.style.left = (posInitial + slideSize) + "px";
+                    index--;  
+                    console.log("INdex2", index)
+                }
+            };
+            
+            allowShift = false;
+        }
+        
+        function checkIndex(e) {
+            items.classList.remove('shifting');
+            if (index == -1) {
+                items.style.left = -(slidesLength * slideSize) + "px";
+                index = slidesLength - 1;
+                console.log("index2",index)
+            }
 
-    //     allowShift = true;
-    // }
+            if (index == slidesLength) {
+                items.style.left = -(1 * slideSize) + "px";
+                index = 0;
+                console.log("index3",index)
+            }
+            console.log("index",slidesLength ,index)
+            allowShift = true;
+        }
+    }
+
+    
 
     const renderRelatedPostsCards = () => {
         return(
             <div className="related-post-cards" id="slides">{props.relatedPosts.map((el, i) => {
                 return (
-                    <div key={i} className="related-post-card">
+                    <div key={i} className="related-post-card" id="slide">
                         <RelatedPostCard
                             key={i}
                             image={el.image}
@@ -215,6 +231,14 @@ export const RelatedPosts = (props) => {
                     </div>
                 )
             })}</div>
+            // <div className="related-post-cards" id="slides">
+            //     <span className="slide">Slide 1</span>
+            //     <span className="slide">Slide 2</span>
+            //     <span className="slide">Slide 3</span>
+            //     <span className="slide">Slide 4</span>
+            //     <span className="slide">Slide 5</span>
+            // </div>
+          
         )
     }
 
