@@ -99,7 +99,7 @@ export const LeaveAComment = (props) => {
     }, [])
 
     const onClickHandler = () => {
-        // props.postComment();
+        props.postComment();
         if(props.leaveACommentInputForm.formIsValid){
             clearInputValue("inputLeaveComment1");
             clearInputValue("inputLeaveComment2");
@@ -167,7 +167,7 @@ export const LeaveAComment = (props) => {
                 outerDivClassName="load-more-posts-button-wrapper"
                 className="load-more-posts"
                 text="POST COMMENT"
-                // onClick={loadMoreHandler}
+                onClick={onClickHandler}
             />
         </div>
     );
@@ -183,6 +183,7 @@ export default connect(
         return {
             initLeaveACommentForm: bindActionCreators(Actions.initLeaveACommentForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
+            postComment: bindActionCreators(Actions.postComment, dispatch),
         };
     }
 )(LeaveAComment);

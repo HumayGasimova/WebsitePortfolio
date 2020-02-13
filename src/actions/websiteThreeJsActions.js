@@ -94,3 +94,9 @@ export function setInputFiledValueAndCheckValidation(obj, e, id, formName) {
     };
 };
 
+export function postComment() {
+    return { 
+        type: actionTypes.POST_COMMENT
+    };
+};
+

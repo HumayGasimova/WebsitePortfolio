@@ -160,6 +160,43 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
     }
 }
 
+
+const postComment = (state, action) => {
+    console.log("d")
+    let updatedSingleStory = {...state.singleStory};
+    let updatedLeaveACommentInputForm = {...state.leaveACommentInputForm, inputsArray: [...state.leaveACommentInputForm.inputsArray]};
+    if(state.leaveACommentInputForm.formIsValid && state.leaveACommentInputForm.inputsArray){
+        let comment = {
+            id: uuid(),
+            image: "Name1",
+            fullName: `${state.leaveACommentInputForm.inputsArray.find(x => x.controlName === "firstName").value}`,
+            date: Utility.getCurrentDateAndTime(),
+            comment: state.leaveACommentInputForm.inputsArray.find(x => x.controlName === "comment").value,
+        }
+        updatedSingleStory.comments.push(comment);
+        updatedLeaveACommentInputForm.inputsArray = updatedLeaveACommentInputForm.inputsArray.map(el => {return {...el, value: ''}});
+        
+        updatedLeaveACommentInputForm.formIsValid = false;
+        updatedLeaveACommentInputForm.inputsArray = updatedLeaveACommentInputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
+    }else{
+        updatedLeaveACommentInputForm.inputsArray = updatedLeaveACommentInputForm.inputsArray.map((el, i) => {
+            return {
+                    ...el, 
+                    touched: true,
+                    errorMessage: ["Fill the field"]
+                }
+                
+        })
+        console.log(updatedLeaveACommentInputForm)
+    }
+    
+    return {
+        ...state,
+        singleStory: updatedSingleStory,
+        leaveACommentInputForm: updatedLeaveACommentInputForm
+    }; 
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -184,6 +221,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initLeaveACommentForm(state, action);
         case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
             return setInputFiledValueAndCheckValidation(state, action); 
+        case actionTypes.POST_COMMENT:
+            return postComment(state, action); 
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         case actionTypes.START_INIT_RELATED_POSTS:
