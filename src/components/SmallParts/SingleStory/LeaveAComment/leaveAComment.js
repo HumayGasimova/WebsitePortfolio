@@ -37,6 +37,7 @@ import {
 */
 
 import Input from '../../../../library/Input/input';
+import Button from '../../../../library/Button/button';
 
 /**
 * Actions
@@ -61,6 +62,7 @@ import * as Selectors from '../../../../reducers/selectors';
 */
 
 import {
+    EH0,
     H2,
     H3,
     H4,
@@ -122,13 +124,13 @@ export const LeaveAComment = (props) => {
     const renderLeaveACommentForm = () => {
         if(props.leaveACommentInputForm.inputsArray){
             return(
-                <div className="leave-comment-form-inputs">
+                <div className="leave-a-comment-wrapper">
                     {props.leaveACommentInputForm.inputsArray.map((el, i)=>{
                         return(
-                            <div key={i} className="leave-comment-form-input">
-                                <div className="leave-comment-form-input-name">{el.inputFieldName}</div>
+                            <div key={i} className={`leave-a-comment-form-${el.inputID}`}>
+                                {/* <div className="leave-a-comment-form-input-name">{el.inputFieldName}</div> */}
                                 <Input
-                                    className="leave-comment-input"
+                                    className="leave-a-comment-input"
                                     onChange={(event) => inputChangeHandler(event, el.id)}
                                     elementType={el.elementType}
                                     rows={el.elementConfig.rows}
@@ -139,6 +141,7 @@ export const LeaveAComment = (props) => {
                                     textareaID={el.textareaID}
                                     placeholder={el.elementConfig.placeholder}
                                 />
+                                <EH0/>
                             </div>
                         )
                     })}
@@ -157,9 +160,15 @@ export const LeaveAComment = (props) => {
             <EH2/>
             <H3>LEAVE A COMMENT</H3>
             <EH2/>
-            <div className="leave-a-comment-wrapper">
+            {/* <div className="leave-a-comment-wrapper"> */}
                {renderLeaveACommentForm()}
-            </div>
+            {/* </div> */}
+            <Button
+                outerDivClassName="load-more-posts-button-wrapper"
+                className="load-more-posts"
+                text="POST COMMENT"
+                // onClick={loadMoreHandler}
+            />
         </div>
     );
 }

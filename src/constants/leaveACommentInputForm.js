@@ -8,7 +8,7 @@ export const leaveACommentInputForm = {
             elementConfig: {
                 type: 'text',
                 placeholder: ' Your comment',
-                rows: "5"
+                rows: "10"
             },
             value: '',
             validation: [
@@ -82,10 +82,10 @@ export const leaveACommentInputForm = {
             },
             value: '',
             validation: [
-                {
-                    required: true,
-                    valid: false
-                }
+                // {
+                //     required: true,
+                //     valid: false
+                // }
             ],
             validField: false,
             touched: false,

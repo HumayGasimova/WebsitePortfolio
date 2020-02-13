@@ -1,5 +1,20 @@
 .leave-a-comment {
     .leave-a-comment-wrapper {
-
+        display: flex;
+        flex-wrap: wrap;
+        .leave-a-comment-form-textareaLeaveComment1 {
+            width: 100%;
+        }
+        .leave-a-comment-form-inputLeaveComment1 {
+            width: calc(33.3% - 10px);
+            margin-right: 10px;
+        }
+        .leave-a-comment-form-inputLeaveComment2 {
+            width: calc(33.3% - 10px);
+            margin-right: 10px;
+        }
+        .leave-a-comment-form-inputLeaveComment3 {
+            width: 33.3%;
+        }
     }
 }
