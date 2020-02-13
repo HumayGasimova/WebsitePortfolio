@@ -133,7 +133,7 @@ export const relatedPostCard = (props) => {
     */
 
     return(
-        <>
+        <div className="related-post-card">
             <div 
                 className="related-post-card-image"
                 onMouseLeave={handleMouseLeave} 
@@ -174,7 +174,7 @@ export const relatedPostCard = (props) => {
                 <H6 className="h6-pink-yanone-suva-grey">{`${props.month} ${props.day}, ${props.year} | `}</H6> 
                 <H6>{`${props.comments ? props.comments.length : 0} Comments`}</H6>
             </div>
-        </>
+        </div>
     );
 }
 

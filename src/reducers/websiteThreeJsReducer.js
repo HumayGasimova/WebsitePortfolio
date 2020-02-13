@@ -103,10 +103,14 @@ const addRelatedPosts = (state, action) => {
 const addRelatedPostsElement = (state, action) => {
     let updatedRelatedPosts = [...state.relatedPosts];
     let firstElement = state.relatedPosts[0];
+    let secondElement = state.relatedPosts[1];
+    let thirdElement = state.relatedPosts[2];
     let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
   
     updatedRelatedPosts.unshift(lastElement);
     updatedRelatedPosts.push(firstElement);
+    updatedRelatedPosts.push(secondElement);
+    updatedRelatedPosts.push(thirdElement);
 
     return {
         ...state,
