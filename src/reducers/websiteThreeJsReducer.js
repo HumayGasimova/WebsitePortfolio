@@ -21,7 +21,8 @@ export const initialState = {
     menuDrinks: [],
     stories: [] ,
     singleStory: {},
-    relatedPosts: []
+    relatedPosts: [],
+    leaveACommentInputForm: {}
 }
 
 const initMenuItems = (state, action) => {
@@ -102,15 +103,12 @@ const addRelatedPosts = (state, action) => {
 
 const addRelatedPostsElement = (state, action) => {
     let updatedRelatedPosts = [...state.relatedPosts];
+    console.log(updatedRelatedPosts)
     let firstElement = state.relatedPosts[0];
-    let secondElement = state.relatedPosts[1];
-    let thirdElement = state.relatedPosts[2];
     let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
   
     updatedRelatedPosts.unshift(lastElement);
     updatedRelatedPosts.push(firstElement);
-    updatedRelatedPosts.push(secondElement);
-    updatedRelatedPosts.push(thirdElement);
 
     return {
         ...state,
@@ -118,6 +116,49 @@ const addRelatedPostsElement = (state, action) => {
     };
 } 
 
+const initLeaveACommentForm = (state, action) => {
+
+    return {
+        ...state,
+        leaveACommentInputForm: action.obj
+    };
+} 
+
+const setInputFiledValueAndCheckValidation = (state, action) => {
+    let updatedInputFieldObj = {...action.obj, inputsArray: [...action.obj.inputsArray]};
+    let inputField = updatedInputFieldObj.inputsArray.find(x => x.id === action.inputFieldId);
+    let inputFieldIndex = updatedInputFieldObj.inputsArray.findIndex(x => x.id === action.inputFieldId);
+    inputField = {
+        ...inputField, 
+        value: action.event.target.value,
+        validation: Utility.checkValidity(action.event.target.value, inputField.validation),
+        touched: true
+    };
+
+    inputField = {
+        ...inputField, 
+        errorMessage: Utility.errorMessages(inputField.inputFieldName, inputField.validation),
+        validField: Utility.checkValidityOfField(inputField.validation),
+    }
+   
+    updatedInputFieldObj.inputsArray.splice(inputFieldIndex, 1, inputField)
+
+    let checkIfFormIsValid = updatedInputFieldObj.inputsArray.map(el => el.validField === true);
+    updatedInputFieldObj = {...updatedInputFieldObj, formIsValid: checkIfFormIsValid.every(x => x === true)};
+
+    switch(action.formName) {
+        case 'leaveACommentInputForm':
+            return {
+                ...state,
+                leaveACommentInputForm: updatedInputFieldObj
+            };
+        // case 'sendMessageForm':
+        //     return {
+        //         ...state,
+        //         sendMessageForm: updatedInputFieldObj
+        //     };
+    }
+}
 
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
@@ -139,6 +180,10 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return addRelatedPosts(state, action);
         case actionTypes.ADD_RELATED_POSTS_ELEMENT:
             return addRelatedPostsElement(state, action);
+        case actionTypes.INIT_LEAVE_A_COMMENT_FIELD:
+            return initLeaveACommentForm(state, action);
+        case actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION:
+            return setInputFiledValueAndCheckValidation(state, action); 
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         case actionTypes.START_INIT_RELATED_POSTS:

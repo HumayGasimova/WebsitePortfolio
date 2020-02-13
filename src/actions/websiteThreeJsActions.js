@@ -77,3 +77,20 @@ export function addRelatedPostsElement(str) {
     };
 };
 
+export function initLeaveACommentForm(obj) {
+    return { 
+        type: actionTypes.INIT_LEAVE_A_COMMENT_FIELD,
+        obj: obj
+    };
+};
+
+export function setInputFiledValueAndCheckValidation(obj, e, id, formName) {
+    return { 
+        type: actionTypes.SET_INPUT_FIELD_VALUE_AND_CHESCK_VALIDATION,
+        obj: obj,
+        event: e,
+        inputFieldId: id,
+        formName: formName
+    };
+};
+

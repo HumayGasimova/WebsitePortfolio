@@ -5,18 +5,19 @@
         .related-posts-inner-wrapper {
             width: 100%;
             overflow: hidden;
+            transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
             // overflow: hidden;
             .related-post-cards {
                 display: flex;
                 height: 233px;
                 width: 233%;
                 position: relative;
-                left: -300px;
+                // left: -180px;
                 background-color: white;
-                .related-post-card {
-                    width: 500px;
-                    padding: 3px;
-                }
+                // .related-post-card {
+                //     width: 500px;
+                //     padding: 3px;
+                // }
             }
         }
         .related-posts-arrow-left {

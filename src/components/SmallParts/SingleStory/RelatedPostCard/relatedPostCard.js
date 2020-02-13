@@ -86,10 +86,10 @@ import DefaultImage from '../../../../images/error.jpg';
 import * as Colors from '../../../../constants/colors';
 
 /**
-* relatedPostCard component definition and export
+* RelatedPostCard component definition and export
 */
 
-export const relatedPostCard = (props) => {
+export const RelatedPostCard = (props) => {
 
     /**
     * State
@@ -133,7 +133,7 @@ export const relatedPostCard = (props) => {
     */
 
     return(
-        <div className="related-post-card">
+        <div className="related-post-card" id="slide">
             <div 
                 className="related-post-card-image"
                 onMouseLeave={handleMouseLeave} 
@@ -189,5 +189,5 @@ export default connect(
             // startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
         };
     }
-)(relatedPostCard);
+)(RelatedPostCard);
  

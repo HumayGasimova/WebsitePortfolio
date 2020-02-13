@@ -43,3 +43,10 @@ export const getRelatedPostsState = createSelector(
     [getRelatedPosts],
     (x) => x
 );
+
+const getLeaveACommentInputForm = (state) => state.home.leaveACommentInputForm;
+
+export const getLeaveACommentInputFormState = createSelector(
+    [getLeaveACommentInputForm],
+    (x) => x
+);
