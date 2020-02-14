@@ -100,7 +100,7 @@ export const Comment = (props) => {
             <div className="comment-content">
                 <H4 className="h4-animation">{props.name}</H4>
                 <EH0/>
-                <H6 className="h6-pink-yanone-suva-grey">{props.date}</H6>
+                <H6 className="h6-pink-grey-yanone-suva">{props.date}</H6>
                 <EH0/>
                 <H5 textColor={Colors.EBB} >{props.comment}</H5>
             </div>

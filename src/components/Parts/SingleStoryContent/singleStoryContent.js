@@ -61,6 +61,7 @@ import {
     H3,
     H4,
     H5,
+    H6,
     EH0,
     EH1,
     EH2,
@@ -135,7 +136,6 @@ export const SingleStoryContent = (props) => {
                     image={props.image}
                     header={props.header}
                     paragraphs={props.paragraphs}
-                    // header={props.header}
                 />
                 {/* <RelatedPosts
                     // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
@@ -143,10 +143,17 @@ export const SingleStoryContent = (props) => {
                 /> */}
                 {renderComments()}
                 <LeaveAComment/>
+                <EH2/>
             </div>
             <div className="single-story-content-right-part">
             
             </div>
+            <H5 className="h5-pink-swan-jaldi">
+                © Copyright 2012 - 2020   |   
+                Avada Theme by Theme Fusion   |   
+                All Rights Reserved   |   
+                Powered by WordPress
+            </H5>
         </div>
     );
 }

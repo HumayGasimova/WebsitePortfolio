@@ -118,7 +118,7 @@ export const FooterItem = (props) => {
                     <EH1/>
                     <H4 className="h4-animation">{props.name}</H4>
                     <EH1/>
-                    <H5 textColor={Colors.PINK_SWAN}>{props.info}</H5>
+                    <H5 className="h5-pink-swan-jaldi">{props.info}</H5>
                 </div>
                 <EW3/>
                 <EH3/>
