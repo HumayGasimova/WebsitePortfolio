@@ -1,0 +1,18 @@
+.popular-vs-recent-card {
+    display: flex;
+    background-color: rgb(51, 51, 51);
+    padding: 15px;
+    align-items: center;
+    .popular-vs-recent-card-image {
+        background-color: rgb(18, 68, 159);
+        filter: grayscale(65%);
+        >img {
+            width: 50px;
+            height: 50px;
+            opacity: 0.8;
+        }
+    }
+    .popular-vs-recent-card-info {
+
+    }
+}

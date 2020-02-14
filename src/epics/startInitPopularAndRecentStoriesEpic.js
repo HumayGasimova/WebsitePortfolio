@@ -70,10 +70,16 @@ export const startInitPopularAndRecentStoriesEpic = (action$) =>
                 case 'recent':
                     updatedStoriesArray = updatedStoriesArray.slice(0,3);
                     break;
+                case 'comments': 
+                    updatedStoriesArray = [{
+                        text: 'No comments have been published yet.'
+                    }]
+                    break;
             }
             return of(
                 Actions.addPopularVsRecentStories(updatedStoriesArray),
             )
+           
         })                
     )
 

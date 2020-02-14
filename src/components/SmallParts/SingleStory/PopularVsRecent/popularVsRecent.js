@@ -35,6 +35,8 @@ import {
 * Components
 */
 
+import PopularVsRecentCard from '../PopularVsRecentCard/popularVsRecentCard';
+
 /**
 * Actions
 */
@@ -135,6 +137,7 @@ export const PopularVsRecent = (props) => {
         updatedTabs = updatedTabs.map(el => {return{...el, active: false}});
         updatedTabs[index].active = true;
         setTabs(updatedTabs);
+        props.startInitPopularAndRecentStories(index === 0 ? "popular" : (index === 1 ? "recent" : "comments"));
     }
 
     const renderPopularVsRecentTabs = () => {
@@ -164,7 +167,23 @@ export const PopularVsRecent = (props) => {
     }
 
     const renderPopularVsRecentStories = () => {
-
+        if(props.popularVsRecentStories){
+            return(
+                <div>{props.popularVsRecentStories.map((el, i) => {
+                    return(
+                        <PopularVsRecentCard
+                            key={i}
+                            image={el.image}
+                            header={el.header}
+                            month={el.month}
+                            day={el.day}
+                            year={el.year}
+                            text={el.text}
+                        />
+                    )
+                })}</div>
+            )
+        }
     }
 
     /**
@@ -184,7 +203,7 @@ export const PopularVsRecent = (props) => {
 export default connect(
     (state) => {
         return {
-            // relatedPosts: Selectors.getRelatedPostsState(state),
+            popularVsRecentStories: Selectors.getPopularVsRecentStoriesState(state),
         };
     },
     (dispatch) => {
