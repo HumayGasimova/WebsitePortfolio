@@ -31,6 +31,7 @@ import './singleStoryContent.scss';
 
 import Content from '../../SmallParts/SingleStory/Content/content';
 import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
+import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 // import * as Selectors from '../../../reducers/selectors';
 
@@ -60,12 +61,14 @@ import {
     H3,
     H4,
     H5,
+    EH0,
     EH1,
     EH2,
     EH4,
     EW1,
     EW2,
-    Line1
+    Line1,
+    Line3
 } from '../../UtilityComponents';
 
 /**
@@ -95,6 +98,32 @@ export const SingleStoryContent = (props) => {
         // props.startInitRelatedPosts(props.id);
     }, [props.id]);
 
+    const renderComments = () => {
+        if(props.singleStory.comments){
+            return(<>
+                    <EH2/>
+                    <H3>COMMENTS</H3>
+                    <div className="single-story-content-comments">{props.singleStory.comments.map((el, i) => {
+                        return(
+                            <div key={i}>
+                                <EH1/>
+                                <Comment
+                                    image={el.image}
+                                    name={el.fullName}
+                                    date={el.date}
+                                    comment={el.comment}
+                                />
+                                <EH0/>
+                                <Line3/>
+                            </div>
+                        )
+                    })}</div>
+                </>
+            )
+        }
+        
+    }
+
     /**
     * Markup
     */
@@ -112,6 +141,7 @@ export const SingleStoryContent = (props) => {
                     // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
                 /> */}
+                {renderComments()}
                 <LeaveAComment/>
             </div>
             <div className="single-story-content-right-part">
@@ -125,6 +155,7 @@ export default connect(
     (state) => {
         return {
             relatedPosts: Selectors.getRelatedPostsState(state),
+            singleStory: Selectors.getSingleStoryState(state),
         };
     },
     (dispatch) => {
