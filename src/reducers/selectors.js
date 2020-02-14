@@ -50,3 +50,10 @@ export const getLeaveACommentInputFormState = createSelector(
     [getLeaveACommentInputForm],
     (x) => x
 );
+
+const getPopularVsRecentStories = (state) => state.home.popularVsRecentStories;
+
+export const getPopularVsRecentStoriesState = createSelector(
+    [getPopularVsRecentStories],
+    (x) => x
+);

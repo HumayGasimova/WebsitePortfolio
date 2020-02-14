@@ -100,3 +100,16 @@ export function postComment() {
     };
 };
 
+export function startInitPopularAndRecentStories(option) {
+    return { 
+        type: actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES,
+        option: option
+    };
+};
+
+export function addPopularVsRecentStories(array) {
+    return { 
+        type: actionTypes.ADD_POPULAR_VS_RECENT_STORIES,
+        array: array
+    };
+};

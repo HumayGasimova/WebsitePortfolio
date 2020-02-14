@@ -76,7 +76,7 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 10,
+                popular: 50,
                 path: "million-visits"
             },
             {
@@ -115,7 +115,7 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 100,
+                popular: 500,
                 path: "exclusive-coffee"
             },
             {
@@ -172,7 +172,7 @@ export const storiesArray = [
                     "openning",
                     "specials"
                 ],
-                popular: 70,
+                popular: 170,
                 path: "sydney-opening"
             },
             {
@@ -192,7 +192,7 @@ export const storiesArray = [
                     "dinner",
                     "specials"
                 ],
-                popular: 500,
+                popular: 200,
                 path: "london-opening"
             }
         ]

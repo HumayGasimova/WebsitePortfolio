@@ -114,6 +114,10 @@ export const PopularVsRecent = (props) => {
     * Methods
     */
 
+    useEffect(() => {
+        props.startInitPopularAndRecentStories("popular");
+    }, [])
+
     const handleMouseEnter = (index) => {
         let updatedTabs = [...tabs];
         updatedTabs[index].isHovering = true;
@@ -126,6 +130,13 @@ export const PopularVsRecent = (props) => {
         setTabs(updatedTabs);
     }
 
+    const onClickHandler = (index) => {
+        let updatedTabs = [...tabs];
+        updatedTabs = updatedTabs.map(el => {return{...el, active: false}});
+        updatedTabs[index].active = true;
+        setTabs(updatedTabs);
+    }
+
     const renderPopularVsRecentTabs = () => {
         return(
             <>{tabs.map((el, i) => {
@@ -135,6 +146,7 @@ export const PopularVsRecent = (props) => {
                         className={el.active && el.isHovering ? "popular-vs-recent-tab-active-hover" : (el.active ? "popular-vs-recent-tab-active" : "popular-vs-recent-tab")}
                         onMouseEnter={() =>handleMouseEnter(i)} 
                         onMouseLeave={()=> handleMouseLeave(i)}
+                        onClick={() => onClickHandler(i)}
                     >
                         {!el.icon ? 
                             <H4>{el.tabName}</H4>:
@@ -177,7 +189,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            startInitPopularAndRecentStories: bindActionCreators(Actions.startInitPopularAndRecentStories, dispatch),
         };
     }
 )(PopularVsRecent);

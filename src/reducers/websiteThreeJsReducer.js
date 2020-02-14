@@ -197,6 +197,13 @@ const postComment = (state, action) => {
     }; 
 }
 
+const addPopularVsRecentStories = (state, action) => {
+    return {
+        ...state,
+        popularVsRecentStories: action.array
+    };
+} 
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -223,6 +230,10 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return setInputFiledValueAndCheckValidation(state, action); 
         case actionTypes.POST_COMMENT:
             return postComment(state, action); 
+        case actionTypes.ADD_POPULAR_VS_RECENT_STORIES:
+            return addPopularVsRecentStories(state, action);
+        case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
+            return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         case actionTypes.START_INIT_RELATED_POSTS:
