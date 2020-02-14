@@ -33,6 +33,8 @@ import Content from '../../SmallParts/SingleStory/Content/content';
 import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
+import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
+
 // import * as Selectors from '../../../reducers/selectors';
 
 /**
@@ -101,10 +103,11 @@ export const SingleStoryContent = (props) => {
 
     const renderComments = () => {
         if(props.singleStory.comments){
-            return(<>
+            return(
+                <>
                     <EH2/>
                     <H3>COMMENTS</H3>
-                    <div className="single-story-content-comments">{props.singleStory.comments.map((el, i) => {
+                    <>{props.singleStory.comments.map((el, i) => {
                         return(
                             <div key={i}>
                                 <EH1/>
@@ -118,7 +121,7 @@ export const SingleStoryContent = (props) => {
                                 <Line3/>
                             </div>
                         )
-                    })}</div>
+                    })}</>
                 </>
             )
         }
@@ -146,7 +149,7 @@ export const SingleStoryContent = (props) => {
                 <EH2/>
             </div>
             <div className="single-story-content-right-part">
-            
+                <PopularVsRecent/>
             </div>
             <H5 className="h5-pink-swan-jaldi">
                 © Copyright 2012 - 2020   |   

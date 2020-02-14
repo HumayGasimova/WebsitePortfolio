@@ -8,16 +8,13 @@
     cursor: context-menu;
     .single-story-content-left-part {
         // border: 2px solid red;
-        width: 69%;
-        // height: 100px;
-        .single-story-content-comments {
-            
-        }
+        width: calc(69% - 40px);
+        margin-right: 40px;
     }
     .single-story-content-right-part {
         // border: 2px solid red;
-        width: 31%;
-        // height: 100px;
+        width: calc(31% - 40px);
+        margin-left: 40px;
     }
 }
 

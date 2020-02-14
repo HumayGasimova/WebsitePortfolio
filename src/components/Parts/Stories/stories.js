@@ -32,7 +32,7 @@ import {
 */
 
 import { 
-    faComments,
+    faComments
 } from '@fortawesome/free-regular-svg-icons';
 
 import { 
