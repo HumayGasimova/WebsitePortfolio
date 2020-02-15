@@ -25,6 +25,8 @@ import './carousel.scss';
 * Components
 */
 
+import CarouselContent from './CarouselContent/carouselContent';
+import CarouselSlide from './CarouselSlide/carouselSlide';
 
 /**
 * Actions
@@ -42,9 +44,9 @@ import './carousel.scss';
 * Constants
 */
 
-// import {
-//     storiesArray
-// } from '../constants/storiesArray';
+import {
+    slides
+} from '../../constants/slides';
 
 /**
 * Carousel component definition and export
@@ -56,50 +58,31 @@ export const Carousel = (props) => {
     * State
     */
 
-    const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    const [selected, setSelected] = useState(0);
-    const [move, setMove] = useState(false)
+    const getWidth = () => window.innerWidth;
+
+    const [state, setState] = useState({
+        translate: 0,
+        transition: 0.45
+    });
+
+    const {translate, transition} = state;
 
     /**
     * Methods
     */
-
-    const prevOnClick = () => {
-        let value = normolizeIndex(selected - 1, array);
-        setSelected(value);
-        setMove(true);
-    }
-
-    const nextOnClick = () => {
-        let value = normolizeIndex(selected + 1, array);
-        setSelected(value);
-        setMove(true);
-    }
-
-    const normolizeIndex = (i, array) => {
-        if (!array.length) throw Error("empty array");
-        const indexModulus = i % array.length;
-        console.log(indexModulus)
-        if (indexModulus < 0) {
-          return array.length + indexModulus;
-        } else {
-          return indexModulus;
-        }
-        
-    }
-
-    const getRelativeIndexOf = (rIndex, threshold = 0) => {
-        let indexArray = [];
-        for (let i = rIndex - threshold; i <= rIndex + threshold; i++) {
-          indexArray.push(i);
-        }
-        return indexArray;
-    }
-
-    const getCircularArray = (array, activeIndex = 0, thereshold = 0) => {
-       return getRelativeIndexOf(activeIndex, thereshold)
-            .map(i => normolizeIndex(i, array))
-            .map(i => array[i])
+   
+    const renderCarouselSlides = () => {
+        return(
+            <>{slides.map((el, i) => {
+                return(
+                    <CarouselSlide
+                        key={i}
+                        image={el.image}
+                        width={getWidth()}
+                    />
+                )
+            })}</>
+        )
     }
 
     /**
@@ -107,16 +90,14 @@ export const Carousel = (props) => {
     */
 
     return(
-        <div className="carousel">
-            <button onClick={prevOnClick}>Previous</button>
-            {getCircularArray(array, selected, 4).map((el, i) => {
-                return(
-                    <div key={i} className={move ? "carousel-card" : "carousel-card"}>
-                        {el}
-                    </div>
-                )
-            })}
-            <button onClick={nextOnClick}>Next</button>
+        <div className="carousel-slider">
+            <CarouselContent
+                translate={translate}
+                transition={transition}
+                width={getWidth() * slides.length}
+            >
+                {renderCarouselSlides()}
+            </CarouselContent>
         </div>
     );
 }
