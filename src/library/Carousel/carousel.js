@@ -58,6 +58,7 @@ export const Carousel = (props) => {
 
     const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     const [selected, setSelected] = useState(0);
+    const [move, setMove] = useState(false)
 
     /**
     * Methods
@@ -66,11 +67,13 @@ export const Carousel = (props) => {
     const prevOnClick = () => {
         let value = normolizeIndex(selected - 1, array);
         setSelected(value);
+        setMove(true);
     }
 
     const nextOnClick = () => {
         let value = normolizeIndex(selected + 1, array);
         setSelected(value);
+        setMove(true);
     }
 
     const normolizeIndex = (i, array) => {
@@ -90,7 +93,6 @@ export const Carousel = (props) => {
         for (let i = rIndex - threshold; i <= rIndex + threshold; i++) {
           indexArray.push(i);
         }
-        console.log(indexArray)
         return indexArray;
     }
 
@@ -98,9 +100,6 @@ export const Carousel = (props) => {
        return getRelativeIndexOf(activeIndex, thereshold)
             .map(i => normolizeIndex(i, array))
             .map(i => array[i])
-
-            console.log(getRelativeIndexOf(activeIndex, thereshold).map(i => normolizeIndex(i, array))
-            .map(i => array[i]))
     }
 
     /**
@@ -110,8 +109,13 @@ export const Carousel = (props) => {
     return(
         <div className="carousel">
             <button onClick={prevOnClick}>Previous</button>
-            {getCircularArray(array, selected, 4).map(e => e)}
-            {/* {console.log("main",getCircularArray(array, selected, 4))} */}
+            {getCircularArray(array, selected, 4).map((el, i) => {
+                return(
+                    <div key={i} className={move ? "carousel-card" : "carousel-card"}>
+                        {el}
+                    </div>
+                )
+            })}
             <button onClick={nextOnClick}>Next</button>
         </div>
     );
