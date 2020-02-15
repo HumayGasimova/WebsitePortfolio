@@ -18,6 +18,7 @@ import {
 
 import Main from './components/main';
 import AboutUs from './components/Pages/AboutUs/aboutUs';
+import Carousel from './library/Carousel/carousel';
 
 /**
 * Styles
@@ -42,7 +43,7 @@ export class App extends Component {
             <Switch>
                <Route 
                   path="/crypto-cafe"
-                  component={ Main }
+                  component={ Carousel }
                />
                <Redirect exact from="/" to="/crypto-cafe"/>
             </Switch>
