@@ -91,7 +91,6 @@ export const CarouselSlide = (props) => {
             style={{width: `${props.width}px`}}
         >
             <img src={loadImage(props.image)}/>
-            {console.log(props.width)}
         </div>
     );
 }

@@ -15,11 +15,15 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
 /**
 * Styles
 */
 
-import './carouselContent.scss';
+import './carouselArrow.scss';
 
 /**
 * Components
@@ -47,10 +51,19 @@ import './carouselContent.scss';
 // } from '../constants/storiesArray';
 
 /**
-* CarouselContent component definition and export
+* Icons
 */
 
-export const CarouselContent = (props) => {
+import { 
+    faArrowAltCircleLeft,
+    faArrowAltCircleRight
+} from '@fortawesome/free-solid-svg-icons';
+
+/**
+* CarouselArrow component definition and export
+*/
+
+export const CarouselArrow = (props) => {
 
     /**
     * State
@@ -59,21 +72,28 @@ export const CarouselContent = (props) => {
     /**
     * Methods
     */
-   
+
+    const loadIconName = (name) => {
+        switch(name){
+            case 'left':
+                return faArrowAltCircleLeft;
+            case 'right':
+                return faArrowAltCircleRight;
+        }
+    }
+
     /**
     * Markup
     */
 
     return(
-            <div 
-                className="carousel-content" 
-                style={{
-                    transform: `translateX(-${props.translate}px)`,
-                    // transition: `transform ${props.transition}s ease-out)`,
-                    width: `${props.width}px`
-                }}
-            >
-                {props.children}
+            <div className={props.name === "left" ? "carousel-arrow-left" : "carousel-arrow-right"}>
+                <FontAwesomeIcon 
+                    icon={loadIconName(props.name)} 
+                    size='2x'
+                    // color="white"
+                    onClick={props.onClick}
+                />
             </div>
     );
 }
@@ -92,5 +112,5 @@ export default connect(
             // initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
         };
     }
-)(CarouselContent);
+)(CarouselArrow);
  

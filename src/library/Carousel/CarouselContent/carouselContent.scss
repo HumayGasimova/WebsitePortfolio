@@ -1,5 +1,5 @@
 .carousel-content {
     height: 100%;
     display: flex;
-    border: 2px solid blue;
+    transition: transform ease-out 0.45s;
 }

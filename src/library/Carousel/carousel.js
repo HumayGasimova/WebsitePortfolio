@@ -27,6 +27,7 @@ import './carousel.scss';
 
 import CarouselContent from './CarouselContent/carouselContent';
 import CarouselSlide from './CarouselSlide/carouselSlide';
+import CarouselArrow from './CarouselArrow/carouselArrow';
 
 /**
 * Actions
@@ -61,15 +62,48 @@ export const Carousel = (props) => {
     const getWidth = () => window.innerWidth;
 
     const [state, setState] = useState({
+        activeIndex: 0,
         translate: 0,
         transition: 0.45
     });
 
-    const {translate, transition} = state;
+    const {activeIndex, translate, transition} = state;
 
     /**
     * Methods
     */
+
+    const prevSlide = () => {
+        if(activeIndex === 0){
+            return setState({
+                ...state,
+                translate: (slides.length - 1) * getWidth(),
+                activeIndex: slides.length - 1
+            })
+        }
+
+        setState({
+            ...state,
+            translate: (activeIndex - 1) * getWidth(),
+            activeIndex: activeIndex - 1
+        })
+    }
+
+    const nextSlide = () => {
+        if(activeIndex === slides.length - 1){
+            return setState({
+                ...state,
+                translate: 0,
+                activeIndex: 0
+            })
+        }
+
+        setState({
+            ...state,
+            translate: (activeIndex + 1) * getWidth(),
+            activeIndex: activeIndex + 1
+        })
+    }
    
     const renderCarouselSlides = () => {
         return(
@@ -91,6 +125,10 @@ export const Carousel = (props) => {
 
     return(
         <div className="carousel-slider">
+            <CarouselArrow 
+                name="left"
+                onClick={prevSlide}
+            />
             <CarouselContent
                 translate={translate}
                 transition={transition}
@@ -98,6 +136,10 @@ export const Carousel = (props) => {
             >
                 {renderCarouselSlides()}
             </CarouselContent>
+            <CarouselArrow 
+                name="right"
+                onClick={nextSlide}
+            />
         </div>
     );
 }
