@@ -141,7 +141,7 @@ export const PopularVsRecentCard = (props) => {
                     <H6 className="h6-pink-grey-yanone-suva">{`${props.month} ${props.day}, ${props.year}`}</H6>
                 </div> 
             </> :
-            <H5 className="h5-pink-swan-jaldi">{props.text}</H5>}
+            <H5 className="h5-pink-swan">{props.text}</H5>}
         </div>
         
     );
