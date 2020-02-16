@@ -28,6 +28,7 @@ import './carousel.scss';
 import CarouselContent from './CarouselContent/carouselContent';
 import CarouselSlide from './CarouselSlide/carouselSlide';
 import CarouselArrow from './CarouselArrow/carouselArrow';
+import CarouselDots from './CarouselDots/carouselDots';
 
 /**
 * Actions
@@ -139,6 +140,10 @@ export const Carousel = (props) => {
             <CarouselArrow 
                 name="right"
                 onClick={nextSlide}
+            />
+            <CarouselDots 
+                slides={slides} 
+                activeIndex={activeIndex}
             />
         </div>
     );
