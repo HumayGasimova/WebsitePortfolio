@@ -128,7 +128,6 @@ export const LeaveAComment = (props) => {
                     {props.leaveACommentInputForm.inputsArray.map((el, i)=>{
                         return(
                             <div key={i} className={`leave-a-comment-form-${el.inputID}`}>
-                                {/* <div className="leave-a-comment-form-input-name">{el.inputFieldName}</div> */}
                                 <Input
                                     className="leave-a-comment-input"
                                     onChange={(event) => inputChangeHandler(event, el.id)}
@@ -160,9 +159,7 @@ export const LeaveAComment = (props) => {
             <EH2/>
             <H3>LEAVE A COMMENT</H3>
             <EH2/>
-            {/* <div className="leave-a-comment-wrapper"> */}
-               {renderLeaveACommentForm()}
-            {/* </div> */}
+            {renderLeaveACommentForm()}
             <Button
                 outerDivClassName="load-more-posts-button-wrapper"
                 className="load-more-posts"

@@ -34,6 +34,7 @@ import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
+import Archives from '../../SmallParts/SingleStory/Archives/archieves';
 
 // import * as Selectors from '../../../reducers/selectors';
 
@@ -154,6 +155,7 @@ export const SingleStoryContent = (props) => {
                 <PopularVsRecent/>
                 <EH2/>
                 <EH2/>
+                <EH2/>
                 <div className="single-story-content-right-part-wrapper">
                     <div className="single-story-content-right-part-wrapper-image">
                         <img src={Cake}/>
@@ -163,6 +165,10 @@ export const SingleStoryContent = (props) => {
                         <H5 className="h5-pink-swan">We use only the finest ingredients to produce stellar tastes.</H5>
                     </div>
                 </div>
+                <EH2/>
+                <EH2/>
+                <EH2/>
+                <Archives/>
             </div>
             <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   

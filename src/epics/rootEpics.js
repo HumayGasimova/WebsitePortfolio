@@ -4,5 +4,6 @@ import * as Epic from './index'
 export const rootEpic = combineEpics(
     Epic.startInitStoriesEpic,
     Epic.startInitRelatedPostsEpic,
-    Epic.startInitPopularAndRecentStoriesEpic
+    Epic.startInitPopularAndRecentStoriesEpic,
+    Epic.startInitArchievesEpic
 );

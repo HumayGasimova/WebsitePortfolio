@@ -1,0 +1,41 @@
+.archieves {
+    .archieves-items {
+        .archieves-item {
+            padding: 0px 0 0px 15px;
+            border-bottom: 1px solid rgb(180, 139, 62);
+        }
+    }
+}
+
+// @-webkit-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+// @-moz-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+// @-o-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+@keyframes activeTab {
+    from{
+        border-top: 3px solid rgb(180, 139, 62);
+    }
+    to {
+        border-top: 3px solid  rgb(51, 51, 51);
+    }
+}

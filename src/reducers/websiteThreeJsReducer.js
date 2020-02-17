@@ -22,7 +22,8 @@ export const initialState = {
     stories: [] ,
     singleStory: {},
     relatedPosts: [],
-    leaveACommentInputForm: {}
+    leaveACommentInputForm: {},
+    archievesMonths: []
 }
 
 const initMenuItems = (state, action) => {
@@ -204,6 +205,14 @@ const addPopularVsRecentStories = (state, action) => {
     };
 } 
 
+const addArchievesMonths = (state, action) => {
+    return {
+        ...state,
+        archievesMonths: action.array
+    };
+} 
+
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -232,12 +241,16 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return postComment(state, action); 
         case actionTypes.ADD_POPULAR_VS_RECENT_STORIES:
             return addPopularVsRecentStories(state, action);
+        case actionTypes.ADD_ARCHIEVES_MONTHS:
+            return addArchievesMonths(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:
             return state;
         case actionTypes.START_INIT_RELATED_POSTS:
             return state;
+        case actionTypes.START_INIT_ARCHIEVES:
+            return state; 
         default: 
             return state;
     }

@@ -179,7 +179,7 @@ export const StoryCard = (props) => {
                             className="story-card-link-left"
                             onClick={props.onClick}
                         >
-                            <H4 className="h4-animation-with-icon">Read more</H4>
+                            <H4 className="h4-animation-with-icon-right">Read more</H4>
                         </div>
                         <EW1/>
                         <FontAwesomeIcon 

@@ -31,7 +31,7 @@
     }
 }
 
-.h4-animation-with-icon {
+.h4-animation-with-icon-right {
     font-size: 18px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     color:  white;
@@ -45,12 +45,39 @@
     }
 }
 
-.h4-animation-with-icon:after {
+.h4-animation-with-icon-right:after {
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     top: 50%;
     right: -12px;
+    padding-left: 5px;
+    font-size: 14px;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.h4-animation-with-icon-left {
+    font-size: 18px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color:  white;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+        -webkit-animation: appear 0.3s linear;
+        -moz-animation: appear 0.3s linear;
+        -o-animation: appear 0.3s linear;
+        animation: appear 0.3s linear;
+    }
+}
+
+.h4-animation-with-icon-left:after {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    top: 45%;
+    left: -20px;
     padding-left: 5px;
     font-size: 14px;
     position: absolute;

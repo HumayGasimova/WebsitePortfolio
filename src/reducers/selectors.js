@@ -57,3 +57,11 @@ export const getPopularVsRecentStoriesState = createSelector(
     [getPopularVsRecentStories],
     (x) => x
 );
+
+const getArchievesMonths = (state) => state.home.archievesMonths;
+
+export const getArchievesMonthsState = createSelector(
+    [getArchievesMonths],
+    (x) => x
+);
+

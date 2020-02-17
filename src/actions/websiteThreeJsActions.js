@@ -113,3 +113,16 @@ export function addPopularVsRecentStories(array) {
         array: array
     };
 };
+
+export function startInitArchieves() {
+    return { 
+        type: actionTypes.START_INIT_ARCHIEVES
+    };
+};
+
+export function addArchievesMonths(array) {
+    return { 
+        type: actionTypes.ADD_ARCHIEVES_MONTHS,
+        array: array
+    };
+};
