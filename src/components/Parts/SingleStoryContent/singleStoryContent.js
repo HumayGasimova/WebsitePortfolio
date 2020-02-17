@@ -34,7 +34,7 @@ import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
-import Archives from '../../SmallParts/SingleStory/Archives/archieves';
+import ArchievesGuide from '../../SmallParts/SingleStory/ArchivesGuide/archievesGuide';
 
 // import * as Selectors from '../../../reducers/selectors';
 
@@ -43,7 +43,6 @@ import Archives from '../../SmallParts/SingleStory/Archives/archieves';
 */
 
 import * as Actions from '../../../actions';
-
 
 /**
 * Selectors
@@ -168,7 +167,7 @@ export const SingleStoryContent = (props) => {
                 <EH2/>
                 <EH2/>
                 <EH2/>
-                <Archives/>
+                <ArchievesGuide/>
             </div>
             <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   

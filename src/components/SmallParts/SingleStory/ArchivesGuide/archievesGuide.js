@@ -41,7 +41,7 @@ import * as Actions from '../../../../actions';
 * Styles
 */
 
-import './archieves.scss';
+import './archievesGuide.scss';
 
 /**
 * Selectors
@@ -75,10 +75,10 @@ import {
 
 
 /**
-* Archieves component definition and export
+* ArchievesGuide component definition and export
 */
 
-export const Archieves = (props) => {
+export const ArchievesGuide = (props) => {
 
     /**
     * State
@@ -89,13 +89,13 @@ export const Archieves = (props) => {
     */
 
     useEffect(() => {
-        if(props.archievesMonths.length === 0){
-            props.startInitArchieves();
-        }
+        // if(props.archievesMonths.length === 0){
+        //     props.startInitArchieves();
+        // }
     }, []);
 
-    const archievesMonthOnClick = (path, storiesArray) => {
-        props.history.push(`/crypto-cafe/${path}`,{storiesArray});
+    const archievesMonthOnClick = (path, obj) => {
+        props.history.push(`/crypto-cafe/${path}`,{obj});
     }
 
     const renderArchieves = () => {
@@ -103,7 +103,7 @@ export const Archieves = (props) => {
             return(
                 <div className="archieves-items">{props.archievesMonths.map((el, i) => {
                     return(
-                       <div key={i} className="archieves-item" onClick={() => archievesMonthOnClick(el.path, el.storiesArray)}>
+                       <div key={i} className="archieves-item" onClick={() => archievesMonthOnClick(el.path, el)}>
                             <EH0/>
                             <H4 className="h4-animation-with-icon-left">{el.text}</H4>
                             <EH0/>
@@ -134,9 +134,9 @@ export default connect(
     },
     (dispatch) => {
         return {
-            startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
-)(withRouter(Archieves));
+)(withRouter(ArchievesGuide));
  

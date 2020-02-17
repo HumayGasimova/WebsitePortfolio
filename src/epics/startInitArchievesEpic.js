@@ -37,10 +37,12 @@ export const startInitArchievesEpic = (action$) =>
         ofType(actionTypes.START_INIT_ARCHIEVES),
         mergeMap((action) => {
             let archievesMonths = [...storiesArray];
+            let archievesMonthObj = {};
+
             archievesMonths = archievesMonths.map(el => {
                 return {
                         key: `${el.date.year}${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
-                        path: `/${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
+                        path: `${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
                         text: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`,
                         storiesArray: [...el.storiesArray.map(el => {
                                                 return {
@@ -54,8 +56,15 @@ export const startInitArchievesEpic = (action$) =>
                 }
             })
 
+            if(action.path){
+                let obj = archievesMonths.find(x => x.path === action.path);
+                if(obj){
+                    archievesMonthObj = {...obj, text: obj.text.toUpperCase()};
+                }
+            }
             return of(
                 Actions.addArchievesMonths(archievesMonths),
+                Actions.initArchievesMonth(archievesMonthObj),
             )  
         })                
     )

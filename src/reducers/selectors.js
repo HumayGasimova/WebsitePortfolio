@@ -65,3 +65,9 @@ export const getArchievesMonthsState = createSelector(
     (x) => x
 );
 
+const getArchievesMonth = (state) => state.home.archievesMonth;
+
+export const getArchievesMonthState = createSelector(
+    [getArchievesMonth],
+    (x) => x
+);

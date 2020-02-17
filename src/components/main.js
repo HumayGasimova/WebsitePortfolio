@@ -39,6 +39,7 @@ import AboutUs from './Pages/AboutUs/aboutUs';
 import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
 import OurStory from './Pages/OurStory/ourStory';
 import SingleStory from './Pages/SingleStory/singleStory';
+import Archieve from './Pages/Archieve/archieve';
 
 /**
 * Actions
@@ -50,7 +51,7 @@ import * as Actions from '../actions';
 * Selectors
 */
 
-// import * as Selectors from '../reducers/selectors';
+import * as Selectors from '../reducers/selectors';
 
 /**
 * Constants
@@ -73,6 +74,7 @@ export const Main = (props) => {
     useEffect(() => {
         let path = props.location.pathname.slice(13);
         let storyObj = {};
+        let archievesMonthObj = {};
         let id;
         switch(path){
             case '':
@@ -100,10 +102,12 @@ export const Main = (props) => {
         props.activateMenuItem(id);
         storiesArray.map(el => {
             storyObj = el.storiesArray.find(x => x.path === path);
+            // console.log(storyObj)
             if(storyObj){
                 props.initSingleStory(storyObj);
             }
-        })
+        });
+        props.startInitArchieves(path);
     }, [])
 
     /**
@@ -115,6 +119,16 @@ export const Main = (props) => {
             <Toolbar/>
             <Sidebar/>
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/2020/February"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/2020/January"}
+                    component={Archieve}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/london-opening"}
@@ -173,7 +187,7 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            // singleStory: Selectors.getSingleStoryState(state),
+            archievesMonths: Selectors.getArchievesMonthState(state),
             // dots: Selectors.getDotsState(state)
         };
     },
@@ -182,6 +196,7 @@ export default connect(
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
+            startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
         };
     }
 )(Main);
