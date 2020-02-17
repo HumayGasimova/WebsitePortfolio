@@ -110,7 +110,7 @@ export const Content = (props) => {
                             <H5 colorText={Colors.EBB}>{el}</H5>
                             <EH1/>
                             <div className="content-additional-text">
-                                <H5>Cras feugiat, nisi non auctor eleifend, elit lorem laoreet erat, facilisis suscipit neque sadips ipsum sem eu ex.</H5>
+                                <H5 className="h5-pink-swan">Cras feugiat, nisi non auctor eleifend, elit lorem laoreet erat, facilisis suscipit neque sadips ipsum sem eu ex.</H5>
                             </div>
                         </div>
                     )
