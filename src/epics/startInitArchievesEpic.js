@@ -44,6 +44,7 @@ export const startInitArchievesEpic = (action$) =>
                         key: `${el.date.year}${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
                         path: `${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
                         text: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`,
+                        show: true,
                         storiesArray: [...el.storiesArray.map(el => {
                                                 return {
                                                     id: el.id,

@@ -1,0 +1,167 @@
+.archieves-month {
+    // display: flex;
+    // flex-wrap: wrap;
+    position: relative;
+    z-index: 20;
+    padding: 80px 80px 0 80px;
+    background-color: rgb(41, 39, 38);
+    cursor: context-menu;
+    .archieves-month-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .utility-div {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(41, 39, 38);
+            position: relative;
+            z-index: 10;
+        }
+    }
+    .archieves-by-month {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .archieves-month-button {
+            width: 100px;
+            background-color: rgb(63, 63, 63);
+            border: 1px solid rgb(41, 39, 38);
+            padding: 7px;
+            cursor: pointer;
+        }
+        .archieves-month-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            max-height: 2400px;
+            // transition: max-height 0.3s ease-out;
+        }
+        .archieves-month-wrapper-open {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: auto;
+            max-height: 2400px;
+            -webkit-animation: openStories 1s linear;
+            -moz-animation: openStories 1s linear;
+            -o-animation: openStories 1s linear;
+            animation: openStories 1s linear;
+            // transition: max-height 0.3s ease-out;
+        }
+        .archieves-month-wrapper-close {
+            max-height: 0;
+            // animation: closeStories 0.3s linear;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: 0px;
+            -webkit-animation: closeStories 1s linear;
+            -moz-animation: closeStories 1s linear;
+            -o-animation: closeStories 1s linear;
+            animation: closeStories 1s linear;
+            // transition: max-height 0.3s ease-out;
+        }
+    }
+}
+
+@-webkit-keyframes openStories {
+    from{
+        max-height: 0px;
+    }
+    to {
+        max-height: 1900px;
+    }
+}
+@-moz-keyframes openStories {
+    from{
+        max-height: 0px;
+    }
+    to {
+        max-height: 1900px;
+    }
+}
+@-o-keyframes openStories {
+    from{
+        max-height: 0px;
+    }
+    to {
+        max-height: 1900px;
+    }
+}
+@keyframes openStories {
+    from{
+        max-height: 0px;
+    }
+    to {
+        max-height: 1900px;
+    }
+}
+
+@-webkit-keyframes closeStories {
+    from{
+        max-height: 1900px;
+    }
+    to {
+        max-height: 0px;
+    }
+}
+@-moz-keyframes closeStories {
+    from{
+        max-height: 1900px;
+    }
+    to {
+        max-height: 0px;
+    }
+}
+@-o-keyframes closeStories {
+    from{
+        max-height: 1900px;
+    }
+    to {
+        max-height: 0px;
+    }
+}
+@keyframes closeStories {
+    from{
+        max-height: 1900px;
+    }
+    to {
+        max-height: 0px;
+    }
+}
+
+// @media only screen and (max-width: 1300px){
+//     .stories {
+//         padding: 80px 40px 0 40px;
+//     }
+// }
+
+// @media only screen and (max-width: 1000px){
+//     .stories {
+//         padding: 80px 0 0 0;
+//     }
+// }
+
+// @media only screen and (max-width: 900px){
+//     .stories {
+//         padding: 80px 80px 0 80px;
+//         .stories-by-month {
+           
+//             .stories-wrapper {
+//                 flex-wrap: nowrap;
+//                 flex-direction: column;
+//                 max-height: 9400px;
+//             }
+//             .stories-wrapper-open {
+//                 flex-wrap: nowrap;
+//                 flex-direction: column;
+//             }
+//             .stories-wrapper-close {
+//                 flex-wrap: nowrap;
+//                 flex-direction: column;
+//             }
+//         }
+//     }
+// }

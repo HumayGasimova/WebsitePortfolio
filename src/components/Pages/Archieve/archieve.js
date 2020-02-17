@@ -24,9 +24,7 @@ import './archieve.scss';
 * Components
 */
 
-import Statistics from '../../Parts/Statistics/statistics'
-import Stories from '../../Parts/Stories/stories';
-import Footer from '../../Parts/Footer/footer';
+import ArchievesMonth from '../../Parts/ArchievesMonth/archievesMonth';
 
 /**
 * Actions
@@ -97,7 +95,7 @@ export const Archieve = (props) => {
                 </H4>
             </div>
             <div className="archieve-wrapper">
-               {/* <ArchieveMonth/> */}
+               <ArchievesMonth/>
             </div>
         </>
     );

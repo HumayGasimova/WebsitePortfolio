@@ -173,22 +173,26 @@ export const StoryCard = (props) => {
                     <DoubleLine1/>
                     <EH1/>
                     <H5 textColor={Colors.EBB}>{props.description} [...]</H5>
-                    <EH1/>
-                    <div className="story-card-link">
-                        <div 
-                            className="story-card-link-left"
-                            onClick={props.onClick}
-                        >
-                            <H4 className="h4-animation-with-icon-right">Read more</H4>
-                        </div>
-                        <EW1/>
-                        <FontAwesomeIcon 
-                            icon={props.iconComments} 
-                            size="sm" 
-                            className="icon-comments"
-                            onClick={props.onClick}
-                        />
-                    </div>
+                    
+                    {!props.archievesMonth ? 
+                    <>
+                        <EH1/>
+                        <div className="story-card-link">
+                            <div 
+                                className="story-card-link-left"
+                                onClick={props.onClick}
+                            >
+                                <H4 className="h4-animation-with-icon-right">Read more</H4>
+                            </div>
+                            <EW1/>
+                            <FontAwesomeIcon 
+                                icon={props.iconComments} 
+                                size="sm" 
+                                className="icon-comments"
+                                onClick={props.onClick}
+                            />
+                        </div> 
+                    </> : null}
                 </div>
             </div>
         </div>
