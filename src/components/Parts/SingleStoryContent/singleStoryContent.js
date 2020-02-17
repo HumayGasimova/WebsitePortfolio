@@ -151,7 +151,7 @@ export const SingleStoryContent = (props) => {
             <div className="single-story-content-right-part">
                 <PopularVsRecent/>
             </div>
-            <H5 className="h5-pink-swan">
+            <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   
                 Avada Theme by Theme Fusion   |   
                 All Rights Reserved   |   
