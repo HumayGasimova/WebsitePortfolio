@@ -95,7 +95,7 @@ export const AboutUs = (props) => {
                 <EH1/>
                 <Line2/>
                 <EH1/>
-                <H3 classsName="h3-center">WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
+                <H3 className="h3-center">WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
             </div>
             <div className="about-us-wrapper">
                 <CafeInfo/>
