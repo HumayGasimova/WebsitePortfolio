@@ -94,7 +94,7 @@ export const Main = (props) => {
                 id = 6;
                 break;
             default:
-                id = 1;
+                id = null;
                 break;
         }
         props.activateMenuItem(id);

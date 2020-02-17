@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -90,12 +94,16 @@ export const Archieves = (props) => {
         }
     }, []);
 
+    const archievesMonthOnClick = (path, storiesArray) => {
+        props.history.push(`/crypto-cafe/${path}`,{storiesArray});
+    }
+
     const renderArchieves = () => {
         if(props.archievesMonths){
             return(
                 <div className="archieves-items">{props.archievesMonths.map((el, i) => {
                     return(
-                       <div key={i} className="archieves-item">
+                       <div key={i} className="archieves-item" onClick={() => archievesMonthOnClick(el.path, el.storiesArray)}>
                             <EH0/>
                             <H4 className="h4-animation-with-icon-left">{el.text}</H4>
                             <EH0/>
@@ -127,7 +135,8 @@ export default connect(
     (dispatch) => {
         return {
             startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
-)(Archieves);
+)(withRouter(Archieves));
  

@@ -39,9 +39,18 @@ export const startInitArchievesEpic = (action$) =>
             let archievesMonths = [...storiesArray];
             archievesMonths = archievesMonths.map(el => {
                 return {
-                    key: `${el.date.year}${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
-                    path: `/${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
-                    text: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`
+                        key: `${el.date.year}${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
+                        path: `/${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
+                        text: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`,
+                        storiesArray: [...el.storiesArray.map(el => {
+                                                return {
+                                                    id: el.id,
+                                                    image: el.image,
+                                                    header: el.header,
+                                                    paragraphs: [...el.paragraphs],
+                                                    path: el.path
+                                                }
+                                        })]
                 }
             })
 
