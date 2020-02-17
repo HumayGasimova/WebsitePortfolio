@@ -47,11 +47,22 @@ export const startInitArchievesEpic = (action$) =>
                         show: true,
                         storiesArray: [...el.storiesArray.map(el => {
                                                 return {
-                                                    id: el.id,
+                                                    id: 1,
+                                                    day: el.day,
+                                                    month: el.month,
+                                                    year: el.year,
                                                     image: el.image,
                                                     header: el.header,
                                                     paragraphs: [...el.paragraphs],
+                                                    comments: [...el.comments],
+                                                    tag: [...el.tag],
+                                                    popular: el.popular,
                                                     path: el.path
+                                                    // id: el.id,
+                                                    // image: el.image,
+                                                    // header: el.header,
+                                                    // paragraphs: [...el.paragraphs],
+                                                    // path: el.path
                                                 }
                                         })]
                 }

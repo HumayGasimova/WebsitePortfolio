@@ -135,3 +135,10 @@ export function initArchievesMonth(obj) {
     };
 };
 
+export function showArchievesStoriesOfMonth(key) {
+    return { 
+        type: actionTypes.SHOW_ARCHIEVES_STORIES_OF_MONTH,
+        key: key
+    };
+};
+

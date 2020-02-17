@@ -96,20 +96,10 @@ export const ArchievesMonth = (props) => {
     * Methods
     */
 
-    // useEffect(() => {
-    //     if(props.stories.length === 0){
-    //         props.startInitStories(0);
-    //     }
-    // }, [])
-
-    // const loadMoreHandler = () => {
-    //     props.startInitStories(props.stories.length);
-    // } 
-
-    // const storyOnClick = (path, obj) => {
-    //     props.history.push(`/crypto-cafe/${path}`,{obj});
-    //     props.activateMenuItem(null);
-    // }
+    const storyOnClick = (path, obj) => {
+        props.history.push(`/crypto-cafe/${path}`,{obj});
+        props.activateMenuItem(null);
+    }
 
     const renderStoriesByMonth = () => {
         if(props.archievesMonth.storiesArray){
@@ -124,11 +114,10 @@ export const ArchievesMonth = (props) => {
                                 header={el.header}
                                 description={description}
                                 image={el.image}
-                                // iconComments={faComments}
                                 iconSearch={faSearch}
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
-                                // onClick={() => storyOnClick(el.path, el)}
+                                onClick={() => storyOnClick(el.path, el)}
                             />
                         )
                     }else{
@@ -140,11 +129,10 @@ export const ArchievesMonth = (props) => {
                                 header={el.header}
                                 description={description}
                                 image={el.image}
-                                // iconComments={faComments}
                                 iconSearch={faSearch}
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
-                                // onClick={() => storyOnClick(el.path, el)}
+                                onClick={() => storyOnClick(el.path, el)}
                             />
                         )
                     }
@@ -168,7 +156,7 @@ export const ArchievesMonth = (props) => {
                 <div className="archieves-by-month">
                     <div 
                         className="archieves-month-button"
-                        // onClick={() => props.showStoriesOfMonth(el.key)}
+                        onClick={() => props.showArchievesStoriesOfMonth(props.archievesMonth.key)}
                     >
                         <H4 className="h4-white-centered">{props.archievesMonth.path ? props.archievesMonth.path.slice(props.archievesMonth.path.indexOf('/') + 1, props.archievesMonth.path.length) : null}</H4>
                         <H4 className="h4-white-centered">{props.archievesMonth.path ? props.archievesMonth.path.slice(0, props.archievesMonth.path.indexOf('/')) : null}</H4>
@@ -193,7 +181,6 @@ export const ArchievesMonth = (props) => {
                             </div>
                         </CSSTransition>
                 </div>
-                <div className="utility-div"/>
             </div>
         </div>
     );
@@ -207,8 +194,8 @@ export const ArchievesMonth = (props) => {
     (dispatch) => {
         return {
             // startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
-            // showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
-            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            showArchievesStoriesOfMonth: bindActionCreators(Actions.showArchievesStoriesOfMonth, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
 )(withRouter(ArchievesMonth));

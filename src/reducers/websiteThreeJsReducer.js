@@ -220,6 +220,15 @@ const initArchievesMonth = (state, action) => {
     };
 } 
 
+const showArchievesStoriesOfMonth = (state, action) => {
+    let updatedArchievesMonth = {...state.archievesMonth};
+    updatedArchievesMonth.show = !updatedArchievesMonth.show;
+    return {
+        ...state,
+        archievesMonth: updatedArchievesMonth
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -252,6 +261,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return addArchievesMonths(state, action);
         case actionTypes.INIT_ARCHIEVES_MONTH:
             return initArchievesMonth(state, action);
+        case actionTypes.SHOW_ARCHIEVES_STORIES_OF_MONTH:
+            return showArchievesStoriesOfMonth(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

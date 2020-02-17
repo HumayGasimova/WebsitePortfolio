@@ -25,6 +25,7 @@ import './archieve.scss';
 */
 
 import ArchievesMonth from '../../Parts/ArchievesMonth/archievesMonth';
+import Footer from '../../Parts/Footer/footer';
 
 /**
 * Actions
@@ -96,6 +97,14 @@ export const Archieve = (props) => {
             </div>
             <div className="archieve-wrapper">
                <ArchievesMonth/>
+               <div className="archieve-footer-wrapper">
+                    <H5 className="h5-pink-swan-center">
+                        © Copyright 2012 - 2020   |   
+                        Avada Theme by Theme Fusion   |   
+                        All Rights Reserved   |   
+                        Powered by WordPress
+                    </H5>
+                </div>
             </div>
         </>
     );

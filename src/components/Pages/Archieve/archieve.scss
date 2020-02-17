@@ -30,6 +30,12 @@
     position: relative;
     left: 300px;
     width: calc(100% - 282px);
+    .archieve-footer-wrapper {
+        background-color: rgb(41, 39, 38);
+        padding: 80px 0 40px 0;
+        position: relative;
+        z-index: 20;
+    }
 }
 
 @media only screen and (max-width: 1120px){
