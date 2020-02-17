@@ -54,6 +54,8 @@ import * as Selectors from '../../../reducers/selectors';
 * Images
 */
 
+import Cake from '../../../images/cake.jpg';
+
 /**
 * Utility
 */
@@ -150,6 +152,17 @@ export const SingleStoryContent = (props) => {
             </div>
             <div className="single-story-content-right-part">
                 <PopularVsRecent/>
+                <EH2/>
+                <EH2/>
+                <div className="single-story-content-right-part-wrapper">
+                    <div className="single-story-content-right-part-wrapper-image">
+                        <img src={Cake}/>
+                    </div>
+                    <EH1/>
+                    <div className="single-story-content-right-part-wrapper-text">
+                        <H5 className="h5-pink-swan">We use only the finest ingredients to produce stellar tastes.</H5>
+                    </div>
+                </div>
             </div>
             <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   

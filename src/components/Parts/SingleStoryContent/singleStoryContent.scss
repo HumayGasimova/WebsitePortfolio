@@ -15,6 +15,23 @@
         // border: 2px solid red;
         width: calc(31% - 40px);
         margin-left: 40px;
+        .single-story-content-right-part-wrapper {
+            .single-story-content-right-part-wrapper-image {
+                // width: 25%;
+                background-color: rgb(18, 68, 159);
+                filter: grayscale(45%);
+                >img {
+                    width: 100%;
+                    // height: 220px;
+                    object-fit: cover;
+                    opacity: 0.8;
+                }
+            }
+            .single-story-content-right-part-wrapper-text {
+                padding: 15px;
+                background-color: rgb(51, 51, 51);
+            }
+        }
     }
 }
 
