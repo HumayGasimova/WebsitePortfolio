@@ -41,7 +41,7 @@ import * as Actions from '../../../../actions';
 * Styles
 */
 
-import './archievesGuide.scss';
+import './categories.scss';
 
 /**
 * Selectors
@@ -75,10 +75,10 @@ import {
 
 
 /**
-* ArchievesGuide component definition and export
+* Categories component definition and export
 */
 
-export const ArchievesGuide = (props) => {
+export const Categories = (props) => {
 
     /**
     * State
@@ -88,23 +88,27 @@ export const ArchievesGuide = (props) => {
     * Methods
     */
 
-    const archievesMonthOnClick = (path, obj) => {
-        props.history.push(`/crypto-cafe/${path}`,{obj});
+    useEffect(() => {
+        // if(props.archievesMonths.length === 0){
+        //     props.startInitArchieves();
+        // }
+    }, []);
+
+    const categoriesOnClick = (path, obj) => {
+        props.history.push(`/crypto-cafe/category/${path}`,{obj});
     }
 
-    const renderArchieves = () => {
-        if(props.archievesMonths){
+    const renderCategories = () => {
+        if(props.categories){
             return(
-                <div className="archieves-items">{props.archievesMonths.map((el, i) => {
+                <div className="categories-items">{props.categories.map((el, i) => {
                     return(
                        <div 
                             key={i} 
-                            className="archieves-item" 
-                            onClick={() => archievesMonthOnClick(el.path, el)}
+                            className="categories-item" 
+                            onClick={() => categoriesOnClick(el.path, el)}
                         >
-                            <EH0/>
-                            <H4 className="h4-animation-with-icon-left">{el.text}</H4>
-                            <EH0/>
+                            <H6 className="h6-jaldi">{el.category}</H6>
                        </div>
                     )
                 })}</div>
@@ -117,9 +121,10 @@ export const ArchievesGuide = (props) => {
     */
 
     return(
-        <div className="archieves">
-            <H4 className={"h4-white"}>ARCHIVES</H4>
-            {renderArchieves()}
+        <div className="categories">
+            <H4 className={"h4-white"}>CATEGORIES</H4>
+            <EH0/>
+            {renderCategories()}
         </div>
     );
 }
@@ -127,14 +132,14 @@ export const ArchievesGuide = (props) => {
 export default connect(
     (state) => {
         return {
-            archievesMonths: Selectors.getArchievesMonthsState(state),
+            categories: Selectors.getCategoriesState(state),
         };
     },
     (dispatch) => {
         return {
             // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
-            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            // activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
-)(withRouter(ArchievesGuide));
+)(withRouter(Categories));
  

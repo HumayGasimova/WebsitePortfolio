@@ -36,7 +36,7 @@ export const storiesArray = [
                         comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin eu magna ut sollicitudin. Maecenas eu turpis enim. Phasellus sapien ligula, suscipit non urna elementum, dignissim accumsan mauris.",
                     }
                 ],
-                tag: [
+                categories: [
                     "brunch",
                     "coffee",
                     "dinner",
@@ -70,7 +70,7 @@ export const storiesArray = [
                     }
 
                 ],
-                tag: [
+                categories: [
                     "brunch",
                     "coffee",
                     "dinner",
@@ -109,7 +109,7 @@ export const storiesArray = [
                     }
 
                 ],
-                tag: [
+                categories: [
                     "brunch",
                     "coffee",
                     "dinner",
@@ -131,7 +131,7 @@ export const storiesArray = [
                     'Integer eu velit efficitur, placerat magna ac, malesuada risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi rutrum augue orci, non bibendum nisi ultricies at. Pellentesque pharetra, nibh vel faucibus elementum, ligula magna congue lacus, et interdum est purus a ligula. Aliquam maximus, eros tincidunt convallis euismod, magna tellus placerat arcu, et consectetur lacus ipsum ac arcu. Maecenas ultrices lectus risus, eget sollicitudin erat facilisis in. Nullam fermentum eget sem sit amet pellentesque. Nunc rhoncus interdum lorem ac lobortis.'
                 ],
                 comments: [],
-                tag: [
+                categories: [
                     "brunch",
                     "coffee",
                     "dinner",
@@ -163,13 +163,10 @@ export const storiesArray = [
                     'Integer eu velit efficitur, placerat magna ac, malesuada risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi rutrum augue orci, non bibendum nisi ultricies at. Pellentesque pharetra, nibh vel faucibus elementum, ligula magna congue lacus, et interdum est purus a ligula. Aliquam maximus, eros tincidunt convallis euismod, magna tellus placerat arcu, et consectetur lacus ipsum ac arcu. Maecenas ultrices lectus risus, eget sollicitudin erat facilisis in. Nullam fermentum eget sem sit amet pellentesque. Nunc rhoncus interdum lorem ac lobortis.'
                 ],
                 comments: [],
-                tag: [
+                categories: [
                     "brunch",
-                    "coffee",
-                    "dinner",
                     "featured",
                     "lunch",
-                    "openning",
                     "specials"
                 ],
                 popular: 170,
@@ -188,7 +185,8 @@ export const storiesArray = [
                     'Integer eu velit efficitur, placerat magna ac, malesuada risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi rutrum augue orci, non bibendum nisi ultricies at. Pellentesque pharetra, nibh vel faucibus elementum, ligula magna congue lacus, et interdum est purus a ligula. Aliquam maximus, eros tincidunt convallis euismod, magna tellus placerat arcu, et consectetur lacus ipsum ac arcu. Maecenas ultrices lectus risus, eget sollicitudin erat facilisis in. Nullam fermentum eget sem sit amet pellentesque. Nunc rhoncus interdum lorem ac lobortis.'
                 ],
                 comments: [],
-                tag: [
+                categories: [
+                    "brunch",
                     "dinner",
                     "specials"
                 ],

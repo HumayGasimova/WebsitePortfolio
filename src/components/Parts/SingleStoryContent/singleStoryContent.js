@@ -35,6 +35,7 @@ import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
 import ArchievesGuide from '../../SmallParts/SingleStory/ArchivesGuide/archievesGuide';
+import Categories from '../../SmallParts/SingleStory/Categories/categories';
 
 // import * as Selectors from '../../../reducers/selectors';
 
@@ -168,6 +169,10 @@ export const SingleStoryContent = (props) => {
                 <EH2/>
                 <EH2/>
                 <ArchievesGuide/>
+                <EH2/>
+                <EH2/>
+                <EH2/>
+                <Categories/>
             </div>
             <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   

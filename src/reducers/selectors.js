@@ -71,3 +71,10 @@ export const getArchievesMonthState = createSelector(
     [getArchievesMonth],
     (x) => x
 );
+
+const getCategories = (state) => state.home.categories;
+
+export const getCategoriesState = createSelector(
+    [getCategories],
+    (x) => x
+);

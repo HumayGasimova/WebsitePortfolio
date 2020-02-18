@@ -142,3 +142,17 @@ export function showArchievesStoriesOfMonth(key) {
     };
 };
 
+export function startInitCategories(path) {
+    return { 
+        type: actionTypes.START_INIT_CATEGORIES,
+        path: path
+    };
+};
+
+export function initCategories(path) {
+    return { 
+        type: actionTypes.INIT_CATEGORIES,
+        array: path
+    };
+};
+

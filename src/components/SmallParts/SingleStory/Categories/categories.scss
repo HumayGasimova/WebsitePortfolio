@@ -1,0 +1,86 @@
+.categories {
+    .categories-items {
+        display: flex;
+        flex-wrap: wrap;
+        .categories-item {
+            margin: 3px;
+            text-align: center;
+            border: 1px solid rgb(180, 139, 62);
+            padding: 5px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(180, 139, 62);
+                -webkit-animation: appearBackground 0.3s linear;
+                -moz-animation: appearBackground 0.3s linear;
+                -o-animation: appearBackground 0.3s linear;
+                animation: appearBackground 0.3s linear;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes appearBackground {
+    from{
+        background-color: rgb(63, 63, 63);
+    }
+    to {
+        background-color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appearBackground {
+    from{
+        background-color: rgb(63, 63, 63);
+    }
+    to {
+        background-color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appearBackground {
+    from{
+        background-color: rgb(63, 63, 63);
+    }
+    to {
+        background-color: rgb(180, 139, 62);
+    }
+}
+@keyframes appearBackground {
+    from{
+        background-color: rgb(63, 63, 63);
+    }
+    to {
+        background-color: rgb(180, 139, 62);
+    }
+}
+
+// @-webkit-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+// @-moz-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+// @-o-keyframes appear {
+//     from{
+//         color: white;
+//     }
+//     to {
+//         color: rgb(180, 139, 62);
+//     }
+// }
+@keyframes activeTab {
+    from{
+        border-top: 3px solid rgb(180, 139, 62);
+    }
+    to {
+        border-top: 3px solid  rgb(51, 51, 51);
+    }
+}

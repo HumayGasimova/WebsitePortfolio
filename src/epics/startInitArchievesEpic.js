@@ -55,7 +55,7 @@ export const startInitArchievesEpic = (action$) =>
                                                     header: el.header,
                                                     paragraphs: [...el.paragraphs],
                                                     comments: [...el.comments],
-                                                    tag: [...el.tag],
+                                                    categories: [...el.categories],
                                                     popular: el.popular,
                                                     path: el.path
                                                     // id: el.id,

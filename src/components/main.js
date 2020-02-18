@@ -108,6 +108,7 @@ export const Main = (props) => {
             }
         });
         props.startInitArchieves(path);
+        props.startInitCategories(path);
     }, [])
 
     /**
@@ -119,6 +120,41 @@ export const Main = (props) => {
             <Toolbar/>
             <Sidebar/>
             <Switch>
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/specials"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/openning"}
+                    component={Archieve}
+                />
+                 <Route 
+                    exact 
+                    path={props.match.url + "/category/lunch"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/featured"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/dinner"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/coffee"}
+                    component={Archieve}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/category/brunch"}
+                    component={Archieve}
+                />
                 <Route 
                     exact 
                     path={props.match.url + "/2020/February"}
@@ -197,6 +233,7 @@ export default connect(
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
             startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
         };
     }
 )(Main);

@@ -5,5 +5,6 @@ export const rootEpic = combineEpics(
     Epic.startInitStoriesEpic,
     Epic.startInitRelatedPostsEpic,
     Epic.startInitPopularAndRecentStoriesEpic,
-    Epic.startInitArchievesEpic
+    Epic.startInitArchievesEpic,
+    Epic.startInitCategoriesEpic
 );
