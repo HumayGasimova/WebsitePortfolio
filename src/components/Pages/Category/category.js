@@ -74,7 +74,7 @@ export const Category = (props) => {
 
     useEffect(()=>{
         props.initCategoryStories(props.location.state ? props.location.state.obj : {});
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     }, []);
 
     /**
