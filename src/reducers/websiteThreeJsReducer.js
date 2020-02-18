@@ -25,7 +25,8 @@ export const initialState = {
     leaveACommentInputForm: {},
     archievesMonths: [],
     archievesMonth: {},
-    categories: []
+    categories: [],
+    categoryStories: {}
 }
 
 const initMenuItems = (state, action) => {
@@ -235,6 +236,13 @@ const initCategories = (state, action) => {
     };
 }
 
+const initCategoryStories = (state, action) => {
+    return {
+        ...state,
+        categoryStories: action.obj
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -271,6 +279,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return showArchievesStoriesOfMonth(state, action);
         case actionTypes.INIT_CATEGORIES:
             return initCategories(state, action);
+        case actionTypes.INIT_CATEGORY_STORIES:
+            return initCategoryStories(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

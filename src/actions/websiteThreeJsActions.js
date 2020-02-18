@@ -152,7 +152,13 @@ export function startInitCategories(path) {
 export function initCategories(path) {
     return { 
         type: actionTypes.INIT_CATEGORIES,
-        array: path
+        path: path
     };
 };
 
+export function initCategoryStories(obj) {
+    return { 
+        type: actionTypes.INIT_CATEGORY_STORIES,
+        obj: obj
+    };
+};

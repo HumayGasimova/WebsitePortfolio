@@ -107,7 +107,7 @@ export const startInitCategoriesEpic = (action$) =>
 
             return of(
                 Actions.initCategories(updatedCategoriesArray),
-                // Actions.initArchievesMonth(archievesMonthObj),
+                // Actions.initCategoryStories(archievesMonthObj),
             )  
         })                
     )

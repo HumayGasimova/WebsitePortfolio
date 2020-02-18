@@ -78,3 +78,10 @@ export const getCategoriesState = createSelector(
     [getCategories],
     (x) => x
 );
+
+const getCategoryStories = (state) => state.home.categoryStories;
+
+export const getCategoryStoriesState = createSelector(
+    [getCategoryStories],
+    (x) => x
+);

@@ -73,7 +73,7 @@ export const Category = (props) => {
     */
 
     useEffect(()=>{
-        // props.initArchievesMonth(props.location.state ? props.location.state.obj : {});
+        props.initCategoryStories(props.location.state ? props.location.state.obj : {});
         // window.scrollTo(0, 0);
     }, []);
 
@@ -87,13 +87,11 @@ export const Category = (props) => {
                 <div className="category-wrapper-backgroud-div"/>
             </div>
             <div className="category-header-text">
-                {/* <H1 className="h1-center">{"props.categories.category"}</H1> */}
+                <H1 className="h1-center">{props.categoryStories.category ? props.categoryStories.category.toUpperCase() : null}</H1>
                 <EH1/>
-                {/* <H4 className="h4-white-centered">
-                    {`Home / 
-                    ${props.archievesMonth.path ? props.archievesMonth.path.slice(0, props.archievesMonth.path.indexOf('/')): null} /  
-                    ${props.archievesMonth.path ? props.archievesMonth.path.slice(props.archievesMonth.path.indexOf('/') + 1, props.archievesMonth.path.length) : null}`}
-                </H4> */}
+                <H4 className="h4-white-centered">
+                    {`Home / ${props.categoryStories.category}`}
+                </H4>
             </div>
             <div className="category-wrapper">
                {/* <ArchievesMonth/> */}
@@ -113,13 +111,13 @@ export const Category = (props) => {
 export default connect(
     (state) => {
         return {
-            categories: Selectors.getCategoriesState(state),
+            categoryStories: Selectors.getCategoryStoriesState(state),
             // dots: Selectors.getDotsState(state)
         };
     },
     (dispatch) => {
         return {
-            // initArchievesMonth: bindActionCreators(Actions.initArchievesMonth, dispatch),
+            initCategoryStories: bindActionCreators(Actions.initCategoryStories, dispatch),
             // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
         };
     }
