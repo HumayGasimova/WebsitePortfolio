@@ -91,7 +91,7 @@ export const Slider = (props) => {
             cloneLast = lastSlide.cloneNode(true),
             index = 0,
             allowShift = true;
-console.log(cloneFirst)
+// console.log(cloneFirst)
             // props.addRelatedPostsElement();
         
         // Clone first and last slide
@@ -185,7 +185,7 @@ console.log(cloneFirst)
             items.style.left = -(1 * slideSize) + "px";
             index = 0;
           }
-          console.log(index)
+          // console.log(index)
           allowShift = true;
         }
     }

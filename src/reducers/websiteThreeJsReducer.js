@@ -106,7 +106,6 @@ const addRelatedPosts = (state, action) => {
 
 const addRelatedPostsElement = (state, action) => {
     let updatedRelatedPosts = [...state.relatedPosts];
-    console.log(updatedRelatedPosts)
     let firstElement = state.relatedPosts[0];
     let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
   
@@ -165,7 +164,6 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
 
 
 const postComment = (state, action) => {
-    console.log("d")
     let updatedSingleStory = {...state.singleStory};
     let updatedLeaveACommentInputForm = {...state.leaveACommentInputForm, inputsArray: [...state.leaveACommentInputForm.inputsArray]};
     if(state.leaveACommentInputForm.formIsValid && state.leaveACommentInputForm.inputsArray){
@@ -190,7 +188,7 @@ const postComment = (state, action) => {
                 }
                 
         })
-        console.log(updatedLeaveACommentInputForm)
+        // console.log(updatedLeaveACommentInputForm)
     }
     
     return {

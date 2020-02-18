@@ -39,11 +39,6 @@ export const storiesArray = [
                 categories: [
                     "brunch",
                     "coffee",
-                    "dinner",
-                    "featured",
-                    "lunch",
-                    "openning",
-                    "specials"
                 ],
                 popular: 4,
                 path: "new-york-opening"
@@ -71,7 +66,6 @@ export const storiesArray = [
 
                 ],
                 categories: [
-                    "brunch",
                     "coffee",
                     "dinner",
                     "specials"
@@ -110,7 +104,6 @@ export const storiesArray = [
 
                 ],
                 categories: [
-                    "brunch",
                     "coffee",
                     "dinner",
                     "specials"
@@ -132,7 +125,6 @@ export const storiesArray = [
                 ],
                 comments: [],
                 categories: [
-                    "brunch",
                     "coffee",
                     "dinner",
                     "specials"
@@ -186,7 +178,6 @@ export const storiesArray = [
                 ],
                 comments: [],
                 categories: [
-                    "brunch",
                     "dinner",
                     "specials"
                 ],

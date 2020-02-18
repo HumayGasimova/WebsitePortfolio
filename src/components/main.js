@@ -14,7 +14,6 @@ import {
     bindActionCreators
 } from 'redux';
 
-
 import {
     BrowserRouter as Router,
     Route,
@@ -40,6 +39,7 @@ import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
 import OurStory from './Pages/OurStory/ourStory';
 import SingleStory from './Pages/SingleStory/singleStory';
 import Archieve from './Pages/Archieve/archieve';
+import Category from './Pages/Category/category';
 
 /**
 * Actions
@@ -123,37 +123,37 @@ export const Main = (props) => {
                 <Route 
                     exact 
                     path={props.match.url + "/category/specials"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/category/openning"}
-                    component={Archieve}
+                    component={Category}
                 />
                  <Route 
                     exact 
                     path={props.match.url + "/category/lunch"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/category/featured"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/category/dinner"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/category/coffee"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 
                     path={props.match.url + "/category/brunch"}
-                    component={Archieve}
+                    component={Category}
                 />
                 <Route 
                     exact 

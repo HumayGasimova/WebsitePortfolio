@@ -79,7 +79,7 @@ export const CircularArray = (props) => {
     const normolizeIndex = (i, array) => {
         if (!array.length) throw Error("empty array");
         const indexModulus = i % array.length;
-        console.log(indexModulus)
+        // console.log(indexModulus)
         if (indexModulus < 0) {
           return array.length + indexModulus;
         } else {

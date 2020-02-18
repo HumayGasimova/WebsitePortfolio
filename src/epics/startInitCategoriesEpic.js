@@ -41,8 +41,63 @@ export const startInitCategoriesEpic = (action$) =>
         ofType(actionTypes.START_INIT_CATEGORIES),
         mergeMap((action) => {
             let updatedCategoriesArray = [...categoriesArray];
-            let categoriesMonthObj = {}
+            let updatedStoriesArray = [...storiesArray];
 
+            updatedStoriesArray.map((el, i) => {
+                el.storiesArray.map((el, i) => {
+                    if(el.categories.includes(updatedCategoriesArray[0].key)){
+                        updatedCategoriesArray[0].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[1].key)){
+                        updatedCategoriesArray[1].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[2].key)){
+                        updatedCategoriesArray[2].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[3].key)){
+                        updatedCategoriesArray[3].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[4].key)){
+                        updatedCategoriesArray[4].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[5].key)){
+                        updatedCategoriesArray[5].storiesArrayOfCategories.push(el); 
+                    }
+                    if(el.categories.includes(updatedCategoriesArray[6].key)){
+                        updatedCategoriesArray[6].storiesArrayOfCategories.push(el); 
+                    }
+                })
+            })
+
+            updatedCategoriesArray = updatedCategoriesArray.map((el,i) => {
+                let jan = el.storiesArrayOfCategories.filter(x => x.month === "January");
+                let feb = el.storiesArrayOfCategories.filter(x => x.month === "February");
+                return({
+                    key: el.key,
+                    category: el.category,
+                    path: el.path,
+                    storiesArrayOfCategories: [
+                        {
+                            key: "february20",
+                            date: {
+                                month: "FEBRUARY",
+                                year: "2020"
+                            },
+                            show: true,
+                            storiesArray: feb
+                        },
+                        {
+                            key: "january20",
+                            date: {
+                                month: "JANUARY",
+                                year: "2020"
+                            },
+                            show: true,
+                            storiesArray: jan
+                        }
+                    ]
+                })
+            })
             // if(action.path){
             //     let obj = archievesMonths.find(x => x.path === action.path);
             //     if(obj){

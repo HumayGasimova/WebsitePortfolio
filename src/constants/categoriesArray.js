@@ -1,37 +1,44 @@
 export const categoriesArray= [
     {
+        key: "brunch",
         category: "Brunch",
         path: "brunch",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "coffee",
         category: "Coffee",
         path: "coffee",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "dinner",
         category: "Dinner",
         path: "dinner",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "featured",
         category: "Featured",
         path: "featured",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "lunch",
         category: "Lunch",
         path: "lunch",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "openning",
         category: "Openning",
         path: "openning",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
     {
+        key: "specials",
         category: "Specials",
         path: "specials",
-        storiesArray: []
+        storiesArrayOfCategories: []
     },
 ]
