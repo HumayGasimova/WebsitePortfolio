@@ -149,10 +149,10 @@ export function startInitCategories(path) {
     };
 };
 
-export function initCategories(path) {
+export function initCategories(array) {
     return { 
         type: actionTypes.INIT_CATEGORIES,
-        path: path
+        array: array
     };
 };
 
