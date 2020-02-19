@@ -42,6 +42,7 @@ export const startInitCategoriesEpic = (action$) =>
         mergeMap((action) => {
             let updatedCategoriesArray = [...categoriesArray];
             let updatedStoriesArray = [...storiesArray];
+            let categoryObj = {};
 
             updatedStoriesArray.map((el, i) => {
                 el.storiesArray.map((el, i) => {
@@ -98,16 +99,17 @@ export const startInitCategoriesEpic = (action$) =>
                     ]
                 })
             })
-            // if(action.path){
-            //     let obj = archievesMonths.find(x => x.path === action.path);
-            //     if(obj){
-            //         archievesMonthObj = {...obj, text: obj.text.toUpperCase()};
-            //     }
-            // }
+            console.log(updatedCategoriesArray)
+            if(action.path){
+                let obj = updatedCategoriesArray.find(x => x.path === action.path);
+                if(obj){
+                    categoryObj = obj;
+                }
+            }
 
             return of(
                 Actions.initCategories(updatedCategoriesArray),
-                // Actions.initCategoryStories(archievesMonthObj),
+                Actions.initCategoryStories(categoryObj),
             )  
         })                
     )
