@@ -109,6 +109,7 @@ export const Main = (props) => {
         });
         props.startInitArchieves(path);
         props.startInitCategories(path);
+        props.startInitRecentPosts()
     }, [])
 
     /**
@@ -234,6 +235,7 @@ export default connect(
             initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
             startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
             startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
+            startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch),
         };
     }
 )(Main);

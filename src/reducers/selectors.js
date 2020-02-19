@@ -85,3 +85,10 @@ export const getCategoryStoriesState = createSelector(
     [getCategoryStories],
     (x) => x
 );
+
+const getRecentPosts = (state) => state.home.recentPosts;
+
+export const ggetRecentPostsState = createSelector(
+    [getRecentPosts],
+    (x) => x
+);

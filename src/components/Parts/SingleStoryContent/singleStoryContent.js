@@ -34,7 +34,7 @@ import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
-import ArchievesGuide from '../../SmallParts/SingleStory/ArchivesGuide/archievesGuide';
+import GuideItems from '../../SmallParts/SingleStory/GuideItems/guideItems';
 import Categories from '../../SmallParts/SingleStory/Categories/categories';
 
 // import * as Selectors from '../../../reducers/selectors';
@@ -168,11 +168,21 @@ export const SingleStoryContent = (props) => {
                 <EH2/>
                 <EH2/>
                 <EH2/>
-                <ArchievesGuide/>
+                <GuideItems
+                    header="ARCHIVES"
+                    array={props.archievesMonths}
+                />
                 <EH2/>
                 <EH2/>
                 <EH2/>
                 <Categories/>
+                <EH2/>
+                <EH2/>
+                <EH2/>
+                <GuideItems
+                    header="RECENT POSTS"
+                    array={props.recentPosts}
+                />
             </div>
             <H5 className="h5-pink-swan-center">
                 © Copyright 2012 - 2020   |   
@@ -189,6 +199,8 @@ export default connect(
         return {
             relatedPosts: Selectors.getRelatedPostsState(state),
             singleStory: Selectors.getSingleStoryState(state),
+            archievesMonths: Selectors.getArchievesMonthsState(state),
+            recentPosts: Selectors.ggetRecentPostsState(state),
         };
     },
     (dispatch) => {

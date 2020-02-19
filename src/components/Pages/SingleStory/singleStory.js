@@ -76,7 +76,7 @@ export const SingleStory = (props) => {
     useEffect(()=>{
         props.initSingleStory(props.location.state ? props.location.state.obj : {});
         window.scrollTo(0, 0);
-    }, []);
+    }, [props.location.state.obj]);
 
     /**
     * Markup

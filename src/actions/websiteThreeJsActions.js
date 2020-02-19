@@ -170,3 +170,15 @@ export function showCategoryStoriesOfMonth(key) {
     };
 };
 
+export function startInitRecentPosts() {
+    return { 
+        type: actionTypes.START_INIT_RECENT_POSTS
+    };
+};
+
+export function addRecentPosts(array) {
+    return { 
+        type: actionTypes.ADD_RECENT_POSTS,
+        array: array
+    };
+};

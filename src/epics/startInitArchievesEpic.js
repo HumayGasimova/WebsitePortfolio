@@ -43,7 +43,7 @@ export const startInitArchievesEpic = (action$) =>
                 return {
                         key: `${el.date.year}${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
                         path: `${el.date.year}/${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()}`,
-                        text: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`,
+                        header: `${el.date.month[0]}${el.date.month.slice(1,el.date.month.length).toLowerCase()} ${el.date.year}`,
                         show: true,
                         storiesArray: [...el.storiesArray.map(el => {
                                                 return {
@@ -66,7 +66,7 @@ export const startInitArchievesEpic = (action$) =>
             if(action.path){
                 let obj = archievesMonths.find(x => x.path === action.path);
                 if(obj){
-                    archievesMonthObj = {...obj, text: obj.text.toUpperCase()};
+                    archievesMonthObj = {...obj, header: obj.header.toUpperCase()};
                 }
             }
             return of(

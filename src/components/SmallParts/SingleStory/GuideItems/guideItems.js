@@ -41,7 +41,7 @@ import * as Actions from '../../../../actions';
 * Styles
 */
 
-import './archievesGuide.scss';
+import './guideItems.scss';
 
 /**
 * Selectors
@@ -75,10 +75,10 @@ import {
 
 
 /**
-* ArchievesGuide component definition and export
+* GuideItems component definition and export
 */
 
-export const ArchievesGuide = (props) => {
+export const GuideItems = (props) => {
 
     /**
     * State
@@ -88,28 +88,28 @@ export const ArchievesGuide = (props) => {
     * Methods
     */
 
-    const archievesMonthOnClick = (path, obj) => {
+    const guideItemsOnClick = (path, obj) => {
         props.history.push(`/crypto-cafe/${path}`,{obj});
     }
 
     const renderArchieves = () => {
-        if(props.archievesMonths){
+        // if(props.array){
             return(
-                <div className="archieves-items">{props.archievesMonths.map((el, i) => {
+                <div className="guide-items-items">{props.array.map((el, i) => {
                     return(
                        <div 
                             key={i} 
-                            className="archieves-item" 
-                            onClick={() => archievesMonthOnClick(el.path, el)}
+                            className="guide-items-item" 
+                            onClick={() => guideItemsOnClick(el.path, el)}
                         >
                             <EH0/>
-                            <H4 className="h4-animation-with-icon-left">{el.text}</H4>
+                            <H4 className="h4-animation-with-icon-left">{el.header}</H4>
                             <EH0/>
                        </div>
                     )
                 })}</div>
             )
-        }
+        // }
     }
 
     /**
@@ -117,8 +117,8 @@ export const ArchievesGuide = (props) => {
     */
 
     return(
-        <div className="archieves">
-            <H4 className={"h4-white"}>ARCHIVES</H4>
+        <div className="guide-items">
+            <H4 className={"h4-white"}>{props.header}</H4>
             {renderArchieves()}
         </div>
     );
@@ -127,7 +127,7 @@ export const ArchievesGuide = (props) => {
 export default connect(
     (state) => {
         return {
-            archievesMonths: Selectors.getArchievesMonthsState(state),
+            // archievesMonths: Selectors.getArchievesMonthsState(state),
         };
     },
     (dispatch) => {
@@ -136,5 +136,5 @@ export default connect(
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
-)(withRouter(ArchievesGuide));
+)(withRouter(GuideItems));
  

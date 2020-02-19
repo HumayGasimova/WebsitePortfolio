@@ -26,7 +26,8 @@ export const initialState = {
     archievesMonths: [],
     archievesMonth: {},
     categories: [],
-    categoryStories: {}
+    categoryStories: {},
+    recentPosts: []
 }
 
 const initMenuItems = (state, action) => {
@@ -249,11 +250,19 @@ const showCategoryStoriesOfMonth = (state, action) => {
     obj.show = !obj.show;
     let objIndex = updatedCategoryStories.storiesArrayOfCategories.findIndex(x => x.key === action.key);
 
-    updatedCategoryStories.storiesArrayOfCategories.splice(objIndex, 1, obj)
+    updatedCategoryStories.storiesArrayOfCategories.splice(objIndex, 1, obj);
 
     return {
         ...state,
         categoryStories: updatedCategoryStories
+    };
+}
+
+const addRecentPosts = (state, action) => {
+
+    return {
+        ...state,
+        recentPosts: action.array
     };
 }
 
@@ -297,6 +306,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initCategoryStories(state, action);
         case actionTypes.SHOW_CATEGORY_STORIES_OF_MONTH:
             return showCategoryStoriesOfMonth(state, action);
+        case actionTypes.ADD_RECENT_POSTS:
+            return addRecentPosts(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:
@@ -306,6 +317,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.START_INIT_ARCHIEVES:
             return state; 
         case actionTypes.START_INIT_CATEGORIES:
+            return state; 
+        case actionTypes.START_INIT_RECENT_POSTS:
             return state; 
         default: 
             return state;

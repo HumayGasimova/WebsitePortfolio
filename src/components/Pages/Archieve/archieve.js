@@ -87,7 +87,7 @@ export const Archieve = (props) => {
                 <div className="archieve-wrapper-backgroud-div"/>
             </div>
             <div className="archieve-header-text">
-                <H1 className="h1-center">{`MONTHLY ARCHIVIES: ${props.archievesMonth.text}`}</H1>
+                <H1 className="h1-center">{`MONTHLY ARCHIVIES: ${props.archievesMonth.header}`}</H1>
                 <EH1/>
                 <H4 className="h4-white-centered">
                     {`Home / 
