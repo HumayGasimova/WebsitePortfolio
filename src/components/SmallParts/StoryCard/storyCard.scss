@@ -374,7 +374,18 @@
     }
 }
 
- @media only screen and (max-width: 900px){
+@media only screen and (max-width: 1000px){
+    .story-card-left {
+        width: calc(50% - 142px);
+        padding: 0 90px 40px 50px;
+    }
+    .story-card-right {
+        width: calc(50% - 142px);
+        padding: 0 50px 40px 90px;
+    }
+}
+
+@media only screen and (max-width: 900px){
     .story-card-left {
         width: 100%;
         padding: 0 0 40px 0;

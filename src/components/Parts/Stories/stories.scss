@@ -138,17 +138,16 @@
     }
 }
 
-@media only screen and (max-width: 1000px){
-    .stories {
-        padding: 80px 0 0 0;
-    }
-}
+// @media only screen and (max-width: 1000px){
+//     .stories {
+//         padding: 80px 0 0 0;
+//     }
+// }
 
 @media only screen and (max-width: 900px){
     .stories {
         padding: 80px 80px 0 80px;
         .stories-by-month {
-           
             .stories-wrapper {
                 flex-wrap: nowrap;
                 flex-direction: column;
