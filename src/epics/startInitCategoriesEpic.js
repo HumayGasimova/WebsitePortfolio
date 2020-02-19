@@ -99,14 +99,15 @@ export const startInitCategoriesEpic = (action$) =>
                     ]
                 })
             })
-            console.log(updatedCategoriesArray)
+            
             if(action.path){
-                let obj = updatedCategoriesArray.find(x => x.path === action.path);
+                let path = action.path.slice(9, action.path.length)
+                let obj = updatedCategoriesArray.find(x => x.path === path);
                 if(obj){
                     categoryObj = obj;
                 }
             }
-
+            
             return of(
                 Actions.initCategories(updatedCategoriesArray),
                 Actions.initCategoryStories(categoryObj),
