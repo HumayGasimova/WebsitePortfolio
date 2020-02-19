@@ -170,10 +170,12 @@ export const StoryCard = (props) => {
                         onClick={props.onClick}
                     >{props.header}</H3>
                     <EH1/>
-                    <DoubleLine1/>
-                    <EH1/>
+                    {!props.archievesMonth ? 
+                        <>
+                            <DoubleLine1/>
+                            <EH1/>
+                        </> : null}
                     <H5 textColor={Colors.EBB}>{props.description} [...]</H5>
-                    
                     {!props.archievesMonth ? 
                     <>
                         <EH1/>
