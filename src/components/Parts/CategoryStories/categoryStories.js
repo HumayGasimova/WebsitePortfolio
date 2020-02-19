@@ -110,7 +110,7 @@ export const CategoryStories = (props) => {
                         <div key={i} className="category-stories-by-month">
                             <div 
                                 className="category-stories-button"
-                                // onClick={() => props.showStoriesOfMonth(el.key)}
+                                onClick={() => props.showCategoryStoriesOfMonth(el.key)}
                             >
                                 <H4 className="h4-white-centered">{el.date.month}</H4>
                                 <H4 className="h4-white-centered">{el.date.year}</H4>
@@ -202,7 +202,7 @@ export const CategoryStories = (props) => {
     (dispatch) => {
         return {
             // startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
-            showArchievesStoriesOfMonth: bindActionCreators(Actions.showArchievesStoriesOfMonth, dispatch),
+            showCategoryStoriesOfMonth: bindActionCreators(Actions.showCategoryStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }

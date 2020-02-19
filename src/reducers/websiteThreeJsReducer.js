@@ -243,6 +243,20 @@ const initCategoryStories = (state, action) => {
     };
 }
 
+const showCategoryStoriesOfMonth = (state, action) => {
+    let updatedCategoryStories = {...state.categoryStories};
+    let obj = updatedCategoryStories.storiesArrayOfCategories.find(x => x.key === action.key);
+    obj.show = !obj.show;
+    let objIndex = updatedCategoryStories.storiesArrayOfCategories.findIndex(x => x.key === action.key);
+
+    updatedCategoryStories.storiesArrayOfCategories.splice(objIndex, 1, obj)
+
+    return {
+        ...state,
+        categoryStories: updatedCategoryStories
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -281,6 +295,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return initCategories(state, action);
         case actionTypes.INIT_CATEGORY_STORIES:
             return initCategoryStories(state, action);
+        case actionTypes.SHOW_CATEGORY_STORIES_OF_MONTH:
+            return showCategoryStoriesOfMonth(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

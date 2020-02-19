@@ -162,3 +162,11 @@ export function initCategoryStories(obj) {
         obj: obj
     };
 };
+
+export function showCategoryStoriesOfMonth(key) {
+    return { 
+        type: actionTypes.SHOW_CATEGORY_STORIES_OF_MONTH,
+        key: key
+    };
+};
+
