@@ -207,7 +207,8 @@ export const Stories = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             stories: Selectors.getStoriesState(state),

@@ -24,7 +24,7 @@ import './category.scss';
 * Components
 */
 
-import ArchievesMonth from '../../Parts/ArchievesMonth/archievesMonth';
+import CategoryStories from '../../Parts/CategoryStories/categoryStories';
 import Footer from '../../Parts/Footer/footer';
 
 /**
@@ -94,7 +94,7 @@ export const Category = (props) => {
                 </H4>
             </div>
             <div className="category-wrapper">
-               {/* <ArchievesMonth/> */}
+               <CategoryStories/>
                <div className="category-footer-wrapper">
                     <H5 className="h5-pink-swan-center">
                         © Copyright 2012 - 2020   |   

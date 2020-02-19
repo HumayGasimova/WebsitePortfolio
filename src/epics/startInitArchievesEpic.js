@@ -58,11 +58,6 @@ export const startInitArchievesEpic = (action$) =>
                                                     categories: [...el.categories],
                                                     popular: el.popular,
                                                     path: el.path
-                                                    // id: el.id,
-                                                    // image: el.image,
-                                                    // header: el.header,
-                                                    // paragraphs: [...el.paragraphs],
-                                                    // path: el.path
                                                 }
                                         })]
                 }

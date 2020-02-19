@@ -38,7 +38,7 @@ export const storiesArray = [
                 ],
                 categories: [
                     "brunch",
-                    "coffee",
+                    "coffee"
                 ],
                 popular: 4,
                 path: "new-york-opening"
@@ -127,7 +127,8 @@ export const storiesArray = [
                 categories: [
                     "coffee",
                     "dinner",
-                    "specials"
+                    "specials",
+                    "openning"
                 ],
                 popular: 100,
                 path: "pacific-opening"
@@ -159,7 +160,7 @@ export const storiesArray = [
                     "brunch",
                     "featured",
                     "lunch",
-                    "specials"
+                    "specials",
                 ],
                 popular: 170,
                 path: "sydney-opening"

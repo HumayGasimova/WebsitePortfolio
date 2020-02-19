@@ -99,7 +99,16 @@ export const startInitCategoriesEpic = (action$) =>
                     ]
                 })
             })
-            
+          
+            updatedCategoriesArray.map((el,i) => {
+                let obj = updatedCategoriesArray[i].storiesArrayOfCategories.find(x => x.storiesArray.length === 0);
+                let objIndex = updatedCategoriesArray[i].storiesArrayOfCategories.findIndex(x => x.storiesArray.length === 0);
+                if(obj){
+                    updatedCategoriesArray[i].storiesArrayOfCategories.splice(objIndex, 1)
+                }
+
+               
+            })
             if(action.path){
                 let path = action.path.slice(9, action.path.length)
                 let obj = updatedCategoriesArray.find(x => x.path === path);

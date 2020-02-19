@@ -90,7 +90,7 @@ export const SingleStory = (props) => {
             <div className="single-story-header-text">
                 <H1 className="h1-center">{props.singleStory.header}</H1>
                 <EH1/>
-                <H4 className="h4-white-centered">{`Home / ${props.singleStory.tag ? props.singleStory.tag.join(", "): []} / ${props.singleStory.header}`}</H4>
+                <H4 className="h4-white-centered">{`Home / ${props.singleStory.categories ? props.singleStory.categories.join(", "): []} / ${props.singleStory.header}`}</H4>
             </div>
             <div className="single-story-wrapper">
                 <SingleStoryContent
