@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -123,6 +127,11 @@ export const StoryCard = (props) => {
         }
     }
 
+    const onClick = (obj) => {
+        props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
+        // // props.activateMenuItem(null);
+    }
+
     /**
     * Markup
     */
@@ -191,7 +200,7 @@ export const StoryCard = (props) => {
                                 icon={props.iconComments} 
                                 size="sm" 
                                 className="icon-comments"
-                                onClick={props.onClick}
+                                onClick={() => onClick(props.obj)}
                             />
                         </div> 
                     </> : null}
@@ -212,4 +221,4 @@ export default connect(
             // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
         };
     }
-)(StoryCard);
+)(withRouter(StoryCard));

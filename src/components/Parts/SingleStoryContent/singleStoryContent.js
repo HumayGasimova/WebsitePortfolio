@@ -148,7 +148,9 @@ export const SingleStoryContent = (props) => {
                     id={props.id}
                 /> */}
                 {renderComments()}
-                <LeaveAComment/>
+                <LeaveAComment
+                    getLeaveACommentsDivRef={props.getLeaveACommentsDivRef}
+                />
                 <EH2/>
             </div>
             <div className="single-story-content-right-part">

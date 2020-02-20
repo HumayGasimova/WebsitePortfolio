@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -90,12 +91,15 @@ import {
 
 export const LeaveAComment = (props) => {
 
+    const myRef = useRef(null)
+
     /**
     * Methods
     */
 
     useEffect(() => {
         props.initLeaveACommentForm(leaveACommentInputForm);
+        props.getLeaveACommentsDivRef(myRef.current.offsetTop);
     }, [])
 
     const onClickHandler = () => {
@@ -155,7 +159,7 @@ export const LeaveAComment = (props) => {
     */
 
     return(
-        <div className="leave-a-comment">
+        <div className="leave-a-comment"  ref={myRef}>
             <EH2/>
             <H3>LEAVE A COMMENT</H3>
             <EH2/>

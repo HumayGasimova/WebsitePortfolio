@@ -69,14 +69,25 @@ import {
 
 export const SingleStory = (props) => {
 
+    const [leaveACommentRef, setLeaveACommentRef] = useState(null)
+
     /**
     * Methods
     */
 
     useEffect(()=>{
         props.initSingleStory(props.location.state ? props.location.state.obj : {});
-        window.scrollTo(0, 0);
-    }, [props.location.state]);
+       console.log(leaveACommentRef)
+        if(props.location.state.comment){
+            window.scrollTo(0, leaveACommentRef);
+        }else{
+            window.scrollTo(0, 0);
+        }
+    }, [props.location.state, leaveACommentRef]);
+
+    const getLeaveACommentsDivRef = (ref) => {
+        setLeaveACommentRef(ref + 500);
+    }
 
     /**
     * Markup
@@ -98,6 +109,7 @@ export const SingleStory = (props) => {
                     header={props.singleStory.header}
                     paragraphs={props.singleStory.paragraphs ? props.singleStory.paragraphs : []}
                     id={props.singleStory.id}
+                    getLeaveACommentsDivRef={(ref) => getLeaveACommentsDivRef(ref)}
                 />
             </div>
         </>

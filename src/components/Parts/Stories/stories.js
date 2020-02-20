@@ -154,6 +154,8 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
+                                                path={el.path}
+                                                obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
                                             />
                                         )
@@ -169,6 +171,8 @@ export const Stories = (props) => {
                                                 iconSearch={faSearch}
                                                 iconLink={faLink}
                                                 show={show}
+                                                path={el.path}
+                                                obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
                                             />
                                         )
