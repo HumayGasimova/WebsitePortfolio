@@ -83,17 +83,17 @@ export const Contact = (props) => {
 
     return(
         <>
-            <div className="food-and-drink-cover-wrapper">
-                <div className="food-and-drink-wrapper-backgroud-div"/>
+            <div className="contact-cover-wrapper">
+                <div className="contact-wrapper-backgroud-div"/>
             </div>
-            <div className="food-and-drink-header-text">
+            <div className="contact-header-text">
                 <H1 className="h1-center">CONTACT</H1>
                 <EH1/>
                 <Line2/>
                 <EH1/>
                 <H3 className="h3-center">IF YOU HAVE ANY QUESTIONS, FEEL FREE TO FILL OUT THE FORM BELOW AND SEND US.</H3>
             </div>
-            <div className="food-and-drink-wrapper">
+            <div className="contact-wrapper">
                 <Description/>
                 <Reservations/>
                 <Footer/>
