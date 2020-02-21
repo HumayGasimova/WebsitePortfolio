@@ -19,6 +19,10 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     CSSTransition 
 } from 'react-transition-group';
@@ -140,6 +144,10 @@ export const PopularVsRecent = (props) => {
         props.startInitPopularAndRecentStories(index === 0 ? "popular" : (index === 1 ? "recent" : "comments"));
     }
 
+    const popularVsRecenPostsLink = (path, obj) => {
+        props.history.push(`/crypto-cafe/${path}`,{obj});
+    }
+
     const renderPopularVsRecentTabs = () => {
         return(
             <>{tabs.map((el, i) => {
@@ -179,6 +187,7 @@ export const PopularVsRecent = (props) => {
                             day={el.day}
                             year={el.year}
                             text={el.text}
+                            onClick={() => popularVsRecenPostsLink(el.path, el)}
                         />
                     )
                 })}</div>
@@ -211,5 +220,5 @@ export default connect(
             startInitPopularAndRecentStories: bindActionCreators(Actions.startInitPopularAndRecentStories, dispatch),
         };
     }
-)(PopularVsRecent);
+)(withRouter(PopularVsRecent));
  

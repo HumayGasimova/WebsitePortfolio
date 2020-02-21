@@ -131,12 +131,18 @@ export const PopularVsRecentCard = (props) => {
         <div className="popular-vs-recent-card">
             {!props.text ? 
             <>
-                <div className="popular-vs-recent-card-image">
+                <div 
+                    className="popular-vs-recent-card-image" 
+                    onClick={props.onClick}
+                >
                     <img src={loadImage(props.image)}/>
                 </div>
                 <EW1/>
                 <div className="popular-vs-recent-card-info">
-                    <H4 className="h4-animation">{props.header}</H4>
+                    <H4 
+                        className="h4-animation-cursor" 
+                        onClick={props.onClick}
+                    >{props.header}</H4>
                     <EH0/>
                     <H6 className="h6-pink-grey-yanone-suva">{`${props.month} ${props.day}, ${props.year}`}</H6>
                 </div> 

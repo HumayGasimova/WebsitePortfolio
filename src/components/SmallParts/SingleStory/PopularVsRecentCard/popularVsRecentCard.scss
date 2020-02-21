@@ -6,6 +6,7 @@
     .popular-vs-recent-card-image {
         background-color: rgb(18, 68, 159);
         filter: grayscale(65%);
+        cursor: pointer;
         >img {
             width: 50px;
             height: 50px;
