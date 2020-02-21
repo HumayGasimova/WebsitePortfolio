@@ -37,9 +37,12 @@ import Home from './Pages/Home/home';
 import AboutUs from './Pages/AboutUs/aboutUs';
 import FoodAndDrink from './Pages/FoodAndDrink/foodAndDrink';
 import OurStory from './Pages/OurStory/ourStory';
+import Locations from './Pages/Locations/locations';
 import SingleStory from './Pages/SingleStory/singleStory';
 import Archieve from './Pages/Archieve/archieve';
 import Category from './Pages/Category/category';
+
+
 
 /**
 * Actions
@@ -195,6 +198,11 @@ export const Main = (props) => {
                     exact 
                     path={props.match.url + "/new-york-opening"}
                     component={SingleStory}
+                />
+                <Route 
+                    exact 
+                    path={props.match.url + "/locations"}
+                    component={Locations}
                 />
                 <Route 
                     exact 
