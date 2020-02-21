@@ -24,9 +24,52 @@
     width: 100%;
 }
 
-// .h5-pink-swan-jaldi {
-//     font-size: 17px;
-//     font-family: 'Jaldi', sans-serif;
-//     color: rgb(194, 185, 182);
-//     text-align: center;
-// }
+.h5-animated {
+    font-size: 17px;
+    font-family: 'Jaldi', sans-serif;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        color: rgb(180, 139, 62);
+        -webkit-animation: appear 0.3s linear;
+        -moz-animation: appear 0.3s linear;
+        -o-animation: appear 0.3s linear;
+        animation: appear 0.3s linear;
+    }
+    >a {
+        text-decoration: rgb(194, 38, 38);
+    }
+}
+
+@-webkit-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-moz-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@-o-keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}
+@keyframes appear {
+    from{
+        color: white;
+    }
+    to {
+        color: rgb(180, 139, 62);
+    }
+}

@@ -30,7 +30,10 @@ export const H5 = (props) => {
     */
 
     return(
-        <div className={props.textColor ? `h5-${props.textColor}` : (props.className ? props.className : "h5")}>
+        <div 
+            className={props.textColor ? `h5-${props.textColor}` : (props.className ? props.className : "h5")}
+            onClick={props.onClick}
+        >
            {props.children}
         </div>
     );

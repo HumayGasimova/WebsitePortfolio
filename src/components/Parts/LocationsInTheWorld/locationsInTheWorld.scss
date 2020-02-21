@@ -20,6 +20,14 @@
     .locations-in-the-world-addresses {
         background-color: rgb(51, 51, 51);
         padding: 80px;
+        width: calc(100% - 160px);
+        .locations-in-the-world-addresses-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            .locations-in-the-world-address {
+                width: 25%;
+            }
+        }
     }
 }
 

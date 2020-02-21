@@ -25,6 +25,7 @@ import './locationsInTheWorld.scss';
 * Components
 */
 
+import LocationCard from '../../SmallParts/LocationCard/locationCard';
 
 /**
 * Actions
@@ -66,8 +67,8 @@ import {
 */
 
 import {
-    menuDrinksArray
-} from '../../../constants/menuDrinksArray';
+    locationsAddresses
+} from '../../../constants/locationsAddresses';
 
 /**
 * Images
@@ -89,7 +90,7 @@ export const LocationsInTheWorld = (props) => {
     * State
     */
 
-    const [locationImages, setLocationImages] = useState([
+    const [locationImages] = useState([
         {
             id: 1,
             image: "image1"
@@ -136,7 +137,7 @@ export const LocationsInTheWorld = (props) => {
         return(
             <div className="locations-in-the-world-images-wrapper">{locationImages.map((el, i) => {
                 return(
-                    <div className="locations-in-the-world-image" key={i}>
+                    <div key={i} className="locations-in-the-world-image">
                         <img src={loadImage(el.image)}/>
                     </div>
                 )
@@ -144,6 +145,25 @@ export const LocationsInTheWorld = (props) => {
         )
     }
 
+    const renderLocationAddresses = () => {
+        return(
+            <div className="locations-in-the-world-addresses-wrapper">{locationsAddresses.map((el, i) => {
+                return(
+                    <div key={i} className="locations-in-the-world-address">
+                        <LocationCard
+                            city={el.city}
+                            addressLine1={el.addressLine1}
+                            addressLine2={el.addressLine2}
+                            phone={el.phone}
+                            email={el.email}
+                            website={el.website}
+                        />
+                    </div>
+                )
+            })}</div>
+        )
+    }
+    
     /**
     * Markup
     */
@@ -158,7 +178,9 @@ export const LocationsInTheWorld = (props) => {
                 <EH2/>
                 {renderLocationImages()}
             </div>
-            <div className="locations-in-the-world-addresses"></div>
+            <div className="locations-in-the-world-addresses">
+                {renderLocationAddresses()}
+            </div>
         </div>
     );
 }
