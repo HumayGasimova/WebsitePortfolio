@@ -91,7 +91,7 @@ export const Contact = (props) => {
                 <EH1/>
                 <Line2/>
                 <EH1/>
-                <H3 className="h3-center">IF YOU HAVE ANY QUESTIONS,FEEL FREE TO FILL OUT THE FORM BELOW AND SEND US.</H3>
+                <H3 className="h3-center">IF YOU HAVE ANY QUESTIONS, FEEL FREE TO FILL OUT THE FORM BELOW AND SEND US.</H3>
             </div>
             <div className="food-and-drink-wrapper">
                 <Description/>
