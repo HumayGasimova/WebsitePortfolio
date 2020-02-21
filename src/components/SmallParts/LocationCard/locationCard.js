@@ -95,12 +95,18 @@ export const LocationCard = (props) => {
             <div className="location-card-wrapper">
                 <H5 className="h5-pink-swan">E:</H5>
                 <EW1/>
-                <H5 className="h5-animated">{props.email}</H5>
+                <H5 
+                    className="h5-animated"
+                    onClick={websiteLink}
+                >{props.email}</H5>
             </div>
             <div className="location-card-wrapper">
                 <H5 className="h5-pink-swan">W:</H5> 
                 <EW1/>
-                <H5 className="h5-animated" onClick={websiteLink}>{props.website}</H5> 
+                <H5 
+                    className="h5-animated" 
+                    onClick={websiteLink}
+                >{props.website}</H5> 
             </div>
         </div>
     );
