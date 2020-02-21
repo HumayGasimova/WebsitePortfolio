@@ -4,7 +4,6 @@
         padding: 80px;
         .locations-in-the-world-images-wrapper {
             display: flex;
-            flex-wrap: wrap;
             .locations-in-the-world-image {
                 width: 25%;
                 background-color: rgb(18, 68, 159);
@@ -31,36 +30,63 @@
     }
 }
 
-// @media only screen and (max-width: 1180px){
-//     .menu-drinks {
-//         flex-wrap: nowrap;
-//         flex-direction: column;
-//         .menu-drinks-description {
-//             width: calc(100% - 120px);
-//         }
-//         .menu-drinks-wrapper {
-//             width: 100%;
-//         }
-//     }
-// }
+@media only screen and (max-width: 1200px){
+    .locations-in-the-world {
+        .locations-in-the-world-images {
+            .locations-in-the-world-images-wrapper {
+                flex-direction: column;
+                .locations-in-the-world-image {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .locations-in-the-world-addresses {
+            .locations-in-the-world-addresses-wrapper {
+                display: flex;
+                .locations-in-the-world-address {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
 
-// @media only screen and (max-width: 620px){
-//     .menu-drinks {
-//         .menu-drinks-description {
-//             width: calc(100% - 120px);
-//         }
-//         .menu-drinks-wrapper {
-//             flex-wrap: nowrap;
-//             flex-direction: column;
-//             width: 100%;
-//             height: 1000px;
-//             .menu-drinks-items {
-//                 width: calc(100% - 120px);
-//             }
-//             .menu-drinks-image {
-//                 height: 100%;
-//                 width: 100%;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 1200px){
+    .locations-in-the-world {
+        .locations-in-the-world-addresses {
+            .locations-in-the-world-addresses-wrapper {
+                display: flex;
+                .locations-in-the-world-address {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 995px){
+    .locations-in-the-world {
+        .locations-in-the-world-addresses {
+            .locations-in-the-world-addresses-wrapper {
+                display: flex;
+                .locations-in-the-world-address {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 743px){
+    .locations-in-the-world {
+        .locations-in-the-world-addresses {
+            .locations-in-the-world-addresses-wrapper {
+                display: flex;
+                .locations-in-the-world-address {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
