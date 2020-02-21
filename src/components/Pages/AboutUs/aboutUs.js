@@ -58,6 +58,7 @@ import {
     H3,
     H4,
     H5,
+    EH0,
     EH1,
     EH2,
     EW1,
@@ -92,8 +93,9 @@ export const AboutUs = (props) => {
             </div>
             <div className="about-us-header-text">
                 <H1 className="h1-center">ABOUT US</H1>
-                <EH1/>
+                <EH0/>
                 <Line2/>
+                <EH0/>
                 <EH1/>
                 <H3 className="h3-center">WE DON'T PREACH ABOUT COFFEE WE MAKE COFFEE. WE HAVE EIGHT VENUES ACROSS THIS CELESTIAL ROCK.</H3>
             </div>

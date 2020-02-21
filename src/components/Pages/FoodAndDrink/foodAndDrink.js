@@ -59,6 +59,7 @@ import {
     H3,
     H4,
     H5,
+    EH0,
     EH1,
     EH2,
     EW1,
@@ -91,8 +92,9 @@ export const FoodAndDrink = (props) => {
             </div>
             <div className="food-and-drink-header-text">
                 <H1 className="h1-center">FOOD & DRINK</H1>
-                <EH1/>
+                <EH0/>
                 <Line2/>
+                <EH0/>
                 <EH1/>
                 <H3 className="h3-center">TENDER STEAKS, TASTY BURGERS AND LIGHT BITES. WASH IT DOWN WITH A COFFEE OR A BEER.</H3>
             </div>

@@ -56,6 +56,7 @@ import {
     H3,
     H4,
     H5,
+    EH0,
     EH1,
     EH2,
     EW1,
@@ -88,8 +89,9 @@ export const Contact = (props) => {
             </div>
             <div className="contact-header-text">
                 <H1 className="h1-center">CONTACT</H1>
-                <EH1/>
+                <EH0/>
                 <Line2/>
+                <EH0/>
                 <EH1/>
                 <H3 className="h3-center">IF YOU HAVE ANY QUESTIONS, FEEL FREE TO FILL OUT THE FORM BELOW AND SEND US.</H3>
             </div>
