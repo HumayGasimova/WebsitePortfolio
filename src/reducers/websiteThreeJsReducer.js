@@ -27,7 +27,12 @@ export const initialState = {
     archievesMonth: {},
     categories: [],
     categoryStories: {},
-    recentPosts: []
+    recentPosts: [],
+    gallery: {
+        show: false,
+        currentId: 0,
+        imagesArray: []
+    }
 }
 
 const initMenuItems = (state, action) => {
@@ -266,6 +271,19 @@ const addRecentPosts = (state, action) => {
     };
 }
 
+const openGallery = (state, action) => {
+    let updatedGallery = {
+        ...state.gallery,
+        show: true,
+        currentId: action.id
+    };
+
+    return {
+        ...state,
+        gallery: updatedGallery
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -308,6 +326,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return showCategoryStoriesOfMonth(state, action);
         case actionTypes.ADD_RECENT_POSTS:
             return addRecentPosts(state, action);
+        case actionTypes.OPEN_GALLERY:
+            return openGallery(state, action);
+            
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

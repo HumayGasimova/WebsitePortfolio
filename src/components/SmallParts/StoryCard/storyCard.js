@@ -168,7 +168,12 @@ export const StoryCard = (props) => {
                             </div>
                             <EW1/>
                             <div className="story-card-image-hover-icons">
-                                <FontAwesomeIcon icon={props.iconSearch} size="lg" color="white"/>
+                                <FontAwesomeIcon 
+                                    icon={props.iconSearch} 
+                                    size="lg" 
+                                    color="white"
+                                    onClick={props.openGallery}
+                                />
                             </div>
                         </div>
                     </CSSTransition>

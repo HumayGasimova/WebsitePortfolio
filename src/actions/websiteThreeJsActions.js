@@ -182,3 +182,10 @@ export function addRecentPosts(array) {
         array: array
     };
 };
+
+export function openGallery(id) {
+    return { 
+        type: actionTypes.OPEN_GALLERY,
+        id: id
+    };
+};

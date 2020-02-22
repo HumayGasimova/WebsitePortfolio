@@ -157,6 +157,7 @@ export const Stories = (props) => {
                                                 path={el.path}
                                                 obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
+                                                openGallery={() => props.openGallery(el.id)}
                                             />
                                         )
                                     }else{
@@ -174,6 +175,7 @@ export const Stories = (props) => {
                                                 path={el.path}
                                                 obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
+                                                openGallery={() => props.openGallery(el.id)}
                                             />
                                         )
                                     }
@@ -223,6 +225,7 @@ export default connect(
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch),
         };
     }
 )(withRouter(Stories));
