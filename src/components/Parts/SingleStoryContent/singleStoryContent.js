@@ -202,7 +202,7 @@ export default connect(
             relatedPosts: Selectors.getRelatedPostsState(state),
             singleStory: Selectors.getSingleStoryState(state),
             archievesMonths: Selectors.getArchievesMonthsState(state),
-            recentPosts: Selectors.ggetRecentPostsState(state),
+            recentPosts: Selectors.getRecentPostsState(state),
         };
     },
     (dispatch) => {

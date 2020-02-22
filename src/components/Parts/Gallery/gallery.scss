@@ -1,0 +1,69 @@
+.gallery {
+    width: 100vw;
+    height: 100vh;
+    background-color: green($color: #000000);
+    z-index: 100;
+    position: absolute;
+    left: 0;
+}
+
+// @media only screen and (max-width: 1200px){
+//     .locations-in-the-world {
+//         .locations-in-the-world-images {
+//             .locations-in-the-world-images-wrapper {
+//                 flex-direction: column;
+//                 .locations-in-the-world-image {
+//                     width: 100%;
+//                     margin-bottom: 20px;
+//                 }
+//             }
+//         }
+//         .locations-in-the-world-addresses {
+//             .locations-in-the-world-addresses-wrapper {
+//                 display: flex;
+//                 .locations-in-the-world-address {
+//                     width: 50%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 1200px){
+//     .locations-in-the-world {
+//         .locations-in-the-world-addresses {
+//             .locations-in-the-world-addresses-wrapper {
+//                 display: flex;
+//                 .locations-in-the-world-address {
+//                     width: 25%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 995px){
+//     .locations-in-the-world {
+//         .locations-in-the-world-addresses {
+//             .locations-in-the-world-addresses-wrapper {
+//                 display: flex;
+//                 .locations-in-the-world-address {
+//                     width: 50%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 743px){
+//     .locations-in-the-world {
+//         .locations-in-the-world-addresses {
+//             .locations-in-the-world-addresses-wrapper {
+//                 display: flex;
+//                 .locations-in-the-world-address {
+//                     width: 100%;
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -27,6 +27,7 @@ import './ourStory.scss';
 import Statistics from '../../Parts/Statistics/statistics'
 import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
+import Gallery from '../../Parts/Gallery/gallery';
 
 /**
 * Actions
@@ -38,7 +39,7 @@ import Footer from '../../Parts/Footer/footer';
 * Selectors
 */
 
-// import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -100,6 +101,7 @@ export const OurStory = (props) => {
                 <Statistics/>
                 <Footer/>
             </div>
+                {props.gallery.show ? <Gallery/> : null}
         </>
     );
 }
@@ -107,7 +109,7 @@ export const OurStory = (props) => {
 export default connect(
     (state) => {
         return {
-            // feedback: Selectors.getFeedbackState(state),
+            gallery: Selectors.getGalleryState(state),
             // dots: Selectors.getDotsState(state)
         };
     },
