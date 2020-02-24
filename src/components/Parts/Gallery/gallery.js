@@ -238,8 +238,16 @@ export const Gallery = (props) => {
         >
             <div className="gallery-wrapper">
                 <div className="gallery-buttons">
-                    <div className="gallery-button-close">
-                        <FontAwesomeIcon icon={faTimes} size="sm" color="white" className="icon"/>
+                    <div 
+                        className="gallery-button-close"
+                        onClick={props.closeGallery}                    
+                    >
+                        <FontAwesomeIcon 
+                            icon={faTimes} 
+                            size="sm" 
+                            color="white" 
+                            className="icon"
+                        />
                     </div>
                     <div className="gallery-buttons-fullscreen">
                         <FontAwesomeIcon icon={faArrowsAlt} size="sm" color="white" className="icon"/>
@@ -277,7 +285,6 @@ export const Gallery = (props) => {
                     </div> : null}
                 </div>
                 <div className="gallery-small-slider"></div>
-                {console.log(activeIndex)}
             </div>
         </div>
     );
@@ -291,7 +298,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // initMenuDrinks: bindActionCreators(Actions.initMenuDrinks, dispatch),
+            closeGallery: bindActionCreators(Actions.closeGallery, dispatch),
         };
     }
 )(Gallery);

@@ -296,6 +296,19 @@ const addGalleryImages = (state, action) => {
     };
 }
 
+const closeGallery = (state, action) => {
+    let updatedGallery = {
+        ...state.gallery,
+        show: false,
+        currentId: 0
+    };
+
+    return {
+        ...state,
+        gallery: updatedGallery
+    };
+}
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -341,7 +354,10 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.OPEN_GALLERY:
             return openGallery(state, action);
         case actionTypes.ADD_GALLERY_IMAGES:
-            return addGalleryImages(state, action);   
+            return addGalleryImages(state, action);  
+        case actionTypes.CLOSE_GALLERY:
+            return closeGallery(state, action);    
+            
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

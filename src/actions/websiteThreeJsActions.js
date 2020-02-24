@@ -196,3 +196,9 @@ export function addGalleryImages(array) {
         array: array
     };
 };
+
+export function closeGallery() {
+    return { 
+        type: actionTypes.CLOSE_GALLERY
+    };
+};
