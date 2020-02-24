@@ -128,10 +128,48 @@ export const Gallery = (props) => {
     useEffect(() => {
         // props.initMenuDrinks(menuDrinksArray);
         let topPosition = document.body.scrollTop;
-        // let slider = document.getElementById('slider-content');
-        // slider.addEventListener('scroll', () => {
-        //     console.log("f")
-        // })
+        let slider = document.getElementById('slider-content');
+        let oldValue = 0;
+        window.addEventListener('scroll', (e) => {
+            let newValue = window.pageYOffset;
+            console.log(newValue)
+
+            //Subtract the two and conclude
+            if(oldValue - newValue < 0){
+                console.log("Down");
+                if(activeIndex === props.gallery.imagesArray.length - 1){
+                    return setState({
+                        ...state,
+                        translate: 0,
+                        activeIndex: 0
+                    })
+                }
+                
+                setState({
+                    ...state,
+                    translate: (activeIndex + 1) * getHeight(),
+                    activeIndex: activeIndex + 1
+                })
+            } else if(oldValue - newValue > 0){
+                console.log("Up");
+                if(activeIndex === 0){
+                    return setState({
+                        ...state,
+                        translate: (props.gallery.imagesArray.length - 1) * getHeight(),
+                        activeIndex: props.gallery.imagesArray.length - 1
+                    })
+                }
+                
+                setState({
+                    ...state,
+                    translate: (activeIndex - 1) * getHeight(),
+                    activeIndex: activeIndex - 1
+                })
+            }
+        
+            // Update the old value
+            oldValue  = newValue;
+        })
         setCurrentTopPosition(topPosition);
         setState({
             ...state,
