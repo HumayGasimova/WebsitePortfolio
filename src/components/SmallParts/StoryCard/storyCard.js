@@ -158,21 +158,25 @@ export const StoryCard = (props) => {
                             }}
                         > 
                         <div className="story-card-image-hover">
-                            <div className="story-card-image-hover-icons">
+                            <div 
+                                className="story-card-image-hover-icons"
+                                onClick={props.onClick}
+                            >
                                 <FontAwesomeIcon 
                                     icon={props.iconLink} 
                                     size="lg" 
                                     color="white"
-                                    onClick={props.onClick}
                                 />
                             </div>
                             <EW1/>
-                            <div className="story-card-image-hover-icons">
+                            <div 
+                                className="story-card-image-hover-icons"
+                                onClick={props.openGallery}
+                            >
                                 <FontAwesomeIcon 
                                     icon={props.iconSearch} 
                                     size="lg" 
                                     color="white"
-                                    onClick={props.openGallery}
                                 />
                             </div>
                         </div>

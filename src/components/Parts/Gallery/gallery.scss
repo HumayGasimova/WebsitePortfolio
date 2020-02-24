@@ -4,6 +4,7 @@
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 600;
     position: absolute;
+    overflow: hidden;
     left: 0;
     .gallery-wrapper {
         display: flex;

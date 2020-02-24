@@ -108,6 +108,9 @@ export const Gallery = (props) => {
     */
 
     const [currentTopPosition, setCurrentTopPosition] = useState(0);
+    const [showUpArrow, setShowUpArrow] = useState(false);
+    const [showDownArrow, setShowDownArrow] = useState(false);
+
     const getHeight = () => window.innerHeight;
 
     const [state, setState] = useState({
@@ -125,8 +128,27 @@ export const Gallery = (props) => {
     useEffect(() => {
         // props.initMenuDrinks(menuDrinksArray);
         let topPosition = document.body.scrollTop;
+        // let slider = document.getElementById('slider-content');
+        // slider.addEventListener('scroll', () => {
+        //     console.log("f")
+        // })
         setCurrentTopPosition(topPosition);
+        setState({
+            ...state,
+            activeIndex: props.gallery.currentId,
+            translate: (props.gallery.currentId - 1) * getHeight(),
+        })
     }, []);
+
+    const handleMouseEnter = () => {
+        setShowUpArrow(true);
+        setShowDownArrow(true)
+    }
+
+    const handleMouseLeave = () => {
+        setShowUpArrow(false);
+        setShowDownArrow(false);
+    }
 
     const loadImage = (img) => {
         switch(img) {
@@ -155,7 +177,7 @@ export const Gallery = (props) => {
                 activeIndex: props.gallery.imagesArray.length - 1
             })
         }
-
+        
         setState({
             ...state,
             translate: (activeIndex - 1) * getHeight(),
@@ -171,7 +193,7 @@ export const Gallery = (props) => {
                 activeIndex: 0
             })
         }
-
+        
         setState({
             ...state,
             translate: (activeIndex + 1) * getHeight(),
@@ -182,12 +204,15 @@ export const Gallery = (props) => {
     const renderSlider = () => {
         return(
             <div 
-            className="gallery-slider-content" 
-            style={{
-                transform: `translateY(-${translate}px)`,
-                // transition: `transform ${props.transition}s ease-out)`,
-                height: `${getHeight()}px`
-            }}
+                className="gallery-slider-content" 
+                id="slider-content"
+                onMouseEnter={handleMouseEnter} 
+                onMouseLeave={handleMouseLeave}
+                style={{
+                    transform: `translateY(-${translate}px)`,
+                    // transition: `transform ${props.transition}s ease-out)`,
+                    height: `${getHeight()}px`
+                }}
             >{props.gallery.imagesArray.map((el, i) => {
                 return(
                     <div 
@@ -224,28 +249,35 @@ export const Gallery = (props) => {
                     </div>
                 </div>
                 <div className="gallery-slider">
-                    <div className="gallery-slider-arrow-up">
+                    {showUpArrow ? 
+                    <div 
+                        className="gallery-slider-arrow-up"
+                        onClick={prevSlide}
+                        onMouseEnter={handleMouseEnter} 
+                    >
                         <FontAwesomeIcon 
                             icon={faChevronUp} 
                             size="sm" 
                             color="white" 
                             className="icon"
-                            onClick={prevSlide}
                         />
-                    </div>
+                    </div> : null}
                     {renderSlider()}
-                    <div className="gallery-slider-arrow-down">
+                    {showDownArrow ? <div 
+                        className="gallery-slider-arrow-down"
+                        onClick={nextSlide}
+                        onMouseEnter={handleMouseEnter} 
+                    >
                         <FontAwesomeIcon 
                             icon={faChevronDown} 
                             size="sm" 
                             color="white" 
                             className="icon"
-                            onClick={nextSlide}
                         /> 
-                    </div>
+                    </div> : null}
                 </div>
                 <div className="gallery-small-slider"></div>
-                {console.log(translate)}
+                {console.log(activeIndex)}
             </div>
         </div>
     );
