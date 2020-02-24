@@ -87,10 +87,12 @@ import {
 * Images
 */
 
-import Image1 from '../../../images/golden-gate-bridge-san-francisco-bay-architecture-wallpaper-preview.jpg';
-import Image2 from '../../../images/australia-3905135_960_720.jpg';
-import Image3 from '../../../images/paris-4468632_960_720.jpg';
-import Image4 from '../../../images/autumn-colors-in-prague-czechia.jpg';
+import StoryImage1 from '../../../images/photo-1527358043728-909898958b29.jpg';
+import StoryImage2 from '../../../images/rocking-chairs-white-chairs-rockers.jpg';
+import StoryImage3 from '../../../images/coffee-latte-art-coffee-shop.jpg';
+import StoryImage4 from '../../../images/coffee-cup-latte-cappuccino.jpg';
+import StoryImage5 from '../../../images/coffee-cup-beverage-food-photo.jpg';
+import StoryImage6 from '../../../images/white-bowl-beside-glass-cup.jpg';
 import DefaultImage from '../../../images/error.jpg';
 
 /**
@@ -115,24 +117,36 @@ export const Gallery = (props) => {
         setCurrentTopPosition(topPosition);
     }, []);
 
-    // const renderLocationAddresses = () => {
-    //     return(
-    //         <div className="locations-in-the-world-addresses-wrapper">{locationsAddresses.map((el, i) => {
-    //             return(
-    //                 <div key={i} className="locations-in-the-world-address">
-    //                     <LocationCard
-    //                         city={el.city}
-    //                         addressLine1={el.addressLine1}
-    //                         addressLine2={el.addressLine2}
-    //                         phone={el.phone}
-    //                         email={el.email}
-    //                         website={el.website}
-    //                     />
-    //                 </div>
-    //             )
-    //         })}</div>
-    //     )
-    // }
+    const loadImage = (img) => {
+        switch(img) {
+            case 'image1': 
+                return StoryImage1;
+            case 'image2': 
+                return StoryImage2;
+            case 'image3': 
+                return StoryImage3;
+            case 'image4': 
+                return StoryImage4;
+            case 'image5': 
+                return StoryImage5;
+            case 'image6': 
+                return StoryImage6;
+            default:
+                return DefaultImage 
+        }
+    }
+
+    const renderSlider = () => {
+        return(
+            <div className="gallery-slider-wrapper">{props.gallery.imagesArray.map((el, i) => {
+                return(
+                    <div key={i} className="gallery-slide">
+                        <img src={loadImage(el)}/>
+                    </div>
+                )
+            })}</div>
+        )
+    }
     
     /**
     * Markup
@@ -155,7 +169,9 @@ export const Gallery = (props) => {
                         <FontAwesomeIcon icon={faPlay} size="sm" color="white" className="icon"/>
                     </div>
                 </div>
-                <div className="gallery-slider"></div>
+                <div className="gallery-slider">
+                    {renderSlider()}
+                </div>
                 <div className="gallery-small-slider"></div>
             </div>
         </div>
@@ -165,7 +181,7 @@ export const Gallery = (props) => {
 export default connect(
     (state) => {
         return {
-            // menuDrinks: Selectors.getMenuDrinksState(state),
+            gallery: Selectors.getGalleryState(state),
         };
     },
     (dispatch) => {

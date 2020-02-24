@@ -189,3 +189,10 @@ export function openGallery(id) {
         id: id
     };
 };
+
+export function addGalleryImages(array) {
+    return { 
+        type: actionTypes.ADD_GALLERY_IMAGES,
+        array: array
+    };
+};

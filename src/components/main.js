@@ -119,7 +119,7 @@ export const Main = (props) => {
     */
 
     return(
-        <div className="main">
+        <div className={props.gallery.show ? "main-scrolling-hidden" : "main"}>
             <Toolbar/>
             <Sidebar/>
             <Switch>
@@ -237,7 +237,7 @@ export default connect(
     (state) => {
         return {
             archievesMonths: Selectors.getArchievesMonthState(state),
-            // dots: Selectors.getDotsState(state)
+            gallery: Selectors.getGalleryState(state),
         };
     },
     (dispatch) => {
