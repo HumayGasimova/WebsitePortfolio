@@ -26,7 +26,9 @@ import {
 import { 
    faTimes,
    faArrowsAlt,
-   faPlay
+   faPlay,
+   faChevronUp,
+   faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -105,7 +107,16 @@ export const Gallery = (props) => {
     * State
     */
 
-   const [currentTopPosition, setCurrentTopPosition] = useState(0)
+    const [currentTopPosition, setCurrentTopPosition] = useState(0);
+    const getHeight = () => window.innerHeight;
+
+    const [state, setState] = useState({
+        activeIndex: 0,
+        translate: 0,
+        transition: 0.45
+    });
+
+    const {activeIndex, translate, transition} = state;
 
     /**
     * Methods
@@ -136,11 +147,54 @@ export const Gallery = (props) => {
         }
     }
 
+    const prevSlide = () => {
+        if(activeIndex === 0){
+            return setState({
+                ...state,
+                translate: (props.gallery.imagesArray.length - 1) * getHeight(),
+                activeIndex: props.gallery.imagesArray.length - 1
+            })
+        }
+
+        setState({
+            ...state,
+            translate: (activeIndex - 1) * getHeight(),
+            activeIndex: activeIndex - 1
+        })
+    }
+
+    const nextSlide = () => {
+        if(activeIndex === props.gallery.imagesArray.length - 1){
+            return setState({
+                ...state,
+                translate: 0,
+                activeIndex: 0
+            })
+        }
+
+        setState({
+            ...state,
+            translate: (activeIndex + 1) * getHeight(),
+            activeIndex: activeIndex + 1
+        })
+    }
+
     const renderSlider = () => {
         return(
-            <div className="gallery-slider-wrapper">{props.gallery.imagesArray.map((el, i) => {
+            <div 
+            className="gallery-slider-content" 
+            style={{
+                transform: `translateY(-${translate}px)`,
+                // transition: `transform ${props.transition}s ease-out)`,
+                height: `${getHeight()}px`
+            }}
+            >{props.gallery.imagesArray.map((el, i) => {
                 return(
-                    <div key={i} className="gallery-slide">
+                    <div 
+                        key={i} 
+                        className="gallery-slide"
+                        style={{height: `${getHeight()}px`}}
+                    >
                         <img src={loadImage(el)}/>
                     </div>
                 )
@@ -170,9 +224,28 @@ export const Gallery = (props) => {
                     </div>
                 </div>
                 <div className="gallery-slider">
+                    <div className="gallery-slider-arrow-up">
+                        <FontAwesomeIcon 
+                            icon={faChevronUp} 
+                            size="sm" 
+                            color="white" 
+                            className="icon"
+                            onClick={prevSlide}
+                        />
+                    </div>
                     {renderSlider()}
+                    <div className="gallery-slider-arrow-down">
+                        <FontAwesomeIcon 
+                            icon={faChevronDown} 
+                            size="sm" 
+                            color="white" 
+                            className="icon"
+                            onClick={nextSlide}
+                        /> 
+                    </div>
                 </div>
                 <div className="gallery-small-slider"></div>
+                {console.log(translate)}
             </div>
         </div>
     );

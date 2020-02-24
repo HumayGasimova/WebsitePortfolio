@@ -29,7 +29,7 @@ export const initialState = {
     categoryStories: {},
     recentPosts: [],
     gallery: {
-        show: false,
+        show: true,
         currentId: 0,
         imagesArray: []
     }
