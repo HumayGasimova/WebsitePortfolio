@@ -15,6 +15,20 @@ import {
     bindActionCreators
 } from 'redux';
 
+import { 
+    FontAwesomeIcon 
+} from '@fortawesome/react-fontawesome';
+
+/**
+* Icons
+*/
+
+import { 
+   faTimes,
+   faArrowsAlt,
+   faPlay
+} from '@fortawesome/free-solid-svg-icons';
+
 /**
 * Styles
 */
@@ -129,7 +143,21 @@ export const Gallery = (props) => {
             className="gallery" 
             style={{top: `${currentTopPosition}`}}
         >
-            
+            <div className="gallery-wrapper">
+                <div className="gallery-buttons">
+                    <div className="gallery-button-close">
+                        <FontAwesomeIcon icon={faTimes} size="sm" color="white" className="icon"/>
+                    </div>
+                    <div className="gallery-buttons-fullscreen">
+                        <FontAwesomeIcon icon={faArrowsAlt} size="sm" color="white" className="icon"/>
+                    </div>
+                    <div className="gallery-buttons-play">
+                        <FontAwesomeIcon icon={faPlay} size="sm" color="white" className="icon"/>
+                    </div>
+                </div>
+                <div className="gallery-slider"></div>
+                <div className="gallery-small-slider"></div>
+            </div>
         </div>
     );
 }

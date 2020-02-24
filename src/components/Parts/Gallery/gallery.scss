@@ -1,10 +1,56 @@
 .gallery {
     width: 100vw;
     height: 100vh;
-    background-color: green($color: #000000);
-    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 600;
     position: absolute;
     left: 0;
+    .gallery-wrapper {
+        .gallery-buttons {
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            .gallery-button-close {
+                width: 20px;
+                height: 17px;
+                padding-top: 3px;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background: red;
+                }
+            }
+            .gallery-buttons-fullscreen {
+                width: 20px;
+                height: 17px;
+                padding-top: 3px;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background: rgb(74, 197, 238);
+                }
+            }
+            .gallery-buttons-play {
+                width: 20px;
+                height: 17px;
+                padding-top: 3px;
+                text-align: center;
+                cursor: pointer;
+                &:hover {
+                    background: rgb(74, 197, 238);
+                }
+            }
+            // .icon {
+            //     padding: 4px;
+            // }
+        }
+        .gallery-slider {
+
+        }
+        .gallery-small-slider {
+
+        }
+    }
 }
 
 // @media only screen and (max-width: 1200px){

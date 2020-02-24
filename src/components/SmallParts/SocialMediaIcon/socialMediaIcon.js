@@ -19,7 +19,7 @@ import {
     faLinkedinIn,
     faInstagram,
     faTwitter
-} from '@fortawesome/fontawesome-free-brands'
+} from '@fortawesome/fontawesome-free-brands';
 
 /**
 * Styles
