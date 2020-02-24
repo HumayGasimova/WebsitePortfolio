@@ -234,7 +234,7 @@ export const Gallery = (props) => {
     return(
         <div 
             className="gallery" 
-            style={{top: `${currentTopPosition}`}}
+            // style={{top: `${currsentTopPosition}`}}
         >
             <div className="gallery-wrapper">
                 <div className="gallery-buttons">

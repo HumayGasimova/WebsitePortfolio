@@ -1,11 +1,12 @@
 .gallery {
     width: 100vw;
-    height: calc(100vh - 10px);
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 600;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     left: 0;
+    top: 0;
     .gallery-wrapper {
         display: flex;
         justify-content: space-between;
@@ -52,7 +53,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: calc(100vh - 10px);
+            height: 100vh;
             // width: 100vw;
             // margin: 0 auto;
             overflow: hidden;
