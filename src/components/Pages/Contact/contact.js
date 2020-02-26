@@ -25,6 +25,7 @@ import './contact.scss';
 */
 
 import Description from '../../Parts/Description/description';
+import GetInTouch from '../../Parts/GetInTouch/getInTouch';
 import Reservations from '../../Parts/Reservations/reservations';
 import Footer from '../../Parts/Footer/footer';
 
@@ -97,6 +98,7 @@ export const Contact = (props) => {
             </div>
             <div className="contact-wrapper">
                 <Description/>
+                <GetInTouch/>
                 <Reservations/>
                 <Footer/>
             </div>

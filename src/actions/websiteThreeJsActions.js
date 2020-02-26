@@ -202,3 +202,10 @@ export function closeGallery() {
         type: actionTypes.CLOSE_GALLERY
     };
 };
+
+export function initGetInTouchForm(obj) {
+    return { 
+        type: actionTypes.INIT_GET_IN_TOUCH_FORM,
+        obj: obj
+    };
+};

@@ -30,7 +30,7 @@ export const H2 = (props) => {
     */
 
     return(
-        <div className="h2">
+        <div className={props.className ? props.className : "h2"}>
            {props.children}
         </div>
     );

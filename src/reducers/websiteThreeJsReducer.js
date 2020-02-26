@@ -29,10 +29,11 @@ export const initialState = {
     categoryStories: {},
     recentPosts: [],
     gallery: {
-        show: true,
+        show: false,
         currentId: 0,
         imagesArray: []
-    }
+    },
+    getInTouchInputForm: {}
 }
 
 const initMenuItems = (state, action) => {
@@ -309,6 +310,16 @@ const closeGallery = (state, action) => {
     };
 }
 
+const initGetInTouchForm = (state, action) => {
+
+    return {
+        ...state,
+        getInTouchInputForm: action.obj
+    };
+} 
+
+
+
 const websiteThreeJsReducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.INIT_MENU_ITEMS:
@@ -357,7 +368,8 @@ const websiteThreeJsReducer = (state = initialState, action) => {
             return addGalleryImages(state, action);  
         case actionTypes.CLOSE_GALLERY:
             return closeGallery(state, action);    
-            
+        case actionTypes.INIT_GET_IN_TOUCH_FORM:
+            return initGetInTouchForm(state, action);    
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

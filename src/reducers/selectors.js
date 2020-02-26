@@ -99,3 +99,10 @@ export const getGalleryState = createSelector(
     [getGallery],
     (x) => x
 );
+
+const getGetInTouchInputForm = (state) => state.home.getInTouchInputForm;
+
+export const getGetInTouchInputFormState = createSelector(
+    [getGetInTouchInputForm],
+    (x) => x
+);

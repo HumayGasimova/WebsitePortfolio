@@ -1,0 +1,38 @@
+.get-in-touch {
+    position: relative;
+    padding: 80px;
+    z-index: 20;
+    background-color: rgb(51, 51, 51);
+    cursor: context-menu;
+    .get-in-touch-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .get-in-touch-form-inputGetInTouch1 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-inputGetInTouch2 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-inputGetInTouch3 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-inputGetInTouch4 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-inputGetInTouch5 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-inputGetInTouch6 {
+            width: calc(50% - 10px);
+            margin-right: 10px;
+        }
+        .get-in-touch-form-textareaGetInTouch7 {
+            width: 100%;
+        }
+    }
+}
