@@ -62,10 +62,6 @@ export const getInTouchInputForm = {
                 {
                     required: true,
                     valid: false
-                },
-                {
-                    isEmail: true,
-                    valid: false
                 }
             ],
             validField: false,

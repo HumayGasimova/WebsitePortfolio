@@ -101,26 +101,29 @@ export const GetInTouch = (props) => {
     }, [])
 
     const onClickHandler = () => {
-        // props.postComment();
-        // if(props.leaveACommentInputForm.formIsValid){
-        //     clearInputValue("inputLeaveComment1");
-        //     clearInputValue("inputLeaveComment2");
-        //     clearInputValue("inputLeaveComment3");
-        //     clearInputValue("textareaLeaveComment1");
-        // }
-        // props.leaveACommentInputForm.inputsArray.map(el => {
-        //     if(!el.validField){
-        //         clearInputValue(el.inputID);
-        //     }
-        // })
+        props.sendComment();
+        if(props.getInTouchInputForm.formIsValid){
+            clearInputValue("inputGetInTouch1");
+            clearInputValue("inputGetInTouch2");
+            clearInputValue("inputGetInTouch3");
+            clearInputValue("inputGetInTouch4");
+            clearInputValue("inputGetInTouch5");
+            clearInputValue("inputGetInTouch6");
+            clearInputValue("textareaGetInTouch7");
+        }
+        props.getInTouchInputForm.inputsArray.map(el => {
+            if(!el.validField){
+                clearInputValue(el.inputID);
+            }
+        })
     }
 
     const inputChangeHandler = (e, inputFieldId) => {
-        // props.setInputFiledValueAndCheckValidation(props.leaveACommentInputForm, e, inputFieldId, 'leaveACommentInputForm');
+        props.setInputFiledValueAndCheckValidation(props.getInTouchInputForm, e, inputFieldId, 'getInTouchInputForm');
     }
 
     const clearInputValue = (fieldId) => {
-        // document.getElementById(fieldId).value = '';
+        document.getElementById(fieldId).value = '';
     }
 
     const renderLeaveACommentForm = () => {
@@ -142,7 +145,7 @@ export const GetInTouch = (props) => {
                                     textareaID={el.textareaID}
                                     placeholder={el.elementConfig.placeholder}
                                 />
-                                <EH0/>
+                                <EH2/>
                             </div>
                         )
                     })}
@@ -159,12 +162,14 @@ export const GetInTouch = (props) => {
     return(
         <div className="get-in-touch">
             <EH2/>
-            <H2 className="h2-center">GET IN TOUCH</H2>
-            <EH2/>
-            <H4 className="h4-yanone-kaffeesatz-centered">HAVE QUESTIONS? WE’LL BE HAPPY TO ANSWER!</H4>
-            <EH2/>
-            <EH2/>
-            <Line1/>
+            <div className="get-in-touch-header-wrapper">
+                <H2>GET IN TOUCH</H2>
+                <EH2/>
+                <H4>HAVE QUESTIONS? WE’LL BE HAPPY TO ANSWER!</H4>
+                <EH2/>
+                <EH2/>
+                <Line1/>
+            </div>
             <EH2/>
             <EH2/>
             <EH2/>
@@ -172,8 +177,8 @@ export const GetInTouch = (props) => {
             <Button
                 outerDivClassName="load-more-posts-button-wrapper"
                 className="load-more-posts"
-                text="POST COMMENT"
-                // onClick={onClickHandler}
+                text="SEND"
+                onClick={onClickHandler}
             />
         </div>
     );
@@ -188,8 +193,8 @@ export default connect(
     (dispatch) => {
         return {
             initGetInTouchForm: bindActionCreators(Actions.initGetInTouchForm, dispatch),
-            // setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
-            // postComment: bindActionCreators(Actions.postComment, dispatch),
+            setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
+            sendComment: bindActionCreators(Actions.sendComment, dispatch),
         };
     }
 )(GetInTouch);

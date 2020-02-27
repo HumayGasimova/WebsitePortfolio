@@ -33,7 +33,8 @@ export const initialState = {
         currentId: 0,
         imagesArray: []
     },
-    getInTouchInputForm: {}
+    getInTouchInputForm: {},
+    customerMessages:[]
 }
 
 const initMenuItems = (state, action) => {
@@ -162,11 +163,11 @@ const setInputFiledValueAndCheckValidation = (state, action) => {
                 ...state,
                 leaveACommentInputForm: updatedInputFieldObj
             };
-        // case 'sendMessageForm':
-        //     return {
-        //         ...state,
-        //         sendMessageForm: updatedInputFieldObj
-        //     };
+        case 'getInTouchInputForm':
+            return {
+                ...state,
+                getInTouchInputForm: updatedInputFieldObj
+            };
     }
 }
 
@@ -203,6 +204,44 @@ const postComment = (state, action) => {
         ...state,
         singleStory: updatedSingleStory,
         leaveACommentInputForm: updatedLeaveACommentInputForm
+    }; 
+}
+
+const sendComment = (state, action) => {
+    let updatedCustomerMessages = [...state.customerMessages];
+    let updatedGetInTouchInputForm = {...state.getInTouchInputForm, inputsArray: [...state.getInTouchInputForm.inputsArray]};
+    if(state.getInTouchInputForm.formIsValid && state.getInTouchInputForm.inputsArray){
+        let message = {
+            id: uuid(),
+            name: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "name").value}`,
+            email: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "email").value}`,
+            phone: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "phoneNumber").value}`,
+            location: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "location").value}`,
+            partyOf2: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "partyOf2").value}`,
+            date: `${state.getInTouchInputForm.inputsArray.find(x => x.controlName === "date").value}`,
+            specialNote: state.getInTouchInputForm.inputsArray.find(x => x.controlName === "specialNote").value,
+        }
+        updatedCustomerMessages.push(message);
+        updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map(el => {return {...el, value: ''}});
+        
+        updatedGetInTouchInputForm.formIsValid = false;
+        updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map(el => {return {...el, value: '', validField: false, touched: false}});
+    }else{
+        updatedGetInTouchInputForm.inputsArray = updatedGetInTouchInputForm.inputsArray.map((el, i) => {
+            return {
+                    ...el, 
+                    touched: true,
+                    errorMessage: ["Fill the field"]
+                }
+                
+        })
+        // console.log(updatedLeaveACommentInputForm)
+    }
+    
+    return {
+        ...state,
+        customerMessages: updatedCustomerMessages,
+        getInTouchInputForms: updatedGetInTouchInputForm
     }; 
 }
 
@@ -369,7 +408,9 @@ const websiteThreeJsReducer = (state = initialState, action) => {
         case actionTypes.CLOSE_GALLERY:
             return closeGallery(state, action);    
         case actionTypes.INIT_GET_IN_TOUCH_FORM:
-            return initGetInTouchForm(state, action);    
+            return initGetInTouchForm(state, action);   
+        case actionTypes.SEND_COMMENT:
+            return sendComment(state, action);
         case actionTypes.START_INIT_POPULAR_AND_RECENT_STORIES:
             return state; 
         case actionTypes.SHOW_STORIES_OF_MONTH:

@@ -209,3 +209,9 @@ export function initGetInTouchForm(obj) {
         obj: obj
     };
 };
+
+export function sendComment() {
+    return { 
+        type: actionTypes.SEND_COMMENT
+    };
+};
