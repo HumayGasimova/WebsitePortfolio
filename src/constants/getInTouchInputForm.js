@@ -1,3 +1,7 @@
+import {
+    countriesArray
+} from './countriesArray';
+
 export const getInTouchInputForm = {
     formIsValid: false,
     inputsArray: [
@@ -74,10 +78,11 @@ export const getInTouchInputForm = {
         {
             id: 4,
             inputFieldName: "Location",
-            elementType: 'input',
+            elementType: 'select',
             elementConfig: {
                 type: 'text',
-                placeholder: ' Location'
+                placeholder: ' Location',
+                options: [...countriesArray]
             },
             value: '',
             validation: [

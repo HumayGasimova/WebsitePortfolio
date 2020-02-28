@@ -144,6 +144,7 @@ export const GetInTouch = (props) => {
                                     inputID={el.inputID}
                                     textareaID={el.textareaID}
                                     placeholder={el.elementConfig.placeholder}
+                                    options={el.elementConfig.options}
                                 />
                                 <EH2/>
                             </div>

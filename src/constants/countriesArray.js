@@ -901,7 +901,7 @@ export const countriesArray = [
     },
     {
         value: "Turks & Caicos Is",
-        option: "Turks & Caicos Is,
+        option: "Turks & Caicos Is",
     },
     {
         value: "Tuvalu",
