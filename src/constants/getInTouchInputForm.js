@@ -2,6 +2,10 @@ import {
     countriesArray
 } from './countriesArray';
 
+import {
+    partyArray
+} from './partyArray';
+
 export const getInTouchInputForm = {
     formIsValid: false,
     inputsArray: [
@@ -101,10 +105,11 @@ export const getInTouchInputForm = {
         {
             id: 5,
             inputFieldName: "Party of 2",
-            elementType: 'input',
+            elementType: 'select',
             elementConfig: {
                 type: 'text',
-                placeholder: 'Party of 2'
+                placeholder: 'Party of 2',
+                options: [...partyArray]
             },
             value: '',
             validation: [
