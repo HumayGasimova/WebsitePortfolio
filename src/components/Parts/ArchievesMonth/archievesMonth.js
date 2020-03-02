@@ -118,6 +118,7 @@ export const ArchievesMonth = (props) => {
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
                                 onClick={() => storyOnClick(el.path, el)}
+                                openGallery={() => props.openGallery(el.id, "Archieve")}
                             />
                         )
                     }else{
@@ -133,6 +134,7 @@ export const ArchievesMonth = (props) => {
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
                                 onClick={() => storyOnClick(el.path, el)}
+                                openGallery={() => props.openGallery(el.id, "Archieve")}
                             />
                         )
                     }
@@ -196,6 +198,7 @@ export const ArchievesMonth = (props) => {
             // startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showArchievesStoriesOfMonth: bindActionCreators(Actions.showArchievesStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch),
         };
     }
 )(withRouter(ArchievesMonth));

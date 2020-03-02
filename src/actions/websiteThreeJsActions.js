@@ -183,10 +183,11 @@ export function addRecentPosts(array) {
     };
 };
 
-export function openGallery(id) {
+export function openGallery(id, page) {
     return { 
         type: actionTypes.OPEN_GALLERY,
-        id: id
+        id: id,
+        page: page
     };
 };
 

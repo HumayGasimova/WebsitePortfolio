@@ -147,6 +147,7 @@ export const CategoryStories = (props) => {
                                                     iconLink={faLink}
                                                     show={show}
                                                     onClick={() => storyOnClick(el.path, el)}
+                                                    openGallery={() => props.openGallery(el.id, "Category")}
                                                 />
                                             )
                                         }else{
@@ -163,6 +164,7 @@ export const CategoryStories = (props) => {
                                                     iconLink={faLink}
                                                     show={show}
                                                     onClick={() => storyOnClick(el.path, el)}
+                                                    openGallery={() => props.openGallery(el.id, "Category")}
                                                 />
                                             )
                                         }
@@ -204,6 +206,7 @@ export const CategoryStories = (props) => {
             // startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showCategoryStoriesOfMonth: bindActionCreators(Actions.showCategoryStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch),
         };
     }
 )(withRouter(CategoryStories));

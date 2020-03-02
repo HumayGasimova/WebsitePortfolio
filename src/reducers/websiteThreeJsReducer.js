@@ -317,6 +317,26 @@ const openGallery = (state, action) => {
         show: true,
         currentId: action.id
     };
+    if(action.page === "Archieve"){
+        let archieveImages = state.archievesMonth.storiesArray.map((el, i) => {
+            return el.image
+        });
+        updatedGallery.imagesArray = [...archieveImages];
+    }
+
+    if(action.page === "Category"){
+        let categoryImages = [];
+        state.categoryStories.storiesArrayOfCategories.map((el, i) => {
+            el.storiesArray.map(el => {
+                categoryImages.push(el.image);
+            })
+        });
+
+        updatedGallery.imagesArray = [...categoryImages];
+    }
+    // if(action.page === "Category"){
+    //     updatedGallery.imagesArray = [...state.categories];
+    // }
 
     return {
         ...state,

@@ -26,6 +26,7 @@ import './category.scss';
 
 import CategoryStories from '../../Parts/CategoryStories/categoryStories';
 import Footer from '../../Parts/Footer/footer';
+import Gallery from '../../Parts/Gallery/gallery';
 
 /**
 * Actions
@@ -105,6 +106,7 @@ export const Category = (props) => {
                     </H5>
                 </div> */}
             </div>
+            {props.gallery.show ? <Gallery/> : null}
         </>
     );
 }
@@ -113,7 +115,7 @@ export default connect(
     (state) => {
         return {
             categoryStories: Selectors.getCategoryStoriesState(state),
-            // dots: Selectors.getDotsState(state)
+            gallery: Selectors.getGalleryState(state),
         };
     },
     (dispatch) => {

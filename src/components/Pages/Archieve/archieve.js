@@ -26,6 +26,7 @@ import './archieve.scss';
 
 import ArchievesMonth from '../../Parts/ArchievesMonth/archievesMonth';
 import Footer from '../../Parts/Footer/footer';
+import Gallery from '../../Parts/Gallery/gallery';
 
 /**
 * Actions
@@ -107,6 +108,7 @@ export const Archieve = (props) => {
                     </H5>
                 </div> */}
             </div>
+            {props.gallery.show ? <Gallery/> : null}
         </>
     );
 }
@@ -115,7 +117,7 @@ export default connect(
     (state) => {
         return {
             archievesMonth: Selectors.getArchievesMonthState(state),
-            // dots: Selectors.getDotsState(state)
+            gallery: Selectors.getGalleryState(state),
         };
     },
     (dispatch) => {
