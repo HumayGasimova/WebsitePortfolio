@@ -95,14 +95,15 @@ export const Category = (props) => {
             </div>
             <div className="category-wrapper">
                <CategoryStories/>
-               <div className="category-footer-wrapper">
+               <Footer/>
+               {/* <div className="category-footer-wrapper">
                     <H5 className="h5-pink-swan-center">
                         © Copyright 2012 - 2020   |   
                         Avada Theme by Theme Fusion   |   
                         All Rights Reserved   |   
                         Powered by WordPress
                     </H5>
-                </div>
+                </div> */}
             </div>
         </>
     );
