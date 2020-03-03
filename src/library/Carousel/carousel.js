@@ -4,7 +4,8 @@
 
 import React, {
     useEffect,
-    useState
+    useState,
+    useRef
 } from 'react';
 
 import {
@@ -69,6 +70,18 @@ export const Carousel = (props) => {
     });
 
     const {activeIndex, translate, transition} = state;
+    const autoPlayRef = useRef();
+
+    useEffect(() => {
+        autoPlayRef.current = nextSlide
+    })
+
+    useEffect(() => {
+        const play = () => {
+            autoPlayRef.current()
+        }
+        const interval = setInterval(play, 3000);
+    }, [])
 
     /**
     * Methods

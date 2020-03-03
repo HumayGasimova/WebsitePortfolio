@@ -91,8 +91,8 @@ export const CarouselArrow = (props) => {
                 <FontAwesomeIcon 
                     icon={loadIconName(props.name)} 
                     size='2x'
-                    // color="white"
                     onClick={props.onClick}
+                    style={{cursor: "pointer"}}
                 />
             </div>
     );
