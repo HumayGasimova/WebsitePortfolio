@@ -77,7 +77,7 @@ export const SingleStory = (props) => {
 
     useEffect(()=>{
         props.initSingleStory(props.location.state ? props.location.state.obj : {});
-       console.log(leaveACommentRef)
+    //    console.log(leaveACommentRef)
         if(props.location.state.comment){
             window.scrollTo(0, leaveACommentRef);
         }else{
