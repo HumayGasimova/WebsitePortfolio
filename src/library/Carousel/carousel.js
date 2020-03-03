@@ -78,9 +78,10 @@ export const Carousel = (props) => {
 
     useEffect(() => {
         const play = () => {
-            autoPlayRef.current()
+            autoPlayRef.current();
         }
         const interval = setInterval(play, 3000);
+        return () => clearInterval(interval);
     }, [])
 
     /**

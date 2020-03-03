@@ -74,7 +74,7 @@ import {
     EH4,
     EW1,
     EW2,
-    Line1
+    Line2
 } from '../../UtilityComponents';
 
 /**
@@ -169,7 +169,7 @@ export const GetInTouch = (props) => {
                 <H4>HAVE QUESTIONS? WE’LL BE HAPPY TO ANSWER!</H4>
                 <EH2/>
                 <EH2/>
-                <Line1/>
+                <Line2/>
             </div>
             <EH2/>
             <EH2/>
