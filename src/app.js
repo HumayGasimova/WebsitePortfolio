@@ -43,7 +43,7 @@ export class App extends Component {
             <Switch>
                <Route 
                   path="/crypto-cafe"
-                  component={ Carousel }
+                  component={ Main }
                />
                <Redirect exact from="/" to="/crypto-cafe"/>
             </Switch>
