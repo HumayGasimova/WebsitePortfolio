@@ -69,7 +69,7 @@ export const CarouselContent = (props) => {
                 className="carousel-content" 
                 style={{
                     transform: `translateX(-${props.translate}px)`,
-                    // transition: `transform ${props.transition}s ease-out)`,
+                    transition: `transform ${props.transition}s ease-out`,
                     width: `${props.width}px`
                 }}
             >

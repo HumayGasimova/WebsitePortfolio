@@ -61,68 +61,105 @@ export const Carousel = (props) => {
     * State
     */
 
+    const firstSlide = slides[0];
+    const secondSlide = slides[1]
+    const lastSlide = slides[slides.length - 1];
+
     const getWidth = () => window.innerWidth;
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: 0,
-        transition: 0.45
+        translate: getWidth(),
+        transition: 0.45,
+        _slides: [lastSlide, firstSlide, secondSlide]
     });
 
-    const {activeIndex, translate, transition} = state;
+    const {activeIndex, translate, transition, _slides} = state;
     const autoPlayRef = useRef();
+    const transitionRef = useRef();
 
     useEffect(() => {
-        autoPlayRef.current = nextSlide
+       if(transition === 0) {
+           setState({
+               ...state,
+               transition: 0.45
+           })
+        }
+    }, [transition])
+
+    useEffect(() => {
+        autoPlayRef.current = nextSlide;
+        transitionRef.current = smoothTransition;
     })
 
     useEffect(() => {
         const play = () => {
             autoPlayRef.current();
         }
-        const interval = setInterval(play, 3000);
-        return () => clearInterval(interval);
-    }, [])
+
+        const smooth = e => {
+            // if(e.target.className.includes('carousel-content')){
+                transitionRef.current()
+            // }
+        }
+
+        let interval = null;
+
+        const transitionEnd = window.addEventListener('transitionend', smooth)
+        if(props.autoPlay){
+            interval = setInterval(play, 3000);
+            return () => clearInterval(interval);
+        }
+        return () => {
+            window.removeEventListener('transitionend', transitionEnd)
+            if(props.autoPlay){
+            clearInterval(interval);
+            }
+        };
+    }, [props.autoPlay])
 
     /**
     * Methods
     */
 
-    const prevSlide = () => {
-        if(activeIndex === 0){
-            return setState({
-                ...state,
-                translate: (slides.length - 1) * getWidth(),
-                activeIndex: slides.length - 1
-            })
-        }
+    const smoothTransition = () => {
+        let _slides = [];
 
+        //We're at the last slide
+        if(activeIndex === slides.length - 1)
+            _slides = [slides[slides.length - 2], lastSlide, firstSlide];
+        //We're back at the first slide. Just reset to how it was on initial render.
+        else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide]
+        // Create an array of the previous last slide, and the next two slides that follow it.
+        else _slides = slides.slice(activeIndex - 1, activeIndex + 2)
+        
         setState({
             ...state,
-            translate: (activeIndex - 1) * getWidth(),
-            activeIndex: activeIndex - 1
+            _slides,
+            transition: 0,
+            translate: getWidth()
+        })
+    }
+
+    const prevSlide = () => {
+        setState({
+            ...state,
+            translate: 0,
+            activeIndex: activeIndex === 0 ? slides.length - 1: activeIndex - 1
         })
     }
 
     const nextSlide = () => {
-        if(activeIndex === slides.length - 1){
-            return setState({
-                ...state,
-                translate: 0,
-                activeIndex: 0
-            })
-        }
-
         setState({
             ...state,
-            translate: (activeIndex + 1) * getWidth(),
-            activeIndex: activeIndex + 1
+            translate: translate + getWidth(),
+            activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         })
     }
    
     const renderCarouselSlides = () => {
         return(
-            <>{slides.map((el, i) => {
+            <>{_slides.map((el, i) => {
                 return(
                     <CarouselSlide
                         key={i}
@@ -147,7 +184,7 @@ export const Carousel = (props) => {
             <CarouselContent
                 translate={translate}
                 transition={transition}
-                width={getWidth() * slides.length}
+                width={getWidth() * _slides.length}
             >
                 {renderCarouselSlides()}
             </CarouselContent>
@@ -159,6 +196,7 @@ export const Carousel = (props) => {
                 slides={slides} 
                 activeIndex={activeIndex}
             />
+            {console.log(_slides.length)}
         </div>
     );
 }
