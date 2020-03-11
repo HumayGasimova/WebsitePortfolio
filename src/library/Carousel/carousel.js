@@ -75,22 +75,29 @@ export const Carousel = (props) => {
     });
 
     const {activeIndex, translate, transition, _slides} = state;
+
     const autoPlayRef = useRef();
     const transitionRef = useRef();
+    const resizeRef = useRef();
 
-    useEffect(() => {
-       if(transition === 0) {
-           setState({
-               ...state,
-               transition: 0.45
-           })
-        }
-    }, [transition])
+    /**
+    * Methods
+    */
 
     useEffect(() => {
         autoPlayRef.current = nextSlide;
         transitionRef.current = smoothTransition;
+        resizeRef.current = handleResize;
     })
+
+    useEffect(() => {
+    if(transition === 0) {
+        setState({
+            ...state,
+            transition: 0.45
+        })
+        }
+    }, [transition])
 
     useEffect(() => {
         const play = () => {
@@ -98,29 +105,41 @@ export const Carousel = (props) => {
         }
 
         const smooth = e => {
-            // if(e.target.className.includes('carousel-content')){
+            if(e.target.className.includes('carousel-content')){
                 transitionRef.current()
-            // }
+            }
+        }
+
+        const resize = () => {
+            resizeRef.current()
         }
 
         let interval = null;
 
-        const transitionEnd = window.addEventListener('transitionend', smooth)
+        const transitionEnd = window.addEventListener('transitionend', smooth);
+        const onResize = window.addEventListener('resize', resize);
+
         if(props.autoPlay){
             interval = setInterval(play, 3000);
             return () => clearInterval(interval);
         }
         return () => {
-            window.removeEventListener('transitionend', transitionEnd)
+            window.removeEventListener('transitionend', transitionEnd);
+            window.removeEventListener('resize', onResize);
+
             if(props.autoPlay){
-            clearInterval(interval);
+                clearInterval(interval);
             }
         };
     }, [props.autoPlay])
 
-    /**
-    * Methods
-    */
+    const handleResize = () => {
+        setState({
+            ...state,
+            translate: getWidth(),
+            transition: 0
+        })
+    }
 
     const smoothTransition = () => {
         let _slides = [];
