@@ -41,6 +41,7 @@ import './gallery.scss';
 * Components
 */
 
+import Slider from '../../SmallParts/Slider/slider';
 
 /**
 * Actions
@@ -107,20 +108,6 @@ export const Gallery = (props) => {
     * State
     */
 
-    const [currentTopPosition, setCurrentTopPosition] = useState(0);
-    const [showUpArrow, setShowUpArrow] = useState(false);
-    const [showDownArrow, setShowDownArrow] = useState(false);
-
-    const getHeight = () => window.innerHeight;
-
-    const [state, setState] = useState({
-        activeIndex: 0,
-        translate: 0,
-        transition: 0.45
-    });
-
-    const {activeIndex, translate, transition} = state;
-
     /**
     * Methods
     */
@@ -178,92 +165,9 @@ export const Gallery = (props) => {
         // })
     }, []);
 
-    const handleMouseEnter = () => {
-        setShowUpArrow(true);
-        setShowDownArrow(true)
-    }
+   
 
-    const handleMouseLeave = () => {
-        setShowUpArrow(false);
-        setShowDownArrow(false);
-    }
 
-    const loadImage = (img) => {
-        switch(img) {
-            case 'image1': 
-                return StoryImage1;
-            case 'image2': 
-                return StoryImage2;
-            case 'image3': 
-                return StoryImage3;
-            case 'image4': 
-                return StoryImage4;
-            case 'image5': 
-                return StoryImage5;
-            case 'image6': 
-                return StoryImage6;
-            default:
-                return DefaultImage 
-        }
-    }
-
-    const prevSlide = () => {
-        if(activeIndex === 0){
-            return setState({
-                ...state,
-                translate: (props.gallery.imagesArray.length - 1) * getHeight(),
-                activeIndex: props.gallery.imagesArray.length - 1
-            })
-        }
-        
-        setState({
-            ...state,
-            translate: (activeIndex - 1) * getHeight(),
-            activeIndex: activeIndex - 1
-        })
-    }
-
-    const nextSlide = () => {
-        if(activeIndex === props.gallery.imagesArray.length - 1){
-            return setState({
-                ...state,
-                translate: 0,
-                activeIndex: 0
-            })
-        }
-        
-        setState({
-            ...state,
-            translate: (activeIndex + 1) * getHeight(),
-            activeIndex: activeIndex + 1
-        })
-    }
-
-    const renderSlider = () => {
-        return(
-            <div 
-                className="gallery-slider-content" 
-                id="slider-content"
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave}
-                style={{
-                    transform: `translateY(-${translate}px)`,
-                    // transition: `transform ${props.transition}s ease-out)`,
-                    height: `${getHeight()}px`
-                }}
-            >{props.gallery.imagesArray.map((el, i) => {
-                return(
-                    <div 
-                        key={i} 
-                        className="gallery-slide"
-                        style={{height: `${getHeight()}px`}}
-                    >
-                        <img src={loadImage(el)}/>
-                    </div>
-                )
-            })}</div>
-        )
-    }
 
     const renderSmallSlider = () => {
         return(
@@ -295,7 +199,7 @@ export const Gallery = (props) => {
     return(
         <div 
             className="gallery" 
-            // style={{top: `${currsentTopPosition}`}}
+            // style={{top: `${currentTopPosition}`}}
         >
             <div className="gallery-wrapper">
                 <div className="gallery-buttons">
@@ -318,32 +222,10 @@ export const Gallery = (props) => {
                     </div>
                 </div>
                 <div className="gallery-slider">
-                    {showUpArrow ? 
-                    <div 
-                        className="gallery-slider-arrow-up"
-                        onClick={prevSlide}
-                        onMouseEnter={handleMouseEnter} 
-                    >
-                        <FontAwesomeIcon 
-                            icon={faChevronUp} 
-                            size="sm" 
-                            color="white" 
-                            className="icon"
-                        />
-                    </div> : null}
-                    {renderSlider()}
-                    {showDownArrow ? <div 
-                        className="gallery-slider-arrow-down"
-                        onClick={nextSlide}
-                        onMouseEnter={handleMouseEnter} 
-                    >
-                        <FontAwesomeIcon 
-                            icon={faChevronDown} 
-                            size="sm" 
-                            color="white" 
-                            className="icon"
-                        /> 
-                    </div> : null}
+                    <Slider
+                        slides={props.gallery.imagesArray}
+                  
+                    />
                 </div>
                 <div className="gallery-small-slider">
                     {/* {renderSmallSlider()} */}

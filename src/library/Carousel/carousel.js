@@ -91,11 +91,11 @@ export const Carousel = (props) => {
     })
 
     useEffect(() => {
-    if(transition === 0) {
-        setState({
-            ...state,
-            transition: 0.45
-        })
+        if(transition === 0) {
+            setState({
+                ...state,
+                transition: 0.45
+            })
         }
     }, [transition])
 
