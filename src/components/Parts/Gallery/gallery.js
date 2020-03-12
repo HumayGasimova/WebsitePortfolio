@@ -27,7 +27,7 @@ import {
    faTimes,
    faArrowsAlt,
    faPlay,
-   faChevronUp,
+   faPause,
    faChevronDown
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -108,6 +108,8 @@ export const Gallery = (props) => {
     * State
     */
 
+    const [autoPlayButton, setAutoPlayButton] = useState(false);
+
     /**
     * Methods
     */
@@ -165,9 +167,9 @@ export const Gallery = (props) => {
         // })
     }, []);
 
-   
-
-
+    const autoPlayOnClick = () => {
+        setAutoPlayButton(!autoPlayButton)
+    }
 
     const renderSmallSlider = () => {
         return(
@@ -215,16 +217,37 @@ export const Gallery = (props) => {
                         />
                     </div>
                     <div className="gallery-buttons-fullscreen">
-                        <FontAwesomeIcon icon={faArrowsAlt} size="sm" color="white" className="icon"/>
+                        <FontAwesomeIcon 
+                            icon={faArrowsAlt} 
+                            size="sm" 
+                            color="white" 
+                            className="icon"
+                        />
                     </div>
-                    <div className="gallery-buttons-play">
-                        <FontAwesomeIcon icon={faPlay} size="sm" color="white" className="icon"/>
+                    <div 
+                        className="gallery-buttons-play"
+                        onClick={autoPlayOnClick}
+                    >
+                        {!autoPlayButton ? 
+                            <FontAwesomeIcon 
+                                icon={faPlay} 
+                                size="sm" 
+                                color="white" 
+                                className="icon"
+                            /> : 
+                            <FontAwesomeIcon 
+                                icon={faPause} 
+                                size="sm" 
+                                color="white" 
+                                className="icon"
+                            />
+                        }
                     </div>
                 </div>
                 <div className="gallery-slider">
                     <Slider
                         slides={props.gallery.imagesArray}
-                  
+                        // autoPlay={autoPlayButton}
                     />
                 </div>
                 <div className="gallery-small-slider">
