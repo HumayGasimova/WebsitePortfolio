@@ -247,7 +247,7 @@ export const Gallery = (props) => {
                 <div className="gallery-slider">
                     <Slider
                         slides={props.gallery.imagesArray}
-                        // autoPlay={autoPlayButton}
+                        autoPlay={autoPlayButton}
                     />
                 </div>
                 <div className="gallery-small-slider">

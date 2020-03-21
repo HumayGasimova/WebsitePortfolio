@@ -48,6 +48,14 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
+* Hooks
+*/
+
+import {
+    useInterval
+} from '../../../Hooks/useInterval';
+
+/**
 * Images
 */
 
@@ -95,7 +103,7 @@ export const Slider = (props) => {
     */
 
     useEffect(() => {
-        autoPlayRef.current = nextSlide;
+        // autoPlayRef.current = nextSlide;
         transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
     })
@@ -110,9 +118,9 @@ export const Slider = (props) => {
     }, [transition])
 
     useEffect(() => {
-        const play = () => {
-            autoPlayRef.current();
-        }
+        // const play = () => {
+        //     autoPlayRef.current();
+        // }
 
         const smooth = e => {
             if(e.target.className.includes('slider-content')){
@@ -129,20 +137,25 @@ export const Slider = (props) => {
         const transitionEnd = window.addEventListener('transitionend', smooth);
         const onResize = window.addEventListener('resize', resize);
 
-        if(props.autoPlay){
-            interval = setInterval(play, 3000);
-            return () => clearInterval(interval);
-        }
+        // if(props.autoPlay){
+        //     interval = setInterval(play, 3000);
+        //     // return () => clearInterval(interval);
+        // }
+
         return () => {
             window.removeEventListener('transitionend', transitionEnd);
             window.removeEventListener('resize', onResize);
 
-            if(props.autoPlay){
-                clearInterval(interval);
-            }
+            // if(props.autoPlay){
+                // clearInterval(interval);
+            // }
         };
-    }, [props.autoPlay])
+    }, [])
 
+    useInterval(() => {
+        nextSlide();
+    }, props.autoPlay ? 3000 : null)
+    
     const handleResize = () => {
         setState({
             ...state,
