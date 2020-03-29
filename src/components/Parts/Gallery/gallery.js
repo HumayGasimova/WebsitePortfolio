@@ -116,9 +116,9 @@ export const Gallery = (props) => {
 
     useEffect(() => {
         // props.initMenuDrinks(menuDrinksArray);
-        let topPosition = document.body.scrollTop;
-        let slider = document.getElementById('slider-content');
-        let oldValue = 0;
+        // let topPosition = document.body.scrollTop;
+        // let slider = document.getElementById('slider-content');
+        // let oldValue = 0;
         // window.addEventListener('scroll', (e) => {
         //     let newValue = window.pageYOffset;
         //     console.log(newValue)
@@ -247,6 +247,7 @@ export const Gallery = (props) => {
                 <div className="gallery-slider">
                     <Slider
                         slides={props.gallery.imagesArray}
+                        currentSlideId={props.gallery.currentId}
                         autoPlay={autoPlayButton}
                     />
                 </div>

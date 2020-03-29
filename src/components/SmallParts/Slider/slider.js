@@ -77,16 +77,21 @@ export const Slider = (props) => {
 
     const slides = props.slides;
 
-    const firstSlide = slides[0];
-    const secondSlide = slides[1]
-    const lastSlide = slides[slides.length - 1];
+    // const firstSlide = slides[0];
+    // const secondSlide = slides[1];
+    // const lastSlide = slides[slides.length - 1];
+
+    const firstSlide = slides[props.currentSlideId - 1];
+    const secondSlide = slides[props.currentSlideId];
+    const lastSlide = props.currentSlideId - 1 === 0 ?  slides[slides.length - 1] : slides[props.currentSlideId - 2];
 
     const [currentTopPosition, setCurrentTopPosition] = useState(0);
     const [showUpArrow, setShowUpArrow] = useState(false);
     const [showDownArrow, setShowDownArrow] = useState(false);
 
     const [state, setState] = useState({
-        activeIndex: 0,
+        // activeIndex: 0,
+        activeIndex: props.currentSlideId - 1,
         translate: getHeight(),
         transition: 0.45,
         _slides: [lastSlide, firstSlide, secondSlide]
@@ -146,6 +151,12 @@ export const Slider = (props) => {
             window.removeEventListener('transitionend', transitionEnd);
             window.removeEventListener('resize', onResize);
 
+            setState({
+                activeIndex: props.currentSlideId - 1,
+                translate: getHeight(),
+                transition: 0.45,
+                _slides: [lastSlide, firstSlide, secondSlide]
+            })
             // if(props.autoPlay){
                 // clearInterval(interval);
             // }
@@ -174,20 +185,46 @@ export const Slider = (props) => {
         else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide]
         // Create an array of the previous last slide, and the next two slides that follow it.
         else _slides = slides.slice(activeIndex - 1, activeIndex + 2)
+
+        //We're at the last slide
+        // if(activeIndex === slides.length - 1){
+        //     _slides = [slides[slides.length - 2], lastSlide, firstSlide];
+        //     console.log("first",_slides)
+           
+        // }  else {
+        //     if (activeIndex === 0) {
+        //         _slides = [lastSlide, firstSlide, secondSlide]
+        //         console.log("second",_slides)
+      
+        //     } else {
+        //         // if()
+        //         _slides = slides.slice(activeIndex - 1, activeIndex + 2) 
+        //         console.log("third",_slides)
+        //     }
+        // }
         
+            
+        //We're back at the first slide. Just reset to how it was on initial render.
+     
+        
+        // Create an array of the previous last slide, and the next two slides that follow it.
+       
+        
+   
         setState({
             ...state,
             _slides,
             transition: 0,
             translate: getHeight()
         })
+        console.log(_slides)
     }
 
     const prevSlide = () => {
         setState({
             ...state,
             translate: 0,
-            activeIndex: activeIndex === 0 ? slides.length - 1: activeIndex - 1
+            activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1
         })
     }
 
@@ -195,6 +232,7 @@ export const Slider = (props) => {
         setState({
             ...state,
             translate: translate + getHeight(),
+            // activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
             activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         })
     }
