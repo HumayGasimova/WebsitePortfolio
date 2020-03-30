@@ -340,7 +340,7 @@ const openGallery = (state, action) => {
         let categoryImages = [];
         state.categoryStories.storiesArrayOfCategories.map((el, i) => {
             el.storiesArray.map(el => {
-                categoryImages.push(el.image);
+                categoryImages.push(el.image); 
             })
         });
 
