@@ -317,13 +317,10 @@ const openGallery = (state, action) => {
     let setOfImg1 = state.gallery.imagesArray.slice(action.id - 1,  state.gallery.imagesArray.length);
     let setOfImg2 = state.gallery.imagesArray.slice(0, action.id - 1);
     
-
-    // updateImageArray.push(setOfImg1)
     updateImageArray = updateImageArray
                         .concat(setOfImg1)
                         .concat(setOfImg2)
-
-    console.log(updateImageArray)
+                        
     let updatedGallery = {
         ...state.gallery,
         show: true,
