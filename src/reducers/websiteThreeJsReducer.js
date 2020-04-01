@@ -118,8 +118,8 @@ const addRelatedPostsElement = (state, action) => {
     let firstElement = state.relatedPosts[0];
     let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
   
-    updatedRelatedPosts.unshift(lastElement);
-    updatedRelatedPosts.push(firstElement);
+    // updatedRelatedPosts.unshift(lastElement);
+    // updatedRelatedPosts.push(firstElement);
 
     return {
         ...state,

@@ -25,27 +25,33 @@ import {
 */
 
 import { 
-   faChevronUp,
-   faChevronDown
+    faArrowAltCircleLeft,
+    faArrowAltCircleRight
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Styles
 */
 
-import './slider.scss';
+import './relatedPostsSlider.scss';
+
+/**
+* Components
+*/
+
+import RelatedPostCard from '../RelatedPostCard/relatedPostCard';
 
 /**
 * Actions
 */
 
-import * as Actions from '../../../actions';
+import * as Actions from '../../../../actions';
 
 /**
 * Selectors
 */
 
-import * as Selectors from '../../../reducers/selectors';
+import * as Selectors from '../../../../reducers/selectors';
 
 /**
 * Hooks
@@ -53,37 +59,50 @@ import * as Selectors from '../../../reducers/selectors';
 
 import {
     useInterval
-} from '../../../Hooks/useInterval';
+} from '../../../../Hooks/useInterval';
 
 /**
 * Images
 */
 
-import StoryImage1 from '../../../images/photo-1527358043728-909898958b29.jpg';
-import StoryImage2 from '../../../images/rocking-chairs-white-chairs-rockers.jpg';
-import StoryImage3 from '../../../images/coffee-latte-art-coffee-shop.jpg';
-import StoryImage4 from '../../../images/coffee-cup-latte-cappuccino.jpg';
-import StoryImage5 from '../../../images/coffee-cup-beverage-food-photo.jpg';
-import StoryImage6 from '../../../images/white-bowl-beside-glass-cup.jpg';
-import DefaultImage from '../../../images/error.jpg';
+import StoryImage1 from '../../../../images/photo-1527358043728-909898958b29.jpg';
+import StoryImage2 from '../../../../images/rocking-chairs-white-chairs-rockers.jpg';
+import StoryImage3 from '../../../../images/coffee-latte-art-coffee-shop.jpg';
+import StoryImage4 from '../../../../images/coffee-cup-latte-cappuccino.jpg';
+import StoryImage5 from '../../../../images/coffee-cup-beverage-food-photo.jpg';
+import StoryImage6 from '../../../../images/white-bowl-beside-glass-cup.jpg';
+import DefaultImage from '../../../../images/error.jpg';
 
 /**
-* Slider component definition and export
+* Utility
 */
 
-export const Slider = (props) => {
+import {
+    H2,
+    H3,
+    H4,
+    H5,
+    EH1,
+    EH2,
+    EH4,
+    EW1,
+    EW2,
+    Line1
+} from '../../../UtilityComponents';
+
+/**
+* RelatedPostsSlider component definition and export
+*/
+
+export const RelatedPostsSlider = (props) => {
 
     const getHeight = () => window.innerHeight;
 
-    const slides = [...props.slides];
+    const slides = [...props.relatedPosts];
 
     const firstSlide = slides[0];
     const secondSlide = slides[1];
     const lastSlide = slides[slides.length - 1];
-
-    const [currentTopPosition, setCurrentTopPosition] = useState(0);
-    const [showUpArrow, setShowUpArrow] = useState(false);
-    const [showDownArrow, setShowDownArrow] = useState(false);
 
     const [state, setState] = useState({
         activeIndex: 0,
@@ -101,6 +120,13 @@ export const Slider = (props) => {
     /**
     * Methods
     */
+
+    useEffect(() => {
+        props.startInitRelatedPosts(props.id);
+        if(props.id){
+            props.addRelatedPostsElement();
+        }
+    }, [props.id, props.relatedPosts.length]);
 
     useEffect(() => {
         // autoPlayRef.current = nextSlide;
@@ -208,15 +234,6 @@ export const Slider = (props) => {
         })
     }
 
-    const handleMouseEnter = () => {
-        setShowUpArrow(true);
-        setShowDownArrow(true)
-    }
-
-    const handleMouseLeave = () => {
-        setShowUpArrow(false);
-        setShowDownArrow(false);
-    }
 
     const loadImage = (img) => {
         switch(img) {
@@ -237,30 +254,30 @@ export const Slider = (props) => {
         }
     }
 
-    const renderSlider = () => {
-        return(
-            <div 
-                className="slider-content" 
-                id="slider-content"
-                onMouseEnter={handleMouseEnter} 
-                onMouseLeave={handleMouseLeave}
-                style={{
-                    transform: `translateY(-${translate}px)`,
-                    transition: `transform ${transition}s ease-out`,
-                    height: `${getHeight()}px`
-                }}
-            >{_slides.map((el, i) => {
-                return(
-                    <div 
-                        key={i} 
-                        className="slide"
-                        style={{height: `${getHeight()}px`}}
-                    >
-                        <img src={loadImage(el)}/>
-                    </div>
-                )
-            })}</div>
-        )
+    const renderRelatedPostsSlider = () => {
+        // return(
+        //     <div 
+        //         className="related-posts-slider-content" 
+        //         id="related-posts-slider-content"
+        //         style={{
+        //             transform: `translateY(-${translate}px)`,
+        //             transition: `transform ${transition}s ease-out`,
+        //             height: `${getHeight()}px`
+        //         }}
+        //     >{_slides.map((el, i) => {
+        //         return (
+        //             <RelatedPostCard
+        //                 key={i}
+        //                 image={el.image}
+        //                 header={el.header}
+        //                 day={el.day}
+        //                 month={el.month}
+        //                 year={el.year}
+        //                 comments={el.comments}
+        //             />
+        //         )
+        //     })}</div>
+        // )
     }
 
     /**
@@ -268,47 +285,45 @@ export const Slider = (props) => {
     */
 
     return(
-        <>
-            {showUpArrow ? 
-            <div 
-                className="slider-arrow-up"
-                onClick={prevSlide}
-                onMouseEnter={handleMouseEnter} 
-            >
-                <FontAwesomeIcon 
-                    icon={faChevronUp} 
-                    size="sm" 
-                    color="white" 
-                    className="icon"
-                />
-            </div> : null}
-            {renderSlider()}
-            {showDownArrow ? <div 
-                className="slider-arrow-down"
-                onClick={nextSlide}
-                onMouseEnter={handleMouseEnter} 
-            >
-                <FontAwesomeIcon 
-                    icon={faChevronDown} 
-                    size="sm" 
-                    color="white" 
-                    className="icon"
-                /> 
-            </div> : null}
-        </>
+        <div className="related-posts">
+            <EH2/>
+            <H3>RELATED POSTS</H3>
+            <EH2/>
+            <div className="related-posts-wrapper" id="slider">
+                <div className="related-posts-arrow-left" onClick={prevSlide}>
+                    <FontAwesomeIcon 
+                        icon={faArrowAltCircleLeft} 
+                        size="lg" 
+                        color="white"
+                    />
+                </div>
+                <div className="related-posts-inner-wrapper" id="slider">
+                    {renderRelatedPostsSlider()}
+                </div>
+                <div className="related-posts-arrow-right" onClick={nextSlide}>
+                    <FontAwesomeIcon 
+                        icon={faArrowAltCircleRight} 
+                        size="lg" 
+                        color="white"
+                    />
+                </div>
+                {console.log(slides)}
+            </div>
+        </div>
     );
 }
 
 export default connect(
     (state) => {
         return {
-            gallery: Selectors.getGalleryState(state),
+            relatedPosts: Selectors.getRelatedPostsState(state),
         };
     },
     (dispatch) => {
         return {
-            // closeGallery: bindActionCreators(Actions.closeGallery, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
         };
     }
-)(Slider);
+)(RelatedPostsSlider);
  

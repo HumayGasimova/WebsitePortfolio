@@ -30,6 +30,7 @@ import './singleStoryContent.scss';
 */
 
 import Content from '../../SmallParts/SingleStory/Content/content';
+import RelatedPostsSlider from '../../SmallParts/SingleStory/RelatedPostsSlider/relatedPostsSlider';
 import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
@@ -143,9 +144,15 @@ export const SingleStoryContent = (props) => {
                     header={props.header}
                     paragraphs={props.paragraphs}
                 />
+                {/* <RelatedPostsSlider
+                    // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
+                    id={props.id}
+                    // autoPlay
+                /> */}
                 {/* <RelatedPosts
                     // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
+                    // autoPlay
                 /> */}
                 {renderComments()}
                 <LeaveAComment
