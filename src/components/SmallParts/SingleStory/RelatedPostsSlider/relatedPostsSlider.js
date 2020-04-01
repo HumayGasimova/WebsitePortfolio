@@ -98,17 +98,17 @@ export const RelatedPostsSlider = (props) => {
 
     const getHeight = () => window.innerHeight;
 
-    const slides = [...props.relatedPosts];
-
-    const firstSlide = slides[0];
-    const secondSlide = slides[1];
-    const lastSlide = slides[slides.length - 1];
+    let firstSlide;
+    let secondSlide;
+    let thirdSlide;
+    let forthSlide;
+    let lastSlide;
 
     const [state, setState] = useState({
         activeIndex: 0,
         translate: getHeight(),
         transition: 0.45,
-        _slides: [lastSlide, firstSlide, secondSlide]
+        _slides: []
     });
 
     const {activeIndex, translate, transition, _slides} = state;
@@ -122,10 +122,23 @@ export const RelatedPostsSlider = (props) => {
     */
 
     useEffect(() => {
+        let slides = [...props.relatedPosts];
+
+        firstSlide = slides[0];
+        secondSlide = slides[1];
+        thirdSlide = slides[2];
+        forthSlide = slides[3];
+        lastSlide = slides[slides.length - 1];
+
         props.startInitRelatedPosts(props.id);
         if(props.id){
             props.addRelatedPostsElement();
         }
+
+        setState({
+            ...state,
+            _slides: [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
+        })
     }, [props.id, props.relatedPosts.length]);
 
     useEffect(() => {
@@ -201,13 +214,11 @@ export const RelatedPostsSlider = (props) => {
         
             //We're at the last slide
             if(activeIndex === slides.length - 1)
-                _slides = [slides[slides.length - 2], lastSlide, firstSlide];
+                _slides = [slides[slides.length - 2], lastSlide, firstSlide, secondSlide, thirdSlide];
             //We're back at the first slide. Just reset to how it was on initial render.
-            else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide]
+            else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
             // Create an array of the previous last slide, and the next two slides that follow it.
-            else _slides = slides.slice(activeIndex - 1, activeIndex + 2)
-
-     
+            else _slides = slides.slice(activeIndex - 1, activeIndex + 5)
     
         setState({
             ...state,
@@ -255,29 +266,32 @@ export const RelatedPostsSlider = (props) => {
     }
 
     const renderRelatedPostsSlider = () => {
-        // return(
-        //     <div 
-        //         className="related-posts-slider-content" 
-        //         id="related-posts-slider-content"
-        //         style={{
-        //             transform: `translateY(-${translate}px)`,
-        //             transition: `transform ${transition}s ease-out`,
-        //             height: `${getHeight()}px`
-        //         }}
-        //     >{_slides.map((el, i) => {
-        //         return (
-        //             <RelatedPostCard
-        //                 key={i}
-        //                 image={el.image}
-        //                 header={el.header}
-        //                 day={el.day}
-        //                 month={el.month}
-        //                 year={el.year}
-        //                 comments={el.comments}
-        //             />
-        //         )
-        //     })}</div>
-        // )
+        console.log(_slides)
+        if(props.relatedPosts.length !== 0){
+            return(
+                <div 
+                    className="related-posts-slider-content" 
+                    id="related-posts-slider-content"
+                    style={{
+                        transform: `translateY(-${translate}px)`,
+                        transition: `transform ${transition}s ease-out`,
+                        height: `${getHeight()}px`
+                    }}
+                >{_slides.map((el, i) => {
+                    return (
+                        <RelatedPostCard
+                            key={i}
+                            // image={el.image}
+                            // header={el.header}
+                        //     day={el.day}
+                        //     month={el.month}
+                        //     year={el.year}
+                        //     comments={el.comments}
+                        />
+                    )
+                })}</div>
+            )
+        }
     }
 
     /**
@@ -307,7 +321,6 @@ export const RelatedPostsSlider = (props) => {
                         color="white"
                     />
                 </div>
-                {console.log(slides)}
             </div>
         </div>
     );
@@ -316,7 +329,7 @@ export const RelatedPostsSlider = (props) => {
 export default connect(
     (state) => {
         return {
-            relatedPosts: Selectors.getRelatedPostsState(state),
+            // relatedPosts: Selectors.getRelatedPostsState(state),
         };
     },
     (dispatch) => {

@@ -144,11 +144,11 @@ export const SingleStoryContent = (props) => {
                     header={props.header}
                     paragraphs={props.paragraphs}
                 />
-                {/* <RelatedPostsSlider
-                    // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
+                <RelatedPostsSlider
+                    relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
                     // autoPlay
-                /> */}
+                />
                 {/* <RelatedPosts
                     // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
