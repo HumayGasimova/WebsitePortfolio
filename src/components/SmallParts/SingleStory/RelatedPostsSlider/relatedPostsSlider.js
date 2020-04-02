@@ -62,18 +62,6 @@ import {
 } from '../../../../Hooks/useInterval';
 
 /**
-* Images
-*/
-
-import StoryImage1 from '../../../../images/photo-1527358043728-909898958b29.jpg';
-import StoryImage2 from '../../../../images/rocking-chairs-white-chairs-rockers.jpg';
-import StoryImage3 from '../../../../images/coffee-latte-art-coffee-shop.jpg';
-import StoryImage4 from '../../../../images/coffee-cup-latte-cappuccino.jpg';
-import StoryImage5 from '../../../../images/coffee-cup-beverage-food-photo.jpg';
-import StoryImage6 from '../../../../images/white-bowl-beside-glass-cup.jpg';
-import DefaultImage from '../../../../images/error.jpg';
-
-/**
 * Utility
 */
 
@@ -96,7 +84,9 @@ import {
 
 export const RelatedPostsSlider = (props) => {
 
-    const getHeight = () => window.innerHeight;
+    const getWidth = () => window.innerWidth;
+
+    let slides;
 
     let firstSlide;
     let secondSlide;
@@ -106,7 +96,7 @@ export const RelatedPostsSlider = (props) => {
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: getHeight(),
+        translate: "300px",
         transition: 0.45,
         _slides: []
     });
@@ -122,7 +112,7 @@ export const RelatedPostsSlider = (props) => {
     */
 
     useEffect(() => {
-        let slides = [...props.relatedPosts];
+        slides = [...props.relatedPosts];
 
         firstSlide = slides[0];
         secondSlide = slides[1];
@@ -135,10 +125,13 @@ export const RelatedPostsSlider = (props) => {
             props.addRelatedPostsElement();
         }
 
-        setState({
-            ...state,
-            _slides: [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
-        })
+        if(props.relatedPosts.length !== 0){
+            setState({
+                ...state,
+                _slides: [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
+            })
+        }
+        
     }, [props.id, props.relatedPosts.length]);
 
     useEffect(() => {
@@ -187,7 +180,7 @@ export const RelatedPostsSlider = (props) => {
 
             setState({
                 activeIndex: props.currentSlideId - 1,
-                translate: getHeight(),
+                translate: getWidth(),
                 transition: 0.45,
                 _slides: [lastSlide, firstSlide, secondSlide]
             })
@@ -204,7 +197,7 @@ export const RelatedPostsSlider = (props) => {
     const handleResize = () => {
         setState({
             ...state,
-            translate: getHeight(),
+            translate: getWidth(),
             transition: 0
         })
     }
@@ -224,7 +217,7 @@ export const RelatedPostsSlider = (props) => {
             ...state,
             _slides,
             transition: 0,
-            translate: getHeight()
+            translate: getWidth()
         })
         
     }
@@ -240,53 +233,33 @@ export const RelatedPostsSlider = (props) => {
     const nextSlide = () => {
         setState({
             ...state,
-            translate: translate + getHeight(),
+            translate: translate + getWidth(),
             activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         })
     }
 
-
-    const loadImage = (img) => {
-        switch(img) {
-            case 'image1': 
-                return StoryImage1;
-            case 'image2': 
-                return StoryImage2;
-            case 'image3': 
-                return StoryImage3;
-            case 'image4': 
-                return StoryImage4;
-            case 'image5': 
-                return StoryImage5;
-            case 'image6': 
-                return StoryImage6;
-            default:
-                return DefaultImage 
-        }
-    }
-
     const renderRelatedPostsSlider = () => {
         console.log(_slides)
-        if(props.relatedPosts.length !== 0){
+        if(_slides.length !== 0){
             return(
                 <div 
                     className="related-posts-slider-content" 
                     id="related-posts-slider-content"
                     style={{
-                        transform: `translateY(-${translate}px)`,
+                        transform: `translateX(-${translate}px)`,
                         transition: `transform ${transition}s ease-out`,
-                        height: `${getHeight()}px`
+                        width: `${getWidth()}px`
                     }}
                 >{_slides.map((el, i) => {
                     return (
                         <RelatedPostCard
                             key={i}
-                            // image={el.image}
-                            // header={el.header}
-                        //     day={el.day}
-                        //     month={el.month}
-                        //     year={el.year}
-                        //     comments={el.comments}
+                            image={el.image}
+                            header={el.header}
+                            day={el.day}
+                            month={el.month}
+                            year={el.year}
+                            comments={el.comments}
                         />
                     )
                 })}</div>
@@ -311,7 +284,7 @@ export const RelatedPostsSlider = (props) => {
                         color="white"
                     />
                 </div>
-                <div className="related-posts-inner-wrapper" id="slider">
+                <div className="related-posts-inner-wrapper">
                     {renderRelatedPostsSlider()}
                 </div>
                 <div className="related-posts-arrow-right" onClick={nextSlide}>
