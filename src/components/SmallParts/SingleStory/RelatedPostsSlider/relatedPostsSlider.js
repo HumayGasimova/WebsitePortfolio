@@ -25,8 +25,8 @@ import {
 */
 
 import { 
-    faArrowAltCircleLeft,
-    faArrowAltCircleRight
+    faChevronLeft,
+    faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -279,9 +279,10 @@ export const RelatedPostsSlider = (props) => {
             <div className="related-posts-wrapper" id="slider">
                 <div className="related-posts-arrow-left" onClick={prevSlide}>
                     <FontAwesomeIcon 
-                        icon={faArrowAltCircleLeft} 
-                        size="lg" 
-                        color="white"
+                        icon={faChevronLeft} 
+                        size="sm" 
+                        color="white" 
+                        className="icon"
                     />
                 </div>
                 <div className="related-posts-inner-wrapper">
@@ -289,9 +290,10 @@ export const RelatedPostsSlider = (props) => {
                 </div>
                 <div className="related-posts-arrow-right" onClick={nextSlide}>
                     <FontAwesomeIcon 
-                        icon={faArrowAltCircleRight} 
-                        size="lg" 
-                        color="white"
+                        icon={faChevronRight} 
+                        size="sm" 
+                        color="white" 
+                        className="icon"
                     />
                 </div>
             </div>

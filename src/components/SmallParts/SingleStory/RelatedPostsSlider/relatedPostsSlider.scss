@@ -2,7 +2,11 @@
     .related-posts-wrapper {
         display: flex;
         align-items: center;
+        position: relative;
+        left: -30px;
+        width: calc(100% + 60px);
         .related-posts-inner-wrapper {
+            // display: flex;
             width: 100%;
             height: 200px;
             overflow: hidden;
@@ -12,7 +16,7 @@
                 width: 100%;
                 display: flex;
                 // position: absolute;
-                border: 2px solid red;
+                // border: 2px solid red;
                 // height: 233px;
                 // width: 233%;
                 // position: relative;
@@ -26,21 +30,29 @@
         }
         .related-posts-arrow-left {
             // border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(104, 97, 95, 0.9);
             width: 30px;
-            height: 30px;
-            // position: absolute;
-            right: 0%;
-            z-index: 1;
-
+            height: 70px;
+            position: relative;
+            z-index: 10;
+            left: 4.8%;
+            // top: 10%;
         }
         .related-posts-arrow-right {
             // border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(104, 97, 95, 0.9);
             width: 30px;
-            height: 30px;
-            // position: absolute;
-            left: 0%;
-            z-index: 1;
-
+            height: 70px;
+            position: relative;
+            z-index: 10;
+            right: 4.3%;
+            // top: 10%;
         }
     }
 }
@@ -49,20 +61,20 @@
     transition: left .2s ease-out;
 }
 
-    .related-posts-slider-content {
-        width: 100%;
-        display: flex;
-        // transition: transform ease-out 0.45s;
-        .slide {
-            background-color: rgb(18, 68, 159);
-            filter: grayscale(40%);
-            width: 100%;
-            height: 100%;
-            >img {
-                width: 100%;
-                height: 100%;
-                opacity: 0.8;
-            }
-        }
-    }
+    // .related-posts-slider-content {
+    //     width: 100%;
+    //     display: flex;
+    //     // transition: transform ease-out 0.45s;
+    //     .slide {
+    //         background-color: rgb(18, 68, 159);
+    //         filter: grayscale(40%);
+    //         width: 100%;
+    //         height: 100%;
+    //         >img {
+    //             width: 100%;
+    //             height: 100%;
+    //             opacity: 0.8;
+    //         }
+    //     }
+    // }
 // }
