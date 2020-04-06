@@ -4,7 +4,8 @@
 
 import React, {
     useState,
-    useEffect
+    useEffect,
+    useRef
 } from 'react';
 
 import {
@@ -95,11 +96,36 @@ export const RelatedPostCard = (props) => {
     * State
     */
 
+    const getWidth = () => window.innerWidth;
+
     const [isHovering, setIsHovering] = useState(false);
+
+    const resizeRef = useRef();
 
     /**
     * Methods
     */
+
+    useEffect(() => {
+        resizeRef.current = handleResize;
+    })
+
+    useEffect(() => {
+        const resize = () => {
+            resizeRef.current()
+        }
+
+        const onResize = window.addEventListener('resize', resize);
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+        };
+    }, []);
+
+    const handleResize = () => {
+        let cardWidth = document.getElementById('slide').offsetWidth;
+        props.getWidthOfCard(cardWidth);
+    }
 
     const handleMouseEnter = () => {
         setIsHovering(true);

@@ -96,10 +96,12 @@ export const RelatedPostsSlider = (props) => {
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: "300px",
+        translate: 200,
         transition: 0.45,
         _slides: []
     });
+
+    const [cardWidth, setCardWidth] = useState(201);
 
     const {activeIndex, translate, transition, _slides} = state;
 
@@ -155,7 +157,7 @@ export const RelatedPostsSlider = (props) => {
         // }
 
         const smooth = e => {
-            if(e.target.className.includes('slider-content')){
+            if(e.target.className.includes('related-posts-slider-content')){
                 transitionRef.current()
             }
         }
@@ -180,7 +182,7 @@ export const RelatedPostsSlider = (props) => {
 
             setState({
                 activeIndex: props.currentSlideId - 1,
-                translate: getWidth(),
+                translate: 200.8,
                 transition: 0.45,
                 _slides: [lastSlide, firstSlide, secondSlide]
             })
@@ -197,7 +199,7 @@ export const RelatedPostsSlider = (props) => {
     const handleResize = () => {
         setState({
             ...state,
-            translate: getWidth(),
+            translate: cardWidth,
             transition: 0
         })
     }
@@ -217,7 +219,7 @@ export const RelatedPostsSlider = (props) => {
             ...state,
             _slides,
             transition: 0,
-            translate: getWidth()
+            translate: 200.8
         })
         
     }
@@ -233,9 +235,13 @@ export const RelatedPostsSlider = (props) => {
     const nextSlide = () => {
         setState({
             ...state,
-            translate: translate + getWidth(),
+            translate: translate + 200.8,
             activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
         })
+    }
+
+    const widthOfTheCard = (width) => {
+        setCardWidth(width);
     }
 
     const renderRelatedPostsSlider = () => {
@@ -260,6 +266,7 @@ export const RelatedPostsSlider = (props) => {
                             month={el.month}
                             year={el.year}
                             comments={el.comments}
+                            getWidthOfCard={(w) => widthOfTheCard(w)}
                         />
                     )
                 })}</div>
