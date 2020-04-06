@@ -96,12 +96,12 @@ export const RelatedPostsSlider = (props) => {
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: 200,
+        translate: 215,
         transition: 0.45,
         _slides: []
     });
 
-    const [cardWidth, setCardWidth] = useState(201);
+    const [cardWidth, setCardWidth] = useState(0);
 
     const {activeIndex, translate, transition, _slides} = state;
 
