@@ -86,7 +86,7 @@ export const RelatedPostsSlider = (props) => {
 
     const getWidth = () => window.innerWidth;
 
-    let slides;
+    // let slides = [];
 
     let firstSlide;
     let secondSlide;
@@ -102,6 +102,7 @@ export const RelatedPostsSlider = (props) => {
     });
 
     const [cardWidth, setCardWidth] = useState(0);
+    const [slides, setSlides] = useState([]);
 
     const {activeIndex, translate, transition, _slides} = state;
 
@@ -114,13 +115,14 @@ export const RelatedPostsSlider = (props) => {
     */
 
     useEffect(() => {
-        slides = [...props.relatedPosts];
+        let slides = [...props.relatedPosts];
+        setSlides(slides)
 
-        firstSlide = slides[0];
-        secondSlide = slides[1];
-        thirdSlide = slides[2];
-        forthSlide = slides[3];
-        lastSlide = slides[slides.length - 1];
+        // firstSlide = slides[0];
+        // secondSlide = slides[1];
+        // thirdSlide = slides[2];
+        // forthSlide = slides[3];
+        // lastSlide = slides[slides.length - 1];
 
         props.startInitRelatedPosts(props.id);
         if(props.id){
@@ -130,7 +132,7 @@ export const RelatedPostsSlider = (props) => {
         if(props.relatedPosts.length !== 0){
             setState({
                 ...state,
-                _slides: [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
+                _slides: [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
             })
         }
         
@@ -209,9 +211,9 @@ export const RelatedPostsSlider = (props) => {
         
             //We're at the last slide
             if(activeIndex === slides.length - 1)
-                _slides = [slides[slides.length - 2], lastSlide, firstSlide, secondSlide, thirdSlide];
+                _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
             //We're back at the first slide. Just reset to how it was on initial render.
-            else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide, thirdSlide, forthSlide]
+            else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
             // Create an array of the previous last slide, and the next two slides that follow it.
             else _slides = slides.slice(activeIndex - 1, activeIndex + 5)
     
@@ -219,25 +221,29 @@ export const RelatedPostsSlider = (props) => {
             ...state,
             _slides,
             transition: 0,
-            translate: 200.8
+            translate: cardWidth
         })
-        
     }
 
     const prevSlide = () => {
-        setState({
-            ...state,
-            translate: 0,
-            activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1
-        })
+        if(slides.length !== 0){
+            setState({
+                ...state,
+                translate: 0,
+                activeIndex: activeIndex === 0 ? slides.length - 1 : activeIndex - 1
+            })
+        }
+     
     }
 
     const nextSlide = () => {
-        setState({
-            ...state,
-            translate: translate + 200.8,
-            activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
-        })
+        if(slides.length !== 0){
+            setState({
+                ...state,
+                translate: translate + cardWidth,
+                activeIndex: activeIndex === slides.length - 1 ? 0 : activeIndex + 1
+            })
+        }
     }
 
     const widthOfTheCard = (width) => {
@@ -254,7 +260,7 @@ export const RelatedPostsSlider = (props) => {
                     style={{
                         transform: `translateX(-${translate}px)`,
                         transition: `transform ${transition}s ease-out`,
-                        width: `${getWidth()}px`
+                        width: `1004px`
                     }}
                 >{_slides.map((el, i) => {
                     return (
