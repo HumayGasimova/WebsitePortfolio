@@ -36,8 +36,8 @@ export const startInitRelatedPostsEpic = (action$) =>
     action$.pipe(
         ofType(actionTypes.START_INIT_RELATED_POSTS),
         mergeMap((action) => {
+            let updatedRelatedPosts = [...storiesArray];
             if(action.currentStoryId){
-                let updatedRelatedPosts = [...storiesArray];
                 updatedRelatedPosts = updatedRelatedPosts.map((el) => {
                     return el.storiesArray.filter(x => x.id !== action.currentStoryId);
                 })
@@ -46,7 +46,9 @@ export const startInitRelatedPostsEpic = (action$) =>
                     Actions.addRelatedPosts(updatedRelatedPosts),
                 )   
             }else{
-                return empty();
+                return of(
+                    Actions.addRelatedPosts([]),
+                )   
             }
             
         })                

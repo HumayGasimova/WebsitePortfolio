@@ -96,12 +96,12 @@ export const RelatedPostsSlider = (props) => {
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: 215,
+        translate: 200.8,
         transition: 0.45,
         _slides: []
     });
 
-    const [cardWidth, setCardWidth] = useState(0);
+    const [cardWidth, setCardWidth] = useState(200.8);
     const [slides, setSlides] = useState([]);
 
     const {activeIndex, translate, transition, _slides} = state;
@@ -115,28 +115,38 @@ export const RelatedPostsSlider = (props) => {
     */
 
     useEffect(() => {
-        let slides = [...props.relatedPosts];
-        setSlides(slides)
-
+        props.startInitRelatedPosts(props.id);
+        let slidesArray = [...props.relatedPosts];
+        setSlides(slidesArray)
         // firstSlide = slides[0];
         // secondSlide = slides[1];
         // thirdSlide = slides[2];
         // forthSlide = slides[3];
         // lastSlide = slides[slides.length - 1];
 
-        props.startInitRelatedPosts(props.id);
-        if(props.id){
-            props.addRelatedPostsElement();
-        }
+       
+        // if(props.id){
+        //     props.addRelatedPostsElement();
+        // }
 
         if(props.relatedPosts.length !== 0){
             setState({
                 ...state,
-                _slides: [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
+                _slides: [slidesArray[slidesArray.length - 1], slidesArray[0], slidesArray[1], slidesArray[2], slidesArray[3]]
             })
         }
-        
-    }, [props.id, props.relatedPosts.length]);
+        return () => {
+            setState({
+                activeIndex: 0,
+                translate: 200.8,
+                transition: 0.45,
+                _slides: []
+            });
+            setSlides([]);
+            setCardWidth(200.8);
+            props.startInitRelatedPosts(null)
+        };
+    }, [props.id, props.relatedPosts.length, slides.length]);
 
     useEffect(() => {
         // autoPlayRef.current = nextSlide;
@@ -181,13 +191,6 @@ export const RelatedPostsSlider = (props) => {
         return () => {
             window.removeEventListener('transitionend', transitionEnd);
             window.removeEventListener('resize', onResize);
-
-            setState({
-                activeIndex: props.currentSlideId - 1,
-                translate: 200.8,
-                transition: 0.45,
-                _slides: [lastSlide, firstSlide, secondSlide]
-            })
             // if(props.autoPlay){
                 // clearInterval(interval);
             // }
@@ -209,14 +212,22 @@ export const RelatedPostsSlider = (props) => {
     const smoothTransition = () => {
         let _slides = [];
         
-            //We're at the last slide
-            if(activeIndex === slides.length - 1)
+            if(activeIndex === slides.length - 1){
                 _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
-            //We're back at the first slide. Just reset to how it was on initial render.
-            else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
-            // Create an array of the previous last slide, and the next two slides that follow it.
-            else _slides = slides.slice(activeIndex - 1, activeIndex + 5)
-    
+                // _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
+                console.log("First", _slides)
+               
+            }else{
+                if (activeIndex === 0){
+                    
+                    _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
+                    console.log("Second",_slides)
+                }else{
+                    _slides = slides.slice(activeIndex - 1, activeIndex + 5)
+                    console.log("Third", _slides)
+                }
+            }
+                
         setState({
             ...state,
             _slides,
@@ -227,6 +238,7 @@ export const RelatedPostsSlider = (props) => {
 
     const prevSlide = () => {
         if(slides.length !== 0){
+            console.log("PREV")
             setState({
                 ...state,
                 translate: 0,
@@ -238,6 +250,7 @@ export const RelatedPostsSlider = (props) => {
 
     const nextSlide = () => {
         if(slides.length !== 0){
+            console.log("NEXT")
             setState({
                 ...state,
                 translate: translate + cardWidth,
@@ -251,7 +264,7 @@ export const RelatedPostsSlider = (props) => {
     }
 
     const renderRelatedPostsSlider = () => {
-        console.log(_slides)
+        // console.log(_slides)
         if(_slides.length !== 0){
             return(
                 <div 
@@ -309,6 +322,7 @@ export const RelatedPostsSlider = (props) => {
                         className="icon"
                     />
                 </div>
+                {console.log(activeIndex)}
             </div>
         </div>
     );

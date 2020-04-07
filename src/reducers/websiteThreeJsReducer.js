@@ -107,6 +107,7 @@ const initSingleStory = (state, action) => {
 } 
 
 const addRelatedPosts = (state, action) => {
+    console.log("arra",action.array)
     return {
         ...state,
         relatedPosts: action.array
@@ -114,17 +115,17 @@ const addRelatedPosts = (state, action) => {
 } 
 
 const addRelatedPostsElement = (state, action) => {
-    let updatedRelatedPosts = [...state.relatedPosts];
-    let firstElement = state.relatedPosts[0];
-    let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
+    // let updatedRelatedPosts = [...state.relatedPosts];
+    // let firstElement = state.relatedPosts[0];
+    // let lastElement = state.relatedPosts[state.relatedPosts.length - 1];
   
-    // updatedRelatedPosts.unshift(lastElement);
-    // updatedRelatedPosts.push(firstElement);
+    // // updatedRelatedPosts.unshift(lastElement);
+    // // updatedRelatedPosts.push(firstElement);
 
-    return {
-        ...state,
-        relatedPosts: updatedRelatedPosts
-    };
+    // return {
+    //     ...state,
+    //     relatedPosts: updatedRelatedPosts
+    // };
 } 
 
 const initLeaveACommentForm = (state, action) => {
