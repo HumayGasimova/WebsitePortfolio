@@ -214,21 +214,18 @@ export const RelatedPostsSlider = (props) => {
         
             if(activeIndex === slides.length - 1){
                 _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0], slides[1], slides[2]];
-                // _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
-                console.log("First", _slides)
             }
             if (activeIndex === 0){
-                _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]]
-                console.log("Second",_slides)
+                _slides = [slides[slides.length - 1], slides[0], slides[1], slides[2], slides[3]];
             }
             if(activeIndex === 1){
-                _slides = slides.slice(activeIndex - 1, activeIndex + 5)
+                _slides = slides.slice(activeIndex - 1, activeIndex + 5);
             }
             if(activeIndex === 2){
-                _slides = [slides[1], slides[2], slides[3], slides[slides.length - 1], slides[0]]
+                _slides = [slides[1], slides[2], slides[3], slides[slides.length - 1], slides[0]];
             }
             if(activeIndex === 3){
-                _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]]
+                _slides = [slides[2], slides[3], slides[slides.length - 1], slides[0], slides[1]];
             }
         
         setState({

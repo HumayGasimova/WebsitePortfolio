@@ -147,7 +147,7 @@ export const SingleStoryContent = (props) => {
                 <RelatedPostsSlider
                     relatedPosts={props.relatedPosts ? props.relatedPosts : []}
                     id={props.id}
-                    // autoPlay
+                    autoPlay
                 />
                 {/* <RelatedPosts
                     // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
