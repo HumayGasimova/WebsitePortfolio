@@ -96,12 +96,12 @@ export const RelatedPostsSlider = (props) => {
 
     const [state, setState] = useState({
         activeIndex: 0,
-        translate: 200.8,
+        translate: 202.5,
         transition: 0.45,
         _slides: []
     });
 
-    const [cardWidth, setCardWidth] = useState(200.8);
+    const [cardWidth, setCardWidth] = useState(202.5);
     const [slides, setSlides] = useState([]);
 
     const {activeIndex, translate, transition, _slides} = state;
@@ -138,12 +138,12 @@ export const RelatedPostsSlider = (props) => {
         return () => {
             setState({
                 activeIndex: 0,
-                translate: 200.8,
+                translate: 202.5,
                 transition: 0.45,
                 _slides: []
             });
             setSlides([]);
-            setCardWidth(200.8);
+            setCardWidth(202.5);
             props.startInitRelatedPosts(null)
         };
     }, [props.id, props.relatedPosts.length, slides.length]);
