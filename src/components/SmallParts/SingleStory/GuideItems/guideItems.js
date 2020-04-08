@@ -89,6 +89,7 @@ export const GuideItems = (props) => {
     */
 
     const guideItemsOnClick = (path, obj) => {
+        props.startInitRelatedPosts(null);
         props.history.push(`/crypto-cafe/${path}`,{obj});
     }
 
@@ -132,7 +133,7 @@ export default connect(
     },
     (dispatch) => {
         return {
-            // startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
         };
     }
