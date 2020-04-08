@@ -145,6 +145,7 @@ export const PopularVsRecent = (props) => {
     }
 
     const popularVsRecenPostsLink = (path, obj) => {
+        props.startInitRelatedPosts(null);
         props.history.push(`/crypto-cafe/${path}`,{obj});
     }
 
@@ -218,6 +219,7 @@ export default connect(
     (dispatch) => {
         return {
             startInitPopularAndRecentStories: bindActionCreators(Actions.startInitPopularAndRecentStories, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
         };
     }
 )(withRouter(PopularVsRecent));

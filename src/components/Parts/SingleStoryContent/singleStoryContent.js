@@ -101,9 +101,9 @@ export const SingleStoryContent = (props) => {
     * Methods
     */
 
-    useEffect(() => {
-        // props.startInitRelatedPosts(props.id);
-    }, [props.id]);
+    // useEffect(() => {
+    //     // props.startInitRelatedPosts(props.id);
+    // }, [props.id]);
 
     const renderComments = () => {
         if(props.singleStory.comments){

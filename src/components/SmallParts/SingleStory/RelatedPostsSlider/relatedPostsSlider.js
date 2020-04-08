@@ -238,7 +238,6 @@ export const RelatedPostsSlider = (props) => {
 
     const prevSlide = () => {
         if(slides.length !== 0){
-            console.log("PREV")
             setState({
                 ...state,
                 translate: 0,
@@ -250,7 +249,6 @@ export const RelatedPostsSlider = (props) => {
 
     const nextSlide = () => {
         if(slides.length !== 0){
-            console.log("NEXT")
             setState({
                 ...state,
                 translate: translate + cardWidth,
@@ -322,7 +320,7 @@ export const RelatedPostsSlider = (props) => {
                         className="icon"
                     />
                 </div>
-                {console.log(activeIndex)}
+                {/* {console.log(state)} */}
             </div>
         </div>
     );

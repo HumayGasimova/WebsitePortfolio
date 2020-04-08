@@ -107,7 +107,6 @@ const initSingleStory = (state, action) => {
 } 
 
 const addRelatedPosts = (state, action) => {
-    console.log("arra",action.array)
     return {
         ...state,
         relatedPosts: action.array
