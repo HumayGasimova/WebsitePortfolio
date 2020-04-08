@@ -16,6 +16,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -144,7 +148,7 @@ export const RelatedPostsSlider = (props) => {
             });
             setSlides([]);
             setCardWidth(202.5);
-            props.startInitRelatedPosts(null)
+            props.startInitRelatedPosts(null);
         };
     }, [props.id, props.relatedPosts.length, slides.length]);
 
@@ -199,7 +203,12 @@ export const RelatedPostsSlider = (props) => {
 
     useInterval(() => {
         nextSlide();
-    }, props.autoPlay ? 3000 : null)
+    }, props.autoPlay ? 3000 : null);
+
+    const storyOnClick = (path, obj) => {
+        props.history.push(`/crypto-cafe/${path}`,{obj});
+        props.startInitRelatedPosts(null);
+    }
     
     const handleResize = () => {
         setState({
@@ -284,6 +293,7 @@ export const RelatedPostsSlider = (props) => {
                             year={el.year}
                             comments={el.comments}
                             getWidthOfCard={(w) => widthOfTheCard(w)}
+                            onClick={() => storyOnClick(el.path, el)}
                         />
                     )
                 })}</div>
@@ -338,5 +348,5 @@ export default connect(
             addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
         };
     }
-)(RelatedPostsSlider);
+)(withRouter(RelatedPostsSlider));
  
