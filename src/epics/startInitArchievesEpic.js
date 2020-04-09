@@ -72,6 +72,7 @@ export const startInitArchievesEpic = (action$) =>
             return of(
                 Actions.addArchievesMonths(archievesMonths),
                 Actions.initArchievesMonth(archievesMonthObj),
+                // Actions.addGalleryImages(imagesArray, 'Archieve'),
             )  
         })                
     )

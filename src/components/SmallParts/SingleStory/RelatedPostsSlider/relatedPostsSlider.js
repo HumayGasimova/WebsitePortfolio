@@ -294,7 +294,7 @@ export const RelatedPostsSlider = (props) => {
                             comments={el.comments}
                             getWidthOfCard={(w) => widthOfTheCard(w)}
                             onClick={() => storyOnClick(el.path, el)}
-                            openGallery={() => props.openGallery(el.id)}
+                            openGallery={() => props.openGallery(el.id, 'Realted posts')}
                         />
                     )
                 })}</div>

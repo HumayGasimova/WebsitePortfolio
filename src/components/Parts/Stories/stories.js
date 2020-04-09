@@ -157,7 +157,7 @@ export const Stories = (props) => {
                                                 path={el.path}
                                                 obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
-                                                openGallery={() => props.openGallery(el.id)}
+                                                openGallery={() => props.openGallery(el.id, 'Stories')}
                                             />
                                         )
                                     }else{
@@ -175,7 +175,7 @@ export const Stories = (props) => {
                                                 path={el.path}
                                                 obj={el}
                                                 onClick={() => storyOnClick(el.path, el)}
-                                                openGallery={() => props.openGallery(el.id)}
+                                                openGallery={() => props.openGallery(el.id, 'Stories')}
                                             />
                                         )
                                     }

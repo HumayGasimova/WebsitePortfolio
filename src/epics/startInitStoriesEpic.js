@@ -45,7 +45,7 @@ export const startInitStoriesEpic = (action$) =>
                 
                 return of(
                     Actions.addStoriesByMonth(storiesFilteredByMonth),
-                    Actions.addGalleryImages(imagesArray),
+                    Actions.addGalleryImages(imagesArray, 'Stories'),
                 );
             }else{
                 return empty();

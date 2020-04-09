@@ -120,6 +120,7 @@ export const startInitCategoriesEpic = (action$) =>
             return of(
                 Actions.initCategories(updatedCategoriesArray),
                 Actions.initCategoryStories(categoryObj),
+                // Actions.addGalleryImages(imagesArray, 'Category'),
             )  
         })                
     )

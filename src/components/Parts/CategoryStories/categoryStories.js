@@ -147,7 +147,7 @@ export const CategoryStories = (props) => {
                                                     iconLink={faLink}
                                                     show={show}
                                                     onClick={() => storyOnClick(el.path, el)}
-                                                    openGallery={() => props.openGallery(el.id, "Category")}
+                                                    openGallery={() => props.openGallery(el.id, 'Category')}
                                                 />
                                             )
                                         }else{

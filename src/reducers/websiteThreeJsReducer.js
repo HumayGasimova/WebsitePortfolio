@@ -31,7 +31,11 @@ export const initialState = {
     gallery: {
         show: false,
         currentId: 0,
-        imagesArray: []
+        imagesArray: [],
+        imgFromStories: [],
+        imgFromArchieve: [],
+        imgFromCategories: [],
+        imgFromRelatedPosts: []
     },
     getInTouchInputForm: {},
     customerMessages:[]
@@ -314,41 +318,51 @@ const addRecentPosts = (state, action) => {
 const openGallery = (state, action) => {
 
     let updateImageArray = [];
-    let setOfImg1 = state.gallery.imagesArray.slice(action.id - 1,  state.gallery.imagesArray.length);
-    let setOfImg2 = state.gallery.imagesArray.slice(0, action.id - 1);
-    
+    let setOfImg1;
+    let setOfImg2;
+
+    if(action.page === "Stories"){
+        setOfImg1 = state.gallery.imgFromStories.slice(action.id - 1,  state.gallery.imgFromStories.length);
+        setOfImg2 = state.gallery.imgFromStories.slice(0, action.id - 1);
+    }
+
+    if(action.page === "Archieve"){
+        setOfImg1 = state.gallery.imgFromArchieve.slice(action.id - 1,  state.gallery.imgFromArchieve.length);
+        setOfImg2 = state.gallery.imgFromArchieve.slice(0, action.id - 1);
+
+        // let archieveImages = state.archievesMonth.storiesArray.map((el, i) => {
+        //     return el.image
+        // });
+        // updatedGallery.imagesArray = [...archieveImages];
+    }
+
+    if(action.page === "Category"){
+        setOfImg1 = state.gallery.imgFromCategories.slice(action.id - 1,  state.gallery.imgFromCategories.length);
+        setOfImg2 = state.gallery.imgFromCategories.slice(0, action.id - 1);
+
+        // let categoryImages = [];
+        // state.categoryStories.storiesArrayOfCategories.map((el, i) => {
+        //     el.storiesArray.map(el => {
+        //         categoryImages.push(el.image); 
+        //     })
+        // });
+
+        // updatedGallery.imagesArray = [...categoryImages];
+    }
+    if(action.page === "Realted posts"){
+        // updatedGallery.imagesArray = [...state.categories];
+    }
+
     updateImageArray = updateImageArray
                         .concat(setOfImg1)
                         .concat(setOfImg2)
-                        
+
     let updatedGallery = {
         ...state.gallery,
         show: true,
         currentId: action.id,
         imagesArray: updateImageArray
     };
-
-
-    if(action.page === "Archieve"){
-        let archieveImages = state.archievesMonth.storiesArray.map((el, i) => {
-            return el.image
-        });
-        updatedGallery.imagesArray = [...archieveImages];
-    }
-
-    if(action.page === "Category"){
-        let categoryImages = [];
-        state.categoryStories.storiesArrayOfCategories.map((el, i) => {
-            el.storiesArray.map(el => {
-                categoryImages.push(el.image); 
-            })
-        });
-
-        updatedGallery.imagesArray = [...categoryImages];
-    }
-    // if(action.page === "Category"){
-    //     updatedGallery.imagesArray = [...state.categories];
-    // }
 
     return {
         ...state,
@@ -357,10 +371,35 @@ const openGallery = (state, action) => {
 }
 
 const addGalleryImages = (state, action) => {
-    let updatedGallery = {...state.gallery, imagesArray: [...state.gallery.imagesArray]};
-    action.array.map(el => {
-        updatedGallery.imagesArray.push(el);
-    })
+    let updatedGallery;
+
+    if(action.page === "Stories"){
+        updatedGallery = {...state.gallery, imgFromStories: [...state.gallery.imgFromStories]};
+        action.array.map(el => {
+            updatedGallery.imgFromStories.push(el);
+        })
+    }
+
+    if(action.page === "Archieve"){
+        updatedGallery = {...state.gallery, imgFromArchieve: [...state.gallery.imgFromArchieve]};
+        action.array.map(el => {
+            updatedGallery.imgFromArchieve.push(el);
+        })
+    }
+
+    if(action.page === "Category"){
+        updatedGallery = {...state.gallery, imgFromCategories: [...state.gallery.imgFromCategories]};
+        action.array.map(el => {
+            updatedGallery.imgFromCategories.push(el);
+        })
+    }
+
+    if(action.page === "Realted posts"){
+        updatedGallery = {...state.gallery, imgFromRelatedPosts: [...state.gallery.imgFromRelatedPosts]};
+        action.array.map(el => {
+            updatedGallery.imgFromRelatedPosts.push(el);
+        })
+    }
     
     return {
         ...state,
@@ -372,7 +411,8 @@ const closeGallery = (state, action) => {
     let updatedGallery = {
         ...state.gallery,
         show: false,
-        currentId: 0
+        currentId: 0,
+        // imagesArray: []
     };
 
     return {

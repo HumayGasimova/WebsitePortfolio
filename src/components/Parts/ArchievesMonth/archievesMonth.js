@@ -118,7 +118,7 @@ export const ArchievesMonth = (props) => {
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
                                 onClick={() => storyOnClick(el.path, el)}
-                                openGallery={() => props.openGallery(el.id, "Archieve")}
+                                openGallery={() => props.openGallery(el.id, 'Archieve')}
                             />
                         )
                     }else{
@@ -134,7 +134,7 @@ export const ArchievesMonth = (props) => {
                                 iconLink={faLink}
                                 show={props.archievesMonth.show}
                                 onClick={() => storyOnClick(el.path, el)}
-                                openGallery={() => props.openGallery(el.id, "Archieve")}
+                                openGallery={() => props.openGallery(el.id, 'Archieve')}
                             />
                         )
                     }

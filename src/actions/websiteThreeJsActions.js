@@ -191,10 +191,11 @@ export function openGallery(id, page) {
     };
 };
 
-export function addGalleryImages(array) {
+export function addGalleryImages(array, page) {
     return { 
         type: actionTypes.ADD_GALLERY_IMAGES,
-        array: array
+        array: array,
+        page: page
     };
 };
 
