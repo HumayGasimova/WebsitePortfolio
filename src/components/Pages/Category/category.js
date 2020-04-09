@@ -74,7 +74,21 @@ export const Category = (props) => {
     */
 
     useEffect(()=>{
-        props.initCategoryStories(props.location.state ? props.location.state.obj : {});
+        // props.initCategoryStories(props.location.state ? props.location.state.obj : {});
+
+        if(props.location.state){
+            let categoryImages = [];
+            props.location.state.obj.storiesArrayOfCategories.map((el, i) => {
+                el.storiesArray.map((el, i) => {
+                    categoryImages.push(el.image);
+                })
+            });
+                // console.log( props.location.state.obj);
+                // console.log(categoryImages);
+            props.addGalleryImages([], 'clear');
+            props.initCategoryStories(props.location.state.obj);
+            props.addGalleryImages(categoryImages, 'Category');
+        }
         window.scrollTo(0, 0);
     }, []);
 
@@ -121,7 +135,7 @@ export default connect(
     (dispatch) => {
         return {
             initCategoryStories: bindActionCreators(Actions.initCategoryStories, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            addGalleryImages: bindActionCreators(Actions.addGalleryImages, dispatch)
         };
     }
 )(Category);

@@ -43,6 +43,7 @@ export const startInitCategoriesEpic = (action$) =>
             let updatedCategoriesArray = [...categoriesArray];
             let updatedStoriesArray = [...storiesArray];
             let categoryObj = {};
+            let categoryImages = [];
 
             updatedStoriesArray.map((el, i) => {
                 el.storiesArray.map((el, i) => {
@@ -106,9 +107,8 @@ export const startInitCategoriesEpic = (action$) =>
                 if(obj){
                     updatedCategoriesArray[i].storiesArrayOfCategories.splice(objIndex, 1)
                 }
-
-               
             })
+
             if(action.path){
                 let path = action.path.slice(9, action.path.length)
                 let obj = updatedCategoriesArray.find(x => x.path === path);
@@ -116,11 +116,19 @@ export const startInitCategoriesEpic = (action$) =>
                     categoryObj = obj;
                 }
             }
-            
+
+               
+            // categoryObj.storiesArrayOfCategories.map((el, i) => {
+            //     el.storiesArray.map(el => {
+            //         categoryImages.push(el.image); 
+            //     })
+            // });
+
             return of(
                 Actions.initCategories(updatedCategoriesArray),
                 Actions.initCategoryStories(categoryObj),
-                // Actions.addGalleryImages(imagesArray, 'Category'),
+                Actions.addGalleryImages([], 'clear'),
+                Actions.addGalleryImages(categoryImages, 'Category'),
             )  
         })                
     )

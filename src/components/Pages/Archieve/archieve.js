@@ -80,7 +80,7 @@ export const Archieve = (props) => {
             let archieveImages = props.location.state.obj.storiesArray.map((el, i) => {
                 return el.image
             });
-                console.log(props.location.state.obj)
+            
             props.addGalleryImages([], 'clear');
             props.initArchievesMonth(props.location.state.obj);
             props.addGalleryImages(archieveImages, 'Archieve');

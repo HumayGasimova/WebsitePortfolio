@@ -329,26 +329,13 @@ const openGallery = (state, action) => {
     if(action.page === "Archieve"){
         setOfImg1 = state.gallery.imgFromArchieve.slice(action.id - 1,  state.gallery.imgFromArchieve.length);
         setOfImg2 = state.gallery.imgFromArchieve.slice(0, action.id - 1);
-
-        // let archieveImages = state.archievesMonth.storiesArray.map((el, i) => {
-        //     return el.image
-        // });
-        // updatedGallery.imagesArray = [...archieveImages];
     }
 
     if(action.page === "Category"){
         setOfImg1 = state.gallery.imgFromCategories.slice(action.id - 1,  state.gallery.imgFromCategories.length);
         setOfImg2 = state.gallery.imgFromCategories.slice(0, action.id - 1);
-
-        // let categoryImages = [];
-        // state.categoryStories.storiesArrayOfCategories.map((el, i) => {
-        //     el.storiesArray.map(el => {
-        //         categoryImages.push(el.image); 
-        //     })
-        // });
-
-        // updatedGallery.imagesArray = [...categoryImages];
     }
+    
     if(action.page === "Realted posts"){
         // updatedGallery.imagesArray = [...state.categories];
     }

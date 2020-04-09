@@ -91,7 +91,6 @@ export const GuideItems = (props) => {
     const guideItemsOnClick = (path, obj) => {
         props.startInitRelatedPosts(null);
         props.history.push(`/crypto-cafe/${path}`,{obj});
-        console.log("GUIDE",path)
     }
 
     const renderItems = () => {
