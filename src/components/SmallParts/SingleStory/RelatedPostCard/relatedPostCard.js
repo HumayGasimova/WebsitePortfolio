@@ -189,7 +189,11 @@ export const RelatedPostCard = (props) => {
                         </div>
                         <EW1/>
                         <div className="related-post-card-image-hover-icons">
-                            <FontAwesomeIcon icon={faSearch} size="lg" color="white"/>
+                            <FontAwesomeIcon 
+                                icon={faSearch} 
+                                size="lg" color="white"
+                                onClick={props.openGallery}
+                            />
                         </div>
                     </div>
                 </CSSTransition>

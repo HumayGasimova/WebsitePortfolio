@@ -294,6 +294,7 @@ export const RelatedPostsSlider = (props) => {
                             comments={el.comments}
                             getWidthOfCard={(w) => widthOfTheCard(w)}
                             onClick={() => storyOnClick(el.path, el)}
+                            openGallery={() => props.openGallery(el.id)}
                         />
                     )
                 })}</div>
@@ -346,6 +347,7 @@ export default connect(
         return {
             startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
             addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch),
         };
     }
 )(withRouter(RelatedPostsSlider));

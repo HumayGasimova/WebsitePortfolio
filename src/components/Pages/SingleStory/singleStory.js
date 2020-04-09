@@ -27,6 +27,7 @@ import './singleStory.scss';
 import SingleStoryContent from '../../Parts/SingleStoryContent/singleStoryContent';
 import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
+import Gallery from '../../Parts/Gallery/gallery';
 
 /**
 * Actions
@@ -114,6 +115,7 @@ export const SingleStory = (props) => {
                     getLeaveACommentsDivRef={(ref) => getLeaveACommentsDivRef(ref)}
                 />
             </div>
+            {props.gallery.show ? <Gallery/> : null}
         </>
     );
 }
@@ -122,7 +124,7 @@ export default connect(
     (state) => {
         return {
             singleStory: Selectors.getSingleStoryState(state),
-            // dots: Selectors.getDotsState(state)
+            gallery: Selectors.getGalleryState(state),
         };
     },
     (dispatch) => {
