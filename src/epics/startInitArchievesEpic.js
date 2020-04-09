@@ -38,6 +38,7 @@ export const startInitArchievesEpic = (action$) =>
         mergeMap((action) => {
             let archievesMonths = [...storiesArray];
             let archievesMonthObj = {};
+            let archieveImages = [];
 
             archievesMonths = archievesMonths.map(el => {
                 return {
@@ -47,7 +48,7 @@ export const startInitArchievesEpic = (action$) =>
                         show: true,
                         storiesArray: [...el.storiesArray.map(el => {
                                                 return {
-                                                    id: 1,
+                                                    id: el.id,
                                                     day: el.day,
                                                     month: el.month,
                                                     year: el.year,
@@ -69,10 +70,17 @@ export const startInitArchievesEpic = (action$) =>
                     archievesMonthObj = {...obj, header: obj.header.toUpperCase()};
                 }
             }
+
+            console.log(archievesMonthObj)
+            // archieveImages = archievesMonthObj.storiesArray.map((el, i) => {
+            //     return el.image
+            // });
+
             return of(
                 Actions.addArchievesMonths(archievesMonths),
                 Actions.initArchievesMonth(archievesMonthObj),
-                // Actions.addGalleryImages(imagesArray, 'Archieve'),
+                Actions.addGalleryImages([], 'clear'),
+                Actions.addGalleryImages(archieveImages, 'Archieve'),
             )  
         })                
     )

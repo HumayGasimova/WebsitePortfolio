@@ -91,9 +91,10 @@ export const GuideItems = (props) => {
     const guideItemsOnClick = (path, obj) => {
         props.startInitRelatedPosts(null);
         props.history.push(`/crypto-cafe/${path}`,{obj});
+        console.log("GUIDE",path)
     }
 
-    const renderArchieves = () => {
+    const renderItems = () => {
         // if(props.array){
             return(
                 <div className="guide-items-items">{props.array.map((el, i) => {
@@ -120,7 +121,7 @@ export const GuideItems = (props) => {
     return(
         <div className="guide-items">
             <H4 className={"h4-white"}>{props.header}</H4>
-            {renderArchieves()}
+            {renderItems()}
         </div>
     );
 }

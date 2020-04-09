@@ -111,7 +111,7 @@ export const Main = (props) => {
         });
         props.startInitArchieves(path);
         props.startInitCategories(path);
-        props.startInitRecentPosts()
+        props.startInitRecentPosts();
     }, [])
 
     /**

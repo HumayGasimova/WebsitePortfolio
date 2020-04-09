@@ -74,7 +74,18 @@ export const Archieve = (props) => {
     */
 
     useEffect(()=>{
-        props.initArchievesMonth(props.location.state ? props.location.state.obj : {});
+        // props.initArchievesMonth(props.location.state ? props.location.state.obj : {});
+        if(props.location.state){
+
+            let archieveImages = props.location.state.obj.storiesArray.map((el, i) => {
+                return el.image
+            });
+                console.log(props.location.state.obj)
+            props.addGalleryImages([], 'clear');
+            props.initArchievesMonth(props.location.state.obj);
+            props.addGalleryImages(archieveImages, 'Archieve');
+        }
+        
         window.scrollTo(0, 0);
     }, []);
 
@@ -123,7 +134,7 @@ export default connect(
     (dispatch) => {
         return {
             initArchievesMonth: bindActionCreators(Actions.initArchievesMonth, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            addGalleryImages: bindActionCreators(Actions.addGalleryImages, dispatch)
         };
     }
 )(Archieve);

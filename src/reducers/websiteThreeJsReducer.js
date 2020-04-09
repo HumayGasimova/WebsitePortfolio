@@ -401,6 +401,16 @@ const addGalleryImages = (state, action) => {
         })
     }
     
+    if(action.page === "clear"){
+        updatedGallery = {
+            ...state.gallery, 
+            // imgFromStories:  action.array,
+            imgFromArchieve: action.array,
+            imgFromCategories: action.array,
+            imgFromRelatedPosts: action.array,
+        };
+    }
+    
     return {
         ...state,
         gallery: updatedGallery
