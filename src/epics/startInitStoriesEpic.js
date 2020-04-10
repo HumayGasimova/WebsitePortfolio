@@ -40,7 +40,7 @@ export const startInitStoriesEpic = (action$) =>
                 let imagesArray = [];
                 let storiesFilteredByMonth = storiesArray[action.index];
                 imagesArray = storiesFilteredByMonth.storiesArray.map(el => {
-                    return el.image;
+                    return el;
                 })
                 
                 return of(

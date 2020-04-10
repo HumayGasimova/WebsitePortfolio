@@ -318,22 +318,26 @@ const addRecentPosts = (state, action) => {
 const openGallery = (state, action) => {
 
     let updateImageArray = [];
+    let index;
     let setOfImg1;
     let setOfImg2;
 
     if(action.page === "Stories"){
-        setOfImg1 = state.gallery.imgFromStories.slice(action.id - 1,  state.gallery.imgFromStories.length);
-        setOfImg2 = state.gallery.imgFromStories.slice(0, action.id - 1);
+        index = state.gallery.imgFromStories.findIndex(x => x.id === action.id);
+        setOfImg1 = state.gallery.imgFromStories.slice(index,  state.gallery.imgFromStories.length);
+        setOfImg2 = state.gallery.imgFromStories.slice(0, index);
     }
 
     if(action.page === "Archieve"){
-        setOfImg1 = state.gallery.imgFromArchieve.slice(action.id - 1,  state.gallery.imgFromArchieve.length);
-        setOfImg2 = state.gallery.imgFromArchieve.slice(0, action.id - 1);
+        index = state.gallery.imgFromArchieve.findIndex(x => x.id === action.id);
+        setOfImg1 = state.gallery.imgFromArchieve.slice(index,  state.gallery.imgFromArchieve.length);
+        setOfImg2 = state.gallery.imgFromArchieve.slice(0, index);
     }
 
     if(action.page === "Category"){
-        setOfImg1 = state.gallery.imgFromCategories.slice(action.id - 1,  state.gallery.imgFromCategories.length);
-        setOfImg2 = state.gallery.imgFromCategories.slice(0, action.id - 1);
+        index = state.gallery.imgFromCategories.findIndex(x => x.id === action.id);
+        setOfImg1 = state.gallery.imgFromCategories.slice(index,  state.gallery.imgFromCategories.length);
+        setOfImg2 = state.gallery.imgFromCategories.slice(0, index);
     }
     
     if(action.page === "Realted posts"){
@@ -343,6 +347,7 @@ const openGallery = (state, action) => {
     updateImageArray = updateImageArray
                         .concat(setOfImg1)
                         .concat(setOfImg2)
+                        .map(el => el.image)
 
     let updatedGallery = {
         ...state.gallery,

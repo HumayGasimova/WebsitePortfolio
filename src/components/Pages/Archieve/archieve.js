@@ -78,7 +78,7 @@ export const Archieve = (props) => {
         if(props.location.state){
 
             let archieveImages = props.location.state.obj.storiesArray.map((el, i) => {
-                return el.image
+                return el
             });
             
             props.addGalleryImages([], 'clear');

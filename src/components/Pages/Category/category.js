@@ -80,7 +80,7 @@ export const Category = (props) => {
             let categoryImages = [];
             props.location.state.obj.storiesArrayOfCategories.map((el, i) => {
                 el.storiesArray.map((el, i) => {
-                    categoryImages.push(el.image);
+                    categoryImages.push(el);
                 })
             });
                 // console.log( props.location.state.obj);
