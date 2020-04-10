@@ -121,7 +121,8 @@ export const RelatedPostsSlider = (props) => {
     useEffect(() => {
         props.startInitRelatedPosts(props.id);
         let slidesArray = [...props.relatedPosts];
-        setSlides(slidesArray)
+        setSlides(slidesArray);
+        props.addGalleryImages(slidesArray, 'Related posts');
         // firstSlide = slides[0];
         // secondSlide = slides[1];
         // thirdSlide = slides[2];
@@ -294,7 +295,7 @@ export const RelatedPostsSlider = (props) => {
                             comments={el.comments}
                             getWidthOfCard={(w) => widthOfTheCard(w)}
                             onClick={() => storyOnClick(el.path, el)}
-                            openGallery={() => props.openGallery(el.id, 'Realted posts')}
+                            openGallery={() => props.openGallery(el.id, 'Related posts')}
                         />
                     )
                 })}</div>
@@ -348,6 +349,7 @@ export default connect(
             startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
             addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
             openGallery: bindActionCreators(Actions.openGallery, dispatch),
+            addGalleryImages: bindActionCreators(Actions.addGalleryImages, dispatch),
         };
     }
 )(withRouter(RelatedPostsSlider));

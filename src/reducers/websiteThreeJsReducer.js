@@ -340,8 +340,10 @@ const openGallery = (state, action) => {
         setOfImg2 = state.gallery.imgFromCategories.slice(0, index);
     }
     
-    if(action.page === "Realted posts"){
-        // updatedGallery.imagesArray = [...state.categories];
+    if(action.page === "Related posts"){
+        index = state.gallery.imgFromRelatedPosts.findIndex(x => x.id === action.id);
+        setOfImg1 = state.gallery.imgFromRelatedPosts.slice(index,  state.gallery.imgFromRelatedPosts.length);
+        setOfImg2 = state.gallery.imgFromRelatedPosts.slice(0, index);
     }
 
     updateImageArray = updateImageArray
@@ -386,7 +388,7 @@ const addGalleryImages = (state, action) => {
         })
     }
 
-    if(action.page === "Realted posts"){
+    if(action.page === "Related posts"){
         updatedGallery = {...state.gallery, imgFromRelatedPosts: [...state.gallery.imgFromRelatedPosts]};
         action.array.map(el => {
             updatedGallery.imgFromRelatedPosts.push(el);
