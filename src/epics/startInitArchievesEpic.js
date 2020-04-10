@@ -68,18 +68,19 @@ export const startInitArchievesEpic = (action$) =>
                 let obj = archievesMonths.find(x => x.path === action.path);
                 if(obj){
                     archievesMonthObj = {...obj, header: obj.header.toUpperCase()};
+
+                    archieveImages = archievesMonthObj.storiesArray.map((el, i) => {
+                        return el
+                    });
                 }
             }
 
-            console.log(archievesMonthObj)
-            // archieveImages = archievesMonthObj.storiesArray.map((el, i) => {
-            //     return el.image
-            // });
+         
 
             return of(
                 Actions.addArchievesMonths(archievesMonths),
                 Actions.initArchievesMonth(archievesMonthObj),
-                Actions.addGalleryImages([], 'clear'),
+                // Actions.addGalleryImages([], 'clear'),
                 Actions.addGalleryImages(archieveImages, 'Archieve'),
             )  
         })                

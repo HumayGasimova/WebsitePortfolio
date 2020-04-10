@@ -114,20 +114,21 @@ export const startInitCategoriesEpic = (action$) =>
                 let obj = updatedCategoriesArray.find(x => x.path === path);
                 if(obj){
                     categoryObj = obj;
+
+                    categoryObj.storiesArrayOfCategories.map((el, i) => {
+                        el.storiesArray.map(el => {
+                            categoryImages.push(el); 
+                        })
+                    });
                 }
             }
-
                
-            // categoryObj.storiesArrayOfCategories.map((el, i) => {
-            //     el.storiesArray.map(el => {
-            //         categoryImages.push(el.image); 
-            //     })
-            // });
+         
 
             return of(
                 Actions.initCategories(updatedCategoriesArray),
                 Actions.initCategoryStories(categoryObj),
-                Actions.addGalleryImages([], 'clear'),
+                // Actions.addGalleryImages([], 'clear'),
                 Actions.addGalleryImages(categoryImages, 'Category'),
             )  
         })                
