@@ -19,6 +19,8 @@ import {
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
 
+import Fullscreen from "react-full-screen";
+
 /**
 * Icons
 */
@@ -109,6 +111,7 @@ export const Gallery = (props) => {
     */
 
     const [autoPlayButton, setAutoPlayButton] = useState(false);
+    const [fullScreen, setFullScreen] = useState(false);
 
     /**
     * Methods
@@ -199,63 +202,71 @@ export const Gallery = (props) => {
     */
 
     return(
-        <div 
-            className="gallery" 
-            // style={{top: `${currentTopPosition}`}}
+        <Fullscreen
+            enabled={fullScreen}
+            // onChange={() => setFullScreen(false)}
         >
-            <div className="gallery-wrapper">
-                <div className="gallery-buttons">
-                    <div 
-                        className="gallery-button-close"
-                        onClick={props.closeGallery}                    
-                    >
-                        <FontAwesomeIcon 
-                            icon={faTimes} 
-                            size="sm" 
-                            color="white" 
-                            className="icon"
-                        />
-                    </div>
-                    <div className="gallery-buttons-fullscreen">
-                        <FontAwesomeIcon 
-                            icon={faArrowsAlt} 
-                            size="sm" 
-                            color="white" 
-                            className="icon"
-                        />
-                    </div>
-                    <div 
-                        className="gallery-buttons-play"
-                        onClick={autoPlayOnClick}
-                    >
-                        {!autoPlayButton ? 
+            <div 
+                className="gallery" 
+                // style={{top: `${currentTopPosition}`}}
+            >
+                <div className="gallery-wrapper">
+                    <div className="gallery-buttons">
+                        <div 
+                            className="gallery-button-close"
+                            onClick={props.closeGallery}                    
+                        >
                             <FontAwesomeIcon 
-                                icon={faPlay} 
-                                size="sm" 
-                                color="white" 
-                                className="icon"
-                            /> : 
-                            <FontAwesomeIcon 
-                                icon={faPause} 
+                                icon={faTimes} 
                                 size="sm" 
                                 color="white" 
                                 className="icon"
                             />
-                        }
+                        </div>
+                        <div 
+                            className="gallery-buttons-fullscreen"
+                            onClick={() => setFullScreen(!fullScreen)}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faArrowsAlt} 
+                                size="sm" 
+                                color="white" 
+                                className="icon"
+                            />
+                        </div>
+                        <div 
+                            className="gallery-buttons-play"
+                            onClick={autoPlayOnClick}
+                        >
+                            {!autoPlayButton ? 
+                                <FontAwesomeIcon 
+                                    icon={faPlay} 
+                                    size="sm" 
+                                    color="white" 
+                                    className="icon"
+                                /> : 
+                                <FontAwesomeIcon 
+                                    icon={faPause} 
+                                    size="sm" 
+                                    color="white" 
+                                    className="icon"
+                                />
+                            }
+                        </div>
+                    </div>
+                    <div className="gallery-slider">
+                        <Slider
+                            slides={props.gallery.imagesArray}
+                            currentSlideId={props.gallery.currentId}
+                            autoPlay={autoPlayButton}
+                        />
+                    </div>
+                    <div className="gallery-small-slider">
+                        {/* {renderSmallSlider()} */}
                     </div>
                 </div>
-                <div className="gallery-slider">
-                    <Slider
-                        slides={props.gallery.imagesArray}
-                        currentSlideId={props.gallery.currentId}
-                        autoPlay={autoPlayButton}
-                    />
-                </div>
-                <div className="gallery-small-slider">
-                    {/* {renderSmallSlider()} */}
-                </div>
             </div>
-        </div>
+        </Fullscreen>
     );
 }
 
