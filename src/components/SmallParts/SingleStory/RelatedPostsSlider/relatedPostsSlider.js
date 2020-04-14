@@ -88,16 +88,6 @@ import {
 
 export const RelatedPostsSlider = (props) => {
 
-    const getWidth = () => window.innerWidth;
-
-    // let slides = [];
-
-    let firstSlide;
-    let secondSlide;
-    let thirdSlide;
-    let forthSlide;
-    let lastSlide;
-
     const [state, setState] = useState({
         activeIndex: 0,
         translate: 202.5,
@@ -119,6 +109,7 @@ export const RelatedPostsSlider = (props) => {
     */
 
     useEffect(() => {
+        props.addGalleryImages([], 'clear');
         props.startInitRelatedPosts(props.id);
         let slidesArray = [...props.relatedPosts];
         setSlides(slidesArray);
@@ -185,8 +176,8 @@ export const RelatedPostsSlider = (props) => {
 
         let interval = null;
 
-        const transitionEnd = window.addEventListener('transitionend', smooth);
-        const onResize = window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
+        window.addEventListener('resize', resize);
 
         // if(props.autoPlay){
         //     interval = setInterval(play, 3000);
@@ -194,8 +185,8 @@ export const RelatedPostsSlider = (props) => {
         // }
 
         return () => {
-            window.removeEventListener('transitionend', transitionEnd);
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener('transitionend', smooth);
+            window.removeEventListener('resize', resize);
             // if(props.autoPlay){
                 // clearInterval(interval);
             // }
@@ -332,7 +323,7 @@ export const RelatedPostsSlider = (props) => {
                         className="icon"
                     />
                 </div>
-                {/* {console.log(state)} */}
+                {/* {console.log(_slides)} */}
             </div>
         </div>
     );

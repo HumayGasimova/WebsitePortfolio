@@ -117,6 +117,8 @@ export const Gallery = (props) => {
     * Methods
     */
 
+   
+
     useEffect(() => {
         // props.initMenuDrinks(menuDrinksArray);
         // let topPosition = document.body.scrollTop;
@@ -256,7 +258,7 @@ export const Gallery = (props) => {
                     </div>
                     <div className="gallery-slider">
                         <Slider
-                            slides={props.gallery.imagesArray}
+                            // slides={props.gallery.imagesArray}
                             currentSlideId={props.gallery.currentId}
                             autoPlay={autoPlayButton}
                         />

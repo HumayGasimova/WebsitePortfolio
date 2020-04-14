@@ -416,7 +416,7 @@ const closeGallery = (state, action) => {
         ...state.gallery,
         show: false,
         currentId: 0,
-        // imagesArray: []
+        imagesArray: []
     };
 
     return {

@@ -74,14 +74,9 @@ import DefaultImage from '../../../images/error.jpg';
 export const Slider = (props) => {
 
     const getHeight = () => window.innerHeight;
+    
+    const [slides, setSlides] = useState([])
 
-    const slides = [...props.slides];
-
-    const firstSlide = slides[0];
-    const secondSlide = slides[1];
-    const lastSlide = slides[slides.length - 1];
-
-    const [currentTopPosition, setCurrentTopPosition] = useState(0);
     const [showUpArrow, setShowUpArrow] = useState(false);
     const [showDownArrow, setShowDownArrow] = useState(false);
 
@@ -89,7 +84,7 @@ export const Slider = (props) => {
         activeIndex: 0,
         translate: getHeight(),
         transition: 0.45,
-        _slides: [lastSlide, firstSlide, secondSlide]
+        _slides: []
     });
 
     const {activeIndex, translate, transition, _slides} = state;
@@ -101,6 +96,33 @@ export const Slider = (props) => {
     /**
     * Methods
     */
+
+    useEffect(() => {
+        // props.startInitRelatedPosts(props.id);
+        let slidesArray = [...props.gallery.imagesArray];
+        setSlides(slidesArray);
+        // if(props.id){
+        //     props.addRelatedPostsElement();
+        // }
+
+        if(props.gallery.imagesArray.length !== 0){
+            setState({
+                ...state,
+                _slides: [slides[slides.length - 1], slides[0], slides[1]]
+            })
+        }
+
+        return () => {
+            setState({
+                activeIndex: 0,
+                translate: getHeight(),
+                transition: 0.45,
+                _slides: []
+            });
+            setSlides([]);
+            // props.startInitRelatedPosts(null);
+        };
+    }, [props.gallery.imagesArray.length, slides.length]);
 
     useEffect(() => {
         // autoPlayRef.current = nextSlide;
@@ -134,8 +156,8 @@ export const Slider = (props) => {
 
         let interval = null;
 
-        const transitionEnd = window.addEventListener('transitionend', smooth);
-        const onResize = window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
+        window.addEventListener('resize', resize);
 
         // if(props.autoPlay){
         //     interval = setInterval(play, 3000);
@@ -143,15 +165,16 @@ export const Slider = (props) => {
         // }
 
         return () => {
-            window.removeEventListener('transitionend', transitionEnd);
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener('transitionend', smooth);
+            window.removeEventListener('resize', resize);
 
-            setState({
-                activeIndex: props.currentSlideId - 1,
-                translate: getHeight(),
-                transition: 0.45,
-                _slides: [lastSlide, firstSlide, secondSlide]
-            })
+            // setState({
+            //     activeIndex: props.currentSlideId - 1,
+            //     translate: getHeight(),
+            //     transition: 0.45,
+            //     _slides: []
+            // })
+            
             // if(props.autoPlay){
                 // clearInterval(interval);
             // }
@@ -175,14 +198,12 @@ export const Slider = (props) => {
         
             //We're at the last slide
             if(activeIndex === slides.length - 1)
-                _slides = [slides[slides.length - 2], lastSlide, firstSlide];
+                _slides = [slides[slides.length - 2], slides[slides.length - 1], slides[0]];
             //We're back at the first slide. Just reset to how it was on initial render.
-            else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide]
+            else if (activeIndex === 0) _slides = [slides[slides.length - 1], slides[0], slides[1]]
             // Create an array of the previous last slide, and the next two slides that follow it.
             else _slides = slides.slice(activeIndex - 1, activeIndex + 2)
 
-     
-    
         setState({
             ...state,
             _slides,
