@@ -116,16 +116,16 @@ export const Carousel = (props) => {
 
         let interval = null;
 
-        const transitionEnd = window.addEventListener('transitionend', smooth);
-        const onResize = window.addEventListener('resize', resize);
+        window.addEventListener('transitionend', smooth);
+        window.addEventListener('resize', resize);
 
         if(props.autoPlay){
             interval = setInterval(play, 3000);
             return () => clearInterval(interval);
         }
         return () => {
-            window.removeEventListener('transitionend', transitionEnd);
-            window.removeEventListener('resize', onResize);
+            window.removeEventListener('transitionend', smooth);
+            window.removeEventListener('resize', resize);
 
             if(props.autoPlay){
                 clearInterval(interval);
