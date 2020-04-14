@@ -15,6 +15,10 @@ import {
     bindActionCreators
 } from 'redux';
 
+import {
+    withRouter
+} from 'react-router-dom';
+
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -120,6 +124,9 @@ export const Gallery = (props) => {
    
 
     useEffect(() => {
+        props.history.listen((location, action) => {
+            props.closeGallery()
+        });
         // props.initMenuDrinks(menuDrinksArray);
         // let topPosition = document.body.scrollTop;
         // let slider = document.getElementById('slider-content');
@@ -283,5 +290,5 @@ export default connect(
             closeGallery: bindActionCreators(Actions.closeGallery, dispatch),
         };
     }
-)(Gallery);
+)(withRouter(Gallery));
  
