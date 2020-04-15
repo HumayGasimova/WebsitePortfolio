@@ -15,9 +15,7 @@ import {
 } from 'redux';
 
 import {
-    BrowserRouter as Router,
     Route,
-    NavLink,
     Switch
  } from 'react-router-dom';
 
@@ -76,7 +74,6 @@ export const Main = (props) => {
     useEffect(() => {
         let path = props.location.pathname.slice(13);
         let storyObj = {};
-        let archievesMonthObj = {};
         let id;
         switch(path){
             case '':
@@ -104,7 +101,6 @@ export const Main = (props) => {
         props.activateMenuItem(id);
         storiesArray.map(el => {
             storyObj = el.storiesArray.find(x => x.path === path);
-            // console.log(storyObj)
             if(storyObj){
                 props.initSingleStory(storyObj);
             }
@@ -236,18 +232,16 @@ export const Main = (props) => {
 export default connect(
     (state) => {
         return {
-            archievesMonths: Selectors.getArchievesMonthState(state),
-            gallery: Selectors.getGalleryState(state),
+            gallery: Selectors.getGalleryState(state)
         };
     },
     (dispatch) => {
         return {
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
             startInitArchieves: bindActionCreators(Actions.startInitArchieves, dispatch),
             startInitCategories: bindActionCreators(Actions.startInitCategories, dispatch),
-            startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch),
+            startInitRecentPosts: bindActionCreators(Actions.startInitRecentPosts, dispatch)
         };
     }
 )(Main);
