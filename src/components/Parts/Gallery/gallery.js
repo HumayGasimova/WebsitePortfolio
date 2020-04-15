@@ -125,7 +125,7 @@ export const Gallery = (props) => {
 
     useEffect(() => {
         props.history.listen((location, action) => {
-            props.closeGallery()
+            props.closeGallery();
         });
         // props.initMenuDrinks(menuDrinksArray);
         // let topPosition = document.body.scrollTop;
