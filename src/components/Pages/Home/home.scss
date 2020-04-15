@@ -1,7 +1,6 @@
 .home-cover-wrapper {
     background-image: url("../../../images/eat-drink-cafe-bar.jpg");
     background-size: 100% 100vh;
-    // background-position: 282px;
     background-attachment: fixed;
     overflow: hidden;
     filter: grayscale(50%);
@@ -39,7 +38,6 @@
 
 @media only screen and (max-width: 1120px){
     .home-cover-wrapper {
-        // background-position: center;
         width: calc(100% + 18px);
         position: static;
     }

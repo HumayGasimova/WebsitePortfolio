@@ -25,8 +25,6 @@ import './singleStory.scss';
 */
 
 import SingleStoryContent from '../../Parts/SingleStoryContent/singleStoryContent';
-import Stories from '../../Parts/Stories/stories';
-import Footer from '../../Parts/Footer/footer';
 import Gallery from '../../Parts/Gallery/gallery';
 
 /**
@@ -42,26 +40,13 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-import Background from '../../../images/700_FO36064926_7b9fb5c531d9ef758ada11137a039fa4.jpg';
-
-/**
 * Utility
 */
 
 import {
     H1,
-    H2,
-    H3,
     H4,
-    H5,
-    EH1,
-    EH2,
-    EW1,
-    Line1,
-    Line2
+    EH1
 } from '../../UtilityComponents';
 
 /**
@@ -80,7 +65,6 @@ export const SingleStory = (props) => {
         if(props.location.state){
             props.initSingleStory(props.location.state.obj);
         }
-    //    console.log(leaveACommentRef)
         if(props.location.state && props.location.state.comment){
             window.scrollTo(0, leaveACommentRef);
         }else{
@@ -124,13 +108,12 @@ export default connect(
     (state) => {
         return {
             singleStory: Selectors.getSingleStoryState(state),
-            gallery: Selectors.getGalleryState(state),
+            gallery: Selectors.getGalleryState(state)
         };
     },
     (dispatch) => {
         return {
-            initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            initSingleStory: bindActionCreators(Actions.initSingleStory, dispatch)
         };
     }
 )(SingleStory);

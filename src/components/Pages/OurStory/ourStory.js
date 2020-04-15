@@ -10,10 +10,6 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
 /**
 * Styles
 */
@@ -27,13 +23,7 @@ import './ourStory.scss';
 import Statistics from '../../Parts/Statistics/statistics'
 import Stories from '../../Parts/Stories/stories';
 import Footer from '../../Parts/Footer/footer';
-import Gallery from '../../Parts/Gallery/gallery';
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import Gallery from '../../Parts/Gallery/gallery'
 
 /**
 * Selectors
@@ -42,26 +32,14 @@ import Gallery from '../../Parts/Gallery/gallery';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-import Background from '../../../images/700_FO36064926_7b9fb5c531d9ef758ada11137a039fa4.jpg';
-
-/**
 * Utility
 */
 
 import {
     H1,
-    H2,
     H3,
-    H4,
-    H5,
     EH0,
     EH1,
-    EH2,
-    EW1,
-    Line1,
     Line2
 } from '../../UtilityComponents';
 
@@ -109,14 +87,7 @@ export const OurStory = (props) => {
 export default connect(
     (state) => {
         return {
-            gallery: Selectors.getGalleryState(state),
-            // dots: Selectors.getDotsState(state)
-        };
-    },
-    (dispatch) => {
-        return {
-            // startChangingFeedbacks: bindActionCreators(Actions.startChangingFeedbacks, dispatch),
-            // stopChangingFeedbacks: bindActionCreators(Actions.stopChangingFeedbacks, dispatch)
+            gallery: Selectors.getGalleryState(state)
         };
     }
 )(OurStory);

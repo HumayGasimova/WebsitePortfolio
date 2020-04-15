@@ -41,26 +41,13 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-import Background from '../../../images/700_FO36064926_7b9fb5c531d9ef758ada11137a039fa4.jpg';
-
-/**
 * Utility
 */
 
 import {
     H1,
-    H2,
-    H3,
     H4,
-    H5,
-    EH1,
-    EH2,
-    EW1,
-    Line1,
-    Line2
+    EH1
 } from '../../UtilityComponents';
 
 /**
@@ -74,8 +61,6 @@ export const Category = (props) => {
     */
 
     useEffect(()=>{
-        // props.initCategoryStories(props.location.state ? props.location.state.obj : {});
-
         if(props.location.state){
             let categoryImages = [];
             props.location.state.obj.storiesArrayOfCategories.map((el, i) => {
@@ -83,12 +68,11 @@ export const Category = (props) => {
                     categoryImages.push(el);
                 })
             });
-                // console.log( props.location.state.obj);
-                // console.log(categoryImages);
             props.addGalleryImages([], 'clear');
             props.initCategoryStories(props.location.state.obj);
             props.addGalleryImages(categoryImages, 'Category');
         }
+
         window.scrollTo(0, 0);
     }, []);
 
@@ -111,14 +95,6 @@ export const Category = (props) => {
             <div className="category-wrapper">
                <CategoryStories/>
                <Footer/>
-               {/* <div className="category-footer-wrapper">
-                    <H5 className="h5-pink-swan-center">
-                        © Copyright 2012 - 2020   |   
-                        Avada Theme by Theme Fusion   |   
-                        All Rights Reserved   |   
-                        Powered by WordPress
-                    </H5>
-                </div> */}
             </div>
             {props.gallery.show ? <Gallery/> : null}
         </>
@@ -129,7 +105,7 @@ export default connect(
     (state) => {
         return {
             categoryStories: Selectors.getCategoryStoriesState(state),
-            gallery: Selectors.getGalleryState(state),
+            gallery: Selectors.getGalleryState(state)
         };
     },
     (dispatch) => {
