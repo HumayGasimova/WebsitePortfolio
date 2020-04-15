@@ -2,28 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import React from 'react';
 
 /**
 * Styles
@@ -32,28 +11,15 @@ import {
 import './comment.scss';
 
 /**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Utility
 */
 
 import {
-    H2,
-    H3,
     H4,
     H5,
     H6,
     EH0,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    EW2
 } from '../../../UtilityComponents';
 
 /**
@@ -69,10 +35,6 @@ import * as Colors from '../../../../constants/colors';
 */
 
 export const Comment = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -108,16 +70,5 @@ export const Comment = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(Comment);
+export default Comment;
  

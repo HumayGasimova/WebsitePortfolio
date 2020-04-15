@@ -52,12 +52,6 @@ import RelatedPostCard from '../RelatedPostCard/relatedPostCard';
 import * as Actions from '../../../../actions';
 
 /**
-* Selectors
-*/
-
-import * as Selectors from '../../../../reducers/selectors';
-
-/**
 * Hooks
 */
 
@@ -70,16 +64,8 @@ import {
 */
 
 import {
-    H2,
     H3,
-    H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    EH2
 } from '../../../UtilityComponents';
 
 /**
@@ -100,7 +86,6 @@ export const RelatedPostsSlider = (props) => {
 
     const {activeIndex, translate, transition, _slides} = state;
 
-    const autoPlayRef = useRef();
     const transitionRef = useRef();
     const resizeRef = useRef();
 
@@ -114,16 +99,6 @@ export const RelatedPostsSlider = (props) => {
         let slidesArray = [...props.relatedPosts];
         setSlides(slidesArray);
         props.addGalleryImages(slidesArray, 'Related posts');
-        // firstSlide = slides[0];
-        // secondSlide = slides[1];
-        // thirdSlide = slides[2];
-        // forthSlide = slides[3];
-        // lastSlide = slides[slides.length - 1];
-
-       
-        // if(props.id){
-        //     props.addRelatedPostsElement();
-        // }
 
         if(props.relatedPosts.length !== 0){
             setState({
@@ -145,7 +120,6 @@ export const RelatedPostsSlider = (props) => {
     }, [props.id, props.relatedPosts.length, slides.length]);
 
     useEffect(() => {
-        // autoPlayRef.current = nextSlide;
         transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
     })
@@ -160,10 +134,6 @@ export const RelatedPostsSlider = (props) => {
     }, [transition])
 
     useEffect(() => {
-        // const play = () => {
-        //     autoPlayRef.current();
-        // }
-
         const smooth = e => {
             if(e.target.className.includes('related-posts-slider-content')){
                 transitionRef.current()
@@ -174,22 +144,12 @@ export const RelatedPostsSlider = (props) => {
             resizeRef.current()
         }
 
-        let interval = null;
-
         window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
-
-        // if(props.autoPlay){
-        //     interval = setInterval(play, 3000);
-        //     // return () => clearInterval(interval);
-        // }
 
         return () => {
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
-            // if(props.autoPlay){
-                // clearInterval(interval);
-            // }
         };
     }, [])
 
@@ -263,7 +223,6 @@ export const RelatedPostsSlider = (props) => {
     }
 
     const renderRelatedPostsSlider = () => {
-        // console.log(_slides)
         if(_slides.length !== 0){
             return(
                 <div 
@@ -323,24 +282,19 @@ export const RelatedPostsSlider = (props) => {
                         className="icon"
                     />
                 </div>
-                {/* {console.log(_slides)} */}
             </div>
         </div>
     );
 }
 
 export default connect(
-    (state) => {
-        return {
-            // relatedPosts: Selectors.getRelatedPostsState(state),
-        };
-    },
+    null,
     (dispatch) => {
         return {
             startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
             addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
             openGallery: bindActionCreators(Actions.openGallery, dispatch),
-            addGalleryImages: bindActionCreators(Actions.addGalleryImages, dispatch),
+            addGalleryImages: bindActionCreators(Actions.addGalleryImages, dispatch)
         };
     }
 )(withRouter(RelatedPostsSlider));

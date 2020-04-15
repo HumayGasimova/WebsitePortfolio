@@ -3,21 +3,8 @@
 */
 
 import React, {
-    useState,
-    useEffect
+    useState
 } from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 import { 
     FontAwesomeIcon 
@@ -26,16 +13,6 @@ import {
 import { 
     CSSTransition 
 } from 'react-transition-group';
-
-/**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
 
 /**
 * Styles
@@ -48,23 +25,13 @@ import './storyCard.scss';
 */
 
 import {
-    H2,
     H3,
     H4,
     H5,
     EH1,
-    EH2,
-    EH4,
     EW1,
-    Line1,
     DoubleLine1
 } from '../../UtilityComponents';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -129,7 +96,6 @@ export const StoryCard = (props) => {
 
     const onClick = (obj) => {
         props.history.push(`/crypto-cafe/${props.path}`,{obj, comment: true});
-        // // props.activateMenuItem(null);
     }
 
     /**
@@ -219,15 +185,4 @@ export const StoryCard = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(withRouter(StoryCard));
+export default StoryCard;

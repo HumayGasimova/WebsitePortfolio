@@ -3,7 +3,6 @@
     padding: 0 90px 40px 90px;
     border-right: 1px solid rgb(63, 63, 63);
     position: relative;
-    // z-index: -1;
     .story-card-wrapper-left {
         border: 1px solid rgb(63, 63, 63);
         position: relative;
@@ -43,8 +42,6 @@
     width: calc(50% - 182px);
     padding: 0 90px 40px 90px;
     border-left: 1px solid rgb(63, 63, 63);
-    // position: relative;
-    // z-index: -1;
     .story-card-wrapper-right {
         border: 1px solid rgb(63, 63, 63);
         position: relative;
@@ -179,7 +176,6 @@
                 animation: appear 0.3s linear;
                 .icon-arrow {
                     color: rgb(180, 139, 62);
-                    // animation: appear 0.3s linear;
                 }
             }
         }

@@ -7,14 +7,6 @@ import React, {
     useState
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -38,18 +30,6 @@ import {
 import './statisticsItem.scss';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
 * Hooks
 */
 
@@ -63,15 +43,7 @@ import {
 
 import {
     H1,
-    H2,
-    H3,
-    H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line1
+    H3
 } from '../../UtilityComponents';
 
 /**
@@ -126,16 +98,5 @@ export const StatisticsItem = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // feedbacksToShow: Selectors.getFeedbacksToShowState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initFeedbacks: bindActionCreators(Actions.initFeedbacks, dispatch),
-        };
-    }
-)(StatisticsItem);
+export default StatisticsItem;
  

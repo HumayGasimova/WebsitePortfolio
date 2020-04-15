@@ -3,7 +3,6 @@
 */
 
 import React, {
-    useState,
     useEffect,
     useRef
 } from 'react';
@@ -15,23 +14,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
-/**
-* Icons
-*/
-
-import { 
-    faSearch,
-    faLink
-} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Components
@@ -64,17 +46,8 @@ import * as Selectors from '../../../../reducers/selectors';
 
 import {
     EH0,
-    H2,
     H3,
-    H4,
-    H5,
-    H6,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    EH2
 } from '../../../UtilityComponents';
 
 /**
@@ -153,7 +126,6 @@ export const LeaveAComment = (props) => {
         }
     }
 
-
     /**
     * Markup
     */
@@ -177,14 +149,14 @@ export const LeaveAComment = (props) => {
 export default connect(
     (state) => {
         return {
-            leaveACommentInputForm: Selectors.getLeaveACommentInputFormState(state),
+            leaveACommentInputForm: Selectors.getLeaveACommentInputFormState(state)
         };
     },
     (dispatch) => {
         return {
             initLeaveACommentForm: bindActionCreators(Actions.initLeaveACommentForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
-            postComment: bindActionCreators(Actions.postComment, dispatch),
+            postComment: bindActionCreators(Actions.postComment, dispatch)
         };
     }
 )(LeaveAComment);

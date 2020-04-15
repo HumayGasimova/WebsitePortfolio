@@ -10,20 +10,11 @@ import React from 'react';
 
 import './eh0.scss';
 
-
 /**
 * EH0 component definition and export
 */
 
-export const EH0 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const EH0 = () => {
 
     /**
     * Markup

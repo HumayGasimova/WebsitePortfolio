@@ -12,10 +12,6 @@ import {
     connect
 } from 'react-redux';
 
-import {
-    bindActionCreators
-} from 'redux';
-
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -34,12 +30,6 @@ import {
 */
 
 import './slider.scss';
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
 
 /**
 * Selectors
@@ -89,7 +79,6 @@ export const Slider = (props) => {
 
     const {activeIndex, translate, transition, _slides} = state;
 
-    const autoPlayRef = useRef();
     const transitionRef = useRef();
     const resizeRef = useRef();
 
@@ -98,12 +87,8 @@ export const Slider = (props) => {
     */
 
     useEffect(() => {
-        // props.startInitRelatedPosts(props.id);
         let slidesArray = [...props.gallery.imagesArray];
         setSlides(slidesArray);
-        // if(props.id){
-        //     props.addRelatedPostsElement();
-        // }
 
         if(props.gallery.imagesArray.length !== 0){
             setState({
@@ -120,12 +105,10 @@ export const Slider = (props) => {
                 _slides: []
             });
             setSlides([]);
-            // props.startInitRelatedPosts(null);
         };
     }, [props.gallery.imagesArray.length, slides.length]);
 
     useEffect(() => {
-        // autoPlayRef.current = nextSlide;
         transitionRef.current = smoothTransition;
         resizeRef.current = handleResize;
     })
@@ -140,10 +123,6 @@ export const Slider = (props) => {
     }, [transition])
 
     useEffect(() => {
-        // const play = () => {
-        //     autoPlayRef.current();
-        // }
-
         const smooth = e => {
             if(e.target.className.includes('slider-content')){
                 transitionRef.current()
@@ -159,25 +138,9 @@ export const Slider = (props) => {
         window.addEventListener('transitionend', smooth);
         window.addEventListener('resize', resize);
 
-        // if(props.autoPlay){
-        //     interval = setInterval(play, 3000);
-        //     // return () => clearInterval(interval);
-        // }
-
         return () => {
             window.removeEventListener('transitionend', smooth);
             window.removeEventListener('resize', resize);
-
-            // setState({
-            //     activeIndex: props.currentSlideId - 1,
-            //     translate: getHeight(),
-            //     transition: 0.45,
-            //     _slides: []
-            // })
-            
-            // if(props.autoPlay){
-                // clearInterval(interval);
-            // }
         };
     }, [])
 
@@ -323,12 +286,7 @@ export const Slider = (props) => {
 export default connect(
     (state) => {
         return {
-            gallery: Selectors.getGalleryState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // closeGallery: bindActionCreators(Actions.closeGallery, dispatch),
+            gallery: Selectors.getGalleryState(state)
         };
     }
 )(Slider);

@@ -44,7 +44,7 @@ import * as Actions from '../../../../actions';
 * Styles
 */
 
-import './slider.scss';
+import './sliderOld.scss';
 
 /**
 * Selectors
@@ -53,14 +53,10 @@ import './slider.scss';
 import * as Selectors from '../../../../reducers/selectors';
 
 /**
-* Slider component definition and export
+* SliderOld component definition and export
 */
 
-export const Slider = (props) => {
-
-    /**
-    * State
-    */
+export const SliderOld = () => {
 
     /**
     * Methods
@@ -91,8 +87,6 @@ export const Slider = (props) => {
             cloneLast = lastSlide.cloneNode(true),
             index = 0,
             allowShift = true;
-// console.log(cloneFirst)
-            // props.addRelatedPostsElement();
         
         // Clone first and last slide
         items.appendChild(cloneFirst);
@@ -261,5 +255,5 @@ export default connect(
             addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
         };
     }
-)(Slider);
+)(SliderOld);
  

@@ -8,14 +8,6 @@ import React, {
     useRef
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
 import { 
     FontAwesomeIcon 
 } from '@fortawesome/react-fontawesome';
@@ -34,43 +26,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-import * as Actions from '../../../../actions';
-
-/**
 * Styles
 */
 
 import './relatedPostCard.scss';
 
 /**
-* Selectors
-*/
-
-import * as Selectors from '../../../../reducers/selectors';
-
-/**
 * Utility
 */
 
 import {
-    H2,
-    H3,
     H4,
-    H5,
     H6,
     EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    EW1
 } from '../../../UtilityComponents';
 
 /**
@@ -84,7 +53,6 @@ import StoryImage4 from '../../../../images/coffee-cup-latte-cappuccino.jpg';
 import StoryImage5 from '../../../../images/coffee-cup-beverage-food-photo.jpg';
 import StoryImage6 from '../../../../images/white-bowl-beside-glass-cup.jpg';
 import DefaultImage from '../../../../images/error.jpg';
-import * as Colors from '../../../../constants/colors';
 
 /**
 * RelatedPostCard component definition and export
@@ -95,8 +63,6 @@ export const RelatedPostCard = (props) => {
     /**
     * State
     */
-
-    const getWidth = () => window.innerWidth;
 
     const [isHovering, setIsHovering] = useState(false);
 
@@ -208,16 +174,5 @@ export const RelatedPostCard = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // relatedPosts: Selectors.getRelatedPostsState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
-        };
-    }
-)(RelatedPostCard);
+export default RelatedPostCard;
  

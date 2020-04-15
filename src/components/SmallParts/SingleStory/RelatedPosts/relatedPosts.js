@@ -24,7 +24,6 @@ import {
 */
 
 import RelatedPostCard from '../RelatedPostCard/relatedPostCard';
-import Slider from '../Slider/slider';
 
 /**
 * Actions
@@ -58,16 +57,8 @@ import {
 */
 
 import {
-    H2,
     H3,
-    H4,
-    H5,
-    EH1,
     EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
 } from '../../../UtilityComponents';
 
 /**
@@ -182,16 +173,6 @@ export const RelatedPosts = (props) => {
     * Markup
     */
 
-    // return(
-    //     <div className="related-posts">
-    //         <EH2/>
-    //         <H3>RELATED POSTS</H3>
-    //         <EH2/>
-    //         <Slider
-    //             slidesArray={props.relatedPosts}
-    //         />
-    //     </div>
-    // );
     const onPrev = () => {
         let prevId = activeObj.id - 2;
         
@@ -237,13 +218,13 @@ export const RelatedPosts = (props) => {
 export default connect(
     (state) => {
         return {
-            relatedPosts: Selectors.getRelatedPostsState(state),
+            relatedPosts: Selectors.getRelatedPostsState(state)
         };
     },
     (dispatch) => {
         return {
             startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
-            addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch),
+            addRelatedPostsElement: bindActionCreators(Actions.addRelatedPostsElement, dispatch)
         };
     }
 )(RelatedPosts);

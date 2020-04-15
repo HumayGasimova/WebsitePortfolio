@@ -23,10 +23,6 @@ import {
     withRouter
 } from 'react-router-dom';
 
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
 /**
 * Icons
 */
@@ -64,23 +60,8 @@ import * as Selectors from '../../../../reducers/selectors';
 */
 
 import {
-    H2,
-    H3,
-    H4,
-    H5,
-    H6,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    H4
 } from '../../../UtilityComponents';
-
-/**
-* Images
-*/
-
 
 /**
 * PopularVsRecent component definition and export
@@ -166,7 +147,6 @@ export const PopularVsRecent = (props) => {
                                 icon={el.iconName} 
                                 size="lg" 
                                 color="rgb(180, 139, 62)"
-                                // onClick={() => iconOnClick(el.name, props.linkFacebook)}
                             />
                         }
                     </div>
@@ -213,13 +193,13 @@ export const PopularVsRecent = (props) => {
 export default connect(
     (state) => {
         return {
-            popularVsRecentStories: Selectors.getPopularVsRecentStoriesState(state),
+            popularVsRecentStories: Selectors.getPopularVsRecentStoriesState(state)
         };
     },
     (dispatch) => {
         return {
             startInitPopularAndRecentStories: bindActionCreators(Actions.startInitPopularAndRecentStories, dispatch),
-            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch)
         };
     }
 )(withRouter(PopularVsRecent));

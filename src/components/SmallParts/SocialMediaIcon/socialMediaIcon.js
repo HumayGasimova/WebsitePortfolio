@@ -88,7 +88,6 @@ export const SocialMediaIcon = (props) => {
                     icon={loadIconName(props.name)} 
                     size='lg'
                     className="icon-social-media"
-                    // onClick={() => iconOnClick(el.name, props.linkFacebook)}
                 />
             </div>
             {isHovering ? 
