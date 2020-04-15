@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -14,10 +11,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
 
 /**
 * Styles
@@ -31,14 +24,11 @@ import './singleStoryContent.scss';
 
 import Content from '../../SmallParts/SingleStory/Content/content';
 import RelatedPostsSlider from '../../SmallParts/SingleStory/RelatedPostsSlider/relatedPostsSlider';
-import RelatedPosts from '../../SmallParts/SingleStory/RelatedPosts/relatedPosts';
 import Comment from '../../SmallParts/SingleStory/Comment/comment';
 import LeaveAComment from '../../SmallParts/SingleStory/LeaveAComment/leaveAComment';
 import PopularVsRecent from '../../SmallParts/SingleStory/PopularVsRecent/popularVsRecent';
 import GuideItems from '../../SmallParts/SingleStory/GuideItems/guideItems';
 import Categories from '../../SmallParts/SingleStory/Categories/categories';
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Actions
@@ -63,29 +53,13 @@ import Cake from '../../../images/cake.jpg';
 */
 
 import {
-    H2,
     H3,
-    H4,
     H5,
-    H6,
     EH0,
     EH1,
     EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1,
     Line3
 } from '../../UtilityComponents';
-
-/**
-* Constants
-*/
-
-import {
-    statisticsArray
-} from '../../../constants/statisticsArray';
-
 
 /**
 * SingleStoryContent component definition and export
@@ -94,16 +68,8 @@ import {
 export const SingleStoryContent = (props) => {
 
     /**
-    * State
-    */
-
-    /**
     * Methods
     */
-
-    // useEffect(() => {
-    //     // props.startInitRelatedPosts(props.id);
-    // }, [props.id]);
 
     const renderComments = () => {
         if(props.singleStory.comments){
@@ -149,11 +115,6 @@ export const SingleStoryContent = (props) => {
                     id={props.id}
                     autoPlay
                 />
-                {/* <RelatedPosts
-                    // relatedPosts={props.relatedPosts ? props.relatedPosts : []}
-                    id={props.id}
-                    // autoPlay
-                /> */}
                 {renderComments()}
                 <LeaveAComment
                     getLeaveACommentsDivRef={props.getLeaveACommentsDivRef}
@@ -209,12 +170,12 @@ export default connect(
             relatedPosts: Selectors.getRelatedPostsState(state),
             singleStory: Selectors.getSingleStoryState(state),
             archievesMonths: Selectors.getArchievesMonthsState(state),
-            recentPosts: Selectors.getRecentPostsState(state),
+            recentPosts: Selectors.getRecentPostsState(state)
         };
     },
     (dispatch) => {
         return {
-            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch),
+            startInitRelatedPosts: bindActionCreators(Actions.startInitRelatedPosts, dispatch)
         };
     }
 )(SingleStoryContent);

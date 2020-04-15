@@ -164,13 +164,13 @@ export const Toolbar = (props) => {
  export default connect(
     (state) => {
         return {
-            menuItems: Selectors.getMenuItemsState(state),
+            menuItems: Selectors.getMenuItemsState(state)
         };
     },
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
 )(withRouter(Toolbar));

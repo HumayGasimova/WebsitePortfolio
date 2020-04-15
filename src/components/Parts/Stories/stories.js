@@ -3,7 +3,6 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
@@ -70,16 +69,8 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    H2,
-    H3,
     H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line1,
-    DoubleLine1
+    EH1
 } from '../../UtilityComponents';
 
 /**
@@ -87,10 +78,6 @@ import {
 */
 
 export const Stories = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -217,7 +204,7 @@ export const Stories = (props) => {
 export default connect(
     (state) => {
         return {
-            stories: Selectors.getStoriesState(state),
+            stories: Selectors.getStoriesState(state)
         };
     },
     (dispatch) => {
@@ -225,7 +212,7 @@ export default connect(
             startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showStoriesOfMonth: bindActionCreators(Actions.showStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            openGallery: bindActionCreators(Actions.openGallery, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch)
         };
     }
 )(withRouter(Stories));

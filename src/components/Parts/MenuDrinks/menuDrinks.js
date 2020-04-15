@@ -3,7 +3,6 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
@@ -20,12 +19,6 @@ import {
 */
 
 import './menuDrinks.scss';
-
-/**
-* Components
-*/
-
-import MenuFoodCard from '../../SmallParts/MenuFoodCard/menuFoodCard';
 
 /**
 * Actions
@@ -51,13 +44,9 @@ import Smoothie from '../../../images/smoothie-juice-raspberry-drink.jpg'
 
 import {
     H2,
-    H3,
     H4,
     H5,
     EH1,
-    EH2,
-    EH4,
-    EW1,
     Line2
 } from '../../UtilityComponents';
 
@@ -74,10 +63,6 @@ import {
 */
 
 export const MenuDrinks = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -135,12 +120,12 @@ export const MenuDrinks = (props) => {
 export default connect(
     (state) => {
         return {
-            menuDrinks: Selectors.getMenuDrinksState(state),
+            menuDrinks: Selectors.getMenuDrinksState(state)
         };
     },
     (dispatch) => {
         return {
-            initMenuDrinks: bindActionCreators(Actions.initMenuDrinks, dispatch),
+            initMenuDrinks: bindActionCreators(Actions.initMenuDrinks, dispatch)
         };
     }
 )(MenuDrinks);

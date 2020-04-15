@@ -1,6 +1,4 @@
 .stories {
-    // display: flex;
-    // flex-wrap: wrap;
     position: relative;
     z-index: 20;
     padding: 80px 80px 0 80px;
@@ -36,7 +34,6 @@
             width: 100%;
             height: auto;
             max-height: 2400px;
-            // transition: max-height 0.3s ease-out;
         }
         .stories-wrapper-open {
             display: flex;
@@ -48,11 +45,9 @@
             -moz-animation: openStories 1s linear;
             -o-animation: openStories 1s linear;
             animation: openStories 1s linear;
-            // transition: max-height 0.3s ease-out;
         }
         .stories-wrapper-close {
             max-height: 0;
-            // animation: closeStories 0.3s linear;
             display: flex;
             flex-wrap: wrap;
             width: 100%;
@@ -61,7 +56,6 @@
             -moz-animation: closeStories 1s linear;
             -o-animation: closeStories 1s linear;
             animation: closeStories 1s linear;
-            // transition: max-height 0.3s ease-out;
         }
     }
 }
@@ -137,12 +131,6 @@
         padding: 80px 40px 0 40px;
     }
 }
-
-// @media only screen and (max-width: 1000px){
-//     .stories {
-//         padding: 80px 0 0 0;
-//     }
-// }
 
 @media only screen and (max-width: 900px){
     .stories {

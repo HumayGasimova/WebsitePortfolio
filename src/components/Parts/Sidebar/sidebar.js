@@ -3,7 +3,6 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
@@ -48,8 +47,6 @@ import * as Selectors from '../../../reducers/selectors';
 * Images
 */
 
-// import MyLogoOutPart from '../../../images/MainLogo.png';
-// import MyLogoInPart from '../../../images/GHB.png';
 import MyLogo from '../../../images/FinalLogo.png';
 import MyLogoCafe from '../../../images/myLogoCafe.png';
 import MyLogoCrypto from '../../../images/cryptoLogoText.png';
@@ -137,26 +134,19 @@ export const Sidebar = (props) => {
             </div>
             {renderSidebarItems()}
             {renderSocialMediaIcons()}
-
-            {/* <SocialMediaIcons
-                linkFacebook={"http://www.facebook.com/"}
-                linkLinkedIn={"http://www.linkedin.com/"}
-                linkInstagram={"http://www.instagram.com/"}
-                linkTwitter={"http://www.twitter.com/"}
-            /> */}
         </div>
     );
 }
  export default connect(
     (state) => {
         return {
-            menuItems: Selectors.getMenuItemsState(state),
+            menuItems: Selectors.getMenuItemsState(state)
         };
     },
     (dispatch) => {
         return {
             initMenuItems: bindActionCreators(Actions.initMenuItems, dispatch),
-            activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch),
+            activateMenuItem:  bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
 )(withRouter(Sidebar));

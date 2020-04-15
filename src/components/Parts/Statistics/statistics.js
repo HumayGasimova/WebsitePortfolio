@@ -7,14 +7,6 @@ import React, {
     useEffect
 } from 'react';
 
-import {
-    connect
-} from 'react-redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
-
 /**
 * Styles
 */
@@ -26,27 +18,13 @@ import './statistics.scss';
 */
 
 import StatisticsItem from '../../SmallParts/StatisticsItem/statisticsItem';
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Images
-*/
 
 /**
 * Utility
 */
 
 import {
-    H2,
-    H3,
-    H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    EW2,
-    Line1
+    EH1
 } from '../../UtilityComponents';
 
 /**
@@ -62,7 +40,7 @@ import {
 * Statistics component definition and export
 */
 
-export const Statistics = (props) => {
+export const Statistics = () => {
 
     /**
     * State
@@ -85,7 +63,6 @@ export const Statistics = (props) => {
         let el = document.getElementById("statistics");
       
         if(scrollHeight >= el.offsetTop - window.innerHeight/2 + 400){
-            // console.log(el.offsetTop - window.innerHeight/2 + 400, scrollHeight)
             setShowComponent(true);
         }
     }
@@ -123,16 +100,5 @@ export const Statistics = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(Statistics);
+ export default Statistics;
  

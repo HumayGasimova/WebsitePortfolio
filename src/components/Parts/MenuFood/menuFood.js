@@ -3,7 +3,6 @@
 */
 
 import React, {
-    useState,
     useEffect
 } from 'react';
 
@@ -40,26 +39,6 @@ import * as Actions from '../../../actions';
 import * as Selectors from '../../../reducers/selectors';
 
 /**
-* Images
-*/
-
-/**
-* Utility
-*/
-
-import {
-    H2,
-    H3,
-    H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line1
-} from '../../UtilityComponents';
-
-/**
 * Constants
 */
 
@@ -72,10 +51,6 @@ import {
 */
 
 export const MenuFood = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -129,12 +104,12 @@ export const MenuFood = (props) => {
 export default connect(
     (state) => {
         return {
-            menuFood: Selectors.getMenuFoodState(state),
+            menuFood: Selectors.getMenuFoodState(state)
         };
     },
     (dispatch) => {
         return {
-            initMenuFood: bindActionCreators(Actions.initMenuFood, dispatch),
+            initMenuFood: bindActionCreators(Actions.initMenuFood, dispatch)
         };
     }
 )(MenuFood);
