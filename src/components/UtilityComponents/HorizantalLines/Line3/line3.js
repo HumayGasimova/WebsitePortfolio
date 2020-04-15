@@ -14,15 +14,7 @@ import './line3.scss';
 * Line2 component definition and export
 */
 
-export const Line3 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const Line3 = () => {
 
     /**
     * Markup
