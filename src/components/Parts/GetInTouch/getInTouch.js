@@ -3,9 +3,7 @@
 */
 
 import React, {
-    useState,
-    useEffect,
-    useRef
+    useEffect
 } from 'react';
 
 import {
@@ -15,23 +13,6 @@ import {
 import {
     bindActionCreators
 } from 'redux';
-
-import { 
-    FontAwesomeIcon 
-} from '@fortawesome/react-fontawesome';
-
-import { 
-    CSSTransition 
-} from 'react-transition-group';
-
-/**
-* Icons
-*/
-
-import { 
-    faSearch,
-    faLink
-} from '@fortawesome/free-solid-svg-icons';
 
 /**
 * Components
@@ -63,17 +44,9 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    EH0,
     H2,
-    H3,
     H4,
-    H5,
-    H6,
-    EH1,
     EH2,
-    EH4,
-    EW1,
-    EW2,
     Line2
 } from '../../UtilityComponents';
 
@@ -188,14 +161,14 @@ export const GetInTouch = (props) => {
 export default connect(
     (state) => {
         return {
-            getInTouchInputForm: Selectors.getGetInTouchInputFormState(state),
+            getInTouchInputForm: Selectors.getGetInTouchInputFormState(state)
         };
     },
     (dispatch) => {
         return {
             initGetInTouchForm: bindActionCreators(Actions.initGetInTouchForm, dispatch),
             setInputFiledValueAndCheckValidation: bindActionCreators(Actions.setInputFiledValueAndCheckValidation, dispatch),
-            sendComment: bindActionCreators(Actions.sendComment, dispatch),
+            sendComment: bindActionCreators(Actions.sendComment, dispatch)
         };
     }
 )(GetInTouch);

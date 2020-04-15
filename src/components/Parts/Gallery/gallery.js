@@ -33,8 +33,7 @@ import {
    faTimes,
    faArrowsAlt,
    faPlay,
-   faPause,
-   faChevronDown
+   faPause
 } from '@fortawesome/free-solid-svg-icons';
 
 /**
@@ -60,49 +59,6 @@ import * as Actions from '../../../actions';
 */
 
 import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Images
-*/
-
-import Smoothie from '../../../images/smoothie-juice-raspberry-drink.jpg'
-
-/**
-* Utility
-*/
-
-import {
-    H2,
-    H3,
-    H4,
-    H5,
-    EH0,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line2
-} from '../../UtilityComponents';
-
-/**
-* Constants
-*/
-
-import {
-    locationsAddresses
-} from '../../../constants/locationsAddresses';
-
-/**
-* Images
-*/
-
-import StoryImage1 from '../../../images/photo-1527358043728-909898958b29.jpg';
-import StoryImage2 from '../../../images/rocking-chairs-white-chairs-rockers.jpg';
-import StoryImage3 from '../../../images/coffee-latte-art-coffee-shop.jpg';
-import StoryImage4 from '../../../images/coffee-cup-latte-cappuccino.jpg';
-import StoryImage5 from '../../../images/coffee-cup-beverage-food-photo.jpg';
-import StoryImage6 from '../../../images/white-bowl-beside-glass-cup.jpg';
-import DefaultImage from '../../../images/error.jpg';
 
 /**
 * Gallery component definition and export
@@ -182,29 +138,6 @@ export const Gallery = (props) => {
     const autoPlayOnClick = () => {
         setAutoPlayButton(!autoPlayButton)
     }
-
-    const renderSmallSlider = () => {
-        return(
-            <div 
-                className="gallery-small-slider-content" 
-                style={{
-                    transform: `translateY(-${translate}px)`,
-                    // transition: `transform ${props.transition}s ease-out)`,
-                    height: `${getHeight()}px`
-                }}
-            >{props.gallery.imagesArray.map((el, i) => {
-                return(
-                    <div 
-                        key={i} 
-                        className="gallery-small-slider"
-                        style={{height: `${getHeight()}px`}}
-                    >
-                        <img src={loadImage(el)}/>
-                    </div>
-                )
-            })}</div>
-        )
-    }
     
     /**
     * Markup
@@ -213,11 +146,9 @@ export const Gallery = (props) => {
     return(
         <Fullscreen
             enabled={fullScreen}
-            // onChange={() => setFullScreen(false)}
         >
             <div 
                 className="gallery" 
-                // style={{top: `${currentTopPosition}`}}
             >
                 <div className="gallery-wrapper">
                     <div className="gallery-buttons">
@@ -265,13 +196,11 @@ export const Gallery = (props) => {
                     </div>
                     <div className="gallery-slider">
                         <Slider
-                            // slides={props.gallery.imagesArray}
                             currentSlideId={props.gallery.currentId}
                             autoPlay={autoPlayButton}
                         />
                     </div>
                     <div className="gallery-small-slider">
-                        {/* {renderSmallSlider()} */}
                     </div>
                 </div>
             </div>
@@ -282,12 +211,12 @@ export const Gallery = (props) => {
 export default connect(
     (state) => {
         return {
-            gallery: Selectors.getGalleryState(state),
+            gallery: Selectors.getGalleryState(state)
         };
     },
     (dispatch) => {
         return {
-            closeGallery: bindActionCreators(Actions.closeGallery, dispatch),
+            closeGallery: bindActionCreators(Actions.closeGallery, dispatch)
         };
     }
 )(withRouter(Gallery));

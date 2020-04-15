@@ -3,17 +3,8 @@
 */
 
 import React, {
-    useState,
-    useEffect
+    useState
 } from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
 
 /**
 * Styles
@@ -28,38 +19,14 @@ import './locationsInTheWorld.scss';
 import LocationCard from '../../SmallParts/LocationCard/locationCard';
 
 /**
-* Actions
-*/
-
-import * as Actions from '../../../actions';
-
-/**
-* Selectors
-*/
-
-import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Images
-*/
-
-import Smoothie from '../../../images/smoothie-juice-raspberry-drink.jpg'
-
-/**
 * Utility
 */
 
 import {
-    H2,
     H3,
     H4,
-    H5,
     EH0,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line2
+    EH2
 } from '../../UtilityComponents';
 
 /**
@@ -84,7 +51,7 @@ import DefaultImage from '../../../images/error.jpg';
 * LocationsInTheWorld component definition and export
 */
 
-export const LocationsInTheWorld = (props) => {
+export const LocationsInTheWorld = () => {
 
     /**
     * State
@@ -112,10 +79,6 @@ export const LocationsInTheWorld = (props) => {
     /**
     * Methods
     */
-
-    useEffect(() => {
-        // props.initMenuDrinks(menuDrinksArray);
-    }, []);
 
     const loadImage = (name) => {
         switch(name){
@@ -185,16 +148,5 @@ export const LocationsInTheWorld = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // menuDrinks: Selectors.getMenuDrinksState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // initMenuDrinks: bindActionCreators(Actions.initMenuDrinks, dispatch),
-        };
-    }
-)(LocationsInTheWorld);
+export default LocationsInTheWorld;
  

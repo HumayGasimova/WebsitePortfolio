@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -50,7 +47,6 @@ import './categoryStories.scss';
 * Components
 */
 
-import Button from '../../../library/Button/button';
 import StoryCard from '../../SmallParts/StoryCard/storyCard';
 
 /**
@@ -70,16 +66,8 @@ import * as Selectors from '../../../reducers/selectors';
 */
 
 import {
-    H2,
-    H3,
     H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line1,
-    DoubleLine1
+    EH1
 } from '../../UtilityComponents';
 
 /**
@@ -87,10 +75,6 @@ import {
 */
 
 export const CategoryStories = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -198,15 +182,14 @@ export const CategoryStories = (props) => {
  export default connect(
     (state) => {
         return {
-            categoryStories: Selectors.getCategoryStoriesState(state),
+            categoryStories: Selectors.getCategoryStoriesState(state)
         };
     },
     (dispatch) => {
         return {
-            // startInitStories: bindActionCreators(Actions.startInitStories, dispatch),
             showCategoryStoriesOfMonth: bindActionCreators(Actions.showCategoryStoriesOfMonth, dispatch),
             activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
-            openGallery: bindActionCreators(Actions.openGallery, dispatch),
+            openGallery: bindActionCreators(Actions.openGallery, dispatch)
         };
     }
 )(withRouter(CategoryStories));

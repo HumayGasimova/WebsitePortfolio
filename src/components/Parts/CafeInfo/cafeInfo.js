@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    withRouter
-} from 'react-router-dom';
+import React from 'react';
 
 /**
 * Styles
@@ -25,28 +14,7 @@ import './cafeInfo.scss';
 * Components
 */
 
-import Button from '../../../library/Button/button';
 import CafeInfoCard from '../../SmallParts/CafeInfoCard/cafeInfoCard';
-
-/**
-* Images
-*/
-
-/**
-* Utility
-*/
-
-import {
-    H2,
-    H3,
-    H4,
-    H5,
-    EH1,
-    EH2,
-    EH4,
-    EW1,
-    Line1
-} from '../../UtilityComponents';
 
 /**
 * Images
@@ -60,15 +28,7 @@ import Image3 from '../../../images/a019-jakubk-0516-coffee-espresso-wooden-desk
 * CafeInfo component definition and export
 */
 
-export const CafeInfo = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const CafeInfo = () => {
 
     /**
     * Markup
@@ -120,16 +80,5 @@ export const CafeInfo = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(CafeInfo);
+ export default CafeInfo;
  

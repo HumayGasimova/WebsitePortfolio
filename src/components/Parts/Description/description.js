@@ -2,10 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
@@ -30,7 +27,6 @@ import './description.scss';
 */
 
 import Button from '../../../library/Button/button';
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Actions
@@ -71,10 +67,6 @@ import * as Colors from '../../../constants/colors';
 */
 
 export const Description = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -142,14 +134,10 @@ export const Description = (props) => {
     );
 }
  export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
+    null,
     (dispatch) => {
         return {
-            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch),
+            activateMenuItem: bindActionCreators(Actions.activateMenuItem, dispatch)
         };
     }
 )(withRouter(Description));
