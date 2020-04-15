@@ -3,14 +3,11 @@
 */
 
 import { 
-    of,
-    interval,
-    empty
+    of
 } from 'rxjs';
 
 import { 
-    mergeMap,
-    takeUntil
+    mergeMap
 } from 'rxjs/operators';
 
 import { 
@@ -75,12 +72,9 @@ export const startInitArchievesEpic = (action$) =>
                 }
             }
 
-         
-
             return of(
                 Actions.addArchievesMonths(archievesMonths),
                 Actions.initArchievesMonth(archievesMonthObj),
-                // Actions.addGalleryImages([], 'clear'),
                 Actions.addGalleryImages(archieveImages, 'Archieve'),
             )  
         })                

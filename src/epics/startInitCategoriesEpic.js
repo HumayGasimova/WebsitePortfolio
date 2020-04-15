@@ -3,14 +3,11 @@
 */
 
 import { 
-    of,
-    interval,
-    empty
+    of
 } from 'rxjs';
 
 import { 
-    mergeMap,
-    takeUntil
+    mergeMap
 } from 'rxjs/operators';
 
 import { 
@@ -123,12 +120,9 @@ export const startInitCategoriesEpic = (action$) =>
                 }
             }
                
-         
-
             return of(
                 Actions.initCategories(updatedCategoriesArray),
                 Actions.initCategoryStories(categoryObj),
-                // Actions.addGalleryImages([], 'clear'),
                 Actions.addGalleryImages(categoryImages, 'Category'),
             )  
         })                

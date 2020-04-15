@@ -10,20 +10,11 @@ import React from 'react';
 
 import './ew2.scss';
 
-
 /**
 * EW2 component definition and export
 */
 
-export const EW2 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const EW2 = () => {
 
     /**
     * Markup

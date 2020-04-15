@@ -10,20 +10,11 @@ import React from 'react';
 
 import './h5.scss';
 
-
 /**
 * H5 component definition and export
 */
 
 export const H5 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
 
     /**
     * Markup

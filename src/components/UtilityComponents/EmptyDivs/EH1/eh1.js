@@ -10,20 +10,11 @@ import React from 'react';
 
 import './eh1.scss';
 
-
 /**
 * EH1 component definition and export
 */
 
-export const EH1 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const EH1 = () => {
 
     /**
     * Markup

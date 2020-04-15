@@ -4,13 +4,11 @@
 
 import { 
     of,
-    interval,
     empty
 } from 'rxjs';
 
 import { 
-    mergeMap,
-    takeUntil
+    mergeMap
 } from 'rxjs/operators';
 
 import { 

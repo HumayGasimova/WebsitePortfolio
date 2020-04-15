@@ -14,15 +14,7 @@ import './doubleLine1.scss';
 * DoubleLine1 component definition and export
 */
 
-export const DoubleLine1 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const DoubleLine1 = () => {
 
     /**
     * Markup

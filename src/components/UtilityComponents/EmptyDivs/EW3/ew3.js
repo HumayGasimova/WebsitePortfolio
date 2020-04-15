@@ -10,20 +10,11 @@ import React from 'react';
 
 import './ew3.scss';
 
-
 /**
 * EW3 component definition and export
 */
 
-export const EW3 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const EW3 = () => {
 
     /**
     * Markup

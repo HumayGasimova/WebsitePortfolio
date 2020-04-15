@@ -26,7 +26,6 @@ import Carousel from './library/Carousel/carousel';
 
 import './app.scss';
 
-
 /**
 * App component definition and export
 */

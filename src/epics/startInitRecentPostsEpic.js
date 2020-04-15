@@ -3,14 +3,11 @@
 */
 
 import { 
-    of,
-    interval,
-    empty
+    of
 } from 'rxjs';
 
 import { 
-    mergeMap,
-    takeUntil
+    mergeMap
 } from 'rxjs/operators';
 
 import { 
@@ -47,7 +44,6 @@ export const startInitRecentPostsEpic = (action$) =>
                 
             return of(
                 Actions.addRecentPosts(recentPosts),
-                // Actions.initArchievesMonth(archievesMonthObj),
             )  
         })                
     )

@@ -10,20 +10,11 @@ import React from 'react';
 
 import './h2.scss';
 
-
 /**
 * H2 component definition and export
 */
 
 export const H2 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
 
     /**
     * Markup

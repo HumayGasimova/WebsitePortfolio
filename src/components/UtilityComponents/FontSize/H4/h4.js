@@ -10,20 +10,11 @@ import React from 'react';
 
 import './h4.scss';
 
-
 /**
 * H4 component definition and export
 */
 
 export const H4 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
 
     /**
     * Markup

@@ -10,20 +10,11 @@ import React from 'react';
 
 import './h3.scss';
 
-
 /**
 * H3 component definition and export
 */
 
 export const H3 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
 
     /**
     * Markup

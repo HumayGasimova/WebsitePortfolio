@@ -10,20 +10,11 @@ import React from 'react';
 
 import './eh3.scss';
 
-
 /**
 * EH3 component definition and export
 */
 
-export const EH3 = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
+export const EH3 = () => {
 
     /**
     * Markup
