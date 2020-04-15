@@ -161,7 +161,8 @@ export const Toolbar = (props) => {
         </>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             menuItems: Selectors.getMenuItemsState(state)

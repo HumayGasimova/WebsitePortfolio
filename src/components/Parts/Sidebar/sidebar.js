@@ -137,7 +137,8 @@ export const Sidebar = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             menuItems: Selectors.getMenuItemsState(state)

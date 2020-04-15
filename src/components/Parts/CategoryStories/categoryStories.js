@@ -179,7 +179,8 @@ export const CategoryStories = (props) => {
         </div>
     );
 }
- export default connect(
+
+export default connect(
     (state) => {
         return {
             categoryStories: Selectors.getCategoryStoriesState(state)

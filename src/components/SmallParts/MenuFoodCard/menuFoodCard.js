@@ -2,28 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import React from 'react';
 
 /**
 * Utility
@@ -33,10 +12,7 @@ import {
     H2,
     H3,
     H4,
-    H5,
     EH1,
-    EH2,
-    EW1,
     Line2
 } from '../../UtilityComponents';
 
@@ -45,12 +21,6 @@ import {
 */
 
 import './menuFoodCard.scss';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Images
@@ -67,14 +37,9 @@ import Image3 from '../../../images/breakfast-roll-have-breakfast-strawberries.j
 export const MenuFoodCard = (props) => {
 
     /**
-    * State
-    */
-
-    /**
     * Methods
     */
 
-    
     const renderMenuItems = () => {
         return(
             <>{props.menu.map((el, i) => {
@@ -128,16 +93,5 @@ export const MenuFoodCard = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(MenuFoodCard);
+export default MenuFoodCard;
  

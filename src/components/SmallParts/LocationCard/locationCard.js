@@ -2,45 +2,17 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-import {
-    withRouter
-} from 'react-router-dom';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import React from 'react';
 
 /**
 * Utility
 */
 
 import {
-    H2,
     H3,
-    H4,
     H5,
-    EH1,
     EH2,
-    EW1,
-    Line2
+    EW1
 } from '../../UtilityComponents';
 
 /**
@@ -50,28 +22,10 @@ import {
 import './locationCard.scss';
 
 /**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Images
-*/
-
-import Image1 from '../../../images/17222.jpg';
-import Image2 from '../../../images/dessert.jpg';
-import Image3 from '../../../images/breakfast-roll-have-breakfast-strawberries.jpg';
-
-/**
 * LocationCard component definition and export
 */
 
 export const LocationCard = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -112,16 +66,5 @@ export const LocationCard = (props) => {
     );
 }
 
-export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(withRouter(LocationCard));
+export default LocationCard;
  

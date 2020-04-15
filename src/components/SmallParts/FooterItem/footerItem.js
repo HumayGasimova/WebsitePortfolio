@@ -2,18 +2,11 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
+import React from 'react';
 
 import {
     connect
 } from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
 
 import { 
     FontAwesomeIcon 
@@ -34,30 +27,15 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 /**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
 * Utility
 */
 
 import {
-    H2,
-    H3,
     H4,
     H5,
     EH1,
-    EH2,
-    EW1,
     EW3,
-    EH3,
-    Line1
+    EH3
 } from '../../UtilityComponents';
 
 /**
@@ -67,26 +45,10 @@ import {
 import './footerItem.scss';
 
 /**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
-* Constants
-*/
-
-import * as Colors from '../../../constants/colors';
-
-/**
 * FooterItem component definition and export
 */
 
 export const FooterItem = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -125,16 +87,6 @@ export const FooterItem = (props) => {
             </>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(FooterItem);
+
+export default FooterItem;
  

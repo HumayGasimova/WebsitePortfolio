@@ -133,7 +133,8 @@ export const Description = (props) => {
         </>
     );
 }
- export default connect(
+
+export default connect(
     null,
     (dispatch) => {
         return {

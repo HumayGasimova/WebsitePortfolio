@@ -80,5 +80,6 @@ export const CafeInfo = () => {
         </div>
     );
 }
- export default CafeInfo;
+
+export default CafeInfo;
  

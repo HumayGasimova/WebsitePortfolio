@@ -2,18 +2,7 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
+import React from 'react';
 
 import { 
     FontAwesomeIcon 
@@ -28,26 +17,14 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 /**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
-
-/**
 * Utility
 */
 
 import {
-    H2,
     H3,
     H4,
     H5,
     EH1,
-    EH2,
     EW1,
     Line2
 } from '../../UtilityComponents';
@@ -57,12 +34,6 @@ import {
 */
 
 import './cafeInfoCard.scss';
-
-/**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
 
 /**
 * Constants
@@ -75,10 +46,6 @@ import * as Colors from '../../../constants/colors';
 */
 
 export const CafeInfoCard = (props) => {
-
-    /**
-    * State
-    */
 
     /**
     * Methods
@@ -138,16 +105,6 @@ export const CafeInfoCard = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(CafeInfoCard);
+
+export default CafeInfoCard;
  

@@ -2,40 +2,16 @@
 * Libraries
 */
 
-import React, {
-    useState,
-    useEffect
-} from 'react';
-
-import {
-    connect
-} from 'react-redux';
-
-import {
-    bindActionCreators
-} from 'redux';
-
-/**
-* Components
-*/
-
-/**
-* Actions
-*/
-
-// import * as Actions from '../../../actions';
+import React from 'react';
 
 /**
 * Utility
 */
 
 import {
-    H2,
     H3,
     H4,
-    H5,
     EH1,
-    EH2,
     EW1,
     Line1
 } from '../../UtilityComponents';
@@ -47,26 +23,10 @@ import {
 import './adBigCard.scss';
 
 /**
-* Selectors
-*/
-
-// import * as Selectors from '../../../reducers/selectors';
-
-/**
 * AdBigCard component definition and export
 */
 
 export const AdBigCard = (props) => {
-
-    /**
-    * State
-    */
-
-    /**
-    * Methods
-    */
-
-
 
     /**
     * Markup
@@ -87,16 +47,6 @@ export const AdBigCard = (props) => {
         </div>
     );
 }
- export default connect(
-    (state) => {
-        return {
-            // menuButtonIsPressed: Selectors.getMenuButtonIsPressedState(state),
-        };
-    },
-    (dispatch) => {
-        return {
-            // toggleMenuButton: bindActionCreators(Actions.toggleMenuButton, dispatch),
-        };
-    }
-)(AdBigCard);
+
+export default AdBigCard;
  

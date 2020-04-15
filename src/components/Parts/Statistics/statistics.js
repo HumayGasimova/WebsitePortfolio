@@ -100,5 +100,6 @@ export const Statistics = () => {
         </div>
     );
 }
- export default Statistics;
+
+export default Statistics;
  
