@@ -35,3 +35,39 @@ useEffect(() => {
     props.initPropertiesJSON(properties);
     setScreenMaxWidth(size.width);
 }, [size]);
+
+
+/**
+* Actions
+*/
+
+import * as Actions from "../actions";
+
+export function fetchProducts() {
+    let properties = require('../assets/data/properties.json');
+
+    return dispatch => {
+      dispatch(Actions.fetchPropertiesBegin());
+      return fetch("https://jsonplaceholder.typicode.com/posts")
+        // .then(handleErrors)
+        .then(res => {
+            // console.log(res)
+            // return res.json();
+            return properties;
+        })
+        .then(json => {
+          dispatch(Actions.fetchPropertiesSuccess(json));
+          return json;
+        })
+        .catch(error => dispatch(Actions.fetchPropertiesFailur(error)));
+    };
+}
+
+function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+}
+
+
