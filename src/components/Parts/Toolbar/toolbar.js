@@ -81,7 +81,7 @@ export const Toolbar = (props) => {
 
     useEffect(() => {
         props.initMenuItems(menuItemsArray);
-        addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
 
