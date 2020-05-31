@@ -114,3 +114,16 @@ export const getCurrentDateAndTime = () => {
     return `${month} ${date.getDate()}, ${date.getFullYear()} AT ${date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
 } 
 
+// export const filterObject = (obj, predicate) => 
+//     Object.keys(obj)
+//         .filter(key => predicate(obj[key]))
+//         .map( key => ({ [key]: obj[key] }))
+
+
+// export const filterObject = (obj, filter, filterValue) => 
+//     Object.keys(obj).reduce((acc, val) => 
+//         (obj[val][filter] === filterValue ? acc : {
+//             ...acc,
+//             [val]: obj[val]
+//         }                                        
+//     ), {});
