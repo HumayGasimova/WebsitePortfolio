@@ -5,9 +5,9 @@ import {
      connectRouter 
 } from 'connected-react-router';
 
-import websiteThreeJsReducer from './websiteThreeJsReducer';
+import websitePortfolioReducer from './websitePortfolioReducer';
 
 export default (history) => combineReducers({
     router: connectRouter(history),
-    home: websiteThreeJsReducer
+    home: websitePortfolioReducer
 });
