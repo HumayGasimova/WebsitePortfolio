@@ -60,7 +60,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    port: 8000,
+    port: 8080,
     historyApiFallback: true
   },
   plugins: [HTMLWebpackPluginConfig]
